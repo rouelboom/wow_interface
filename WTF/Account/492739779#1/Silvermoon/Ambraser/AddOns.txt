@@ -1,0 +1,11 @@
+Blizzard_ObjectiveTracker: enabled
+Blizzard_CompactRaidFrames: enabled
+Blizzard_CombatText: enabled
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+WeakAuras: disabled
+DBM-Core: disabled
+WorldBossTimers: disabled
+BagBrother: disabled
+Quartz: disabled
+Bagnon: disabled

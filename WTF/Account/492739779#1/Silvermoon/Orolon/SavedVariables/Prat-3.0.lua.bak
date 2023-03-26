@@ -1,0 +1,1513 @@
+
+Prat3CharDB = {
+	["history"] = {
+		["cmdhistory"] = {
+			["ChatFrame10EditBox"] = {
+			},
+			["ChatFrame7EditBox"] = {
+			},
+			["ChatFrame5EditBox"] = {
+			},
+			["ChatFrame8EditBox"] = {
+			},
+			["ChatFrame4EditBox"] = {
+			},
+			["ChatFrame6EditBox"] = {
+			},
+			["ChatFrame3EditBox"] = {
+			},
+			["ChatFrame1EditBox"] = {
+			},
+			["ChatFrame2EditBox"] = {
+			},
+			["ChatFrame9EditBox"] = {
+			},
+		},
+	},
+}
+Prat3HighCPUPerCharDB = {
+	["scrollback"] = {
+		["ChatFrame5"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame4"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame3"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 4,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+				{
+					["message"] = "Speech to text allows you to add closed captioning in a voice channel.",
+					["serverTime"] = 1668436824,
+					["r"] = 1,
+					["b"] = 0,
+					["timestamp"] = 520361.894,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+					["g"] = 1,
+				}, -- [1]
+				{
+					["message"] = "0 |4day:days;, 0 |4hour:hours;, 0 |4minute:minutes;, 0 |4second:seconds;",
+					["timestamp"] = 520361.894,
+				}, -- [2]
+				{
+					["message"] = "========== End of Scrollback ==========",
+					["timestamp"] = 520361.894,
+				}, -- [3]
+				{
+					["message"] = "Speech to text allows you to add closed captioning in a voice channel.",
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+					["timestamp"] = 520361.894,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [4]
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame7"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame6"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame8"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame10"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame9"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 0,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+		["ChatFrame1"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 85,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:38]|h|r 17:36:38Warlord Breka Grimaxe says: Look sharp, Orolon! We're almost to the island.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436598,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [1]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:42]|h|r Quest accepted: Warming Up",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436602,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [2]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:43]|h|r 17:36:43Warlord Breka Grimaxe says: We need to be ready for anything. Show me your skill in combat.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436603,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [3]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:52]|h|r 17:36:52Warlord Breka Grimaxe says: Fine work. Next, we... rain? Our shaman said the skies would be clear.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436612,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [4]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:53]|h|r Warming Up completed.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436613,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [5]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:53]|h|r Experience gained: 200.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436613,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [6]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:53]|h|r Received 55 Copper.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436613,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [7]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:55]|h|r 17:36:55Warlord Breka Grimaxe says: Throg will spar with you for now. I must speak to the crew about the rain.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436615,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [8]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:36:58]|h|r Quest accepted: Stand Your Ground",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436618,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [9]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:00]|h|r 17:37:00Grunt Throg says: I'll take my position. Strike first, and strike hard!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436620,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [10]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:08]|h|r 17:37:08Grunt Throg says: Never run from your foe! Victory or death!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436628,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [11]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:10]|h|r 17:37:10Grunt Throg says: Always face your enemy!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436630,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [12]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:14]|h|r 17:37:14Grunt Throg says: I concede! Your strength will see our mission through.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436634,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [13]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:14]|h|r You have learned a new spell: |cff71d5ff|Hspell:589:0|h[Shadow Word: Pain]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436634,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [14]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:14]|h|r Congratulations, you have reached |cffFF4E00|Hlevelup:2:LEVEL_UP_TYPE_CHARACTER|h[Level 2]|h|r!",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436634,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+				}, -- [15]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:20]|h|r Stand Your Ground completed.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436640,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [16]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:20]|h|r Experience gained: 340.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436640,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [17]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:20]|h|r Received 1 Silver, 20 Copper.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436640,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [18]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:23]|h|r Quest accepted: Brace for Impact",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436643,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [19]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:25]|h|r 17:37:25Grunt Throg says: Warlord! This storm will soon overwhelm us!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436645,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [20]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:28]|h|r 17:37:28Warlord Breka Grimaxe says: Soldiers, brace yourselves!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436648,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [21]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:37]|h|r Brace for Impact completed.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436657,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [22]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:37]|h|r Experience gained: 40.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436657,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [23]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:37]|h|r Received 30 Copper.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436657,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [24]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:49]|h|r 17:37:49Warlord Breka Grimaxe says: Orolon! You survived! We need to regroup at once.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436669,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [25]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:54]|h|r Quest accepted: Murloc Mania",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436674,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [26]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:37:54]|h|r 17:37:54Warlord Breka Grimaxe says: Recover our supplies, but don't fight too many murlocs at once. They're dangerous in packs.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436674,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [27]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:24]|h|r You receive loot: |cffffffff|Hitem:170549::::::::2:1452:::::::::|h[First Aid Kit]|h|rx5",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436704,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [28]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:24]|h|r You receive loot: |cff9d9d9d|Hitem:779::::::::2:1452:::::::::|h[Shiny Seashell]|h|rx3",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436704,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [29]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:24]|h|r You loot 35 Copper",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436704,
+					["extraData"] = {
+						29, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+				}, -- [30]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:32]|h|r You receive loot: |cffffffff|Hitem:170549::::::::2:1452:::::::::|h[First Aid Kit]|h|r",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436712,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [31]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:33]|h|r You loot 7 Copper",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436713,
+					["extraData"] = {
+						29, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+				}, -- [32]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:56]|h|r You have learned a new spell: |cff71d5ff|Hspell:2061:0|h[Flash Heal]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436736,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [33]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:56]|h|r Congratulations, you have reached |cffFF4E00|Hlevelup:3:LEVEL_UP_TYPE_CHARACTER|h[Level 3]|h|r!",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436736,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+				}, -- [34]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:56]|h|r Murloc Mania completed.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436736,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [35]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:56]|h|r Experience gained: 340.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436736,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [36]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:56]|h|r Received 1 Silver, 20 Copper.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436736,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [37]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:57]|h|r You receive item: |cffffffff|Hitem:168410::::::::3:1452::11::1:28:957:::::|h[First Aid Kit]|h|r",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436737,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [38]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:38:57]|h|r Quest accepted: Emergency First Aid",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436737,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [39]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:39:04]|h|r 17:39:04Bo says: My thanks. We'll find the expedition yet.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436744,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [40]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:39:09]|h|r 17:39:09Mithdran Dawntracker says: Mark my words, that storm was unnatural.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436749,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [41]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:39:12]|h|r 17:39:12Lana Jordan says: Quite the storm. Probably hit the first boat, too.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 520361.894,
+					["serverTime"] = 1668436752,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [42]
+				{
+					["message"] = "0 |4day:days;, 0 |4hour:hours;, 1 |4minute:minutes;, 12 |4second:seconds;",
+					["timestamp"] = 520361.894,
+				}, -- [43]
+				{
+					["message"] = "========== End of Scrollback ==========",
+					["timestamp"] = 520361.894,
+				}, -- [44]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:40:37]|h|r Emergency First Aid completed.",
+					["serverTime"] = 1668436837,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520377.91,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [45]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:40:37]|h|r Experience gained: 470.",
+					["serverTime"] = 1668436837,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520377.91,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [46]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:40:37]|h|r Received 2 Silver.",
+					["serverTime"] = 1668436837,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520377.91,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [47]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:40:37]|h|r You receive item: |cffffffff|Hitem:174780::::::::3:1452:::::::::|h[Emptied First Aid Kit]|h|r",
+					["serverTime"] = 1668436837,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520378.066,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [48]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:40:37]|h|r Quest accepted: Finding the Lost Expedition",
+					["serverTime"] = 1668436837,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520378.375,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [49]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:40:39]|h|r 17:40:39Warlord Breka Grimaxe says: You three, search for more survivors. Orolon, you and I will push forward.",
+					["serverTime"] = 1668436839,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520380.363,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [50]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:07]|h|r 17:41:07Won'sa says: So... hungry...",
+					["serverTime"] = 1668436867,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520408.355,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [51]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:10]|h|r 17:41:10Warlord Breka Grimaxe says: Won'sa!",
+					["serverTime"] = 1668436870,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520411.018,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [52]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:14]|h|r Finding the Lost Expedition completed.",
+					["serverTime"] = 1668436874,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520414.983,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [53]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:14]|h|r Experience gained: 240.",
+					["serverTime"] = 1668436874,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520414.983,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [54]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:14]|h|r Received 1 Silver.",
+					["serverTime"] = 1668436874,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520414.983,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [55]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:17]|h|r Quest accepted: Cooking Meat",
+					["serverTime"] = 1668436877,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520418.196,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [56]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:18]|h|r 17:41:18Won'sa says: Shuja said... you'd be comin'...",
+					["serverTime"] = 1668436878,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520418.455,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [57]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:22]|h|r 17:41:22Warlord Breka Grimaxe says: She's my daughter. Nothing could keep me from her.",
+					["serverTime"] = 1668436882,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520422.763,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [58]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:26]|h|r 17:41:26Warlord Breka Grimaxe says: And as a soldier of the Horde, she knows we leave no one behind.",
+					["serverTime"] = 1668436886,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520427.297,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [59]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:34]|h|r |Hchannel:channel:1|h[1] |h|cffd8d8d8[|r|Hplayer:Oakhorn-Arathor:71:CHANNEL:1|h|cffff7c0aOakhorn|r-|cffee77bbAra|r|h|cffd8d8d8]|r: hello",
+					["serverTime"] = 1668436894,
+					["r"] = 1,
+					["extraData"] = {
+						68, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520434.467,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [60]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:44]|h|r You have learned a new spell: |cff71d5ff|Hspell:17:0|h[Power Word: Shield]|h|r.",
+					["serverTime"] = 1668436904,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520444.933,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [61]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:44]|h|r Congratulations, you have reached |cffFF4E00|Hlevelup:4:LEVEL_UP_TYPE_CHARACTER|h[Level 4]|h|r!",
+					["serverTime"] = 1668436904,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+					["timestamp"] = 520444.933,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [62]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:46]|h|r You receive loot: |cffffffff|Hitem:174072::::::::4:1452:::::::::|h[Raw Meat]|h|rx4",
+					["serverTime"] = 1668436906,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520446.519,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [63]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:46]|h|r You receive loot: |cff9d9d9d|Hitem:3299::::::::4:1452:::::::::|h[Fractured Canine]|h|rx2",
+					["serverTime"] = 1668436906,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520446.86,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [64]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:46]|h|r You receive loot: |cff9d9d9d|Hitem:5118::::::::4:1452:::::::::|h[Large Flat Tooth]|h|rx2",
+					["serverTime"] = 1668436906,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520447.151,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [65]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:59]|h|r You receive loot: |cffffffff|Hitem:174072::::::::4:1452:::::::::|h[Raw Meat]|h|r",
+					["serverTime"] = 1668436919,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520459.511,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [66]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:41:59]|h|r You receive loot: |cff9d9d9d|Hitem:3299::::::::4:1452:::::::::|h[Fractured Canine]|h|r",
+					["serverTime"] = 1668436919,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520459.945,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [67]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:17]|h|r You receive loot: |cffffffff|Hitem:174074::::::::4:1452:::::::::|h[Cooked Meat]|h|r",
+					["serverTime"] = 1668436937,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520477.831,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [68]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:17]|h|r 17:42:17Won'sa says: We got ambushed... by da quilboar...",
+					["serverTime"] = 1668436937,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520478.219,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [69]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:20]|h|r Cooking Meat completed.",
+					["serverTime"] = 1668436940,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520480.698,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [70]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:20]|h|r Experience gained: 600.",
+					["serverTime"] = 1668436940,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520480.698,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [71]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:20]|h|r Received 3 Silver, 60 Copper.",
+					["serverTime"] = 1668436940,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520480.698,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [72]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:20]|h|r You receive item: |cffffffff|Hitem:117::::::::4:1452:::::::::|h[Tough Jerky]|h|rx4",
+					["serverTime"] = 1668436940,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520480.73,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [73]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:21]|h|r 17:42:21Warlord Breka Grimaxe says: Eat first. I won't let you starve to death.",
+					["serverTime"] = 1668436941,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520481.772,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [74]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:22]|h|r Quest accepted: Enhanced Combat Tactics",
+					["serverTime"] = 1668436942,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520483.374,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [75]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:25]|h|r 17:42:25Warlord Breka Grimaxe says: Recruit. Quilboar pose a far greater threat than murlocs. You must be ready to face them in battle.",
+					["serverTime"] = 1668436945,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520486.251,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [76]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:38]|h|r 17:42:38Warlord Breka Grimaxe says: Your next lesson begins now!",
+					["serverTime"] = 1668436958,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520499.2,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [77]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:39]|h|r 17:42:39Warlord Breka Grimaxe says: Your spells can be used at range. Cast them to assault your enemies and land the first strike!",
+					["serverTime"] = 1668436959,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520500.255,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [78]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:41]|h|r 17:42:41Warlord Breka Grimaxe says: Good! Use Smite while Shadow Word: Pain deals damage. I'll tell you when to use Shadow Word: Pain again.",
+					["serverTime"] = 1668436961,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520501.631,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [79]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:53]|h|r 17:42:53Warlord Breka Grimaxe says: Shadow Word: Pain is fading! Cast it again!",
+					["serverTime"] = 1668436973,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520513.515,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [80]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:42:56]|h|r 17:42:56Warlord Breka Grimaxe says: Fine work, now do it again! Shadow Word: Pain will continue to damage your opponent while you assault them with Smite.",
+					["serverTime"] = 1668436976,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520516.628,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [81]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:43:08]|h|r 17:43:08Warlord Breka Grimaxe says: Shadow Word: Pain is fading! Cast it again!",
+					["serverTime"] = 1668436988,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520529.329,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [82]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:43:10]|h|r 17:43:10Warlord Breka Grimaxe says: Like that, one more time! A priest can wear down their opponents with proper use of Shadow Word: Pain.",
+					["serverTime"] = 1668436990,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520530.897,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [83]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:43:25]|h|r 17:43:25Warlord Breka Grimaxe says: Shadow Word: Pain is fading! Cast it again!",
+					["serverTime"] = 1668437005,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520545.545,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [84]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[17:43:27]|h|r 17:43:27Warlord Breka Grimaxe says: Enough! You're ready to fight the quilboar. Now we rescue our brethren!",
+					["serverTime"] = 1668437007,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 520548.279,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [85]
+			},
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+		},
+	},
+}

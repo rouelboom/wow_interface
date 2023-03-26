@@ -1,0 +1,49 @@
+VER 3 010000000000000E "1" "SPELL_MISC_PETHEAL"
+/танец 
+END
+VER 3 0100000000000011 "VuhDoDCShieldData" "Ability_Repair"
+P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1HR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+END
+VER 3 0100000000000012 "VuhDoDCShieldNames" "Ability_Repair"
+N[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Роу[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+END
+VER 3 0100000000000004 "ФД" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt]Звериный гнев;[mod:shift] Готовность;[nomod] Притвориться мертвым
+END
+VER 3 0100000000000006 "асист" "ABILITY_DUALWIELD"
+/assist Мевар
+END
+VER 3 010000000000000B "бурст" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt]Жетон завоевания злонравного гладиатора;[mod:shift] Готовность;[nomod] Притвориться мертвым
+END
+VER 3 010000000000000D "детер офф" "INV_MISC_QUESTIONMARK"
+/cast Чародейский выстрел
+/cancelaura Сдерживание
+END
+VER 3 0100000000000001 "детеренс" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl]Узы жестокости деспотичного гладиатора ;[mod:alt] ;[mod:shift] Сдерживание;[nomod] Отрыв
+END
+VER 3 010000000000000F "мешочек" "INV_MISC_QUESTIONMARK"
+/run BuyMerchantItem(27,1)
+END
+VER 3 0100000000000010 "открытие" "INV_MISC_QUESTIONMARK"
+/use Контрабандный мешочек монет
+END
+VER 3 0100000000000009 "сакра" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [target=player]  Рев жертвенности
+END
+VER 3 0100000000000003 "свечка" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] Щит маны;[mod:shift] Приказ хозяина;[nomod] Осветительная ракета
+END
+VER 3 0100000000000002 "стопкаст" "ACHIEVEMENT_GUILDPERK_QUICK AND DEAD"
+/stopcast
+END
+VER 3 010000000000000A "черная стрела" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl] ;[mod:alt] ;[mod:shift] Мощный выстрел;[nomod] Черная стрела
+END

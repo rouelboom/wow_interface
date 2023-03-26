@@ -1,0 +1,16 @@
+Blizzard_ObjectiveTracker: enabled
+Blizzard_CompactRaidFrames: enabled
+Blizzard_CombatText: enabled
+WeakAurasCompanion: enabled
+WeakAurasArchive: enabled
+Bagnon: enabled
+BagBrother: disabled
+WeakAuras: disabled
+Quartz: disabled
+Sorted_CanIMogIt: disabled
+Sorted_Pawn: disabled
+Bagnon_Config: enabled
+Bagnon_GuildBank: enabled
+Bagnon_VoidStorage: enabled
+Sorted_Scrap: disabled
+Peddler: disabled

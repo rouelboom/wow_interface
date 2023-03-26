@@ -1,0 +1,5 @@
+VER 3 0100000000000001 "burst trink" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [nomod ] Hammer of Wrath 
+/use [mod:shift] 13
+END

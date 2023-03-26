@@ -1,0 +1,302 @@
+
+DataStore_MailsDB = {
+	["profileKeys"] = {
+		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
+		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+	},
+	["global"] = {
+		["Characters"] = {
+			["Default.Silvermoon.Ambracer"] = {
+				["Mails"] = {
+					{
+						["lastCheck"] = 1673962348,
+						["sender"] = "Auction House",
+						["subject"] = "Auction expired: Iridescent Plume (6)",
+						["returned"] = false,
+						["money"] = 0,
+						["text"] = "",
+						["icon"] = 134939,
+						["daysLeft"] = 29.30216407775879,
+					}, -- [1]
+					{
+						["returned"] = false,
+						["sender"] = "Auction House",
+						["itemID"] = 201401,
+						["link"] = "|cffffffff|Hitem:201401::::::::70:103:::::::::|h[Iridescent Plume]|h|r",
+						["count"] = 6,
+						["lastCheck"] = 1673962348,
+						["icon"] = 2103817,
+						["daysLeft"] = 29.30216407775879,
+					}, -- [2]
+					{
+						["lastCheck"] = 1673962348,
+						["sender"] = "Auction House",
+						["subject"] = "Auction expired: Aquatic Maw (3)",
+						["returned"] = false,
+						["money"] = 0,
+						["text"] = "",
+						["icon"] = 134939,
+						["daysLeft"] = 29.30222129821777,
+					}, -- [3]
+					{
+						["returned"] = false,
+						["sender"] = "Auction House",
+						["itemID"] = 201400,
+						["link"] = "|cffffffff|Hitem:201400::::::::70:103:::::::::|h[Aquatic Maw]|h|r",
+						["count"] = 3,
+						["lastCheck"] = 1673962348,
+						["icon"] = 463487,
+						["daysLeft"] = 29.30222129821777,
+					}, -- [4]
+					{
+						["lastCheck"] = 1673962348,
+						["sender"] = "Artisan's Consortium",
+						["subject"] = "Order Filled: Infurious Footwraps of Indemnity",
+						["returned"] = false,
+						["money"] = 0,
+						["text"] = "",
+						["icon"] = 134939,
+						["daysLeft"] = 29.99945640563965,
+					}, -- [5]
+				},
+			},
+			["Default.Silvermoon.Allower"] = {
+				["lastUpdate"] = 1671477643,
+			},
+			["Default.Silvermoon.Nowarg"] = {
+				["lastUpdate"] = 1671630490,
+				["Mails"] = {
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190396,
+						["link"] = "|cffffffff|Hitem:190396::::::::70:103:::::::::|h[Serevite Ore |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 200,
+						["lastCheck"] = 1671630490,
+						["icon"] = 4615906,
+						["daysLeft"] = 30,
+					}, -- [1]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 194507,
+						["link"] = "|cff1eff00|Hitem:194507::::::::70:103::11::1:28:2287:::::|h[Plans: Serevite Skeleton Key]|h|r",
+						["count"] = 1,
+						["icon"] = 4549167,
+						["lastCheck"] = 1671656310,
+						["daysLeft"] = 30,
+					}, -- [2]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 192996,
+						["link"] = "|cff0070dd|Hitem:192996::::::::70:103::13:6:8837:8838:4785:8784:8780:8802:5:28:2164:29:36:30:32:38:8:40:255::::Player-3391-0C56127F:|h[Pendant of Impending Perils |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r",
+						["count"] = 1,
+						["lastCheck"] = 1672816877,
+						["icon"] = 4548910,
+						["daysLeft"] = 30,
+					}, -- [3]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190396,
+						["link"] = "|cffffffff|Hitem:190396::::::::70:103:::::::::|h[Serevite Ore |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 100,
+						["lastCheck"] = 1671946349,
+						["icon"] = 4615906,
+						["daysLeft"] = 30,
+					}, -- [4]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 194485,
+						["link"] = "|cffa335ee|Hitem:194485::::::::70:103::8::1:28:2163:::::|h[Plans: Infurious Warboots of Impunity]|h|r",
+						["count"] = 1,
+						["lastCheck"] = 1671911134,
+						["icon"] = 4549166,
+						["daysLeft"] = 30,
+					}, -- [5]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 188658,
+						["link"] = "|cff1eff00|Hitem:188658::::::::70:103::::1:38:2:::::|h[Draconium Ore |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 54,
+						["lastCheck"] = 1671911134,
+						["icon"] = 4581144,
+						["daysLeft"] = 30,
+					}, -- [6]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 188658,
+						["link"] = "|cff1eff00|Hitem:188658::::::::70:103:::::::::|h[Draconium Ore |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 60,
+						["lastCheck"] = 1671811158,
+						["icon"] = 4581144,
+						["daysLeft"] = 30,
+					}, -- [7]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 192857,
+						["link"] = "|cff0070dd|Hitem:192857::::::::70:103::::1:38:2:::::|h[Malygite |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 2,
+						["icon"] = 4555566,
+						["lastCheck"] = 1672213817,
+						["daysLeft"] = 30,
+					}, -- [8]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190396,
+						["link"] = "|cffffffff|Hitem:190396::::::::70:103:::::::::|h[Serevite Ore |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 100,
+						["lastCheck"] = 1671911134,
+						["icon"] = 4615906,
+						["daysLeft"] = 30,
+					}, -- [9]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 199019,
+						["link"] = "|cff1eff00|Hitem:199019::::::::70:103:::3:7968:6652:1713:2:9:70:28:2161:::::|h[Aerodynamic Cape of the Harmonious]|h|r",
+						["count"] = 1,
+						["icon"] = 4185386,
+						["lastCheck"] = 1672000513,
+						["daysLeft"] = 30,
+					}, -- [10]
+					{
+						["sender"] = "Ambracer",
+						["subject"] = "Serevite Ore (100)",
+						["lastCheck"] = 1671946349,
+						["money"] = 300000000,
+						["text"] = "",
+						["icon"] = "Interface\\Icons\\INV_Misc_Coin_01",
+						["daysLeft"] = 30,
+					}, -- [11]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 194456,
+						["link"] = "|cff1eff00|Hitem:194456::::::::70:103::11::1:28:2163:::::|h[Plans: Crimson Combatant's Draconium Pauldrons]|h|r",
+						["count"] = 1,
+						["lastCheck"] = 1672990160,
+						["icon"] = 4549163,
+						["daysLeft"] = 30,
+					}, -- [12]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 199044,
+						["link"] = "|cff1eff00|Hitem:199044::::::::70:103:::3:7969:6652:1676:2:9:70:28:2161:::::|h[Isle Trapper's Axe of the Quickblade]|h|r",
+						["count"] = 1,
+						["icon"] = 4062560,
+						["lastCheck"] = 1672000513,
+						["daysLeft"] = 30,
+					}, -- [13]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 192997,
+						["link"] = "|cff1eff00|Hitem:192997::::::::70:103::13:6:8839:8840:5247:8983:8780:8801:4:28:2164:29:49:38:7:40:256::::Player-3391-0C56127F:|h[Crimson Combatant's Jeweled Signet |A:Professions-ChatIcon-Quality-Tier4:17:17::1|a]|h|r",
+						["count"] = 1,
+						["icon"] = 4548924,
+						["lastCheck"] = 1672000887,
+						["daysLeft"] = 30,
+					}, -- [14]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 201254,
+						["link"] = "|cff00ccff|Hitem:201254::::::::70:103:::::::::|h[Medal of Honor]|h|r",
+						["count"] = 3,
+						["lastCheck"] = 1671946365,
+						["icon"] = 463448,
+						["daysLeft"] = 30,
+					}, -- [15]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 198988,
+						["link"] = "|cff1eff00|Hitem:198988::::::::70:103:::4:7968:6652:7937:1678:2:9:70:28:2523:::::|h[Drakewatcher's Hood of the Quickblade]|h|r",
+						["count"] = 1,
+						["icon"] = 4073848,
+						["lastCheck"] = 1672000513,
+						["daysLeft"] = 30,
+					}, -- [16]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190329,
+						["link"] = "|cff0070dd|Hitem:190329::::::::70:103:::::::::|h[Awakened Frost]|h|r",
+						["count"] = 2,
+						["icon"] = 4554439,
+						["lastCheck"] = 1672221500,
+						["daysLeft"] = 30,
+					}, -- [17]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 199004,
+						["link"] = "|cff1eff00|Hitem:199004::::::::70:103:::4:7968:6652:7937:1704:2:9:70:28:2161:::::|h[Hornstrider's Cinch of the Aurora]|h|r",
+						["count"] = 1,
+						["icon"] = 4185383,
+						["lastCheck"] = 1672000513,
+						["daysLeft"] = 30,
+					}, -- [18]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 188658,
+						["link"] = "|cff1eff00|Hitem:188658::::::::70:103:::::::::|h[Draconium Ore |A:Professions-ChatIcon-Quality-Tier2:17:23::1|a]|h|r",
+						["count"] = 150,
+						["icon"] = 4581144,
+						["lastCheck"] = 1672817810,
+						["daysLeft"] = 30,
+					}, -- [19]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 199042,
+						["link"] = "|cff1eff00|Hitem:199042::::::::70:103:::3:7969:6652:1707:2:28:2437:9:70:::::|h[Hornstrider's Crossbow of the Aurora]|h|r",
+						["count"] = 1,
+						["icon"] = 4064728,
+						["lastCheck"] = 1672000513,
+						["daysLeft"] = 30,
+					}, -- [20]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190328,
+						["link"] = "|cff0070dd|Hitem:190328::::::::70:103:::::::::|h[Rousing Frost]|h|r",
+						["count"] = 2,
+						["icon"] = 4554449,
+						["lastCheck"] = 1672213817,
+						["daysLeft"] = 30,
+					}, -- [21]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190321,
+						["link"] = "|cff0070dd|Hitem:190321::::::::70:103:::::::::|h[Awakened Fire]|h|r",
+						["count"] = 4,
+						["icon"] = 4554438,
+						["lastCheck"] = 1672213817,
+						["daysLeft"] = 30,
+					}, -- [22]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 199037,
+						["link"] = "|cff1eff00|Hitem:199037::::::::70:103:::3:7969:6652:1681:2:9:70:28:2437:::::|h[Shorebreaker's Poleaxe of the Quickblade]|h|r",
+						["count"] = 1,
+						["icon"] = 4093699,
+						["lastCheck"] = 1672000513,
+						["daysLeft"] = 30,
+					}, -- [23]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 190324,
+						["link"] = "|cff0070dd|Hitem:190324::::::::70:103:::::::::|h[Awakened Order]|h|r",
+						["count"] = 2,
+						["icon"] = 4554442,
+						["lastCheck"] = 1672213817,
+						["daysLeft"] = 30,
+					}, -- [24]
+					{
+						["sender"] = "Ambracer",
+						["itemID"] = 194082,
+						["link"] = "|cff0070dd|Hitem:194082::::::::70:103::13:5:8837:8838:4785:8780:8802:5:28:2164:29:32:30:36:38:8:40:400::::Player-3391-0C56127F:|h[Band of New Beginnings |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r",
+						["count"] = 1,
+						["icon"] = 4548917,
+						["lastCheck"] = 1673821147,
+						["daysLeft"] = 30,
+					}, -- [25]
+				},
+			},
+		},
+	},
+}

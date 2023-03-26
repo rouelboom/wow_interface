@@ -1,0 +1,17 @@
+## Interface: 100000
+## Title: Talent Tree Tweaks
+## Author: Numy
+## Notes: Various improvements and addition to the Dragonflight talent tree UI
+## Version: v1.2.0
+## X-Curse-Project-ID: 678792
+## SavedVariables: TalentTreeTweaksDB
+
+libs\embeds.xml
+
+core.lua
+modules\tooltipIds.lua
+modules\exportInspectedBuild.lua
+modules\debugNodeInfo.lua
+modules\searchForIds.lua
+modules\scaleTalentFrame.lua
+modules\respecButtonsInTreeUI.lua

@@ -1,0 +1,10 @@
+VER 3 0100000000000001 "123" "135833"
+#showtooltip 
+/cast !Облик кошки(Смена облика)
+END
+VER 3 0100000000000002 "VuhDoDCShieldData" "Ability_Repair"
+R2PH1PT1OH1IR[x]1RM2LR2HR2DR2LR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DR[x][x][x][x][x][x][x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+END
+VER 3 0100000000000003 "VuhDoDCShieldNames" "Ability_Repair"
+NСпоСлоКозСои[x]ШикЖегДэнКолМел[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Фэр[x][x][x][x][x][x][x]Кро[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+END

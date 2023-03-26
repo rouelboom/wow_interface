@@ -1,0 +1,62 @@
+VER 3 0000000000000006 "13" "INV_MISC_QUESTIONMARK"
+#showtooltip 13
+/use 13
+END
+VER 3 0000000000000007 "14" "INV_MISC_QUESTIONMARK"
+#showtooltip 14
+/use 14
+END
+VER 3 0000000000000009 "BURST" "611424"
+#showtooltip
+/cast Tiger's Fury
+/cast Incarnation: Avatar of Ashamane(Shapeshift)
+/cast Berserk
+END
+VER 3 000000000000000B "cat" "134400"
+#showtooltip
+/cancelform
+/cast Cat Form(Shapeshift)
+END
+VER 3 0000000000000008 "charge" "134400"
+#showtooltip
+/cast [mod:shift,@mouseover, @target]Вмешательство
+/cast [nomod,@mouseover,@target ]Рывок
+END
+VER 3 000000000000000D "cyclone" "134400"
+#showtooltip
+/cast [@focus] Cyclone
+END
+VER 3 000000000000000C "focus" "135881"
+/focus
+END
+VER 3 000000000000000E "kick" "134400"
+#showtooltip
+/cast [@focus] Skull Bash
+END
+VER 3 000000000000000A "rej" "134914"
+#showtooltip 
+/castsequence Rejuvenation, Swiftmend
+END
+VER 3 0000000000000002 "ФОКУС" "136103"
+/focus
+END
+VER 3 0000000000000001 "обновление" "INV_MISC_QUESTIONMARK"
+#showtooltip Омоложение
+/cast [mod:alt,@player] Омоложение
+/cast [nomod, @mouseover, help, nodead]Омоложение 
+END
+VER 3 0000000000000004 "рывок" "INV_MISC_QUESTIONMARK"
+#showtooltip стремительный рывок
+/cancelform
+/targetfriend
+/cast Стремительный рывок
+/targetlasttarget
+END
+VER 3 0000000000000005 "сфь" "INV_MISC_QUESTIONMARK"
+/console cameraDistanceMaxZoomFactor 2.6
+END
+VER 3 0000000000000003 "хил" "INV_MISC_QUESTIONMARK"
+#showtooltip лунный огонь
+/cast [help,nodead] восстановление
+/cast [harm,nodead] лунный огонь
+END

@@ -1,0 +1,61 @@
+
+HandyNotesDB = {
+	["profileKeys"] = {
+		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
+		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
+	},
+	["profiles"] = {
+		["Ambracer - Silvermoon"] = {
+		},
+		["Jundzin - Silvermoon"] = {
+		},
+		["Nowarg - Silvermoon"] = {
+		},
+		["Allower - Silvermoon"] = {
+		},
+		["Сеныч - Ревущий фьорд"] = {
+		},
+		["Rendo - Silvermoon"] = {
+		},
+		["Awakaner - Silvermoon"] = {
+		},
+		["Lumbert - Silvermoon"] = {
+		},
+	},
+}
+HandyNotes_HandyNotesDB = {
+	["profileKeys"] = {
+		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
+		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
+	},
+	["profiles"] = {
+		["Ambracer - Silvermoon"] = {
+		},
+		["Jundzin - Silvermoon"] = {
+		},
+		["Nowarg - Silvermoon"] = {
+		},
+		["Allower - Silvermoon"] = {
+		},
+		["Сеныч - Ревущий фьорд"] = {
+		},
+		["Rendo - Silvermoon"] = {
+		},
+		["Awakaner - Silvermoon"] = {
+		},
+		["Lumbert - Silvermoon"] = {
+		},
+	},
+}

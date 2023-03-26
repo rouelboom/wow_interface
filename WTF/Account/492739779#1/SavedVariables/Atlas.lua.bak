@@ -1,0 +1,17 @@
+
+AtlasDB = {
+	["profileKeys"] = {
+		["Ambracer - Silvermoon"] = "Default",
+		["Jundzin - Silvermoon"] = "Default",
+		["Толаинс - Страж Смерти"] = "Default",
+		["Allower - Silvermoon"] = "Default",
+		["Роуэтс - Страж Смерти"] = "Default",
+		["Rendo - Silvermoon"] = "Default",
+		["Awakaner - Silvermoon"] = "Default",
+		["Фэроун - Гордунни"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}

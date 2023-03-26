@@ -1,0 +1,96 @@
+
+BattleGroundEnemiesDB = {
+	["profileKeys"] = {
+		["Ambracer - Silvermoon"] = "main",
+		["Jundzin - Silvermoon"] = "Default",
+		["Nowarg - Silvermoon"] = "Default",
+		["Allower - Silvermoon"] = "Default",
+		["Rendo - Silvermoon"] = "Default",
+		["Awakaner - Silvermoon"] = "Default",
+		["Сеныч - Ревущий фьорд"] = "Default",
+	},
+	["profiles"] = {
+		["Ambracer - Silvermoon"] = {
+		},
+		["Default"] = {
+			["DisableArenaFramesInBattleground"] = true,
+			["onlyShowWhenNewVersion"] = true,
+			["Allies"] = {
+				["Enabled"] = false,
+				["15"] = {
+					["Position_Y"] = 514.005615234375,
+					["Position_X"] = 150.7444953918457,
+				},
+				["5"] = {
+					["Position_Y"] = 525.3834686279297,
+					["Position_X"] = 247.777587890625,
+				},
+			},
+			["Testmode_UseTeammates"] = false,
+			["lastReadVersion"] = "10.0.2.6",
+			["Enemies"] = {
+				["40"] = {
+					["Enabled"] = false,
+				},
+				["5"] = {
+					["BarHeight"] = 42,
+					["Framescale"] = 0.95,
+					["Position_Y"] = 601.0047322388782,
+					["BarWidth"] = 185,
+					["Position_X"] = 916.3097593772691,
+				},
+				["MiddleButtonValue"] = "/targetexact %n\n/cast Entangling Roots",
+				["15"] = {
+					["Enabled"] = false,
+					["Position_Y"] = 552.4056243896484,
+					["Position_X"] = 1058.833557128906,
+				},
+				["RightButtonType"] = "Custom",
+				["RightButtonValue"] = "/targetexact %n\n/cast Cyclone",
+			},
+		},
+		["main"] = {
+			["DisableArenaFramesInBattleground"] = true,
+			["Allies"] = {
+				["Enabled"] = false,
+				["15"] = {
+					["Position_X"] = 150.7444953918457,
+					["Position_Y"] = 514.005615234375,
+				},
+				["5"] = {
+					["Position_X"] = 247.777587890625,
+					["Position_Y"] = 525.3834686279297,
+				},
+			},
+			["onlyShowWhenNewVersion"] = true,
+			["DisableArenaFramesInArena"] = true,
+			["lastReadVersion"] = "10.0.2.6",
+			["Testmode_UseTeammates"] = false,
+			["Enemies"] = {
+				["15"] = {
+					["Enabled"] = false,
+					["Position_Y"] = 552.4056243896484,
+					["Position_X"] = 1058.833557128906,
+				},
+				["40"] = {
+					["Enabled"] = false,
+				},
+				["5"] = {
+					["Framescale"] = 0.95,
+					["ButtonModules"] = {
+						["Trinket"] = {
+							["Height"] = false,
+						},
+					},
+					["Position_X"] = 781.3612897718558,
+					["BarHeight"] = 42,
+					["Position_Y"] = 610.8789712578291,
+					["BarWidth"] = 185,
+				},
+				["RightButtonValue"] = "/targetexact %n\n/cast Cyclone\n/say Cyclone on %n",
+				["RightButtonType"] = "Custom",
+				["MiddleButtonValue"] = "/targetexact %n\n/cast Entangling Roots",
+			},
+		},
+	},
+}

@@ -1,0 +1,41 @@
+
+DataStore_AgendaDB = {
+	["profileKeys"] = {
+		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
+		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+	},
+	["global"] = {
+		["Options"] = {
+			["WeeklyResetHour"] = 6,
+			["WeeklyResetDay"] = 3,
+			["NextWeeklyReset"] = "2023-01-18",
+		},
+		["Characters"] = {
+			["Default.Silvermoon.Jundzin"] = {
+				["lastUpdate"] = 1673199852,
+			},
+			["Default.Silvermoon.Awakaner"] = {
+				["lastUpdate"] = 1672221135,
+			},
+			["Default.Silvermoon.Rendo"] = {
+				["lastUpdate"] = 1673199732,
+			},
+			["Default.Silvermoon.Nowarg"] = {
+				["lastUpdate"] = 1671572205,
+			},
+			["Default.Silvermoon.Ambracer"] = {
+				["Calendar"] = {
+					"2023-01-11|08:00|New year run |0|7", -- [1]
+				},
+				["lastUpdate"] = 1673961624,
+			},
+			["Default.Silvermoon.Allower"] = {
+				["lastUpdate"] = 1672775635,
+			},
+		},
+	},
+}

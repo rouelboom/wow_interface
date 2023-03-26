@@ -1,0 +1,75 @@
+VER 3 0100000000000012 "VuhDoDCShieldData" "Ability_Repair"
+P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1WM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]
+END
+VER 3 010000000000000D "В АТАКУ!" "INV_SWORD_27"
+/атака
+END
+VER 3 010000000000000F "Пизда" "INV_MISC_QUESTIONMARK"
+#showtooltip Аватара
+/cast Аватара
+/cast Ярость берсерка
+/cast Безрассудство
+/cast Знамя с черепом
+/cast Жетон победы бездушного гладиатора
+END
+VER 3 010000000000000E "аое" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl] Размашистые удары;[mod:alt] умение 3;[mod:shift]Вихрь;[nomod] Рассекающий удар
+END
+VER 3 0100000000000004 "героик" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Смертельное спокойствие;[nomod] Удар героя
+END
+VER 3 0100000000000009 "героик2" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Удар героя;[nomod] Сокрушение
+END
+VER 3 0100000000000005 "дота" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Героический бросок;[nomod] Кровопускание
+END
+VER 3 0100000000000003 "мортал" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Боевой крик;[nomod] Смертельный удар
+END
+VER 3 010000000000000C "отражение закл" "INV_Misc_QuestionMark"
+/закл Отражение заклинания(Боевая стойка, оборонительная стойка)
+/equip *название одноручного оружия*
+/equip *название щита*
+END
+VER 3 010000000000000B "стан" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Внутренняя ярость;[nomod] Низвержение
+END
+VER 3 0100000000000011 "стоп БШ" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancl Вихрь клинков
+END
+VER 3 0100000000000001 "триня" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Ярость берсерка;[nomod] Каждый за себя
+END
+VER 3 010000000000000A "фир" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] Оглушающий удар;[mod:shift]Деморализующий крик;[nomod] Устрашающий крик
+END
+VER 3 0100000000000002 "хил" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] Подрезать сухожилия;[mod:shift]Размашистые удары;[nomod] Победный раж
+END
+VER 3 0100000000000006 "чардж" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt]Глухая оборона;[mod:shift]Вмешательство;[nomod] Рывок
+END
+VER 3 0100000000000008 "шит" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Боевой крик;[nomod] Мощный удар щитом
+END
+VER 3 0100000000000010 "экз2" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Ободряющий клич;[nomod] Казнь
+END
+VER 3 0100000000000007 "экзекут" "INV_Misc_QuestionMark"
+#showtooltip
+/use [mod:ctrl] умение 4;[mod:alt] умение 3;[mod:shift]Ни шагу назад;[nomod] Казнь
+END

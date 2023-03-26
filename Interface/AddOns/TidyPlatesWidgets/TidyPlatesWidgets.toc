@@ -1,0 +1,6 @@
+## Interface: 100005
+## Title: Tidy Plates Widgets
+## Notes: Library of Widgets
+## Dependencies: TidyPlates
+
+Widgets.xml
