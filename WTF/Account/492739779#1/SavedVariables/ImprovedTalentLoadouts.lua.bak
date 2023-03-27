@@ -128,22 +128,1393 @@ ImprovedTalentLoadoutsDB = {
 								795, -- [1]
 							},
 							["ID"] = 10601843,
-							["name"] = "Discipline",
 							["type"] = 1,
+							["name"] = "Discipline",
 						},
 					},
 				},
 				["categories"] = {
 				},
 			},
-			["SHAMAN"] = {
+			["PALADIN"] = {
 				["configIDs"] = {
+					[70] = {
+						[15825345] = {
+							["treeHash"] = {
+								146, -- [1]
+								239, -- [2]
+								50, -- [3]
+								13, -- [4]
+								170, -- [5]
+								31, -- [6]
+								90, -- [7]
+								188, -- [8]
+								252, -- [9]
+								115, -- [10]
+								59, -- [11]
+								101, -- [12]
+								65, -- [13]
+								184, -- [14]
+								118, -- [15]
+								156, -- [16]
+							},
+							["type"] = 1,
+							["name"] = "finar verdict",
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 15825345,
+							["usesSharedActionBars"] = false,
+							["entryInfo"] = {
+								{
+									["nodeID"] = 81507,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102476,
+								}, -- [1]
+								{
+									["nodeID"] = 81526,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102498,
+								}, -- [2]
+								{
+									["nodeID"] = 81543,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102518,
+								}, -- [3]
+								{
+									["nodeID"] = 81597,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102583,
+								}, -- [4]
+								{
+									["nodeID"] = 81598,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102584,
+								}, -- [5]
+								{
+									["nodeID"] = 81599,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102586,
+								}, -- [6]
+								{
+									["nodeID"] = 81600,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102587,
+								}, -- [7]
+								{
+									["nodeID"] = 81602,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102589,
+								}, -- [8]
+								{
+									["nodeID"] = 81603,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102590,
+								}, -- [9]
+								{
+									["nodeID"] = 81604,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102591,
+								}, -- [10]
+								{
+									["nodeID"] = 81605,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102592,
+								}, -- [11]
+								{
+									["nodeID"] = 81606,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102593,
+								}, -- [12]
+								{
+									["nodeID"] = 81607,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102595,
+								}, -- [13]
+								{
+									["nodeID"] = 81609,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102597,
+								}, -- [14]
+								{
+									["nodeID"] = 81614,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102602,
+								}, -- [15]
+								{
+									["nodeID"] = 81615,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102603,
+								}, -- [16]
+								{
+									["nodeID"] = 81616,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102604,
+								}, -- [17]
+								{
+									["nodeID"] = 81632,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102625,
+								}, -- [18]
+							},
+							["exportString"] = "BYEAS+uMNo6HaxL/ztTZBhrdcCAAAAAIAEAgAAAAAAAAkWikkUEIJAACAAAAAA",
+						},
+						[1125610] = {
+							["treeHash"] = {
+								146, -- [1]
+								239, -- [2]
+								50, -- [3]
+								13, -- [4]
+								170, -- [5]
+								31, -- [6]
+								90, -- [7]
+								188, -- [8]
+								252, -- [9]
+								115, -- [10]
+								59, -- [11]
+								101, -- [12]
+								65, -- [13]
+								184, -- [14]
+								118, -- [15]
+								156, -- [16]
+							},
+							["entryInfo"] = {
+								{
+									["nodeID"] = 81507,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102476,
+								}, -- [1]
+								{
+									["nodeID"] = 81526,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102498,
+								}, -- [2]
+								{
+									["nodeID"] = 81543,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102518,
+								}, -- [3]
+								{
+									["nodeID"] = 81597,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102583,
+								}, -- [4]
+								{
+									["nodeID"] = 81598,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102584,
+								}, -- [5]
+								{
+									["nodeID"] = 81599,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102586,
+								}, -- [6]
+								{
+									["nodeID"] = 81600,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102587,
+								}, -- [7]
+								{
+									["nodeID"] = 81602,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102589,
+								}, -- [8]
+								{
+									["nodeID"] = 81603,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102590,
+								}, -- [9]
+								{
+									["nodeID"] = 81604,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102591,
+								}, -- [10]
+								{
+									["nodeID"] = 81605,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102592,
+								}, -- [11]
+								{
+									["nodeID"] = 81606,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102593,
+								}, -- [12]
+								{
+									["nodeID"] = 81607,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102595,
+								}, -- [13]
+								{
+									["nodeID"] = 81609,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102597,
+								}, -- [14]
+								{
+									["nodeID"] = 81614,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102602,
+								}, -- [15]
+								{
+									["nodeID"] = 81615,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102603,
+								}, -- [16]
+								{
+									["nodeID"] = 81616,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102604,
+								}, -- [17]
+								{
+									["nodeID"] = 81632,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102625,
+								}, -- [18]
+							},
+							["exportString"] = "BYEAS+uMNo6HaxL/ztTZBhrdcCAAAAAIAEAgAAAAAAAAkWikkUEIJAACAAAAAA",
+							["usesSharedActionBars"] = false,
+							["default"] = true,
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 1125610,
+							["name"] = "Retribution",
+							["type"] = 1,
+						},
+						[15733608] = {
+							["type"] = 1,
+							["name"] = "pvp default",
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 15733608,
+							["usesSharedActionBars"] = false,
+						},
+					},
+					[65] = {
+						[1125608] = {
+							["treeHash"] = {
+								146, -- [1]
+								239, -- [2]
+								50, -- [3]
+								13, -- [4]
+								170, -- [5]
+								31, -- [6]
+								90, -- [7]
+								188, -- [8]
+								252, -- [9]
+								115, -- [10]
+								59, -- [11]
+								101, -- [12]
+								65, -- [13]
+								184, -- [14]
+								118, -- [15]
+								156, -- [16]
+							},
+							["entryInfo"] = {
+								{
+									["nodeID"] = 81508,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102477,
+								}, -- [1]
+								{
+									["nodeID"] = 81510,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102479,
+								}, -- [2]
+								{
+									["nodeID"] = 81554,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102533,
+								}, -- [3]
+								{
+									["nodeID"] = 81555,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102534,
+								}, -- [4]
+								{
+									["nodeID"] = 81557,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102536,
+								}, -- [5]
+								{
+									["nodeID"] = 81561,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102540,
+								}, -- [6]
+								{
+									["nodeID"] = 81563,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102542,
+								}, -- [7]
+								{
+									["nodeID"] = 81564,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102544,
+								}, -- [8]
+								{
+									["nodeID"] = 81565,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102545,
+								}, -- [9]
+								{
+									["nodeID"] = 81566,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102547,
+								}, -- [10]
+								{
+									["nodeID"] = 81567,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102548,
+								}, -- [11]
+								{
+									["nodeID"] = 81568,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102549,
+								}, -- [12]
+								{
+									["nodeID"] = 81569,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102550,
+								}, -- [13]
+								{
+									["nodeID"] = 81570,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102551,
+								}, -- [14]
+								{
+									["nodeID"] = 81571,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102552,
+								}, -- [15]
+								{
+									["nodeID"] = 81572,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102555,
+								}, -- [16]
+								{
+									["nodeID"] = 81576,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102559,
+								}, -- [17]
+								{
+									["nodeID"] = 81578,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102562,
+								}, -- [18]
+								{
+									["nodeID"] = 81579,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102563,
+								}, -- [19]
+								{
+									["nodeID"] = 81580,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102564,
+								}, -- [20]
+								{
+									["nodeID"] = 81584,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102569,
+								}, -- [21]
+								{
+									["nodeID"] = 81585,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102570,
+								}, -- [22]
+								{
+									["nodeID"] = 81586,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102571,
+								}, -- [23]
+								{
+									["nodeID"] = 81595,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102581,
+								}, -- [24]
+								{
+									["nodeID"] = 81598,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102584,
+								}, -- [25]
+								{
+									["nodeID"] = 81600,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102587,
+								}, -- [26]
+								{
+									["nodeID"] = 81601,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102588,
+								}, -- [27]
+								{
+									["nodeID"] = 81605,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102592,
+								}, -- [28]
+								{
+									["nodeID"] = 81606,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102593,
+								}, -- [29]
+								{
+									["nodeID"] = 81607,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102595,
+								}, -- [30]
+								{
+									["nodeID"] = 81609,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102597,
+								}, -- [31]
+								{
+									["nodeID"] = 81610,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102598,
+								}, -- [32]
+								{
+									["nodeID"] = 81613,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102601,
+								}, -- [33]
+								{
+									["nodeID"] = 81614,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102602,
+								}, -- [34]
+								{
+									["nodeID"] = 81615,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102603,
+								}, -- [35]
+								{
+									["nodeID"] = 81616,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102604,
+								}, -- [36]
+								{
+									["nodeID"] = 81617,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102606,
+								}, -- [37]
+								{
+									["nodeID"] = 81631,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102624,
+								}, -- [38]
+								{
+									["nodeID"] = 81632,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102625,
+								}, -- [39]
+							},
+							["exportString"] = "BEEAS+uMNo6HaxL/ztTZBhrdcCAAAAAQEAAAAlIISJlkkWBRSQJBgoJBJFJkkEAQCAAAAAA",
+							["usesSharedActionBars"] = false,
+							["default"] = true,
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 1125608,
+							["name"] = "Holy",
+							["type"] = 1,
+						},
+					},
+					[66] = {
+						[3721997] = {
+							["type"] = 1,
+							["treeHash"] = {
+								146, -- [1]
+								239, -- [2]
+								50, -- [3]
+								13, -- [4]
+								170, -- [5]
+								31, -- [6]
+								90, -- [7]
+								188, -- [8]
+								252, -- [9]
+								115, -- [10]
+								59, -- [11]
+								101, -- [12]
+								65, -- [13]
+								184, -- [14]
+								118, -- [15]
+								156, -- [16]
+							},
+							["name"] = "prot",
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 3721997,
+							["entryInfo"] = {
+								{
+									["nodeID"] = 81469,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102430,
+								}, -- [1]
+								{
+									["nodeID"] = 81474,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102437,
+								}, -- [2]
+								{
+									["nodeID"] = 81476,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102439,
+								}, -- [3]
+								{
+									["nodeID"] = 81479,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102443,
+								}, -- [4]
+								{
+									["nodeID"] = 81481,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102445,
+								}, -- [5]
+								{
+									["nodeID"] = 81482,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102446,
+								}, -- [6]
+								{
+									["nodeID"] = 81483,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102448,
+								}, -- [7]
+								{
+									["nodeID"] = 81484,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102449,
+								}, -- [8]
+								{
+									["nodeID"] = 81485,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102450,
+								}, -- [9]
+								{
+									["nodeID"] = 81486,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102451,
+								}, -- [10]
+								{
+									["nodeID"] = 81487,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102453,
+								}, -- [11]
+								{
+									["nodeID"] = 81488,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102454,
+								}, -- [12]
+								{
+									["nodeID"] = 81489,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102455,
+								}, -- [13]
+								{
+									["nodeID"] = 81490,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102456,
+								}, -- [14]
+								{
+									["nodeID"] = 81494,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102463,
+								}, -- [15]
+								{
+									["nodeID"] = 81496,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102465,
+								}, -- [16]
+								{
+									["nodeID"] = 81497,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102466,
+								}, -- [17]
+								{
+									["nodeID"] = 81498,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102467,
+								}, -- [18]
+								{
+									["nodeID"] = 81499,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102468,
+								}, -- [19]
+								{
+									["nodeID"] = 81501,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102470,
+								}, -- [20]
+								{
+									["nodeID"] = 81502,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102471,
+								}, -- [21]
+								{
+									["nodeID"] = 81503,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102472,
+								}, -- [22]
+								{
+									["nodeID"] = 81505,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102474,
+								}, -- [23]
+								{
+									["nodeID"] = 81507,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102476,
+								}, -- [24]
+								{
+									["nodeID"] = 81509,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102478,
+								}, -- [25]
+								{
+									["nodeID"] = 81510,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102479,
+								}, -- [26]
+								{
+									["nodeID"] = 81543,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102518,
+								}, -- [27]
+								{
+									["nodeID"] = 81598,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102585,
+								}, -- [28]
+								{
+									["nodeID"] = 81600,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102587,
+								}, -- [29]
+								{
+									["nodeID"] = 81601,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102588,
+								}, -- [30]
+								{
+									["nodeID"] = 81602,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102589,
+								}, -- [31]
+								{
+									["nodeID"] = 81603,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102590,
+								}, -- [32]
+								{
+									["nodeID"] = 81604,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102591,
+								}, -- [33]
+								{
+									["nodeID"] = 81606,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102593,
+								}, -- [34]
+								{
+									["nodeID"] = 81609,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102597,
+								}, -- [35]
+								{
+									["nodeID"] = 81610,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102598,
+								}, -- [36]
+								{
+									["nodeID"] = 81611,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102599,
+								}, -- [37]
+								{
+									["nodeID"] = 81614,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102602,
+								}, -- [38]
+								{
+									["nodeID"] = 81615,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102603,
+								}, -- [39]
+								{
+									["nodeID"] = 81616,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102604,
+								}, -- [40]
+								{
+									["nodeID"] = 81619,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102609,
+								}, -- [41]
+								{
+									["nodeID"] = 81621,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102612,
+								}, -- [42]
+								{
+									["nodeID"] = 81623,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102614,
+								}, -- [43]
+								{
+									["nodeID"] = 81625,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102616,
+								}, -- [44]
+								{
+									["nodeID"] = 81626,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102617,
+								}, -- [45]
+								{
+									["nodeID"] = 81629,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102621,
+								}, -- [46]
+								{
+									["nodeID"] = 81632,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102625,
+								}, -- [47]
+								{
+									["nodeID"] = 90062,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 111887,
+								}, -- [48]
+								{
+									["nodeID"] = 92953,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 115167,
+								}, -- [49]
+								{
+									["nodeID"] = 93356,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 115672,
+								}, -- [50]
+							},
+							["usesSharedActionBars"] = false,
+							["exportString"] = "BIEAS+uMNo6HaxL/ztTZBhrdc2gIKSKJtkEUkkIJiIBAAIAAAAAAAAKSSiQSIJEpIRIFAIAAAIA",
+						},
+						[4316209] = {
+							["type"] = 1,
+							["usesSharedActionBars"] = false,
+							["name"] = "proto researches ",
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 4316209,
+							["treeHash"] = {
+								146, -- [1]
+								239, -- [2]
+								50, -- [3]
+								13, -- [4]
+								170, -- [5]
+								31, -- [6]
+								90, -- [7]
+								188, -- [8]
+								252, -- [9]
+								115, -- [10]
+								59, -- [11]
+								101, -- [12]
+								65, -- [13]
+								184, -- [14]
+								118, -- [15]
+								156, -- [16]
+							},
+							["entryInfo"] = {
+								{
+									["nodeID"] = 81469,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102430,
+								}, -- [1]
+								{
+									["nodeID"] = 81473,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102436,
+								}, -- [2]
+								{
+									["nodeID"] = 81475,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102438,
+								}, -- [3]
+								{
+									["nodeID"] = 81476,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102439,
+								}, -- [4]
+								{
+									["nodeID"] = 81481,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102445,
+								}, -- [5]
+								{
+									["nodeID"] = 81483,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102447,
+								}, -- [6]
+								{
+									["nodeID"] = 81484,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102449,
+								}, -- [7]
+								{
+									["nodeID"] = 81487,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102453,
+								}, -- [8]
+								{
+									["nodeID"] = 81488,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102454,
+								}, -- [9]
+								{
+									["nodeID"] = 81489,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102455,
+								}, -- [10]
+								{
+									["nodeID"] = 81490,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102456,
+								}, -- [11]
+								{
+									["nodeID"] = 81491,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102457,
+								}, -- [12]
+								{
+									["nodeID"] = 81494,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102463,
+								}, -- [13]
+								{
+									["nodeID"] = 81495,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102464,
+								}, -- [14]
+								{
+									["nodeID"] = 81497,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102466,
+								}, -- [15]
+								{
+									["nodeID"] = 81498,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102467,
+								}, -- [16]
+								{
+									["nodeID"] = 81499,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102468,
+								}, -- [17]
+								{
+									["nodeID"] = 81501,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102470,
+								}, -- [18]
+								{
+									["nodeID"] = 81502,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102471,
+								}, -- [19]
+								{
+									["nodeID"] = 81503,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102472,
+								}, -- [20]
+								{
+									["nodeID"] = 81506,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102475,
+								}, -- [21]
+								{
+									["nodeID"] = 81507,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102476,
+								}, -- [22]
+								{
+									["nodeID"] = 81509,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102478,
+								}, -- [23]
+								{
+									["nodeID"] = 81510,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102479,
+								}, -- [24]
+								{
+									["nodeID"] = 81598,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102584,
+								}, -- [25]
+								{
+									["nodeID"] = 81600,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102587,
+								}, -- [26]
+								{
+									["nodeID"] = 81601,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102588,
+								}, -- [27]
+								{
+									["nodeID"] = 81602,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102589,
+								}, -- [28]
+								{
+									["nodeID"] = 81603,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102590,
+								}, -- [29]
+								{
+									["nodeID"] = 81604,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102591,
+								}, -- [30]
+								{
+									["nodeID"] = 81605,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102592,
+								}, -- [31]
+								{
+									["nodeID"] = 81606,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102593,
+								}, -- [32]
+								{
+									["nodeID"] = 81609,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102597,
+								}, -- [33]
+								{
+									["nodeID"] = 81615,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102603,
+								}, -- [34]
+								{
+									["nodeID"] = 81616,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102604,
+								}, -- [35]
+								{
+									["nodeID"] = 81617,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102606,
+								}, -- [36]
+								{
+									["nodeID"] = 81625,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102616,
+								}, -- [37]
+								{
+									["nodeID"] = 81626,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102617,
+								}, -- [38]
+								{
+									["nodeID"] = 81629,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102621,
+								}, -- [39]
+								{
+									["nodeID"] = 81631,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102624,
+								}, -- [40]
+								{
+									["nodeID"] = 81632,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102625,
+								}, -- [41]
+								{
+									["nodeID"] = 90062,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 111887,
+								}, -- [42]
+							},
+							["exportString"] = "BIEAS+uMNo6HaxL/ztTZBhrdc2QkgoFSSClIJSCJSAAAAAAAAAAAoJJJJEQSASsAJFAAAAAA",
+						},
+						[1125609] = {
+							["treeHash"] = {
+								146, -- [1]
+								239, -- [2]
+								50, -- [3]
+								13, -- [4]
+								170, -- [5]
+								31, -- [6]
+								90, -- [7]
+								188, -- [8]
+								252, -- [9]
+								115, -- [10]
+								59, -- [11]
+								101, -- [12]
+								65, -- [13]
+								184, -- [14]
+								118, -- [15]
+								156, -- [16]
+							},
+							["entryInfo"] = {
+								{
+									["nodeID"] = 81469,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102430,
+								}, -- [1]
+								{
+									["nodeID"] = 81474,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102437,
+								}, -- [2]
+								{
+									["nodeID"] = 81476,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102439,
+								}, -- [3]
+								{
+									["nodeID"] = 81479,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102443,
+								}, -- [4]
+								{
+									["nodeID"] = 81481,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102445,
+								}, -- [5]
+								{
+									["nodeID"] = 81482,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102446,
+								}, -- [6]
+								{
+									["nodeID"] = 81483,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102448,
+								}, -- [7]
+								{
+									["nodeID"] = 81484,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102449,
+								}, -- [8]
+								{
+									["nodeID"] = 81485,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102450,
+								}, -- [9]
+								{
+									["nodeID"] = 81486,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102451,
+								}, -- [10]
+								{
+									["nodeID"] = 81487,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102453,
+								}, -- [11]
+								{
+									["nodeID"] = 81488,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102454,
+								}, -- [12]
+								{
+									["nodeID"] = 81489,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102455,
+								}, -- [13]
+								{
+									["nodeID"] = 81490,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102456,
+								}, -- [14]
+								{
+									["nodeID"] = 81494,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102463,
+								}, -- [15]
+								{
+									["nodeID"] = 81496,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102465,
+								}, -- [16]
+								{
+									["nodeID"] = 81497,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102466,
+								}, -- [17]
+								{
+									["nodeID"] = 81498,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102467,
+								}, -- [18]
+								{
+									["nodeID"] = 81499,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102468,
+								}, -- [19]
+								{
+									["nodeID"] = 81501,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102470,
+								}, -- [20]
+								{
+									["nodeID"] = 81502,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102471,
+								}, -- [21]
+								{
+									["nodeID"] = 81503,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102472,
+								}, -- [22]
+								{
+									["nodeID"] = 81505,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102474,
+								}, -- [23]
+								{
+									["nodeID"] = 81507,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102476,
+								}, -- [24]
+								{
+									["nodeID"] = 81509,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102478,
+								}, -- [25]
+								{
+									["nodeID"] = 81510,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102479,
+								}, -- [26]
+								{
+									["nodeID"] = 81543,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102518,
+								}, -- [27]
+								{
+									["nodeID"] = 81598,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102585,
+								}, -- [28]
+								{
+									["nodeID"] = 81600,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102587,
+								}, -- [29]
+								{
+									["nodeID"] = 81601,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102588,
+								}, -- [30]
+								{
+									["nodeID"] = 81602,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102589,
+								}, -- [31]
+								{
+									["nodeID"] = 81603,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102590,
+								}, -- [32]
+								{
+									["nodeID"] = 81604,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102591,
+								}, -- [33]
+								{
+									["nodeID"] = 81606,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102593,
+								}, -- [34]
+								{
+									["nodeID"] = 81609,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102597,
+								}, -- [35]
+								{
+									["nodeID"] = 81610,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102598,
+								}, -- [36]
+								{
+									["nodeID"] = 81611,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102599,
+								}, -- [37]
+								{
+									["nodeID"] = 81614,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102602,
+								}, -- [38]
+								{
+									["nodeID"] = 81615,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102603,
+								}, -- [39]
+								{
+									["nodeID"] = 81616,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102604,
+								}, -- [40]
+								{
+									["nodeID"] = 81619,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102609,
+								}, -- [41]
+								{
+									["nodeID"] = 81621,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102612,
+								}, -- [42]
+								{
+									["nodeID"] = 81623,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102614,
+								}, -- [43]
+								{
+									["nodeID"] = 81625,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102616,
+								}, -- [44]
+								{
+									["nodeID"] = 81626,
+									["ranksPurchased"] = 2,
+									["selectionEntryID"] = 102617,
+								}, -- [45]
+								{
+									["nodeID"] = 81629,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102621,
+								}, -- [46]
+								{
+									["nodeID"] = 81632,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 102625,
+								}, -- [47]
+								{
+									["nodeID"] = 90062,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 111887,
+								}, -- [48]
+								{
+									["nodeID"] = 92953,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 115167,
+								}, -- [49]
+								{
+									["nodeID"] = 93356,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 115672,
+								}, -- [50]
+							},
+							["exportString"] = "BIEAS+uMNo6HaxL/ztTZBhrdc2gIKSKJtkEUkkIJiIBAAIAAAAAAAAKSSiQSIJEpIRIFAIAAAIA",
+							["usesSharedActionBars"] = false,
+							["default"] = true,
+							["treeIDs"] = {
+								790, -- [1]
+							},
+							["ID"] = 1125609,
+							["type"] = 1,
+							["name"] = "Protection",
+						},
+					},
 				},
 				["categories"] = {
 				},
 			},
-			["EVOKER"] = {
+			["MONK"] = {
 				["configIDs"] = {
+					[269] = {
+						[13606538] = {
+							["treeHash"] = {
+								174, -- [1]
+								48, -- [2]
+								180, -- [3]
+								97, -- [4]
+								97, -- [5]
+								105, -- [6]
+								24, -- [7]
+								222, -- [8]
+								110, -- [9]
+								87, -- [10]
+								111, -- [11]
+								5, -- [12]
+								133, -- [13]
+								99, -- [14]
+								68, -- [15]
+								70, -- [16]
+							},
+							["entryInfo"] = {
+								{
+									["nodeID"] = 80613,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 101423,
+								}, -- [1]
+								{
+									["nodeID"] = 80693,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 101511,
+								}, -- [2]
+							},
+							["exportString"] = "B0QAuCDthFWaY4tbX9WBFOGRGBAAAAAAAAIAAAAAAAAAAAAABAAAAAAA",
+							["usesSharedActionBars"] = false,
+							["default"] = true,
+							["treeIDs"] = {
+								781, -- [1]
+							},
+							["ID"] = 13606538,
+							["type"] = 1,
+							["name"] = "Windwalker",
+						},
+					},
+					[270] = {
+						[13606539] = {
+							["treeHash"] = {
+								174, -- [1]
+								48, -- [2]
+								180, -- [3]
+								97, -- [4]
+								97, -- [5]
+								105, -- [6]
+								24, -- [7]
+								222, -- [8]
+								110, -- [9]
+								87, -- [10]
+								111, -- [11]
+								5, -- [12]
+								133, -- [13]
+								99, -- [14]
+								68, -- [15]
+								70, -- [16]
+							},
+							["entryInfo"] = {
+								{
+									["nodeID"] = 80568,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 101370,
+								}, -- [1]
+								{
+									["nodeID"] = 80712,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 101531,
+								}, -- [2]
+							},
+							["exportString"] = "B4QAuCDthFWaY4tbX9WBFOGRGBABAAAAAAAAAAAAAAAAAAAAAAACAAAA",
+							["usesSharedActionBars"] = false,
+							["default"] = true,
+							["treeIDs"] = {
+								781, -- [1]
+							},
+							["ID"] = 13606539,
+							["type"] = 1,
+							["name"] = "Mistweaver",
+						},
+					},
+					[268] = {
+					},
 				},
 				["categories"] = {
 				},
@@ -190,7 +1561,6 @@ ImprovedTalentLoadoutsDB = {
 					},
 					[104] = {
 						[4757932] = {
-							["usesSharedActionBars"] = false,
 							["treeHash"] = {
 								76, -- [1]
 								245, -- [2]
@@ -209,12 +1579,12 @@ ImprovedTalentLoadoutsDB = {
 								143, -- [15]
 								28, -- [16]
 							},
+							["usesSharedActionBars"] = false,
 							["name"] = "Guardian",
 							["treeIDs"] = {
 								793, -- [1]
 							},
 							["ID"] = 4757932,
-							["type"] = 1,
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82126,
@@ -472,36 +1842,19 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 114698,
 								}, -- [51]
 							},
+							["type"] = 1,
 							["exportString"] = "BgGAMVP5WvZVImi//CRxq80jcAAAAAAAAAAAAAgkkkIQkIhk0kkEpQBQAkkkAJJJJJRKIIBAAAAAAAJEA",
 						},
 					},
 					[102] = {
 						[17148475] = {
-							["type"] = 1,
 							["usesSharedActionBars"] = false,
+							["type"] = 1,
 							["name"] = "starfall",
 							["treeIDs"] = {
 								793, -- [1]
 							},
 							["ID"] = 17148475,
-							["treeHash"] = {
-								207, -- [1]
-								152, -- [2]
-								20, -- [3]
-								104, -- [4]
-								24, -- [5]
-								90, -- [6]
-								101, -- [7]
-								193, -- [8]
-								53, -- [9]
-								99, -- [10]
-								79, -- [11]
-								212, -- [12]
-								192, -- [13]
-								251, -- [14]
-								119, -- [15]
-								77, -- [16]
-							},
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82198,
@@ -759,16 +2112,6 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 114299,
 								}, -- [51]
 							},
-							["exportString"] = "BYGAPjJFohhWlFcNj9E1Av/dNBAAAAAAAAAAAAAAAAAAAKAIJSCSCBJRSyBSDKJOQiEpkoJkgUSKJJCpBQoAA",
-						},
-						[16046920] = {
-							["type"] = 1,
-							["usesSharedActionBars"] = false,
-							["name"] = "pvp?",
-							["treeIDs"] = {
-								793, -- [1]
-							},
-							["ID"] = 16046920,
 							["treeHash"] = {
 								207, -- [1]
 								152, -- [2]
@@ -787,6 +2130,29 @@ ImprovedTalentLoadoutsDB = {
 								119, -- [15]
 								77, -- [16]
 							},
+							["exportString"] = "BYGAPjJFohhWlFcNj9E1Av/dNBAAAAAAAAAAAAAAAAAAAKAIJSCSCBJRSyBSDKJOQiEpkoJkgUSKJJCpBQoAA",
+						},
+						[19769689] = {
+							["type"] = 1,
+							["treeHash"] = {
+								76, -- [1]
+								245, -- [2]
+								228, -- [3]
+								214, -- [4]
+								155, -- [5]
+								85, -- [6]
+								136, -- [7]
+								41, -- [8]
+								254, -- [9]
+								191, -- [10]
+								16, -- [11]
+								197, -- [12]
+								42, -- [13]
+								79, -- [14]
+								143, -- [15]
+								28, -- [16]
+							},
+							["name"] = "owl world",
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82198,
@@ -799,69 +2165,69 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 103277,
 								}, -- [2]
 								{
+									["nodeID"] = 82207,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 103285,
+								}, -- [3]
+								{
 									["nodeID"] = 82208,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103286,
-								}, -- [3]
+								}, -- [4]
 								{
 									["nodeID"] = 82209,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103287,
-								}, -- [4]
+								}, -- [5]
 								{
 									["nodeID"] = 82210,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 103288,
-								}, -- [5]
+								}, -- [6]
 								{
 									["nodeID"] = 82212,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103290,
-								}, -- [6]
+								}, -- [7]
 								{
 									["nodeID"] = 82213,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103291,
-								}, -- [7]
+								}, -- [8]
 								{
 									["nodeID"] = 82214,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 103292,
-								}, -- [8]
+								}, -- [9]
 								{
 									["nodeID"] = 82218,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103296,
-								}, -- [9]
+								}, -- [10]
 								{
 									["nodeID"] = 82219,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103297,
-								}, -- [10]
+								}, -- [11]
 								{
 									["nodeID"] = 82220,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103298,
-								}, -- [11]
+								}, -- [12]
 								{
 									["nodeID"] = 82227,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103305,
-								}, -- [12]
+								}, -- [13]
 								{
 									["nodeID"] = 82228,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 103306,
-								}, -- [13]
+								}, -- [14]
 								{
 									["nodeID"] = 82229,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103307,
-								}, -- [14]
-								{
-									["nodeID"] = 82231,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 103309,
 								}, -- [15]
 								{
 									["nodeID"] = 82232,
@@ -924,79 +2290,79 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 109832,
 								}, -- [27]
 								{
+									["nodeID"] = 88201,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 109833,
+								}, -- [28]
+								{
 									["nodeID"] = 88202,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 109834,
-								}, -- [28]
+								}, -- [29]
 								{
 									["nodeID"] = 88203,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109835,
-								}, -- [29]
+								}, -- [30]
 								{
 									["nodeID"] = 88205,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109837,
-								}, -- [30]
+								}, -- [31]
 								{
 									["nodeID"] = 88206,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109839,
-								}, -- [31]
+								}, -- [32]
 								{
 									["nodeID"] = 88207,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 109840,
-								}, -- [32]
+								}, -- [33]
 								{
 									["nodeID"] = 88208,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109842,
-								}, -- [33]
+								}, -- [34]
 								{
 									["nodeID"] = 88210,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 114648,
-								}, -- [34]
+								}, -- [35]
 								{
 									["nodeID"] = 88212,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109846,
-								}, -- [35]
+								}, -- [36]
 								{
 									["nodeID"] = 88215,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109849,
-								}, -- [36]
+								}, -- [37]
 								{
 									["nodeID"] = 88216,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 109850,
-								}, -- [37]
+								}, -- [38]
 								{
 									["nodeID"] = 88220,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109854,
-								}, -- [38]
+								}, -- [39]
 								{
 									["nodeID"] = 88221,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109856,
-								}, -- [39]
+								}, -- [40]
 								{
 									["nodeID"] = 88222,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109857,
-								}, -- [40]
+								}, -- [41]
 								{
 									["nodeID"] = 88223,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109858,
-								}, -- [41]
-								{
-									["nodeID"] = 88224,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 109859,
 								}, -- [42]
 								{
 									["nodeID"] = 88225,
@@ -1044,7 +2410,12 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 114299,
 								}, -- [51]
 							},
-							["exportString"] = "BYGAPjJFohhWlFcNj9E1Av/dNBAAAAAAAAAAAAAAAAAAAKBgkIJIJAJRSyBSDKJOQiEpkoJkgUSKJJCpBQoAA",
+							["ID"] = 19769689,
+							["usesSharedActionBars"] = false,
+							["treeIDs"] = {
+								793, -- [1]
+							},
+							["exportString"] = "BYGAMVP5WvZVImi//CRxq80jcAAAAAAAAAAAAAAAAAAAAlAIJRSQSASCJ5ApBlEHIJJSJRTIBpkIJRINACFAA",
 						},
 						[4757931] = {
 							["treeHash"] = {
@@ -1329,30 +2700,17 @@ ImprovedTalentLoadoutsDB = {
 								793, -- [1]
 							},
 							["ID"] = 4757931,
+							["type"] = 1,
 							["name"] = "Balance",
-							["type"] = 1,
 						},
-						[19769689] = {
-							["treeHash"] = {
-								76, -- [1]
-								245, -- [2]
-								228, -- [3]
-								214, -- [4]
-								155, -- [5]
-								85, -- [6]
-								136, -- [7]
-								41, -- [8]
-								254, -- [9]
-								191, -- [10]
-								16, -- [11]
-								197, -- [12]
-								42, -- [13]
-								79, -- [14]
-								143, -- [15]
-								28, -- [16]
-							},
+						[16046920] = {
+							["usesSharedActionBars"] = false,
 							["type"] = 1,
-							["name"] = "owl world",
+							["name"] = "pvp?",
+							["treeIDs"] = {
+								793, -- [1]
+							},
+							["ID"] = 16046920,
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82198,
@@ -1365,69 +2723,69 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 103277,
 								}, -- [2]
 								{
-									["nodeID"] = 82207,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 103285,
-								}, -- [3]
-								{
 									["nodeID"] = 82208,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103286,
-								}, -- [4]
+								}, -- [3]
 								{
 									["nodeID"] = 82209,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103287,
-								}, -- [5]
+								}, -- [4]
 								{
 									["nodeID"] = 82210,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 103288,
-								}, -- [6]
+								}, -- [5]
 								{
 									["nodeID"] = 82212,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103290,
-								}, -- [7]
+								}, -- [6]
 								{
 									["nodeID"] = 82213,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103291,
-								}, -- [8]
+								}, -- [7]
 								{
 									["nodeID"] = 82214,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 103292,
-								}, -- [9]
+								}, -- [8]
 								{
 									["nodeID"] = 82218,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103296,
-								}, -- [10]
+								}, -- [9]
 								{
 									["nodeID"] = 82219,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103297,
-								}, -- [11]
+								}, -- [10]
 								{
 									["nodeID"] = 82220,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103298,
-								}, -- [12]
+								}, -- [11]
 								{
 									["nodeID"] = 82227,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103305,
-								}, -- [13]
+								}, -- [12]
 								{
 									["nodeID"] = 82228,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 103306,
-								}, -- [14]
+								}, -- [13]
 								{
 									["nodeID"] = 82229,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 103307,
+								}, -- [14]
+								{
+									["nodeID"] = 82231,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 103309,
 								}, -- [15]
 								{
 									["nodeID"] = 82232,
@@ -1490,79 +2848,79 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 109832,
 								}, -- [27]
 								{
-									["nodeID"] = 88201,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 109833,
-								}, -- [28]
-								{
 									["nodeID"] = 88202,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 109834,
-								}, -- [29]
+								}, -- [28]
 								{
 									["nodeID"] = 88203,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109835,
-								}, -- [30]
+								}, -- [29]
 								{
 									["nodeID"] = 88205,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109837,
-								}, -- [31]
+								}, -- [30]
 								{
 									["nodeID"] = 88206,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109839,
-								}, -- [32]
+								}, -- [31]
 								{
 									["nodeID"] = 88207,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 109840,
-								}, -- [33]
+								}, -- [32]
 								{
 									["nodeID"] = 88208,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109842,
-								}, -- [34]
+								}, -- [33]
 								{
 									["nodeID"] = 88210,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 114648,
-								}, -- [35]
+								}, -- [34]
 								{
 									["nodeID"] = 88212,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109846,
-								}, -- [36]
+								}, -- [35]
 								{
 									["nodeID"] = 88215,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109849,
-								}, -- [37]
+								}, -- [36]
 								{
 									["nodeID"] = 88216,
 									["ranksPurchased"] = 2,
 									["selectionEntryID"] = 109850,
-								}, -- [38]
+								}, -- [37]
 								{
 									["nodeID"] = 88220,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109854,
-								}, -- [39]
+								}, -- [38]
 								{
 									["nodeID"] = 88221,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109856,
-								}, -- [40]
+								}, -- [39]
 								{
 									["nodeID"] = 88222,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109857,
-								}, -- [41]
+								}, -- [40]
 								{
 									["nodeID"] = 88223,
 									["ranksPurchased"] = 1,
 									["selectionEntryID"] = 109858,
+								}, -- [41]
+								{
+									["nodeID"] = 88224,
+									["ranksPurchased"] = 1,
+									["selectionEntryID"] = 109859,
 								}, -- [42]
 								{
 									["nodeID"] = 88225,
@@ -1610,12 +2968,25 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 114299,
 								}, -- [51]
 							},
-							["ID"] = 19769689,
-							["treeIDs"] = {
-								793, -- [1]
+							["treeHash"] = {
+								207, -- [1]
+								152, -- [2]
+								20, -- [3]
+								104, -- [4]
+								24, -- [5]
+								90, -- [6]
+								101, -- [7]
+								193, -- [8]
+								53, -- [9]
+								99, -- [10]
+								79, -- [11]
+								212, -- [12]
+								192, -- [13]
+								251, -- [14]
+								119, -- [15]
+								77, -- [16]
 							},
-							["usesSharedActionBars"] = false,
-							["exportString"] = "BYGAMVP5WvZVImi//CRxq80jcAAAAAAAAAAAAAAAAAAAAlAIJRSQSASCJ5ApBlEHIJJSJRTIBpkIJRINACFAA",
+							["exportString"] = "BYGAPjJFohhWlFcNj9E1Av/dNBAAAAAAAAAAAAAAAAAAAKBgkIJIJAJRSyBSDKJOQiEpkoJkgUSKJJCpBQoAA",
 						},
 					},
 					[105] = {
@@ -1912,11 +3283,10 @@ ImprovedTalentLoadoutsDB = {
 								793, -- [1]
 							},
 							["ID"] = 4757934,
-							["type"] = 1,
 							["name"] = "Restoration",
+							["type"] = 1,
 						},
 						[10936682] = {
-							["type"] = 1,
 							["treeHash"] = {
 								207, -- [1]
 								152, -- [2]
@@ -1935,6 +3305,7 @@ ImprovedTalentLoadoutsDB = {
 								119, -- [15]
 								77, -- [16]
 							},
+							["type"] = 1,
 							["name"] = "raid",
 							["entryInfo"] = {
 								{
@@ -2204,14 +3575,13 @@ ImprovedTalentLoadoutsDB = {
 								}, -- [53]
 							},
 							["ID"] = 10936682,
+							["usesSharedActionBars"] = false,
 							["treeIDs"] = {
 								793, -- [1]
 							},
-							["usesSharedActionBars"] = false,
 							["exportString"] = "BkGAMVP5WvZVImi//CRxq80jcISSUKJJJKSLkIQKaRSAAAAAAAAAAAAAFIExBQQSIkkkIRQSLBAAAAAgIAAA",
 						},
 						[10610118] = {
-							["type"] = 1,
 							["treeHash"] = {
 								207, -- [1]
 								152, -- [2]
@@ -2230,11 +3600,13 @@ ImprovedTalentLoadoutsDB = {
 								119, -- [15]
 								77, -- [16]
 							},
+							["type"] = 1,
 							["name"] = "arena",
 							["treeIDs"] = {
 								793, -- [1]
 							},
 							["ID"] = 10610118,
+							["usesSharedActionBars"] = false,
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82047,
@@ -2497,35 +3869,16 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 112963,
 								}, -- [52]
 							},
-							["usesSharedActionBars"] = false,
 							["exportString"] = "BkGAPjJFohhWlFcNj9E1Av/dNBJJtmkERLKRQCRLlDUSCAAAAAAAAAAAAoAhAkgkQIJhkINSaJCAAAAAQAAAA",
 						},
 						[8276601] = {
-							["type"] = 1,
 							["usesSharedActionBars"] = false,
+							["type"] = 1,
 							["name"] = "pvp tree",
 							["treeIDs"] = {
 								793, -- [1]
 							},
 							["ID"] = 8276601,
-							["treeHash"] = {
-								207, -- [1]
-								152, -- [2]
-								20, -- [3]
-								104, -- [4]
-								24, -- [5]
-								90, -- [6]
-								101, -- [7]
-								193, -- [8]
-								53, -- [9]
-								99, -- [10]
-								79, -- [11]
-								212, -- [12]
-								192, -- [13]
-								251, -- [14]
-								119, -- [15]
-								77, -- [16]
-							},
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82045,
@@ -2773,10 +4126,6 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 103323,
 								}, -- [49]
 							},
-							["exportString"] = "BkGAPjJFohhWlFcNj9E1Av/dNRSSoVSkElkWIgQJlIJAAAAAAAAAAAAABhIQeASik8gQIJQSaBAAAAAAAAAA",
-						},
-						[11731779] = {
-							["type"] = 1,
 							["treeHash"] = {
 								207, -- [1]
 								152, -- [2]
@@ -2795,11 +4144,34 @@ ImprovedTalentLoadoutsDB = {
 								119, -- [15]
 								77, -- [16]
 							},
+							["exportString"] = "BkGAPjJFohhWlFcNj9E1Av/dNRSSoVSkElkWIgQJlIJAAAAAAAAAAAAABhIQeASik8gQIJQSaBAAAAAAAAAA",
+						},
+						[11731779] = {
+							["treeHash"] = {
+								207, -- [1]
+								152, -- [2]
+								20, -- [3]
+								104, -- [4]
+								24, -- [5]
+								90, -- [6]
+								101, -- [7]
+								193, -- [8]
+								53, -- [9]
+								99, -- [10]
+								79, -- [11]
+								212, -- [12]
+								192, -- [13]
+								251, -- [14]
+								119, -- [15]
+								77, -- [16]
+							},
+							["type"] = 1,
 							["name"] = "dungeons",
 							["treeIDs"] = {
 								793, -- [1]
 							},
 							["ID"] = 11731779,
+							["usesSharedActionBars"] = false,
 							["entryInfo"] = {
 								{
 									["nodeID"] = 82047,
@@ -3062,7 +4434,6 @@ ImprovedTalentLoadoutsDB = {
 									["selectionEntryID"] = 112963,
 								}, -- [52]
 							},
-							["usesSharedActionBars"] = false,
 							["exportString"] = "BkGAPjJFohhWlFcNj9E1Av/dNBJJtmkERLKRQCRLlDUSCAAAAAAAAAAAAQQIAJIJESSIJSjkWiAAAAAAEAAA",
 						},
 					},
@@ -3074,1297 +4445,14 @@ ImprovedTalentLoadoutsDB = {
 					},
 				},
 			},
-			["MONK"] = {
+			["EVOKER"] = {
 				["configIDs"] = {
 				},
 				["categories"] = {
 				},
 			},
-			["PALADIN"] = {
+			["SHAMAN"] = {
 				["configIDs"] = {
-					[70] = {
-						[15825345] = {
-							["type"] = 1,
-							["treeHash"] = {
-								146, -- [1]
-								239, -- [2]
-								50, -- [3]
-								13, -- [4]
-								170, -- [5]
-								31, -- [6]
-								90, -- [7]
-								188, -- [8]
-								252, -- [9]
-								115, -- [10]
-								59, -- [11]
-								101, -- [12]
-								65, -- [13]
-								184, -- [14]
-								118, -- [15]
-								156, -- [16]
-							},
-							["name"] = "finar verdict",
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 15825345,
-							["entryInfo"] = {
-								{
-									["nodeID"] = 81507,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102476,
-								}, -- [1]
-								{
-									["nodeID"] = 81526,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102498,
-								}, -- [2]
-								{
-									["nodeID"] = 81543,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102518,
-								}, -- [3]
-								{
-									["nodeID"] = 81597,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102583,
-								}, -- [4]
-								{
-									["nodeID"] = 81598,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102584,
-								}, -- [5]
-								{
-									["nodeID"] = 81599,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102586,
-								}, -- [6]
-								{
-									["nodeID"] = 81600,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102587,
-								}, -- [7]
-								{
-									["nodeID"] = 81602,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102589,
-								}, -- [8]
-								{
-									["nodeID"] = 81603,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102590,
-								}, -- [9]
-								{
-									["nodeID"] = 81604,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102591,
-								}, -- [10]
-								{
-									["nodeID"] = 81605,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102592,
-								}, -- [11]
-								{
-									["nodeID"] = 81606,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102593,
-								}, -- [12]
-								{
-									["nodeID"] = 81607,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102595,
-								}, -- [13]
-								{
-									["nodeID"] = 81609,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102597,
-								}, -- [14]
-								{
-									["nodeID"] = 81614,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102602,
-								}, -- [15]
-								{
-									["nodeID"] = 81615,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102603,
-								}, -- [16]
-								{
-									["nodeID"] = 81616,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102604,
-								}, -- [17]
-								{
-									["nodeID"] = 81632,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102625,
-								}, -- [18]
-							},
-							["usesSharedActionBars"] = false,
-							["exportString"] = "BYEAS+uMNo6HaxL/ztTZBhrdcCAAAAAIAEAgAAAAAAAAkWikkUEIJAACAAAAAA",
-						},
-						[1125610] = {
-							["treeHash"] = {
-								146, -- [1]
-								239, -- [2]
-								50, -- [3]
-								13, -- [4]
-								170, -- [5]
-								31, -- [6]
-								90, -- [7]
-								188, -- [8]
-								252, -- [9]
-								115, -- [10]
-								59, -- [11]
-								101, -- [12]
-								65, -- [13]
-								184, -- [14]
-								118, -- [15]
-								156, -- [16]
-							},
-							["entryInfo"] = {
-								{
-									["nodeID"] = 81507,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102476,
-								}, -- [1]
-								{
-									["nodeID"] = 81526,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102498,
-								}, -- [2]
-								{
-									["nodeID"] = 81543,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102518,
-								}, -- [3]
-								{
-									["nodeID"] = 81597,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102583,
-								}, -- [4]
-								{
-									["nodeID"] = 81598,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102584,
-								}, -- [5]
-								{
-									["nodeID"] = 81599,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102586,
-								}, -- [6]
-								{
-									["nodeID"] = 81600,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102587,
-								}, -- [7]
-								{
-									["nodeID"] = 81602,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102589,
-								}, -- [8]
-								{
-									["nodeID"] = 81603,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102590,
-								}, -- [9]
-								{
-									["nodeID"] = 81604,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102591,
-								}, -- [10]
-								{
-									["nodeID"] = 81605,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102592,
-								}, -- [11]
-								{
-									["nodeID"] = 81606,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102593,
-								}, -- [12]
-								{
-									["nodeID"] = 81607,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102595,
-								}, -- [13]
-								{
-									["nodeID"] = 81609,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102597,
-								}, -- [14]
-								{
-									["nodeID"] = 81614,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102602,
-								}, -- [15]
-								{
-									["nodeID"] = 81615,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102603,
-								}, -- [16]
-								{
-									["nodeID"] = 81616,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102604,
-								}, -- [17]
-								{
-									["nodeID"] = 81632,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102625,
-								}, -- [18]
-							},
-							["exportString"] = "BYEAS+uMNo6HaxL/ztTZBhrdcCAAAAAIAEAgAAAAAAAAkWikkUEIJAACAAAAAA",
-							["usesSharedActionBars"] = false,
-							["default"] = true,
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 1125610,
-							["type"] = 1,
-							["name"] = "Retribution",
-						},
-						[15733608] = {
-							["type"] = 1,
-							["name"] = "pvp default",
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 15733608,
-							["usesSharedActionBars"] = false,
-						},
-					},
-					[65] = {
-						[1125608] = {
-							["treeHash"] = {
-								146, -- [1]
-								239, -- [2]
-								50, -- [3]
-								13, -- [4]
-								170, -- [5]
-								31, -- [6]
-								90, -- [7]
-								188, -- [8]
-								252, -- [9]
-								115, -- [10]
-								59, -- [11]
-								101, -- [12]
-								65, -- [13]
-								184, -- [14]
-								118, -- [15]
-								156, -- [16]
-							},
-							["entryInfo"] = {
-								{
-									["nodeID"] = 81508,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102477,
-								}, -- [1]
-								{
-									["nodeID"] = 81510,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102479,
-								}, -- [2]
-								{
-									["nodeID"] = 81554,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102533,
-								}, -- [3]
-								{
-									["nodeID"] = 81555,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102534,
-								}, -- [4]
-								{
-									["nodeID"] = 81557,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102536,
-								}, -- [5]
-								{
-									["nodeID"] = 81561,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102540,
-								}, -- [6]
-								{
-									["nodeID"] = 81563,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102542,
-								}, -- [7]
-								{
-									["nodeID"] = 81564,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102544,
-								}, -- [8]
-								{
-									["nodeID"] = 81565,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102545,
-								}, -- [9]
-								{
-									["nodeID"] = 81566,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102547,
-								}, -- [10]
-								{
-									["nodeID"] = 81567,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102548,
-								}, -- [11]
-								{
-									["nodeID"] = 81568,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102549,
-								}, -- [12]
-								{
-									["nodeID"] = 81569,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102550,
-								}, -- [13]
-								{
-									["nodeID"] = 81570,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102551,
-								}, -- [14]
-								{
-									["nodeID"] = 81571,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102552,
-								}, -- [15]
-								{
-									["nodeID"] = 81572,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102555,
-								}, -- [16]
-								{
-									["nodeID"] = 81576,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102559,
-								}, -- [17]
-								{
-									["nodeID"] = 81578,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102562,
-								}, -- [18]
-								{
-									["nodeID"] = 81579,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102563,
-								}, -- [19]
-								{
-									["nodeID"] = 81580,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102564,
-								}, -- [20]
-								{
-									["nodeID"] = 81584,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102569,
-								}, -- [21]
-								{
-									["nodeID"] = 81585,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102570,
-								}, -- [22]
-								{
-									["nodeID"] = 81586,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102571,
-								}, -- [23]
-								{
-									["nodeID"] = 81595,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102581,
-								}, -- [24]
-								{
-									["nodeID"] = 81598,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102584,
-								}, -- [25]
-								{
-									["nodeID"] = 81600,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102587,
-								}, -- [26]
-								{
-									["nodeID"] = 81601,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102588,
-								}, -- [27]
-								{
-									["nodeID"] = 81605,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102592,
-								}, -- [28]
-								{
-									["nodeID"] = 81606,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102593,
-								}, -- [29]
-								{
-									["nodeID"] = 81607,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102595,
-								}, -- [30]
-								{
-									["nodeID"] = 81609,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102597,
-								}, -- [31]
-								{
-									["nodeID"] = 81610,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102598,
-								}, -- [32]
-								{
-									["nodeID"] = 81613,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102601,
-								}, -- [33]
-								{
-									["nodeID"] = 81614,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102602,
-								}, -- [34]
-								{
-									["nodeID"] = 81615,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102603,
-								}, -- [35]
-								{
-									["nodeID"] = 81616,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102604,
-								}, -- [36]
-								{
-									["nodeID"] = 81617,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102606,
-								}, -- [37]
-								{
-									["nodeID"] = 81631,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102624,
-								}, -- [38]
-								{
-									["nodeID"] = 81632,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102625,
-								}, -- [39]
-							},
-							["exportString"] = "BEEAS+uMNo6HaxL/ztTZBhrdcCAAAAAQEAAAAlIISJlkkWBRSQJBgoJBJFJkkEAQCAAAAAA",
-							["usesSharedActionBars"] = false,
-							["default"] = true,
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 1125608,
-							["type"] = 1,
-							["name"] = "Holy",
-						},
-					},
-					[66] = {
-						[3721997] = {
-							["treeHash"] = {
-								146, -- [1]
-								239, -- [2]
-								50, -- [3]
-								13, -- [4]
-								170, -- [5]
-								31, -- [6]
-								90, -- [7]
-								188, -- [8]
-								252, -- [9]
-								115, -- [10]
-								59, -- [11]
-								101, -- [12]
-								65, -- [13]
-								184, -- [14]
-								118, -- [15]
-								156, -- [16]
-							},
-							["type"] = 1,
-							["name"] = "prot",
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 3721997,
-							["usesSharedActionBars"] = false,
-							["entryInfo"] = {
-								{
-									["nodeID"] = 81469,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102430,
-								}, -- [1]
-								{
-									["nodeID"] = 81474,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102437,
-								}, -- [2]
-								{
-									["nodeID"] = 81476,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102439,
-								}, -- [3]
-								{
-									["nodeID"] = 81479,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102443,
-								}, -- [4]
-								{
-									["nodeID"] = 81481,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102445,
-								}, -- [5]
-								{
-									["nodeID"] = 81482,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102446,
-								}, -- [6]
-								{
-									["nodeID"] = 81483,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102448,
-								}, -- [7]
-								{
-									["nodeID"] = 81484,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102449,
-								}, -- [8]
-								{
-									["nodeID"] = 81485,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102450,
-								}, -- [9]
-								{
-									["nodeID"] = 81486,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102451,
-								}, -- [10]
-								{
-									["nodeID"] = 81487,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102453,
-								}, -- [11]
-								{
-									["nodeID"] = 81488,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102454,
-								}, -- [12]
-								{
-									["nodeID"] = 81489,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102455,
-								}, -- [13]
-								{
-									["nodeID"] = 81490,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102456,
-								}, -- [14]
-								{
-									["nodeID"] = 81494,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102463,
-								}, -- [15]
-								{
-									["nodeID"] = 81496,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102465,
-								}, -- [16]
-								{
-									["nodeID"] = 81497,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102466,
-								}, -- [17]
-								{
-									["nodeID"] = 81498,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102467,
-								}, -- [18]
-								{
-									["nodeID"] = 81499,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102468,
-								}, -- [19]
-								{
-									["nodeID"] = 81501,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102470,
-								}, -- [20]
-								{
-									["nodeID"] = 81502,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102471,
-								}, -- [21]
-								{
-									["nodeID"] = 81503,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102472,
-								}, -- [22]
-								{
-									["nodeID"] = 81505,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102474,
-								}, -- [23]
-								{
-									["nodeID"] = 81507,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102476,
-								}, -- [24]
-								{
-									["nodeID"] = 81509,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102478,
-								}, -- [25]
-								{
-									["nodeID"] = 81510,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102479,
-								}, -- [26]
-								{
-									["nodeID"] = 81543,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102518,
-								}, -- [27]
-								{
-									["nodeID"] = 81598,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102585,
-								}, -- [28]
-								{
-									["nodeID"] = 81600,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102587,
-								}, -- [29]
-								{
-									["nodeID"] = 81601,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102588,
-								}, -- [30]
-								{
-									["nodeID"] = 81602,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102589,
-								}, -- [31]
-								{
-									["nodeID"] = 81603,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102590,
-								}, -- [32]
-								{
-									["nodeID"] = 81604,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102591,
-								}, -- [33]
-								{
-									["nodeID"] = 81606,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102593,
-								}, -- [34]
-								{
-									["nodeID"] = 81609,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102597,
-								}, -- [35]
-								{
-									["nodeID"] = 81610,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102598,
-								}, -- [36]
-								{
-									["nodeID"] = 81611,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102599,
-								}, -- [37]
-								{
-									["nodeID"] = 81614,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102602,
-								}, -- [38]
-								{
-									["nodeID"] = 81615,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102603,
-								}, -- [39]
-								{
-									["nodeID"] = 81616,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102604,
-								}, -- [40]
-								{
-									["nodeID"] = 81619,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102609,
-								}, -- [41]
-								{
-									["nodeID"] = 81621,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102612,
-								}, -- [42]
-								{
-									["nodeID"] = 81623,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102614,
-								}, -- [43]
-								{
-									["nodeID"] = 81625,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102616,
-								}, -- [44]
-								{
-									["nodeID"] = 81626,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102617,
-								}, -- [45]
-								{
-									["nodeID"] = 81629,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102621,
-								}, -- [46]
-								{
-									["nodeID"] = 81632,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102625,
-								}, -- [47]
-								{
-									["nodeID"] = 90062,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 111887,
-								}, -- [48]
-								{
-									["nodeID"] = 92953,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 115167,
-								}, -- [49]
-								{
-									["nodeID"] = 93356,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 115672,
-								}, -- [50]
-							},
-							["exportString"] = "BIEAS+uMNo6HaxL/ztTZBhrdc2gIKSKJtkEUkkIJiIBAAIAAAAAAAAKSSiQSIJEpIRIFAIAAAIA",
-						},
-						[4316209] = {
-							["usesSharedActionBars"] = false,
-							["type"] = 1,
-							["name"] = "proto researches ",
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 4316209,
-							["entryInfo"] = {
-								{
-									["nodeID"] = 81469,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102430,
-								}, -- [1]
-								{
-									["nodeID"] = 81473,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102436,
-								}, -- [2]
-								{
-									["nodeID"] = 81475,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102438,
-								}, -- [3]
-								{
-									["nodeID"] = 81476,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102439,
-								}, -- [4]
-								{
-									["nodeID"] = 81481,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102445,
-								}, -- [5]
-								{
-									["nodeID"] = 81483,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102447,
-								}, -- [6]
-								{
-									["nodeID"] = 81484,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102449,
-								}, -- [7]
-								{
-									["nodeID"] = 81487,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102453,
-								}, -- [8]
-								{
-									["nodeID"] = 81488,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102454,
-								}, -- [9]
-								{
-									["nodeID"] = 81489,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102455,
-								}, -- [10]
-								{
-									["nodeID"] = 81490,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102456,
-								}, -- [11]
-								{
-									["nodeID"] = 81491,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102457,
-								}, -- [12]
-								{
-									["nodeID"] = 81494,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102463,
-								}, -- [13]
-								{
-									["nodeID"] = 81495,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102464,
-								}, -- [14]
-								{
-									["nodeID"] = 81497,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102466,
-								}, -- [15]
-								{
-									["nodeID"] = 81498,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102467,
-								}, -- [16]
-								{
-									["nodeID"] = 81499,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102468,
-								}, -- [17]
-								{
-									["nodeID"] = 81501,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102470,
-								}, -- [18]
-								{
-									["nodeID"] = 81502,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102471,
-								}, -- [19]
-								{
-									["nodeID"] = 81503,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102472,
-								}, -- [20]
-								{
-									["nodeID"] = 81506,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102475,
-								}, -- [21]
-								{
-									["nodeID"] = 81507,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102476,
-								}, -- [22]
-								{
-									["nodeID"] = 81509,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102478,
-								}, -- [23]
-								{
-									["nodeID"] = 81510,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102479,
-								}, -- [24]
-								{
-									["nodeID"] = 81598,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102584,
-								}, -- [25]
-								{
-									["nodeID"] = 81600,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102587,
-								}, -- [26]
-								{
-									["nodeID"] = 81601,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102588,
-								}, -- [27]
-								{
-									["nodeID"] = 81602,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102589,
-								}, -- [28]
-								{
-									["nodeID"] = 81603,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102590,
-								}, -- [29]
-								{
-									["nodeID"] = 81604,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102591,
-								}, -- [30]
-								{
-									["nodeID"] = 81605,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102592,
-								}, -- [31]
-								{
-									["nodeID"] = 81606,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102593,
-								}, -- [32]
-								{
-									["nodeID"] = 81609,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102597,
-								}, -- [33]
-								{
-									["nodeID"] = 81615,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102603,
-								}, -- [34]
-								{
-									["nodeID"] = 81616,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102604,
-								}, -- [35]
-								{
-									["nodeID"] = 81617,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102606,
-								}, -- [36]
-								{
-									["nodeID"] = 81625,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102616,
-								}, -- [37]
-								{
-									["nodeID"] = 81626,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102617,
-								}, -- [38]
-								{
-									["nodeID"] = 81629,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102621,
-								}, -- [39]
-								{
-									["nodeID"] = 81631,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102624,
-								}, -- [40]
-								{
-									["nodeID"] = 81632,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102625,
-								}, -- [41]
-								{
-									["nodeID"] = 90062,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 111887,
-								}, -- [42]
-							},
-							["treeHash"] = {
-								146, -- [1]
-								239, -- [2]
-								50, -- [3]
-								13, -- [4]
-								170, -- [5]
-								31, -- [6]
-								90, -- [7]
-								188, -- [8]
-								252, -- [9]
-								115, -- [10]
-								59, -- [11]
-								101, -- [12]
-								65, -- [13]
-								184, -- [14]
-								118, -- [15]
-								156, -- [16]
-							},
-							["exportString"] = "BIEAS+uMNo6HaxL/ztTZBhrdc2QkgoFSSClIJSCJSAAAAAAAAAAAoJJJJEQSASsAJFAAAAAA",
-						},
-						[1125609] = {
-							["treeHash"] = {
-								146, -- [1]
-								239, -- [2]
-								50, -- [3]
-								13, -- [4]
-								170, -- [5]
-								31, -- [6]
-								90, -- [7]
-								188, -- [8]
-								252, -- [9]
-								115, -- [10]
-								59, -- [11]
-								101, -- [12]
-								65, -- [13]
-								184, -- [14]
-								118, -- [15]
-								156, -- [16]
-							},
-							["entryInfo"] = {
-								{
-									["nodeID"] = 81469,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102430,
-								}, -- [1]
-								{
-									["nodeID"] = 81474,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102437,
-								}, -- [2]
-								{
-									["nodeID"] = 81476,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102439,
-								}, -- [3]
-								{
-									["nodeID"] = 81479,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102443,
-								}, -- [4]
-								{
-									["nodeID"] = 81481,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102445,
-								}, -- [5]
-								{
-									["nodeID"] = 81482,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102446,
-								}, -- [6]
-								{
-									["nodeID"] = 81483,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102448,
-								}, -- [7]
-								{
-									["nodeID"] = 81484,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102449,
-								}, -- [8]
-								{
-									["nodeID"] = 81485,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102450,
-								}, -- [9]
-								{
-									["nodeID"] = 81486,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102451,
-								}, -- [10]
-								{
-									["nodeID"] = 81487,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102453,
-								}, -- [11]
-								{
-									["nodeID"] = 81488,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102454,
-								}, -- [12]
-								{
-									["nodeID"] = 81489,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102455,
-								}, -- [13]
-								{
-									["nodeID"] = 81490,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102456,
-								}, -- [14]
-								{
-									["nodeID"] = 81494,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102463,
-								}, -- [15]
-								{
-									["nodeID"] = 81496,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102465,
-								}, -- [16]
-								{
-									["nodeID"] = 81497,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102466,
-								}, -- [17]
-								{
-									["nodeID"] = 81498,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102467,
-								}, -- [18]
-								{
-									["nodeID"] = 81499,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102468,
-								}, -- [19]
-								{
-									["nodeID"] = 81501,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102470,
-								}, -- [20]
-								{
-									["nodeID"] = 81502,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102471,
-								}, -- [21]
-								{
-									["nodeID"] = 81503,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102472,
-								}, -- [22]
-								{
-									["nodeID"] = 81505,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102474,
-								}, -- [23]
-								{
-									["nodeID"] = 81507,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102476,
-								}, -- [24]
-								{
-									["nodeID"] = 81509,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102478,
-								}, -- [25]
-								{
-									["nodeID"] = 81510,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102479,
-								}, -- [26]
-								{
-									["nodeID"] = 81543,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102518,
-								}, -- [27]
-								{
-									["nodeID"] = 81598,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102585,
-								}, -- [28]
-								{
-									["nodeID"] = 81600,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102587,
-								}, -- [29]
-								{
-									["nodeID"] = 81601,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102588,
-								}, -- [30]
-								{
-									["nodeID"] = 81602,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102589,
-								}, -- [31]
-								{
-									["nodeID"] = 81603,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102590,
-								}, -- [32]
-								{
-									["nodeID"] = 81604,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102591,
-								}, -- [33]
-								{
-									["nodeID"] = 81606,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102593,
-								}, -- [34]
-								{
-									["nodeID"] = 81609,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102597,
-								}, -- [35]
-								{
-									["nodeID"] = 81610,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102598,
-								}, -- [36]
-								{
-									["nodeID"] = 81611,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102599,
-								}, -- [37]
-								{
-									["nodeID"] = 81614,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102602,
-								}, -- [38]
-								{
-									["nodeID"] = 81615,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102603,
-								}, -- [39]
-								{
-									["nodeID"] = 81616,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102604,
-								}, -- [40]
-								{
-									["nodeID"] = 81619,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102609,
-								}, -- [41]
-								{
-									["nodeID"] = 81621,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102612,
-								}, -- [42]
-								{
-									["nodeID"] = 81623,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102614,
-								}, -- [43]
-								{
-									["nodeID"] = 81625,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102616,
-								}, -- [44]
-								{
-									["nodeID"] = 81626,
-									["ranksPurchased"] = 2,
-									["selectionEntryID"] = 102617,
-								}, -- [45]
-								{
-									["nodeID"] = 81629,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102621,
-								}, -- [46]
-								{
-									["nodeID"] = 81632,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 102625,
-								}, -- [47]
-								{
-									["nodeID"] = 90062,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 111887,
-								}, -- [48]
-								{
-									["nodeID"] = 92953,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 115167,
-								}, -- [49]
-								{
-									["nodeID"] = 93356,
-									["ranksPurchased"] = 1,
-									["selectionEntryID"] = 115672,
-								}, -- [50]
-							},
-							["exportString"] = "BIEAS+uMNo6HaxL/ztTZBhrdc2gIKSKJtkEUkkIJiIBAAIAAAAAAAAKSSiQSIJEpIRIFAIAAAIA",
-							["usesSharedActionBars"] = false,
-							["default"] = true,
-							["treeIDs"] = {
-								790, -- [1]
-							},
-							["ID"] = 1125609,
-							["name"] = "Protection",
-							["type"] = 1,
-						},
-					},
 				},
 				["categories"] = {
 				},
@@ -4374,25 +4462,27 @@ ImprovedTalentLoadoutsDB = {
 			["Allower-Silvermoon"] = {
 				["firstLoad"] = true,
 			},
-			["Nowarg-Silvermoon"] = {
-				["firstLoad"] = false,
-			},
 			["Lumbert-Silvermoon"] = {
 				["firstLoad"] = true,
 			},
 			["Ambracer-Silvermoon"] = {
 				["firstLoad"] = false,
-				["lastLoadout"] = 19769689,
+			},
+			["Nowarg-Silvermoon"] = {
+				["firstLoad"] = false,
+			},
+			["Jundzin-Silvermoon"] = {
+				["firstLoad"] = true,
 			},
 		},
 	},
 	["options"] = {
 		["fontSize"] = 10,
+		["applyLoadout"] = true,
+		["showSpecButtons"] = true,
+		["simc"] = true,
 		["loadActionbars"] = true,
 		["specButtonType"] = "text",
-		["simc"] = true,
-		["showSpecButtons"] = true,
-		["applyLoadout"] = true,
 	},
 	["version"] = 6,
 	["classesInitialized"] = true,
@@ -4400,146 +4490,144 @@ ImprovedTalentLoadoutsDB = {
 		["macros"] = {
 			["global"] = {
 				{
-					["body"] = "#showtooltip 13\n/use 13\n",
-					["key"] = "13#showtooltip 13\n/use 13\n",
-					["name"] = "13",
 					["slot"] = 1,
+					["name"] = "13",
+					["key"] = "13#showtooltip 13\n/use 13\n",
+					["body"] = "#showtooltip 13\n/use 13\n",
 				}, -- [1]
 				{
-					["body"] = "#showtooltip 14\n/use 14\n",
-					["key"] = "14#showtooltip 14\n/use 14\n",
-					["name"] = "14",
 					["slot"] = 2,
+					["name"] = "14",
+					["key"] = "14#showtooltip 14\n/use 14\n",
+					["body"] = "#showtooltip 14\n/use 14\n",
 				}, -- [2]
 				{
-					["body"] = "#showtooltip\n/cast Tiger's Fury\n/cast Incarnation: Avatar of Ashamane(Shapeshift)\n/cast Berserk\n",
-					["key"] = "BURST#showtooltip\n/cast Tiger's Fury\n/cast Incarnation: Avatar of Ashamane(Shapeshift)\n/cast Berserk\n",
-					["name"] = "BURST",
 					["slot"] = 3,
+					["name"] = "BURST",
+					["key"] = "BURST#showtooltip\n/cast Tiger's Fury\n/cast Incarnation: Avatar of Ashamane(Shapeshift)\n/cast Berserk\n",
+					["body"] = "#showtooltip\n/cast Tiger's Fury\n/cast Incarnation: Avatar of Ashamane(Shapeshift)\n/cast Berserk\n",
 				}, -- [3]
 				{
-					["body"] = "#showtooltip\n/cancelform\n/cast Cat Form(Shapeshift)\n",
-					["key"] = "cat#showtooltip\n/cancelform\n/cast Cat Form(Shapeshift)\n",
-					["name"] = "cat",
 					["slot"] = 4,
+					["name"] = "cat",
+					["key"] = "cat#showtooltip\n/cancelform\n/cast Cat Form(Shapeshift)\n",
+					["body"] = "#showtooltip\n/cancelform\n/cast Cat Form(Shapeshift)\n",
 				}, -- [4]
 				{
-					["body"] = "#showtooltip\n/cast [mod:shift,@mouseover, @target]Вмешательство\n/cast [nomod,@mouseover,@target ]Рывок\n",
-					["key"] = "charge#showtooltip\n/cast [mod:shift,@mouseover, @target]Вмешательство\n/cast [nomod,@mouseover,@target ]Рывок\n",
-					["name"] = "charge",
 					["slot"] = 5,
+					["name"] = "charge",
+					["key"] = "charge#showtooltip\n/cast [mod:shift,@mouseover, @target]Вмешательство\n/cast [nomod,@mouseover,@target ]Рывок\n",
+					["body"] = "#showtooltip\n/cast [mod:shift,@mouseover, @target]Вмешательство\n/cast [nomod,@mouseover,@target ]Рывок\n",
 				}, -- [5]
 				{
-					["body"] = "#showtooltip\n/cast [@focus] Cyclone\n",
-					["key"] = "cyclone#showtooltip\n/cast [@focus] Cyclone\n",
-					["name"] = "cyclone",
 					["slot"] = 6,
+					["name"] = "cyclone",
+					["key"] = "cyclone#showtooltip\n/cast [@focus] Cyclone\n",
+					["body"] = "#showtooltip\n/cast [@focus] Cyclone\n",
 				}, -- [6]
 				{
-					["body"] = "/focus\n",
-					["key"] = "focus/focus\n",
-					["name"] = "focus",
 					["slot"] = 7,
+					["name"] = "focus",
+					["key"] = "focus/focus\n",
+					["body"] = "/focus\n",
 				}, -- [7]
 				{
-					["body"] = "#showtooltip\n/cast [@focus] Skull Bash\n",
-					["key"] = "kick#showtooltip\n/cast [@focus] Skull Bash\n",
-					["name"] = "kick",
 					["slot"] = 8,
+					["name"] = "kick",
+					["key"] = "kick#showtooltip\n/cast [@focus] Skull Bash\n",
+					["body"] = "#showtooltip\n/cast [@focus] Skull Bash\n",
 				}, -- [8]
 				{
-					["body"] = "#showtooltip incarnation: Chosen of Elune \n/cast saltwater potion\n/cast [@cursor] incarnation: Chosen of elune\n/cast Fire-Eater's Vial\n/cast nature's vigil\n/cast incarnation: Chosen of Elune\n/use 13\n",
-					["key"] = "owl#showtooltip incarnation: Chosen of Elune \n/cast saltwater potion\n/cast [@cursor] incarnation: Chosen of elune\n/cast Fire-Eater's Vial\n/cast nature's vigil\n/cast incarnation: Chosen of Elune\n/use 13\n",
-					["name"] = "owl",
 					["slot"] = 9,
+					["name"] = "owl",
+					["key"] = "owl#showtooltip incarnation: Chosen of Elune \n/cast saltwater potion\n/cast [@cursor] incarnation: Chosen of elune\n/cast Fire-Eater's Vial\n/cast nature's vigil\n/cast incarnation: Chosen of Elune\n/use 13\n",
+					["body"] = "#showtooltip incarnation: Chosen of Elune \n/cast saltwater potion\n/cast [@cursor] incarnation: Chosen of elune\n/cast Fire-Eater's Vial\n/cast nature's vigil\n/cast incarnation: Chosen of Elune\n/use 13\n",
 				}, -- [9]
 				{
-					["body"] = "#showtooltip \n/castsequence Rejuvenation, Swiftmend\n",
-					["key"] = "rej#showtooltip \n/castsequence Rejuvenation, Swiftmend\n",
-					["name"] = "rej",
 					["slot"] = 10,
+					["name"] = "rej",
+					["key"] = "rej#showtooltip \n/castsequence Rejuvenation, Swiftmend\n",
+					["body"] = "#showtooltip \n/castsequence Rejuvenation, Swiftmend\n",
 				}, -- [10]
 				{
-					["body"] = "/focus\n",
-					["key"] = "ФОКУС/focus\n",
-					["name"] = "ФОКУС",
 					["slot"] = 11,
+					["name"] = "ФОКУС",
+					["key"] = "ФОКУС/focus\n",
+					["body"] = "/focus\n",
 				}, -- [11]
 				{
-					["body"] = "#showtooltip Омоложение\n/cast [mod:alt,@player] Омоложение\n/cast [nomod, @mouseover, help, nodead]Омоложение \n",
-					["key"] = "обновление#showtooltip Омоложение\n/cast [mod:alt,@player] Омоложение\n/cast [nomod, @mouseover, help, nodead]Омоложение \n",
-					["name"] = "обновление",
 					["slot"] = 12,
+					["name"] = "обновление",
+					["key"] = "обновление#showtooltip Омоложение\n/cast [mod:alt,@player] Омоложение\n/cast [nomod, @mouseover, help, nodead]Омоложение \n",
+					["body"] = "#showtooltip Омоложение\n/cast [mod:alt,@player] Омоложение\n/cast [nomod, @mouseover, help, nodead]Омоложение \n",
 				}, -- [12]
 				{
-					["body"] = "#showtooltip стремительный рывок\n/cancelform\n/targetfriend\n/cast Стремительный рывок\n/targetlasttarget\n",
-					["key"] = "рывок#showtooltip стремительный рывок\n/cancelform\n/targetfriend\n/cast Стремительный рывок\n/targetlasttarget\n",
-					["name"] = "рывок",
 					["slot"] = 13,
+					["name"] = "рывок",
+					["key"] = "рывок#showtooltip стремительный рывок\n/cancelform\n/targetfriend\n/cast Стремительный рывок\n/targetlasttarget\n",
+					["body"] = "#showtooltip стремительный рывок\n/cancelform\n/targetfriend\n/cast Стремительный рывок\n/targetlasttarget\n",
 				}, -- [13]
 				{
-					["body"] = "/console cameraDistanceMaxZoomFactor 2.6\n",
-					["key"] = "сфь/console cameraDistanceMaxZoomFactor 2.6\n",
-					["name"] = "сфь",
 					["slot"] = 14,
+					["name"] = "сфь",
+					["key"] = "сфь/console cameraDistanceMaxZoomFactor 2.6\n",
+					["body"] = "/console cameraDistanceMaxZoomFactor 2.6\n",
 				}, -- [14]
 				{
-					["body"] = "#showtooltip лунный огонь\n/cast [help,nodead] восстановление\n/cast [harm,nodead] лунный огонь\n",
-					["key"] = "хил#showtooltip лунный огонь\n/cast [help,nodead] восстановление\n/cast [harm,nodead] лунный огонь\n",
-					["name"] = "хил",
 					["slot"] = 15,
+					["name"] = "хил",
+					["key"] = "хил#showtooltip лунный огонь\n/cast [help,nodead] восстановление\n/cast [harm,nodead] лунный огонь\n",
+					["body"] = "#showtooltip лунный огонь\n/cast [help,nodead] восстановление\n/cast [harm,nodead] лунный огонь\n",
 				}, -- [15]
-				["сфь/console cameraDistanceMaxZoomFactor 2.6\n"] = 14,
+				["charge#showtooltip\n/cast [mod:shift,@mouseover, @target]Вмешательство\n/cast [nomod,@mouseover,@target ]Рывок\n"] = 5,
 				["13#showtooltip 13\n/use 13\n"] = 1,
 				["rej#showtooltip \n/castsequence Rejuvenation, Swiftmend\n"] = 10,
 				["обновление#showtooltip Омоложение\n/cast [mod:alt,@player] Омоложение\n/cast [nomod, @mouseover, help, nodead]Омоложение \n"] = 12,
 				["ФОКУС/focus\n"] = 11,
-				["хил#showtooltip лунный огонь\n/cast [help,nodead] восстановление\n/cast [harm,nodead] лунный огонь\n"] = 15,
-				["cyclone#showtooltip\n/cast [@focus] Cyclone\n"] = 6,
-				["kick#showtooltip\n/cast [@focus] Skull Bash\n"] = 8,
-				["14#showtooltip 14\n/use 14\n"] = 2,
-				["owl#showtooltip incarnation: Chosen of Elune \n/cast saltwater potion\n/cast [@cursor] incarnation: Chosen of elune\n/cast Fire-Eater's Vial\n/cast nature's vigil\n/cast incarnation: Chosen of Elune\n/use 13\n"] = 9,
-				["рывок#showtooltip стремительный рывок\n/cancelform\n/targetfriend\n/cast Стремительный рывок\n/targetlasttarget\n"] = 13,
-				["cat#showtooltip\n/cancelform\n/cast Cat Form(Shapeshift)\n"] = 4,
-				["focus/focus\n"] = 7,
 				["BURST#showtooltip\n/cast Tiger's Fury\n/cast Incarnation: Avatar of Ashamane(Shapeshift)\n/cast Berserk\n"] = 3,
-				["charge#showtooltip\n/cast [mod:shift,@mouseover, @target]Вмешательство\n/cast [nomod,@mouseover,@target ]Рывок\n"] = 5,
+				["cyclone#showtooltip\n/cast [@focus] Cyclone\n"] = 6,
+				["focus/focus\n"] = 7,
+				["14#showtooltip 14\n/use 14\n"] = 2,
+				["cat#showtooltip\n/cancelform\n/cast Cat Form(Shapeshift)\n"] = 4,
+				["рывок#showtooltip стремительный рывок\n/cancelform\n/targetfriend\n/cast Стремительный рывок\n/targetlasttarget\n"] = 13,
+				["owl#showtooltip incarnation: Chosen of Elune \n/cast saltwater potion\n/cast [@cursor] incarnation: Chosen of elune\n/cast Fire-Eater's Vial\n/cast nature's vigil\n/cast incarnation: Chosen of Elune\n/use 13\n"] = 9,
+				["kick#showtooltip\n/cast [@focus] Skull Bash\n"] = 8,
+				["хил#showtooltip лунный огонь\n/cast [help,nodead] восстановление\n/cast [harm,nodead] лунный огонь\n"] = 15,
+				["сфь/console cameraDistanceMaxZoomFactor 2.6\n"] = 14,
 			},
 			["char"] = {
 				["Allower-Silvermoon"] = {
 					[121] = {
-						["body"] = "P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1IR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
-						["key"] = "VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1IR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
-						["name"] = "VuhDoDCShieldData",
 						["slot"] = 121,
+						["name"] = "VuhDoDCShieldData",
+						["key"] = "VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1IR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
+						["body"] = "P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1IR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
 					},
 					[122] = {
-						["body"] = "N[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]All[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
-						["key"] = "VuhDoDCShieldNamesN[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]All[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
-						["name"] = "VuhDoDCShieldNames",
 						["slot"] = 122,
+						["name"] = "VuhDoDCShieldNames",
+						["key"] = "VuhDoDCShieldNamesN[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]All[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
+						["body"] = "N[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]All[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n",
 					},
-					["VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1IR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n"] = 121,
 					["VuhDoDCShieldNamesN[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]All[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n"] = 122,
-				},
-				["Nowarg-Silvermoon"] = {
+					["VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1IR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n"] = 121,
 				},
 				["Lumbert-Silvermoon"] = {
 				},
 				["Ambracer-Silvermoon"] = {
 					[122] = {
-						["body"] = "P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
-						["key"] = "VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
-						["name"] = "VuhDoDCShieldData",
 						["slot"] = 122,
+						["name"] = "VuhDoDCShieldData",
+						["key"] = "VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
+						["body"] = "P[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
 					},
 					["VuhDoDCShieldNamesN[x]LeaLín[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldDataR1DT1HM1VR1OH1VH2PH[x]2NT2NM2HM3HM3PM3DR3WM3WM4SR4EM4MR4HM4EM5HM5PM5OH5PM6HM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]2DH[x][x][x][x][x][x][x][x][x]0__0__[x][x][x][x][x][x][x][x][x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					[123] = {
-						["body"] = "N[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
-						["key"] = "VuhDoDCShieldNamesN[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
-						["name"] = "VuhDoDCShieldNames",
 						["slot"] = 123,
+						["name"] = "VuhDoDCShieldNames",
+						["key"] = "VuhDoDCShieldNamesN[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
+						["body"] = "N[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]",
 					},
 					["VuhDoDCShieldNamesNLínLoc[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x]Gra[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldNamesNSin[x]Fig[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]AmbWat[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
@@ -4552,32 +4640,36 @@ ImprovedTalentLoadoutsDB = {
 					["VuhDoDCShieldNamesN[x]CraLea[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x]ScoLig[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldNamesNShaÍzýJiYakZarZes[x]CamKreEukOgrRetKítMidNadTheBcoMerArtCavNalLeaShaKríSmo[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x]BeaHat[x][x][x][x][x][x][x]Rot[x]Dus[x][x][x]Rap[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldNamesNLínCra[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x]Sco[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
-					["VuhDoDCShieldDataR1RM1PM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
-					["VuhDoDCShieldNamesNMorПре[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
+					["VuhDoDCShieldDataR1DT1HM1VR1OH1VH2PH[x]2NT2NM2HM3HM3PM3DR3WM3WM4SR4EM4MR4HM4EM5HM5PM5OH5PM6HM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]2DH[x][x][x][x][x][x][x][x][x]0__0__[x][x][x][x][x][x][x]0__[x]0__[x][x][x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+					["VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+					["VuhDoDCShieldDataR1WM1EM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					["VuhDoDCShieldNamesNSinПре[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]AmbWat[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
-					["VuhDoDCShieldNamesN[x]ПреFig[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldDataR[x]1HM1HR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x]0__0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					["VuhDoDCShieldDataR1HM1PM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
-					["VuhDoDCShieldDataR1HR1EM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH0__0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+					["VuhDoDCShieldDataR1HM1EM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH0__0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					["VuhDoDCShieldDataR[x]1PM1WM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
-					["heal#showtooltip Frenzied Regeneration\n/stopcasting\n/cast Bear Form\n/cast Frenzied Regeneration\n"] = 121,
+					["VuhDoDCShieldDataR1RM1HR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					["VuhDoDCShieldDataR1HM[x]1WM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					["VuhDoDCShieldNamesNShaÍzýJiYakZarZes[x]CamKreEukOgrRetKítMidNadTheBcoMerArtCavNalLeaShaKríSmo[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x]BeaHat[x][x][x][x][x][x][x][x][x]Dus[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldNamesNCraLoc[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]AmbScoGra[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
 					["VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]\n"] = 122,
 					["VuhDoDCShieldNamesNMor[x]Fig[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
-					["VuhDoDCShieldDataR1RM1HR[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+					["heal#showtooltip Frenzied Regeneration\n/stopcasting\n/cast Bear Form\n/cast Frenzied Regeneration\n"] = 121,
 					["VuhDoDCShieldNamesN[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
-					["VuhDoDCShieldDataR1HM1EM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH0__0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+					["VuhDoDCShieldDataR1HR1EM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH0__0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
 					[121] = {
-						["body"] = "#showtooltip Frenzied Regeneration\n/stopcasting\n/cast Bear Form\n/cast Frenzied Regeneration\n",
-						["key"] = "heal#showtooltip Frenzied Regeneration\n/stopcasting\n/cast Bear Form\n/cast Frenzied Regeneration\n",
-						["name"] = "heal",
 						["slot"] = 121,
+						["name"] = "heal",
+						["key"] = "heal#showtooltip Frenzied Regeneration\n/stopcasting\n/cast Bear Form\n/cast Frenzied Regeneration\n",
+						["body"] = "#showtooltip Frenzied Regeneration\n/stopcasting\n/cast Bear Form\n/cast Frenzied Regeneration\n",
 					},
-					["VuhDoDCShieldDataR1WM1EM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
-					["VuhDoDCShieldDataP[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
-					["VuhDoDCShieldDataR1DT1HM1VR1OH1VH2PH[x]2NT2NM2HM3HM3PM3DR3WM3WM4SR4EM4MR4HM4EM5HM5PM5OH5PM6HM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]2DH[x][x][x][x][x][x][x][x][x]0__0__[x][x][x][x][x][x][x]0__[x]0__[x][x][x]0__[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+					["VuhDoDCShieldNamesNMorПре[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
+					["VuhDoDCShieldNamesN[x]ПреFig[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]Amb[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 123,
+					["VuhDoDCShieldDataR1RM1PM[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]1DH[x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x][x]"] = 122,
+				},
+				["Nowarg-Silvermoon"] = {
+				},
+				["Jundzin-Silvermoon"] = {
 				},
 			},
 		},

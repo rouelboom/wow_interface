@@ -2,9 +2,11 @@
 sArena3DB = {
 	["profileKeys"] = {
 		["Ambracer - Silvermoon"] = "Default",
+		["Jundzin - Silvermoon"] = "Default",
 		["Сеныч - Ревущий фьорд"] = "Default",
-		["Nowarg - Silvermoon"] = "Default",
 		["Allower - Silvermoon"] = "Default",
+		["Lumbert - Silvermoon"] = "Default",
+		["Nowarg - Silvermoon"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
