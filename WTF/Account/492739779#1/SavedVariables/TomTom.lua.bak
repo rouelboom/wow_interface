@@ -5,11 +5,14 @@ TomTomDB = {
 		["Jundzin - Silvermoon"] = "Default",
 		["Nowarg - Silvermoon"] = "Default",
 		["Lumbert - Silvermoon"] = "Default",
-		["Allower - Silvermoon"] = "Default",
-		["Сеныч - Ревущий фьорд"] = "Default",
-		["Rendo - Silvermoon"] = "Default",
-		["Awakaner - Silvermoon"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
 		["Толаинс - Страж Смерти"] = "Default",
+		["Allower - Silvermoon"] = "Default",
+		["Rendo - Silvermoon"] = "Default",
+		["Maintainer - Silvermoon"] = "Default",
+		["Awakaner - Silvermoon"] = "Default",
+		["Сеныч - Ревущий фьорд"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -41,11 +44,14 @@ TomTomWaypointsM = {
 		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
 		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
-		["Allower - Silvermoon"] = "Allower - Silvermoon",
-		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
-		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
-		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
+		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
 		["Толаинс - Страж Смерти"] = "Толаинс - Страж Смерти",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
@@ -56,15 +62,21 @@ TomTomWaypointsM = {
 		},
 		["Lumbert - Silvermoon"] = {
 		},
-		["Allower - Silvermoon"] = {
+		["Fasttest - Silvermoon"] = {
 		},
-		["Сеныч - Ревущий фьорд"] = {
+		["Organizer - Silvermoon"] = {
+		},
+		["Толаинс - Страж Смерти"] = {
+		},
+		["Allower - Silvermoon"] = {
 		},
 		["Rendo - Silvermoon"] = {
 		},
+		["Maintainer - Silvermoon"] = {
+		},
 		["Awakaner - Silvermoon"] = {
 		},
-		["Толаинс - Страж Смерти"] = {
+		["Сеныч - Ревущий фьорд"] = {
 		},
 	},
 }

@@ -77,7 +77,7 @@ function ATT:GetUnitByGUID(guid)
     end
 end
 
-function ATT:CheckValidAnchor(unit)
+function ATT:GetAnchorByUnit(unit)
     local validUnits = (isRaidGr() and validRaidUnits) or validPartyUnits
     return anchors[validUnits[unit]]
 end
@@ -209,14 +209,18 @@ end
 
 function ATT:CheckBlizzFrames()
     local compact = C_CVar.GetCVarBool("useCompactPartyFrames")
-    local UseCombinedGroups = CompactRaidFrameManager_GetSetting and
-        CompactRaidFrameManager_GetSetting("KeepGroupsTogether")
+    local UseCombinedGroups = CompactRaidFrameManager_GetSetting and CompactRaidFrameManager_GetSetting("KeepGroupsTogether")
+    local frametype = nil
 
     if isRaidGr() then
-        if not UseCombinedGroups then
-            frametype = "CompactRaidFrame%d"
+        if compact and _G["CompactPartyFrameMember1"] and _G["CompactPartyFrameMember1"]:IsVisible() then
+            frametype = "CompactPartyFrameMember%d"
         else
-            frametype = "CompactRaidGroup1RGMember%d"
+            if not UseCombinedGroups then
+                frametype = "CompactRaidFrame%d"
+            else
+                frametype = "CompactRaidGroup1RGMember%d"
+            end
         end
     else
         if compact then
@@ -240,14 +244,17 @@ end
 function ATT:FindFrames()
     hookedFrames = {}
     local frametype = nil
+    local cunit = nil
 
     if db.attach == 1 and ATT_DropDown1.values[7] then
         frametype = customframes[ATT_DropDown1.values[7]].cframe
+        cunit = customframes[ATT_DropDown1.values[7]].cunitid
     else
         if db.attach == 1 or db.attach == 2 then
             frametype = self:CheckBlizzFrames()
         elseif db.attach > 2 and customframes[db.attach] then
             frametype = customframes[db.attach].cframe
+            cunit = customframes[db.attach].cunitid
         end
     end
 
@@ -261,10 +268,9 @@ function ATT:FindFrames()
             local framename = string.gsub(frametype, "1RG", k)
             for i = 1, 5 do
                 local name = format(framename, i)
-                local unit = _G[name] and
-                    ((string.find(name, "Vd1H") and _G[name].raidid) or (string.find(name, "XPerl") and _G[name].partyid) or (string.find(name, "Cell") and _G[name].unitid) or _G[name].unit)
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
@@ -273,10 +279,9 @@ function ATT:FindFrames()
         if frametype == "CompactPartyFrameMember%d" then
             for i = 1, 5 do
                 local name = "CompactPartyFrameMember" .. i
-                local unit = _G[name] and
-                    ((string.find(name, "Vd1H") and _G[name].raidid) or (string.find(name, "XPerl") and _G[name].partyid) or (string.find(name, "Cell") and _G[name].unitid) or _G[name].unit)
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() and not hookedFrames[UnitGUID(unit)] then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
@@ -284,30 +289,28 @@ function ATT:FindFrames()
             if _G["PlayerFrame"] and _G["PlayerFrame"]:IsShown() then hookedFrames[PlayerGUID] = _G["PlayerFrame"] end
             for i = 1, 4 do
                 local name = "PartyMemberFrame" .. i
-                local unit = _G[name] and _G[name].unit
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() and not hookedFrames[UnitGUID(unit)] then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
         else
             for i = 1, 40 do
                 local name = format(frametype, i)
-                local unit = _G[name] and
-                    ((string.find(name, "Vd1H") and _G[name].raidid) or (string.find(name, "XPerl") and _G[name].partyid) or (string.find(name, "Cell") and _G[name].unitid) or _G[name].unit)
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
         end
     end
     if not hookedFrames[PlayerGUID] or (hookedFrames[PlayerGUID] and not hookedFrames[PlayerGUID]:IsVisible()) then
-        hookedFrames[PlayerGUID] =
-            _G["PlayerFrame"]
+        hookedFrames[PlayerGUID] = _G["PlayerFrame"]
     end
 
-    -- print(frametype)
+    --print(frametype)
 end
 
 function ATT:UpdatePositions()
@@ -319,7 +322,6 @@ function ATT:UpdatePositions()
         local anchorUnit = (isRaidGr() and "raid" .. k) or ((k == 5 and "player") or (k ~= 5 and "party" .. k))
         local anchorGuid = anchorUnit and UnitGUID(anchorUnit)
         local raidFrame = hookedFrames[anchorGuid]
-        -- local raidFrame = hookedFrames[anchor.GUID]
 
         if anchor.GUID == PlayerGUID and db.selfAttach then raidFrame = nil end
         if raidFrame and db.attach and db.attach ~= 0 then
@@ -649,7 +651,7 @@ end
 
 function ATT:UpdateAnchorGUID(unit, guid, newInspect)
     local _, class = UnitClass(unit)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     anchor.GUID = guid
     anchor.class = class
     local icons = anchor.icons
@@ -702,8 +704,8 @@ function ATT:UpdateAnchorGUID(unit, guid, newInspect)
 
                 ATT:ApplyIconTextureBorder(icon)
                 activeGUIDS[icon.GUID] = activeGUIDS[icon.GUID] or {}
-                if activeGUIDS[icon.GUID][ability] then
-                    icon.SetOldTimer(activeGUIDS[icon.GUID][ability].starttime, activeGUIDS[icon.GUID][ability].cooldown)
+                if activeGUIDS[icon.GUID][id] then
+                    icon.SetOldTimer(activeGUIDS[icon.GUID][id].starttime, activeGUIDS[icon.GUID][id].cooldown)
                 else
                     icon.Stop()
                 end
@@ -935,7 +937,7 @@ end
 
 function ATT:UNIT_AURA(unit)
     if not ATTIcons:IsShown() then return end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     if not anchor then return end
     -- Feign Death workaround fix
     local guid = UnitGUID(unit)
@@ -1006,7 +1008,7 @@ end
 
 function ATT:StartCooldown(spellName, unit, SentID, flag)
     if not unit then return end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local guid = anchor.GUID
 
     if not anchor or not guid then return end
@@ -1067,7 +1069,7 @@ function ATT:IconGlow(unit, spellName, event, unitDest, SentID)
     if not unit then
         return
     end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     if not anchor then
         return
     end
@@ -1095,7 +1097,7 @@ function ATT:IconGlow(unit, spellName, event, unitDest, SentID)
 end
 
 function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, _, SentID) ---check anchor
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     if not anchor then return end
     local guid = UnitGUID(unit)
     if (SentID == 5579 or SentID == 23273 or SentID == 23274 or SentID == 23276 or SentID == 23277) and unit and guid then
@@ -1176,7 +1178,7 @@ local function SendPlayerSyncCooldowns(_, elapsed) --on update
 end
 
 function ATT:SyncCooldowns(unit, infos)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local success, data = libS:Deserialize(infos)
 
     if anchor and success and data then
@@ -1658,7 +1660,7 @@ function ATT:CreateOptions()
     iconAlpha:SetPoint("LEFT", iconRows, "RIGHT", 15, 0)
 
     local raidGroupSize = panel:MakeSlider('name', 'Raid Anchors', 'description',
-        'Adjust number of anchors to show when in a raid group\n', 'minText', 'Hide', 'maxText', '40', 'minValue', 0,
+        'Adjust number of anchors when in a raid group\n', 'minText', 'Hide', 'maxText', '40', 'minValue', 0,
         'maxValue', 40, 'step', 1, 'default', 0, 'current', tonumber(db.raidGroupSize) or 5,
         'getCurrent', function()
         return tonumber(db.raidGroupSize) or 5
@@ -1829,7 +1831,7 @@ end
 function ATT:CreateOptionFrame()
     local panel = self.panel
 
-    local extraoptions = CreatePopUpFrame(panel, "Extra Options")
+    local extraoptions = CreatePopUpFrame(panel, "Options")
 
     local bgMode = panel:MakeToggle('name', 'Battleground Mode', 'description',
         'Show only trinkets and racials\ninside Battlegrounds', 'extra', extraoptions, 'default', false, 'getFunc',
@@ -1858,7 +1860,7 @@ function ATT:CreateOptionFrame()
     local syncInfo = extraoptions:CreateFontString(nil, nil, "GameFontNormalSmall")
     syncInfo:SetWidth(250)
     syncInfo:SetText(
-        "- Sync only works for players with ATT and Sync Cooldowns option enabled\n- Sync will accurately update all cooldowns for spells with a base cooldown higher than 15 seconds\n- Sync is mostly usefull for spells that can not be accurately tracked using internal logic")
+        "- Sync is active only for group members with ATT and Sync Cooldowns option enabled\n- Sync is usefull for spells that can not be accurately tracked using internal logic")
     syncInfo:SetJustifyH("LEFT")
     syncInfo:SetPoint("TOPLEFT", cooldownsSync, "TOPLEFT", 0, -35)
 

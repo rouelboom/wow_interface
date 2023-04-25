@@ -3,8 +3,7 @@ TalentTreeTweaksDB = {
 	["modules"] = {
 	},
 	["moduleDb"] = {
-		["ScaleTalentFrame"] = {
-			["scale"] = 0.7000000000000002,
+		["ExportInspectedBuild"] = {
 		},
 		["DebugNodeInfo"] = {
 			["slashDump"] = false,
@@ -14,7 +13,8 @@ TalentTreeTweaksDB = {
 		},
 		["RespecButtons"] = {
 		},
-		["ExportInspectedBuild"] = {
+		["ScaleTalentFrame"] = {
+			["scale"] = 0.7000000000000002,
 		},
 		["SearchForIds"] = {
 		},

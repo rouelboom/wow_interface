@@ -26,12 +26,25 @@ VER 3 000000000000000D "cyclone" "134400"
 #showtooltip
 /cast [@focus] Cyclone
 END
+VER 3 0000000000000010 "eggs" "134400"
+#showtooltip Brightly Colored Egg
+/use Brightly Colored Egg
+END
 VER 3 000000000000000C "focus" "135881"
 /focus
 END
 VER 3 000000000000000E "kick" "134400"
 #showtooltip
 /cast [@focus] Skull Bash
+END
+VER 3 000000000000000F "owl" "134400"
+#showtooltip incarnation: Chosen of Elune 
+/cast saltwater potion
+/cast [@cursor] incarnation: Chosen of elune
+/cast Fire-Eater's Vial
+/cast nature's vigil
+/cast incarnation: Chosen of Elune
+/use 13
 END
 VER 3 000000000000000A "rej" "134914"
 #showtooltip 

@@ -50,7 +50,7 @@ local LDB = LibStub("LibDataBroker-1.1"):NewDataObject("MythicDungeonTools", {
     elseif (buttonPressed == 'MiddleButton') then
       MDT:HideMinimapButton()
     else
-      MDT:ShowInterface()
+      MDT:Async(function() MDT:ShowInterfaceInternal() end,"showInterface")
     end
   end,
   OnTooltipShow = function(tooltip)
@@ -84,9 +84,6 @@ function SlashCmdList.MYTHICDUNGEONTOOLS(cmd, editbox)
   elseif rqst == "hardreset" then
     local prompt = L["hardResetPrompt"]
     local func = function()
-      if not framesInitialized then
-        initFrames()
-      end
       MDT:OpenConfirmationFrame(450, 150, L["hardResetPromptTitle"], L["Delete"], prompt, MDT.HardReset)
     end
     local co = coroutine.create(func)
@@ -98,7 +95,7 @@ function SlashCmdList.MYTHICDUNGEONTOOLS(cmd, editbox)
       MDT:HideMinimapButton()
     end
   else
-    MDT:ShowInterface()
+    MDT:Async(function() MDT:ShowInterfaceInternal() end,"showInterface")
   end
 end
 
@@ -253,7 +250,7 @@ do
       C_MythicPlus.RequestCurrentAffixes()
       C_MythicPlus.RequestMapInfo()
       C_MythicPlus.RequestRewards()
-      if db.loadOnStartUp then MDT:ShowInterface(true) end
+      if db.loadOnStartUp then MDT:Async(function() MDT:ShowInterfaceInternal(true) end,"showInterface") end
     end)
     eventFrame:UnregisterEvent("PLAYER_ENTERING_WORLD")
   end
@@ -385,32 +382,32 @@ function MDT:GetDB()
 end
 
 function MDT:ShowInterface(force)
+  MDT:Async(function() MDT:ShowInterfaceInternal(force) end,"showInterface")
+end
+
+function MDT:ShowInterfaceInternal(force)
   if self:CheckAddonConflicts() then
     self.ShowConflictFrame()
     return
   end
-  local func = function()
-    if not framesInitialized then initFrames() end
-    if not framesInitialized then return end
-    if self.main_frame:IsShown() and not force then
-      MDT:HideInterface()
-    else
-      self.main_frame:Show()
-      self.main_frame.HelpButton:Show()
-      self:CheckCurrentZone()
-      --edge case if user closed MDT window while in the process of dragging a corrupted blip
-      if self.draggedBlip then
-        if MDT.liveSessionActive then
-          MDT:LiveSession_SendCorruptedPositions(MDT:GetRiftOffsets())
-        end
-        self:UpdateMap()
-        self.draggedBlip = nil
+  if not framesInitialized then initFrames() end
+  if not framesInitialized then return end
+  if self.main_frame:IsShown() and not force then
+    MDT:HideInterface()
+  else
+    self.main_frame:Show()
+    self.main_frame.HelpButton:Show()
+    self:CheckCurrentZone()
+    --edge case if user closed MDT window while in the process of dragging a corrupted blip
+    if self.draggedBlip then
+      if MDT.liveSessionActive then
+        MDT:LiveSession_SendCorruptedPositions(MDT:GetRiftOffsets())
       end
-      MDT:UpdateBottomText()
+      self:UpdateMap()
+      self.draggedBlip = nil
     end
+    MDT:UpdateBottomText()
   end
-  local co = coroutine.create(func)
-  MDT.coHandler:AddAction("showInterface",co)
 end
 
 function MDT:HideInterface()
@@ -2559,19 +2556,23 @@ function MDT:GetTileFormat(dungeonIdx, sublevel)
 end
 
 function MDT:UpdateMap(ignoreSetSelection, ignoreReloadPullButtons, ignoreUpdateProgressBar)
+  if not framesInitialized then coroutine.yield() end
   local mapName
   local frame = MDT.main_frame
   mapName = MDT.dungeonMaps[db.currentDungeonIdx][0]
   MDT:EnsureDBTables()
+  if not framesInitialized then coroutine.yield() end
   local preset = MDT:GetCurrentPreset()
   if preset.difficulty then
     db.currentDifficulty = preset.difficulty
     frame.sidePanel.DifficultySlider:SetValue(db.currentDifficulty)
     frame.sidePanel.difficultyWarning:Toggle(db.currentDifficulty)
   end
+  if not framesInitialized then coroutine.yield() end
   local fileName = MDT.dungeonMaps[db.currentDungeonIdx][preset.value.currentSublevel]
   local path = "Interface\\WorldMap\\" .. mapName .. "\\"
   local tileFormat = MDT:GetTileFormat(db.currentDungeonIdx, preset.value.currentSublevel)
+  if not framesInitialized then coroutine.yield() end
   for i = 1, 12 do
     if tileFormat == 4 then
       local texName = path .. fileName .. i
@@ -2585,6 +2586,7 @@ function MDT:UpdateMap(ignoreSetSelection, ignoreReloadPullButtons, ignoreUpdate
       end
     end
   end
+  if not framesInitialized then coroutine.yield() end
   for i = 1, 10 do
     for j = 1, 15 do
       if tileFormat == 15 then
@@ -2596,14 +2598,20 @@ function MDT:UpdateMap(ignoreSetSelection, ignoreReloadPullButtons, ignoreUpdate
       end
     end
   end
+  if not framesInitialized then coroutine.yield() end
   MDT:UpdateDungeonEnemies()
+  if not framesInitialized then coroutine.yield() end
   MDT:DungeonEnemies_UpdateTeeming()
+  if not framesInitialized then coroutine.yield() end
   MDT:DungeonEnemies_UpdateSeasonalAffix()
+  if not framesInitialized then coroutine.yield() end
   MDT:DungeonEnemies_UpdateInspiring()
+  if not framesInitialized then coroutine.yield() end
 
   if not ignoreReloadPullButtons then
     MDT:ReloadPullButtons()
   end
+  if not framesInitialized then coroutine.yield() end
   --handle delete button disable/enable
   local presetCount = 0
   for k, v in pairs(db.presets[db.currentDungeonIdx]) do
@@ -2617,6 +2625,7 @@ function MDT:UpdateMap(ignoreSetSelection, ignoreReloadPullButtons, ignoreUpdate
     MDT.main_frame.sidePanelDeleteButton:SetDisabled(false)
     MDT.main_frame.sidePanelDeleteButton.text:SetTextColor(1, 0.8196, 0)
   end
+  if not framesInitialized then coroutine.yield() end
   --live mode
   local livePreset = MDT:GetCurrentLivePreset()
   if MDT.liveSessionActive and preset ~= livePreset then
@@ -2627,17 +2636,25 @@ function MDT:UpdateMap(ignoreSetSelection, ignoreReloadPullButtons, ignoreUpdate
     MDT.main_frame.setLivePresetButton:Hide()
   end
   MDT:UpdatePresetDropdownTextColor()
+  if not framesInitialized then coroutine.yield() end
 
   if not ignoreSetSelection then MDT:SetSelectionToPull(preset.value.currentPull) end
   MDT:UpdateDungeonDropDown()
+  if not framesInitialized then coroutine.yield() end
   --frame.sidePanel.affixDropdown:SetAffixWeek(MDT:GetCurrentPreset().week,ignoreReloadPullButtons,ignoreUpdateProgressBar)
   frame.sidePanel.affixDropdown:SetValue(MDT:GetCurrentPreset().week)
   MDT:ToggleFreeholdSelector(db.currentDungeonIdx == 16)
+  if not framesInitialized then coroutine.yield() end
   MDT:ToggleBoralusSelector(db.currentDungeonIdx == 19)
+  if not framesInitialized then coroutine.yield() end
   MDT:DisplayMDISelector()
+  if not framesInitialized then coroutine.yield() end
   MDT:DrawAllPresetObjects()
+  if not framesInitialized then coroutine.yield() end
   MDT:KillAllAnimatedLines()
+  if not framesInitialized then coroutine.yield() end
   MDT:DrawAllAnimatedLines()
+  if not framesInitialized then coroutine.yield() end
 end
 
 ---Updates the map to the specified dungeon
@@ -3410,7 +3427,7 @@ function MDT:MakePullSelectionButtons(frame)
     Mixin(frame.PullButtonScrollGroup.frame, BackdropTemplateMixin)
   end
   frame.PullButtonScrollGroup.frame:SetBackdropColor(1, 1, 1, 0)
-  frame.PullButtonScrollGroup.frame:Show()
+  frame.PullButtonScrollGroup.frame:Hide()
 
   self:FixAceGUIShowHide(frame.PullButtonScrollGroup)
 
@@ -4052,10 +4069,20 @@ end
 
 ---Creates a generic dialog that pops up when a user wants needs confirmation for an action
 function MDT:OpenConfirmationFrame(width, height, title, buttonText, prompt, callback, buttonText2, callback2)
-  local f = MDT.main_frame.ConfirmationFrame
-  if not f then
-    MDT.main_frame.ConfirmationFrame = AceGUI:Create("Frame")
+  local f
+  if MDT.main_frame then
     f = MDT.main_frame.ConfirmationFrame
+  else
+    f = MDT.tempConfirmationFrame
+  end
+  if not f then
+    if MDT.main_frame then
+      MDT.main_frame.ConfirmationFrame = AceGUI:Create("Frame")
+      f = MDT.main_frame.ConfirmationFrame
+    else
+      MDT.tempConfirmationFrame = AceGUI:Create("Frame")
+      f = MDT.tempConfirmationFrame
+    end
     f:EnableResize(false)
     f:SetLayout("Flow")
     f:SetCallback("OnClose", function(widget)
@@ -4074,7 +4101,7 @@ function MDT:OpenConfirmationFrame(width, height, title, buttonText, prompt, cal
     f.CancelButton:SetText(L["Cancel"])
     f.CancelButton:SetWidth(100)
     f.CancelButton:SetCallback("OnClick", function()
-      MDT:HideAllDialogs()
+      if MDT.main_frame then MDT:HideAllDialogs() else f:Hide() end
     end)
     f:AddChild(f.CancelButton)
   end
@@ -4098,10 +4125,10 @@ function MDT:OpenConfirmationFrame(width, height, title, buttonText, prompt, cal
     end)
   else
     f.CancelButton:SetCallback("OnClick", function()
-      MDT:HideAllDialogs()
+      if MDT.main_frame then MDT:HideAllDialogs() else f:Hide() end
     end)
   end
-  MDT:HideAllDialogs()
+  if MDT.main_frame then MDT:HideAllDialogs() end
   f:ClearAllPoints()
   f:SetPoint("CENTER", MDT.main_frame, "CENTER", 0, 50)
   f.label:SetText(prompt)
@@ -4704,6 +4731,11 @@ function MDT:CreateCoroutineHandler()
   MDT.coHandler = coHandler
 end
 
+function MDT:Async(func,name)
+  local co = coroutine.create(func)
+  MDT.coHandler:AddAction(name,co)
+end
+
 MDT:CreateCoroutineHandler()
 
 function initFrames()
@@ -4713,7 +4745,16 @@ function initFrames()
     end
   end
 
+  local initSpinner = CreateFrame("Button", "MDTInitSpinner", UIParent,"LoadingSpinnerTemplate")
+  initSpinner.BackgroundFrame.Background:SetVertexColor(0,1,0,1)
+  initSpinner.AnimFrame.Circle:SetVertexColor(0,1,0,1)
+  initSpinner:SetPoint("CENTER", UIParent, "CENTER",0,150)
+  initSpinner:SetSize(60, 60)
+  initSpinner:Show()
+  initSpinner.Anim:Play()
+
   local main_frame = CreateFrame("frame", "MDTFrame", UIParent)
+  main_frame:Hide()
   tinsert(UISpecialFrames, "MDTFrame")
 
   --cache dungeon data to not lose data during reloads
@@ -4921,6 +4962,7 @@ function initFrames()
   coroutine.yield()
   if db.toolbarExpanded then
     main_frame.toolbar.toggleButton:Click()
+    main_frame.toolbar.widgetGroup.frame:Hide()
   end
 
   --ping
@@ -4943,7 +4985,6 @@ function initFrames()
   coroutine.yield()
   MDT:UpdateToDungeon(db.currentDungeonIdx)
   coroutine.yield()
-  main_frame:Hide()
 
   --Maximize if needed
   if db.maximized then MDT:Maximize() end
@@ -4953,4 +4994,6 @@ function initFrames()
   end
 
   framesInitialized = true
+  initSpinner:Hide()
+  initSpinner.Anim:Stop()
 end

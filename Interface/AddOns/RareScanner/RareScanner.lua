@@ -372,6 +372,8 @@ function scanner_button:DetectedNewVignette(self, vignetteInfo, isNavigating)
 	
 	--RSLogger:PrintDebugMessage(string.format("Vignette ATLAS [%s]", vignetteInfo.atlasName))
 		
+	local mapID = RSGeneralDB.GetBestMapForUnit(entityID, vignetteInfo.atlasName)
+	
 	-- Overrides name if Torghast vignette
 	if (vignetteInfo.type and vignetteInfo.type == Enum.VignetteType.Torghast) then
 		local npcName = RSNpcDB.GetNpcName(entityID)
@@ -383,6 +385,13 @@ function scanner_button:DetectedNewVignette(self, vignetteInfo, isNavigating)
 	-- Check if it is an event to summon another NPC. In that case display NPC information instead
 	if (RSConstants.NPCS_WITH_PRE_EVENT[entityID]) then
 		local rareNpcID = RSConstants.NPCS_WITH_PRE_EVENT[entityID]
+		RSGeneralDB.RemoveAlreadyFoundEntity(entityID)
+		vignetteInfo.name = RSNpcDB.GetNpcName(rareNpcID)
+		vignetteInfo.atlasName = RSConstants.NPC_VIGNETTE
+		entityID = rareNpcID
+		vignetteInfo.preEvent = true
+	elseif (entityID == RSConstants.FORBIDDEN_REACH_ANCESTRAL_SPIRIT and RSNpcDB.GetNpcId(vignetteInfo.name, mapID)) then
+		local rareNpcID = RSNpcDB.GetNpcId(vignetteInfo.name, mapID)
 		RSGeneralDB.RemoveAlreadyFoundEntity(entityID)
 		vignetteInfo.name = RSNpcDB.GetNpcName(rareNpcID)
 		vignetteInfo.atlasName = RSConstants.NPC_VIGNETTE
@@ -415,8 +424,6 @@ function scanner_button:DetectedNewVignette(self, vignetteInfo, isNavigating)
 		--RSLogger:PrintDebugMessage(string.format("La entidad [%s] se ignora porque se ha avisado de esta hace menos de %s minutos", entityID, RSConfigDB.GetRescanTimer()))
 		return
 	end
-
-	local mapID = C_Map.GetBestMapForUnit("player")
 	
 	-- In Dragonflight there are icons in the continent map, ignore them
 	if (mapID and mapID == RSConstants.DRAGON_ISLES) then
@@ -842,6 +849,9 @@ function scanner_button:ShowButton()
 			self.PreviousButton:Hide()
 		end
 	end
+	
+	-- In case it wasn't possible to extract the mapID
+	local mapID = self.mapID and self.mapID or ""	
 
 	-- Show button, model and loot panel
 	if (RSConstants.IsNpcAtlas(self.atlasName)) then
@@ -852,10 +862,10 @@ function scanner_button:ShowButton()
 			macrotext = string.format("%s\n/tm %s", macrotext, RSConfigDB.GetMarkerOnTarget())
 		end
 
-		macrotext = string.format("%s\n/rarescanner %s;%s;%s;%s;%s",macrotext, RSConstants.CMD_TOMTOM_WAYPOINT, self.mapID, self.x, self.y, self.name)
+		macrotext = string.format("%s\n/rarescanner %s;%s;%s;%s;%s",macrotext, RSConstants.CMD_TOMTOM_WAYPOINT, mapID, self.x, self.y, self.name)
 		
 		if (RSConfigDB.IsShowingAnimationForNpcs() and RSConfigDB.GetAnimationForNpcs() ~= RSConstants.MAP_ANIMATIONS_ON_FOUND) then
-			macrotext = string.format("%s\n/rarescanner %s;%s",macrotext, RSConstants.CMD_RECENTLY_SEEN, self.npcID, self.mapID, self.x, self.y)
+			macrotext = string.format("%s\n/rarescanner %s;%s",macrotext, RSConstants.CMD_RECENTLY_SEEN, self.npcID, mapID, self.x, self.y)
 		end
 		self:SetAttribute("macrotext", macrotext)
 
@@ -869,11 +879,11 @@ function scanner_button:ShowButton()
 	else
 		self.Description_text:SetText(AL["NOT_TARGETEABLE"])
 		
-		local macrotext = string.format("\n/rarescanner %s;%s;%s;%s;%s", RSConstants.CMD_TOMTOM_WAYPOINT, self.mapID, self.x, self.y, self.name)
+		local macrotext = string.format("\n/rarescanner %s;%s;%s;%s;%s", RSConstants.CMD_TOMTOM_WAYPOINT, mapID, self.x, self.y, self.name)
 		
 		if ((RSConstants.IsContainerAtlas(self.atlasName) and RSConfigDB.IsShowingAnimationForContainers() and RSConfigDB.GetAnimationForContainers() ~= RSConstants.MAP_ANIMATIONS_ON_FOUND) or
 				(RSConstants.IsEventAtlas(self.atlasName) and RSConfigDB.IsShowingAnimationForEvents() and RSConfigDB.GetAnimationForEvents() ~= RSConstants.MAP_ANIMATIONS_ON_FOUND)) then
-			macrotext = string.format("%s\n/rarescanner %s;%s;%s;%s;%s",macrotext, RSConstants.CMD_RECENTLY_SEEN, self.npcID, self.mapID, self.x, self.y)
+			macrotext = string.format("%s\n/rarescanner %s;%s;%s;%s;%s",macrotext, RSConstants.CMD_RECENTLY_SEEN, self.npcID, mapID, self.x, self.y)
 		end
 		
 		self:SetAttribute("macrotext", macrotext)
@@ -1344,6 +1354,9 @@ local function UpdateRareNamesDB(currentDbVersion)
 			for preEntityID, _ in pairs (RSConstants.CONTAINERS_WITH_PRE_EVENT) do
 				RSGeneralDB.RemoveAlreadyFoundEntity(preEntityID)
 			end
+			
+			-- Remove ancestral spirit
+			RSGeneralDB.RemoveAlreadyFoundEntity(RSConstants.FORBIDDEN_REACH_ANCESTRAL_SPIRIT)
 			
 			-- Remove ignored entities
 			for _, entityID in ipairs (RSConstants.IGNORED_VIGNETTES) do

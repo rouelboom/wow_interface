@@ -98,7 +98,7 @@ function ATT:GetUnitByGUID(guid)
     end
 end
 
-function ATT:CheckValidAnchor(unit)
+function ATT:GetAnchorByUnit(unit)
     local validUnits = (isRaidGr() and validRaidUnits) or validPartyUnits
     return anchors[validUnits[unit]]
 end
@@ -257,10 +257,14 @@ function ATT:CheckBlizzFrames()
     local frametype = nil
 
     if isRaidGr() then
-        if UseCombinedGroups then
-            frametype = "CompactRaidFrame%d"
+        if compact and _G["CompactPartyFrameMember1"] and _G["CompactPartyFrameMember1"]:IsVisible() then
+            frametype = "CompactPartyFrameMember%d"
         else
-            frametype = "CompactRaidGroup1RGMember%d"
+            if UseCombinedGroups then
+                frametype = "CompactRaidFrame%d"
+            else
+                frametype = "CompactRaidGroup1RGMember%d"
+            end
         end
     else
         if compact then
@@ -284,14 +288,17 @@ end
 function ATT:FindFrames()
     hookedFrames = {}
     local frametype = nil
+    local cunit = nil
 
     if db.attach == 1 and ATT_DropDown1.values[7] then
         frametype = customframes[ATT_DropDown1.values[7]].cframe
+        cunit = customframes[ATT_DropDown1.values[7]].cunitid
     else
         if db.attach == 1 or db.attach == 2 then
             frametype = self:CheckBlizzFrames()
         elseif db.attach > 2 and customframes[db.attach] then
             frametype = customframes[db.attach].cframe
+            cunit = customframes[db.attach].cunitid
         end
     end
 
@@ -305,12 +312,9 @@ function ATT:FindFrames()
             local framename = string.gsub(frametype, "1RG", k)
             for i = 1, 5 do
                 local name = format(framename, i)
-                local unit = _G[name] and
-                    (
-                    (string.find(name, "Vd1H") and _G[name].raidid) or (string.find(name, "XPerl") and _G[name].partyid)
-                    or (string.find(name, "Cell") and _G[name].unitid) or _G[name].unit)
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
@@ -319,12 +323,9 @@ function ATT:FindFrames()
         if frametype == "CompactPartyFrameMember%d" then
             for i = 1, 5 do
                 local name = "CompactPartyFrameMember" .. i
-                local unit = _G[name] and
-                    (
-                    (string.find(name, "Vd1H") and _G[name].raidid) or (string.find(name, "XPerl") and _G[name].partyid)
-                    or (string.find(name, "Cell") and _G[name].unitid) or _G[name].unit)
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
@@ -339,20 +340,16 @@ function ATT:FindFrames()
         else
             for i = 1, 40 do
                 local name = format(frametype, i)
-                local unit = _G[name] and
-                    (
-                    (string.find(name, "Vd1H") and _G[name].raidid) or (string.find(name, "XPerl") and _G[name].partyid)
-                    or (string.find(name, "Cell") and _G[name].unitid) or _G[name].unit)
                 local frame = _G[name]
-                if frame and unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
+                local unit = frame and (cunit and frame[cunit] or frame['unit'])
+                if unit and UnitIsPlayer(unit) and not frame:IsForbidden() and frame:IsShown() then
                     hookedFrames[UnitGUID(unit)] = frame
                 end
             end
         end
     end
     if not hookedFrames[PlayerGUID] or (hookedFrames[PlayerGUID] and not hookedFrames[PlayerGUID]:IsVisible()) then
-        hookedFrames
-        [PlayerGUID] = _G["PlayerFrame"]
+        hookedFrames[PlayerGUID] = _G["PlayerFrame"]
     end
 
     --print(frametype)
@@ -536,8 +533,8 @@ local function CreateIcon(anchor)
                 local playername = select(6, GetPlayerInfoByGUID(icon.GUID))
                 if playername then
                     UIErrorsFrame:AddMessage("|T" ..
-                    icon.texture:GetTexture() ..
-                    ":18|t |cffFF4500" .. icon.ability .. "|r  - used by ->>  |cffFF4500" .. playername .. "|r");
+                        icon.texture:GetTexture() ..
+                        ":18|t |cffFF4500" .. icon.ability .. "|r  - used by ->>  |cffFF4500" .. playername .. "|r");
                 end
             end
         end
@@ -571,7 +568,8 @@ local function CreateIcon(anchor)
             icon.texture:SetVertexColor(1, 1, 1)
             CooldownFrame_Set(cd, starttime, cooldown, true, false, rate)
             if icon.maxcharges then
-                local chargesleft = activeGUIDS[icon.GUID] and activeGUIDS[icon.GUID][icon.abilityID] and activeGUIDS[icon.GUID][icon.abilityID].chargeleft
+                local chargesleft = activeGUIDS[icon.GUID] and activeGUIDS[icon.GUID][icon.abilityID] and
+                    activeGUIDS[icon.GUID][icon.abilityID].chargeleft
                 icon.chargesText:SetText(chargesleft or icon.maxcharges)
                 cd:SetHideCountdownNumbers(true)
                 cd:SetDrawEdge(true)
@@ -710,7 +708,7 @@ function ATT:ApplyIconTextureBorder(icon)
 end
 
 function ATT:UpdateAnchorGUID(unit, guid, specInspect)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local _, class = UnitClass(unit)
     anchor.GUID = guid
     anchor.class = class
@@ -736,8 +734,8 @@ function ATT:UpdateAnchorGUID(unit, guid, specInspect)
 
         for k = 1, 3 do
             local _, _, _, _, _, spellID = GetPvpTalentInfoByID((
-            isInspect and GetInspectSelectedPvpTalent(unit, k) or
-            C_SpecializationInfo.GetAllSelectedPvpTalentIDs()[k]) or 0)
+                isInspect and GetInspectSelectedPvpTalent(unit, k) or
+                C_SpecializationInfo.GetAllSelectedPvpTalentIDs()[k]) or 0)
             if ATTAnchor.isPVP and spellID then
                 dbInspect[guid][spellID] = 1
             end
@@ -1109,7 +1107,7 @@ end
 
 function ATT:UNIT_AURA(unit, unitAuraUpdateInfo)
     if not ATTIcons:IsShown() then return end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
 
     if (not anchor and unit ~= "player") or not unitAuraUpdateInfo then
         return
@@ -1213,7 +1211,7 @@ function ATT:UpdateGroup()
 end
 
 function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, _, spellID)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
 
     if spellID == 384255 and unit ~= "player" and anchor then
         local guid = UnitGUID(unit)
@@ -1233,7 +1231,7 @@ function ATT:FindAbilityByName(abilities, name)
 end
 
 function ATT:StartCooldown(unit, SentID, flag)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
 
     if not unit or not anchor then
         return
@@ -1326,7 +1324,7 @@ function ATT:TrackCooldown(anchor, SentID, unit, guid, flag)
 end
 
 function ATT:RegisterBuffs(unit, event, dest, SentID)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     if not anchor or not anchor.GUID or not dbInspect[anchor.GUID] then
         return
     end
@@ -1418,7 +1416,7 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
     if not unit then
         return
     end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local guid = anchor.GUID
     if not anchor or not guid or not dbInspect[guid] then
         return
@@ -1517,7 +1515,7 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
             [184364] = true,
             [118038] = true,
             [871] = true,
-            [184662] = true,
+         --   [184662] = true,
             [498] = true,
             [31850] = true,
             [109304] = true,
@@ -1530,7 +1528,10 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
             [115203] = true,
             [22812] = true,
             [204021] = true,
-            [198589] = true
+            [198589] = true,
+            [403876] = true,
+            [243435] = true, --?
+            [363916] = true,
         }
         for k, icon in ipairs(anchor.icons) do
             if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and cdList[icon.abilityID] then
@@ -1617,7 +1618,7 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
     end
 
     if (class == "DRUID") and (event == "SPELL_HEAL") and dbInspect[guid][392162] and SentID == 157982 and
-        unit == unitDest then --dreamstate SPELL_HEAL
+        unit == unitDest then                                                                  --dreamstate SPELL_HEAL
         for k, icon in ipairs(anchor.icons) do
             if icon.inUse and icon.active and icon.abilityID ~= 740 and not icon.excluded then --excluded
                 local starttime = icon.starttime - 4
@@ -1651,7 +1652,7 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
         local etfSpells = { [185358] = true,[342049] = true,[19434] = true,[2643] = true, }
 
         local powerCost = dbReducePowerSpell[SentID]
-        if SentID == 342049 then powerCost = 70 end -- bug chim
+        if SentID == 342049 then powerCost = 70 end                                           -- bug chim
         if dbInspect[guid][321293] and (SentID == 185358) then powerCost = powerCost - 20 end --bug or SentID == 342049 chim
         if anchor.isTrueshot and dbInspect[guid][389449] and etfSpells[SentID] then
             powerCost = dbInspect[guid][389449]
@@ -1745,12 +1746,12 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
 
     if (class == "PALADIN") and (event == "SPELL_CAST_SUCCESS") and dbInspect[guid][234299] and
         dbReducePowerSpell[SentID] then --hoj --blizz bugged
-        local isFree = AuraUtil.FindAuraByName(GetSpellInfo(223817), unit) 
+        local isFree = AuraUtil.FindAuraByName(GetSpellInfo(223817), unit)
         local isfreebug = (AuraUtil.FindAuraByName(GetSpellInfo(326732), unit) and SentID == 53385)
-       -- local foj = AuraUtil.FindAuraByName(GetSpellInfo(203316), unit)
+        -- local foj = AuraUtil.FindAuraByName(GetSpellInfo(203316), unit)
         local reducePoints = dbInspect[guid][406545] and dbReducePowerSpell[SentID] + 1 or dbReducePowerSpell[SentID]
         local hasReduce = dbInspect[guid][234299] * reducePoints
-        
+
         if isfreebug then hasReduce = 1 end --bug
         --[[
         local haveAura = auras[guid]
@@ -1771,13 +1772,13 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
 
     if (class == "PALADIN") and (event == "SPELL_CAST_SUCCESS") and dbInspect[guid][392928] and
         dbReducePowerSpell[SentID] then --lay on hands --tirion
-           -- local isFree = AuraUtil.FindAuraByName(GetSpellInfo(223817), unit)
-           local isFree = false --bugged? 
-            local isfreebug = (AuraUtil.FindAuraByName(GetSpellInfo(326732), unit) and SentID == 53385)
-           -- local foj = AuraUtil.FindAuraByName(GetSpellInfo(203316), unit)
-            local hasReduce = dbReducePowerSpell[SentID]
-    
-            if isfreebug then hasReduce = 1  end --bug
+        -- local isFree = AuraUtil.FindAuraByName(GetSpellInfo(223817), unit)
+        local isFree = false            --bugged?
+        local isfreebug = (AuraUtil.FindAuraByName(GetSpellInfo(326732), unit) and SentID == 53385)
+        -- local foj = AuraUtil.FindAuraByName(GetSpellInfo(203316), unit)
+        local hasReduce = dbReducePowerSpell[SentID]
+
+        if isfreebug then hasReduce = 1 end --bug
 
         for k, icon in ipairs(anchor.icons) do
             if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and icon.abilityID == 633 and
@@ -1790,7 +1791,7 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
 
     if (class == "PALADIN") and (event == "SPELL_CAST_SUCCESS") and spec == 66 and dbInspect[guid][204074] and
         dbReducePowerSpell[SentID] then --[Righteous Protector]
-       local hasReduce = 3
+        local hasReduce = 3
 
         for k, icon in ipairs(anchor.icons) do
             if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and
@@ -1802,18 +1803,18 @@ function ATT:ReduceCD(unit, SentID, event, timer, hit, crit, unitDest)
     end
 
     if (class == "PALADIN") and (event == "SPELL_DAMAGE") and spec == 66 and dbInspect[guid][378279] and
-    SentID == 31935 then --[Gift of the Golden Val'kyr]
-    local isFree = AuraUtil.FindAuraByName(GetSpellInfo(223817), unit)
-   local hasReduce = dbInspect[guid][378279] / 2
+        SentID == 31935 then --[Gift of the Golden Val'kyr]
+        local isFree = AuraUtil.FindAuraByName(GetSpellInfo(223817), unit)
+        local hasReduce = dbInspect[guid][378279] / 2
 
-    for k, icon in ipairs(anchor.icons) do
-        if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and
-            (icon.abilityID == 86659) and not isFree then
-            local starttime = icon.starttime - hasReduce
-            icon.SetTimer(starttime, icon.cooldown, rate)
+        for k, icon in ipairs(anchor.icons) do
+            if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and
+                (icon.abilityID == 86659) and not isFree then
+                local starttime = icon.starttime - hasReduce
+                icon.SetTimer(starttime, icon.cooldown, rate)
+            end
         end
     end
-end
 
     if (class == "PALADIN") and (event == "SPELL_CAST_SUCCESS") and spec == 66 and dbInspect[guid][385422] and
         dbReducePowerSpell[SentID] then --Resolute Defender
@@ -2062,8 +2063,7 @@ end
         end
 
         for k, icon in ipairs(anchor.icons) do
-            if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and hasReduce and
-                cdList[SentID] == icon.abilityID then
+            if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and hasReduce and cdList[SentID] == icon.abilityID then
                 local starttime = icon.starttime - hasReduce
                 icon.SetTimer(starttime, icon.cooldown, rate)
             end
@@ -2072,7 +2072,7 @@ end
 
     if (class == "PRIEST") and spec == 257 and (event == "SPELL_CAST_SUCCESS") and dbInspect[guid][390994] then -- hpriest words [Harmonious Apparatus]
         local cdList = { [204883] = 34861,[33076] = 2050,[14914] = 88625, }
-        local hasReduce = dbInspect[guid][390994] * 2 -- bug? +3
+        local hasReduce = dbInspect[guid][390994] * 2     -- bug? +3
 
         for k, icon in ipairs(anchor.icons) do
             if icon.inUse and icon.active and icon.cooldown > 0 and icon.starttime > 0 and hasReduce and
@@ -2312,7 +2312,7 @@ end
 
 function ATT:RecoveryCD(unit, SentID, event, unitDest)
     if not unit then return end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local guid = anchor.GUID
     if not anchor or not guid or not dbInspect[guid] then
         return
@@ -2437,7 +2437,7 @@ end
 
 function ATT:HasForbearance(unit, event, dest, SentID)
     if not unit then return end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local guid = anchor.GUID
     if not anchor or not guid or not dbInspect[guid] then
         return
@@ -2477,7 +2477,7 @@ function ATT:COMBAT_LOG_EVENT_UNFILTERED()
     if unit and (event == "SPELL_CAST_SUCCESS") then
         self:StartCooldown(unit, SentID, dbAuraRemoved[SentID] and "AuraOn")
         if ATTdbs.ShareCD[SentID] then
-            self:StartCooldown(unit, ATTdbs.ShareCD[SentID],dbAuraRemoved[SentID] and "AuraOn")
+            self:StartCooldown(unit, ATTdbs.ShareCD[SentID], dbAuraRemoved[SentID] and "AuraOn")
         end
         self:ReduceCD(unit, SentID, event, _, _, _, unitDest)
         if (SentID == 204366 or SentID == 329042 or SentID == 235450 or SentID == 235313 or SentID == 11426) then
@@ -2582,7 +2582,7 @@ function ATT:COMBAT_LOG_EVENT_UNFILTERED()
     end
     if unit and ((event == "SPELL_AURA_APPLIED") or (event == "SPELL_AURA_REFRESH") or (event == "SPELL_AURA_REMOVED"))
         and (auraType == "BUFF") then
-       local dest = (unitDest and unitDest) or unit --no use
+        local dest = (unitDest and unitDest) or unit --no use
 
         self:RegisterBuffs(unit, event, dest, SentID)
     end
@@ -2590,7 +2590,7 @@ function ATT:COMBAT_LOG_EVENT_UNFILTERED()
     if unit and ((event == "SPELL_AURA_APPLIED") or (event == "SPELL_AURA_REMOVED")) and (auraType == "BUFF") then
         if db.glow then
             local dest = (unitDest and unitDest) or unit
-            C_Timer.After(0.05, function() self:IconGlow(unit, spellName, event, dest, SentID) end)
+            C_Timer.After(0.04, function() self:IconGlow(unit, spellName, event, dest, SentID) end)
         end
     end
 end
@@ -2599,7 +2599,7 @@ function ATT:IconGlow(unit, spellName, event, unitDest, SentID)
     if not unit then
         return
     end
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     if not anchor then
         return
     end
@@ -2695,7 +2695,7 @@ local function SendPlayerSyncCooldowns(_, elapsed) --on update
 end
 
 function ATT:SyncCooldowns(unit, infos)
-    local anchor = self:CheckValidAnchor(unit)
+    local anchor = self:GetAnchorByUnit(unit)
     local success, data = libS:Deserialize(infos)
 
     if anchor and success and data then
@@ -2708,10 +2708,16 @@ function ATT:SyncCooldowns(unit, infos)
                 if string.format("%.0f", start) ~= string.format("%.0f", icon.starttime) then
                     icon.SetTimer(start, icon.cooldown, spellInfo[2] or 1)
                 end
-                if spellInfo[3] and icon.chargesText:GetText() ~= tostring(spellInfo[3]) then icon.chargesText:SetText(spellInfo[3]) end
+                if spellInfo[3] and icon.chargesText:GetText() ~= tostring(spellInfo[3]) then
+                    icon.chargesText:SetText(
+                        spellInfo[3])
+                end
             elseif icon.inUse and icon.active and icon.starttime and not spellInfo and icon.cooldown > 24 and not icon.excluded and not icon.custom then --TODO
                 local timeleft = icon.starttime + icon.cooldown - cTime
-                if not icon.maxcharges and not ATTdbs.dbReplace[icon.abilityID] and timeleft and timeleft > 2.5 then icon.Stop() end
+                if not icon.maxcharges and not ATTdbs.dbReplace[icon.abilityID] and timeleft and timeleft > 2.5 then
+                    icon
+                        .Stop()
+                end
             end
         end
     end
@@ -2727,7 +2733,7 @@ function ATT:CHAT_MSG_ADDON(prefix, message, dist, sender)
             if infos and tonumber(infos) and tonumber(infos) > tonumber(ATTversion) and not self.VersionChecked then
                 self.VersionChecked = tonumber(infos)
                 print("There is a new version of |cff33ff99Ability Team Tracker|r: |cffFF4500v" ..
-                infos .. "|r - you are currently using: |cffFF4500v" .. ATTversion .. "|r")
+                    infos .. "|r - you are currently using: |cffFF4500v" .. ATTversion .. "|r")
             end
         elseif db.cooldownsSync and msgtype == "sCDS" then
             local unit = self:GetUnitByGUID(guid)
@@ -2847,7 +2853,7 @@ end
 
 function ATT:LoadProfiles()
     local profiles = { "DEFAULT", "TANK", "HEALER", "DAMAGER", "BG", "Extra1", "Extra2" }
-    local oldDB = ATTDB -- getting old main profiles
+    local oldDB = ATTDB  -- getting old main profiles
     oldDB.Profiles = nil -- remove old profiles
 
     if ATTDB["isEnabledSpell"] then
@@ -2989,7 +2995,7 @@ local function ATT_OnLoad(self)
     end
 
     print("|cff33ff99A|rbility |cff33ff99T|ream |cff33ff99T|rracker |cffFF4500v" ..
-    ATTversion .. "|r loaded. Type |cffFF4500/att|r to open options.")
+        ATTversion .. "|r loaded. Type |cffFF4500/att|r to open options.")
 end
 
 function ATT:MergeTable(class, specID, category, isAnchor)
@@ -3186,13 +3192,13 @@ function ATT:CreateOptions()
 
     local attach = panel:MakeDropDown('name', ' Attach to raid frames', 'description', 'Select hook mode behaviour',
         'values', { 0, "Do Not Attach", 1, "Auto attach UI", 2, "Blizzard UI" }, 'default', 0, 'getFunc', function()
-        return db.attach or 0
-    end, 'getCurrent', function()
-        return db.attach or 0
-    end, 'setFunc', function(value)
-        db.attach = tonumber(value);
-        self:ApplyAnchorSettings();
-    end)
+            return db.attach or 0
+        end, 'getCurrent', function()
+            return db.attach or 0
+        end, 'setFunc', function(value)
+            db.attach = tonumber(value);
+            self:ApplyAnchorSettings();
+        end)
     attach:SetPoint("TOPLEFT", panel, "TOPLEFT", 5, -65)
 
     local selfAttach = panel:MakeToggle(
@@ -3202,24 +3208,24 @@ function ATT:CreateOptions()
         'getFunc', function() return db.selfAttach end,
         'getCurrent', function() return db.selfAttach end,
         'setFunc', function(value)
-        db.selfAttach = value;
-        self:ApplyAnchorSettings()
-    end)
+            db.selfAttach = value;
+            self:ApplyAnchorSettings()
+        end)
     selfAttach:SetPoint("TOPLEFT", attach, "TOPLEFT", 15, -42)
 
     local reverseIcons = panel:MakeToggle('name', 'Reverse Icons', 'description', 'Reverse icons growing direction',
         'default', false, 'getFunc', function()
-        return db.reverseIcons
-    end, 'getCurrent', function()
-        return db.reverseIcons
-    end, 'setFunc', function(value)
-        db.reverseIcons = value;
-        self:ApplyAnchorSettings()
-    end)
+            return db.reverseIcons
+        end, 'getCurrent', function()
+            return db.reverseIcons
+        end, 'setFunc', function(value)
+            db.reverseIcons = value;
+            self:ApplyAnchorSettings()
+        end)
     reverseIcons:SetPoint("TOP", panel, "TOP", -110, -45)
 
     local growLeft = panel:MakeToggle('name', 'Anchor Left', 'description', 'Hook anchors left of the frames', 'default'
-        , false, 'getFunc', function()
+    , false, 'getFunc', function()
         return db.growLeft
     end, 'getCurrent', function()
         return db.growLeft
@@ -3231,13 +3237,13 @@ function ATT:CreateOptions()
 
     local growDown = panel:MakeToggle('name', 'Anchor Down', 'description', 'Hook anchors under the frames', 'default',
         false, 'getFunc', function()
-        return db.horizontal
-    end, 'getCurrent', function()
-        return db.horizontal
-    end, 'setFunc', function(value)
-        db.horizontal = value;
-        self:ApplyAnchorSettings();
-    end)
+            return db.horizontal
+        end, 'getCurrent', function()
+            return db.horizontal
+        end, 'setFunc', function(value)
+            db.horizontal = value;
+            self:ApplyAnchorSettings();
+        end)
     growDown:SetPoint("TOP", growLeft, "BOTTOM", 0, -5)
 
     local scale = panel:MakeSlider('name', 'Scale', 'description', 'Adjust the scale of icons', 'minText', 'Min',
@@ -3246,13 +3252,13 @@ function ATT:CreateOptions()
         function()
             return db.scale and tonumber(db.scale * 100) or 100
         end, 'setFunc', function(value)
-        if (tonumber(value) / 100) ~= db.scale then
-            db.scale = tonumber(string.format("%.2f", value)) / 100;
-            ATTIcons:SetScale(db.scale or 1)
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.2f", value))
-    end)
+            if (tonumber(value) / 100) ~= db.scale then
+                db.scale = tonumber(string.format("%.2f", value)) / 100;
+                ATTIcons:SetScale(db.scale or 1)
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.2f", value))
+        end)
     scale:SetPoint("TOPLEFT", attach, "TOPLEFT", 20, -90)
 
     local iconRows = panel:MakeSlider('name', 'Icon Rows', 'description', 'Adjust number of icons per row', 'minText',
@@ -3262,108 +3268,108 @@ function ATT:CreateOptions()
         function()
             return tonumber(db.IconRows) or 1
         end, 'setFunc', function(value)
-        if value ~= db.IconRows then
-            db.IconRows = tonumber(string.format("%.1d", value));
-            self:UpdateIcons();
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.1d", value));
-    end)
+            if value ~= db.IconRows then
+                db.IconRows = tonumber(string.format("%.1d", value));
+                self:UpdateIcons();
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.1d", value));
+        end)
     iconRows:SetPoint("LEFT", scale, "RIGHT", 15, 0)
 
     local iconAlpha = panel:MakeSlider('name', 'Icon Alpha', 'description', 'Adjust icons transparency.', 'minText',
         'Hide', 'maxText', 'Max', 'minValue', 0, 'maxValue', 10, 'step', 1, 'default', 0, 'current',
         db.iconAlpha and tonumber(db.iconAlpha * 10) or 10,
         'getCurrent', function()
-        return db.iconAlpha and tonumber(db.iconAlpha * 10) or 10
-    end, 'setFunc', function(value)
-        if value ~= db.iconAlpha then
-            db.iconAlpha = value / 10;
-            self:UpdateIcons();
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.1d", value));
-    end)
+            return db.iconAlpha and tonumber(db.iconAlpha * 10) or 10
+        end, 'setFunc', function(value)
+            if value ~= db.iconAlpha then
+                db.iconAlpha = value / 10;
+                self:UpdateIcons();
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.1d", value));
+        end)
     iconAlpha:SetPoint("LEFT", iconRows, "RIGHT", 15, 0)
 
     local raidGroupSize = panel:MakeSlider('name', 'Raid Anchors', 'description',
-        'Adjust number of anchors to show when in a raid group\n', 'minText', 'Hide', 'maxText', '40', 'minValue', 0,
+        'Adjust number of anchors to show in a raid group\n', 'minText', 'Hide', 'maxText', '40', 'minValue', 0,
         'maxValue', 40, 'step', 1, 'default', 0, 'current', tonumber(db.raidGroupSize) or 5,
         'getCurrent', function()
-        return tonumber(db.raidGroupSize) or 5
-    end, 'setFunc', function(value)
-        if value ~= db.raidGroupSize then
-            db.raidGroupSize = tonumber(string.format("%.1d", value));
-            self:EnqueueInspect(true)
-            self:UpdateIcons();
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.1d", value));
-    end)
+            return tonumber(db.raidGroupSize) or 5
+        end, 'setFunc', function(value)
+            if value ~= db.raidGroupSize then
+                db.raidGroupSize = tonumber(string.format("%.1d", value));
+                self:EnqueueInspect(true)
+                self:UpdateIcons();
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.1d", value));
+        end)
     raidGroupSize:SetPoint("LEFT", iconAlpha, "RIGHT", 15, 0)
 
     local offsetX = panel:MakeSlider('name', 'Anchor Offset X', 'description', 'Adjust anchor position X', 'minText',
         'Left', 'maxText', 'Right', 'minValue', -200, 'maxValue', 200, 'step', 1, 'default', 0, 'current',
         tonumber(db.offsetX) or 0,
         'getCurrent', function()
-        return tonumber(db.offsetX) or 0
-    end, 'setFunc', function(value)
-        if value ~= db.offsetX then
-            db.offsetX = tonumber(value);
-            self:UpdatePositions()
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(value);
-    end)
+            return tonumber(db.offsetX) or 0
+        end, 'setFunc', function(value)
+            if value ~= db.offsetX then
+                db.offsetX = tonumber(value);
+                self:UpdatePositions()
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(value);
+        end)
     offsetX:SetPoint("TOPLEFT", attach, "TOPLEFT", 20, -150)
 
     local offsetY = panel:MakeSlider('name', 'Anchor Offset Y', 'description', 'Adjust anchor position Y', 'minText',
         'Down', 'maxText', 'Up', 'minValue', -200, 'maxValue', 200, 'step', 1, 'default', 0, 'current',
         tonumber(db.offsetY) or 0,
         'getCurrent', function()
-        return tonumber(db.offsetY) or 0
-    end, 'setFunc', function(value)
-        if value ~= db.offsetY then
-            db.offsetY = tonumber(value);
-            self:UpdatePositions()
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(value);
-    end)
+            return tonumber(db.offsetY) or 0
+        end, 'setFunc', function(value)
+            if value ~= db.offsetY then
+                db.offsetY = tonumber(value);
+                self:UpdatePositions()
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(value);
+        end)
     offsetY:SetPoint("LEFT", offsetX, "RIGHT", 15, 0)
 
     local iconOffsetX = panel:MakeSlider('name', 'Row Spacing', 'description', 'Adjust space between rows', 'minText',
         '0', 'maxText', '100', 'minValue', 0, 'maxValue', 100, 'step', 1, 'default', 5, 'current',
         tonumber(db.iconOffsetX) or 5,
         'getCurrent', function()
-        return tonumber(db.iconOffsetX) or 5
-    end, 'setFunc', function(value)
-        if value ~= db.iconOffsetX then
-            db.iconOffsetX = tonumber(string.format("%.1d", value));
-            self:UpdateIcons();
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.1d", value));
-    end)
+            return tonumber(db.iconOffsetX) or 5
+        end, 'setFunc', function(value)
+            if value ~= db.iconOffsetX then
+                db.iconOffsetX = tonumber(string.format("%.1d", value));
+                self:UpdateIcons();
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.1d", value));
+        end)
     iconOffsetX:SetPoint("LEFT", offsetY, "RIGHT", 15, 0)
 
     local iconOffsetY = panel:MakeSlider('name', 'Icon Spacing', 'description', 'Adjust space between icons', 'minText',
         '0', 'maxText', '100', 'minValue', 0, 'maxValue', 100, 'step', 1, 'default', 2, 'current',
         tonumber(db.iconOffsetY) or 2,
         'getCurrent', function()
-        return tonumber(db.iconOffsetY) or 2
-    end, 'setFunc', function(value)
-        if value ~= db.iconOffsetY then
-            db.iconOffsetY = tonumber(string.format("%.1d", value));
-            self:UpdateIcons();
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.1d", value));
-    end)
+            return tonumber(db.iconOffsetY) or 2
+        end, 'setFunc', function(value)
+            if value ~= db.iconOffsetY then
+                db.iconOffsetY = tonumber(string.format("%.1d", value));
+                self:UpdateIcons();
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.1d", value));
+        end)
     iconOffsetY:SetPoint("LEFT", iconOffsetX, "RIGHT", 15, 0)
 
     local lock = panel:MakeToggle('name', 'Hide Anchors', 'description', 'Hide/Lock anchors', 'default', false, 'getFunc'
-        , function()
+    , function()
         return db.lock
     end, 'getCurrent', function()
         return db.lock
@@ -3375,58 +3381,58 @@ function ATT:CreateOptions()
 
     local glow = panel:MakeToggle('name', 'Glow Icons', 'description',
         'Show Glow animation when\nimportant abilites are active', 'default', true, 'getFunc', function()
-        return db.glow
-    end, 'getCurrent', function()
-        return db.glow
-    end, 'setFunc', function(value)
-        db.glow = value;
-        self:UpdateIcons();
-    end)
+            return db.glow
+        end, 'getCurrent', function()
+            return db.glow
+        end, 'setFunc', function(value)
+            db.glow = value;
+            self:UpdateIcons();
+        end)
     glow:SetPoint("TOP", lock, "BOTTOM", 0, -5)
 
     local showIconBorders = panel:MakeToggle('name', 'Draw Borders', 'description', 'Draw borders around icons',
         'default', true, 'getFunc', function()
-        return db.showIconBorders
-    end, 'getCurrent', function()
-        return db.showIconBorders
-    end, 'setFunc', function(value)
-        db.showIconBorders = value;
-        self:UpdateIcons();
-    end)
+            return db.showIconBorders
+        end, 'getCurrent', function()
+            return db.showIconBorders
+        end, 'setFunc', function(value)
+            db.showIconBorders = value;
+            self:UpdateIcons();
+        end)
     showIconBorders:SetPoint("TOP", glow, "BOTTOM", 0, -5)
 
     local showSelf = panel:MakeToggle('name', 'Show Self', 'description', 'Show your own icons', 'default', false,
         'getFunc', function()
-        return db.showSelf
-    end, 'getCurrent', function()
-        return db.showSelf
-    end, 'setFunc', function(value)
-        db.showSelf = value;
-        self:InspectPlayer()
-        self:ApplyAnchorSettings()
-    end)
+            return db.showSelf
+        end, 'getCurrent', function()
+            return db.showSelf
+        end, 'setFunc', function(value)
+            db.showSelf = value;
+            self:InspectPlayer()
+            self:ApplyAnchorSettings()
+        end)
     showSelf:SetPoint("LEFT", lock, "RIGHT", 130, 0)
 
     local showTooltip = panel:MakeToggle('name', 'Show Tooltip', 'description', 'Show tooltips over icons', 'default',
         false, 'getFunc', function()
-        return db.showTooltip
-    end, 'getCurrent', function()
-        return db.showTooltip
-    end, 'setFunc', function(value)
-        db.showTooltip = value;
-        self:UpdateIcons();
-    end)
+            return db.showTooltip
+        end, 'getCurrent', function()
+            return db.showTooltip
+        end, 'setFunc', function(value)
+            db.showTooltip = value;
+            self:UpdateIcons();
+        end)
     showTooltip:SetPoint("TOP", showSelf, "BOTTOM", 0, -5)
 
     local hidden = panel:MakeToggle('name', 'Hidden Mode', 'description', 'Show icons only after\nthey are on cooldown',
         'default', false, 'getFunc', function()
-        return db.hidden
-    end, 'getCurrent', function()
-        return db.hidden
-    end, 'setFunc', function(value)
-        db.hidden = value;
-        self:UpdateIcons();
-    end)
+            return db.hidden
+        end, 'getCurrent', function()
+            return db.hidden
+        end, 'setFunc', function(value)
+            db.hidden = value;
+            self:UpdateIcons();
+        end)
     hidden:SetPoint("TOP", showTooltip, "BOTTOM", 0, -5)
 
     local cpanel = CreateFrame("Frame", "ATTFrame", panel,
@@ -3457,19 +3463,19 @@ end
 function ATT:CreateOptionFrame()
     local panel = self.panel
 
-    local extraoptions = CreatePopUpFrame(panel, "Extra Options")
+    local extraoptions = CreatePopUpFrame(panel, "Options")
     local dampening = panel:MakeToggle('name', 'Show Dampening', 'description',
         'Show dampening percentage in arena under the remaining time', 'extra', extraoptions, 'default', false,
         'getFunc'
         , function()
-        return db.dampening
-    end, 'getCurrent', function()
-        return db.dampening
-    end, 'setFunc', function(value)
-        db.dampening = value;
-        ATT:ApplyAnchorSettings();
-        ATT:Dampening()
-    end)
+            return db.dampening
+        end, 'getCurrent', function()
+            return db.dampening
+        end, 'setFunc', function(value)
+            db.dampening = value;
+            ATT:ApplyAnchorSettings();
+            ATT:Dampening()
+        end)
     dampening:SetPoint("TOP", extraoptions, "TOP", -100, -40)
 
     local bgMode = panel:MakeToggle('name', 'Battleground Mode', 'description',
@@ -3477,11 +3483,11 @@ function ATT:CreateOptionFrame()
         function()
             return db.bgMode
         end, 'getCurrent', function()
-        return db.bgMode
-    end, 'setFunc', function(value)
-        db.bgMode = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.bgMode
+        end, 'setFunc', function(value)
+            db.bgMode = value;
+            ATT:ApplyAnchorSettings();
+        end)
     bgMode:SetPoint("TOP", dampening, "TOP", 0, -30)
 
     local cooldownsSync = panel:MakeToggle('name', 'Sync Cooldowns', 'description',
@@ -3489,30 +3495,30 @@ function ATT:CreateOptionFrame()
         function()
             return db.cooldownsSync
         end, 'getCurrent', function()
-        return db.cooldownsSync
-    end, 'setFunc', function(value)
-        db.cooldownsSync = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.cooldownsSync
+        end, 'setFunc', function(value)
+            db.cooldownsSync = value;
+            ATT:ApplyAnchorSettings();
+        end)
     cooldownsSync:SetPoint("TOP", bgMode, "TOP", 0, -30)
 
     local syncInfo = extraoptions:CreateFontString(nil, nil, "GameFontNormalSmall")
     syncInfo:SetWidth(250)
     syncInfo:SetText(
-        "- Sync only works for players with ATT and Sync Cooldowns option enabled\n- Sync is mostly usefull for spells that can not be accurately tracked using internal logic")
+        "- Sync is active only for group members with ATT and Sync Cooldowns option enabled\n- Sync is usefull for spells that can not be accurately tracked using internal logic")
     syncInfo:SetJustifyH("LEFT")
     syncInfo:SetPoint("TOPLEFT", cooldownsSync, "TOPLEFT", 0, -35)
 
     local showExtraOptions = panel:MakeButton('name', 'Options', 'description', 'Open Options Tab', 'newsize', false,
         'func', function()
-        if panel.popUP then
-            panel.popUP:Hide()
-            panel.popUP = false
-        else
-            extraoptions:Show()
-            panel.popUP = extraoptions
-        end
-    end)
+            if panel.popUP then
+                panel.popUP:Hide()
+                panel.popUP = false
+            else
+                extraoptions:Show()
+                panel.popUP = extraoptions
+            end
+        end)
     showExtraOptions:SetPoint("TOPLEFT", panel, "TOPLEFT", 360, -555)
 end
 
@@ -3522,72 +3528,72 @@ function ATT:CreateVisibilityFrame()
 
     local arena = panel:MakeToggle('name', 'Show in Arenas', 'description', '', 'extra', visibility, 'default', false,
         'getFunc', function()
-        return db.isEnabledVisibility["arena"]
-    end, 'getCurrent', function()
-        return db.isEnabledVisibility["arena"]
-    end, 'setFunc', function(value)
-        db.isEnabledVisibility["arena"] = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.isEnabledVisibility["arena"]
+        end, 'getCurrent', function()
+            return db.isEnabledVisibility["arena"]
+        end, 'setFunc', function(value)
+            db.isEnabledVisibility["arena"] = value;
+            ATT:ApplyAnchorSettings();
+        end)
     arena:SetPoint("TOP", visibility, "TOP", -110, -40)
 
     local dungeons = panel:MakeToggle('name', 'Show in Dungeons', 'description', '', 'extra', visibility, 'default',
         false, 'getFunc', function()
-        return db.isEnabledVisibility["dungeons"]
-    end, 'getCurrent', function()
-        return db.isEnabledVisibility["dungeons"]
-    end, 'setFunc', function(value)
-        db.isEnabledVisibility["dungeons"] = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.isEnabledVisibility["dungeons"]
+        end, 'getCurrent', function()
+            return db.isEnabledVisibility["dungeons"]
+        end, 'setFunc', function(value)
+            db.isEnabledVisibility["dungeons"] = value;
+            ATT:ApplyAnchorSettings();
+        end)
     dungeons:SetPoint("TOP", arena, "TOP", 0, -30)
 
     local scenarios = panel:MakeToggle('name', 'Show in Scenarios', 'description', '', 'extra', visibility, 'default',
         false, 'getFunc', function()
-        return db.isEnabledVisibility["scenarios"]
-    end, 'getCurrent', function()
-        return db.isEnabledVisibility["scenarios"]
-    end, 'setFunc', function(value)
-        db.isEnabledVisibility["scenarios"] = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.isEnabledVisibility["scenarios"]
+        end, 'getCurrent', function()
+            return db.isEnabledVisibility["scenarios"]
+        end, 'setFunc', function(value)
+            db.isEnabledVisibility["scenarios"] = value;
+            ATT:ApplyAnchorSettings();
+        end)
     scenarios:SetPoint("TOP", dungeons, "TOP", 0, -30)
 
     local inbg = panel:MakeToggle('name', 'Show in Battlegrounds', 'description', '', 'extra', visibility, 'default',
         false, 'getFunc', function()
-        return db.isEnabledVisibility["inbg"]
-    end, 'getCurrent', function()
-        return db.isEnabledVisibility["inbg"]
-    end, 'setFunc', function(value)
-        db.isEnabledVisibility["inbg"] = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.isEnabledVisibility["inbg"]
+        end, 'getCurrent', function()
+            return db.isEnabledVisibility["inbg"]
+        end, 'setFunc', function(value)
+            db.isEnabledVisibility["inbg"] = value;
+            ATT:ApplyAnchorSettings();
+        end)
     inbg:SetPoint("TOP", scenarios, "TOP", 0, -30)
 
     local inraid = panel:MakeToggle('name', 'Show in Raid Instances', 'description', '', 'extra', visibility, 'default',
         false, 'getFunc', function()
-        return db.isEnabledVisibility["inraid"]
-    end, 'getCurrent', function()
-        return db.isEnabledVisibility["inraid"]
-    end, 'setFunc', function(value)
-        db.isEnabledVisibility["inraid"] = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.isEnabledVisibility["inraid"]
+        end, 'getCurrent', function()
+            return db.isEnabledVisibility["inraid"]
+        end, 'setFunc', function(value)
+            db.isEnabledVisibility["inraid"] = value;
+            ATT:ApplyAnchorSettings();
+        end)
     inraid:SetPoint("TOP", inbg, "TOP", 0, -30)
 
     local outside = panel:MakeToggle('name', 'Show in Open World', 'description', '', 'extra', visibility, 'default',
         false, 'getFunc', function()
-        return db.isEnabledVisibility["outside"]
-    end, 'getCurrent', function()
-        return db.isEnabledVisibility["outside"]
-    end, 'setFunc', function(value)
-        db.isEnabledVisibility["outside"] = value;
-        ATT:ApplyAnchorSettings();
-    end)
+            return db.isEnabledVisibility["outside"]
+        end, 'getCurrent', function()
+            return db.isEnabledVisibility["outside"]
+        end, 'setFunc', function(value)
+            db.isEnabledVisibility["outside"] = value;
+            ATT:ApplyAnchorSettings();
+        end)
     outside:SetPoint("TOP", inraid, "TOP", 0, -30)
 
     local showVisibility = panel:MakeButton('name', 'Visibility', 'description', 'Open Visibility Tab', 'newsize', false
-        , 'func', function()
+    , 'func', function()
         if panel.popUP then
             panel.popUP:Hide()
             panel.popUP = false
@@ -3608,26 +3614,26 @@ function ATT:CreateProfilesFrame()
         profiles, 'values',
         { "DEFAULT", "Main", "TANK", "Tank", "HEALER", "Healer", "DAMAGER", "DPS", "BG", "BattleGround", "Extra1",
             "Extra Profie 1", "Extra2", "Extra Profie 2" }, 'default', "DEFAULT", 'getFunc', function()
-        return selectedDB.ProfileSelected
-    end, 'getCurrent', function()
-        return selectedDB.ProfileSelected
-    end, 'setFunc', function(value)
-        local _, instanceType = IsInInstance()
-        if selectedDB.autoselectprofile then
-            print("You can not change profiles if |cffFF4500'Auto Select Profiles'|r is enabled")
+            return selectedDB.ProfileSelected
+        end, 'getCurrent', function()
+            return selectedDB.ProfileSelected
+        end, 'setFunc', function(value)
+            local _, instanceType = IsInInstance()
+            if selectedDB.autoselectprofile then
+                print("You can not change profiles if |cffFF4500'Auto Select Profiles'|r is enabled")
+                panel:UpdateSettings()
+                return --TODO
+            elseif (selectedDB.autoselectBG and instanceType == "pvp") then
+                print("You can not change profiles in battleground if |cffFF4500'Auto Switch BG Profile'|r is enabled")
+                panel:UpdateSettings()
+                return
+            end
+            selectedDB.ProfileSelected = value;
+            self:CheckProfile();
+            self:UpdateScrollBar();
+            self:ApplyAnchorSettings();
             panel:UpdateSettings()
-            return --TODO
-        elseif (selectedDB.autoselectBG and instanceType == "pvp") then
-            print("You can not change profiles in battleground if |cffFF4500'Auto Switch BG Profile'|r is enabled")
-            panel:UpdateSettings()
-            return
-        end
-        selectedDB.ProfileSelected = value;
-        self:CheckProfile();
-        self:UpdateScrollBar();
-        self:ApplyAnchorSettings();
-        panel:UpdateSettings()
-    end) -- here
+        end) -- here
     selectProfile:SetPoint("TOP", profiles, "TOP", -40, -60)
 
     local copyProfile = panel:MakeButton('name', 'Import', 'description',
@@ -3643,7 +3649,8 @@ function ATT:CreateProfilesFrame()
     copyProfile:SetPoint("LEFT", selectProfile, "RIGHT", -5, 3)
 
     StaticPopupDialogs["ATT_COPYPROFILES"] = {
-        text = "Are you sure you want to copy the settings from the Main profile to this profile?\n\nAll the settings on the current profile will be overwritten.",
+        text =
+        "Are you sure you want to copy the settings from the Main profile to this profile?\n\nAll the settings on the current profile will be overwritten.",
         button1 = "Yes",
         button2 = "No",
         OnAccept = function()
@@ -3667,12 +3674,12 @@ function ATT:CreateProfilesFrame()
         function()
             return selectedDB.autoselectprofile
         end, 'setFunc', function(value)
-        selectedDB.autoselectprofile = value;
-        ATT:CheckProfile();
-        ATT:UpdateScrollBar();
-        ATT:ApplyAnchorSettings();
-        panel:UpdateSettings()
-    end) -- here
+            selectedDB.autoselectprofile = value;
+            ATT:CheckProfile();
+            ATT:UpdateScrollBar();
+            ATT:ApplyAnchorSettings();
+            panel:UpdateSettings()
+        end) -- here
     autoselectprofile:SetPoint("TOP", profiles, "TOP", -95, -100)
 
     local autoselectBG = panel:MakeToggle('name', 'Auto Switch BG Profile', 'description',
@@ -3680,21 +3687,21 @@ function ATT:CreateProfilesFrame()
         function()
             return selectedDB.autoselectBG
         end, 'setFunc', function(value)
-        selectedDB.autoselectBG = value;
-        ATT:CheckProfile();
-        ATT:UpdateScrollBar();
-        ATT:ApplyAnchorSettings();
-        panel:UpdateSettings()
-    end)
+            selectedDB.autoselectBG = value;
+            ATT:CheckProfile();
+            ATT:UpdateScrollBar();
+            ATT:ApplyAnchorSettings();
+            panel:UpdateSettings()
+        end)
     autoselectBG:SetPoint("TOP", autoselectprofile, "TOP", 0, -30)
 
     local profilebychar = panel:MakeToggle('name', 'Use Character DB', 'description',
         'Your profiles will be stored per Charcater and not per Account\n', 'extra', profiles, 'default', false,
         'getFunc', function()
-        return ATTDB.profilebychar
-    end, 'setFunc', function(value)
-        StaticPopup_Show("ATT_CHARDB")
-    end)
+            return ATTDB.profilebychar
+        end, 'setFunc', function(value)
+            StaticPopup_Show("ATT_CHARDB")
+        end)
     profilebychar:SetPoint("TOP", autoselectBG, "TOP", 0, -30)
 
     StaticPopupDialogs["ATT_CHARDB"] = {
@@ -3721,8 +3728,8 @@ function ATT:CreateProfilesFrame()
 
     local reset = panel:MakeButton('name', 'Reset Addon', 'description', 'Reset all settings and profiles', 'extra',
         profiles, 'newsize', false, 'func', function()
-        StaticPopup_Show("ATT_RESET")
-    end)
+            StaticPopup_Show("ATT_RESET")
+        end)
     reset:SetPoint("TOP", profilebychar, "TOP", 95, -40)
 
     StaticPopupDialogs["ATT_RESET"] = {
@@ -3749,14 +3756,14 @@ function ATT:CreateProfilesFrame()
 
     local showProfiles = panel:MakeButton('name', 'Profiles', 'description', 'Open Profiles tab', 'newsize', false,
         'func', function()
-        if panel.popUP then
-            panel.popUP:Hide()
-            panel.popUP = false
-        else
-            profiles:Show()
-            panel.popUP = profiles
-        end
-    end)
+            if panel.popUP then
+                panel.popUP:Hide()
+                panel.popUP = false
+            else
+                profiles:Show()
+                panel.popUP = profiles
+            end
+        end)
     showProfiles:SetPoint("TOPLEFT", panel, "TOPLEFT", 560, -555)
 end
 
@@ -3789,12 +3796,12 @@ function ATT:CreateOrderFrame()
     local order = panel:MakeSlider('name', 'Icon Order', 'extra', popUpFrame, 'description', 'Adjust icon order priority'
         , 'minText', '1', 'maxText', '20', 'minValue', 1, 'maxValue', 20, 'step', 1, 'default', 1, 'current',
         tonumber(db.iconOrder[db.specSelected][popUpFrame.id]) or 20, 'setFunc', function(value)
-        if value ~= db.iconOrder[db.specSelected][popUpFrame.id] then
-            db.iconOrder[db.specSelected][popUpFrame.id] = tonumber(string.format("%.1d", value))
-        end
-    end, 'currentTextFunc', function(value)
-        return tonumber(string.format("%.1d", value))
-    end)
+            if value ~= db.iconOrder[db.specSelected][popUpFrame.id] then
+                db.iconOrder[db.specSelected][popUpFrame.id] = tonumber(string.format("%.1d", value))
+            end
+        end, 'currentTextFunc', function(value)
+            return tonumber(string.format("%.1d", value))
+        end)
     order:SetPoint("TOP", popUpFrame, "TOP", 0, -60)
 
     local notorder = popUpFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
@@ -3803,27 +3810,27 @@ function ATT:CreateOrderFrame()
 
     local alertCD = panel:MakeToggle('name', 'Sound alert', 'extra', popUpFrame, 'description',
         'Play a sound when activated', 'default', false, 'getFunc', function()
-        return db.alertCD[db.specSelected][popUpFrame.id]
-    end,
+            return db.alertCD[db.specSelected][popUpFrame.id]
+        end,
         'setFunc', function(value)
-        if db.globalSelections and db.category ~= "abilities" then
-            EnableGlobalSpell(popUpFrame.id, value, "alertCD") --global selections
-        else
-            db.alertCD[db.specSelected][popUpFrame.id] = value;
-        end
-    end)
+            if db.globalSelections and db.category ~= "abilities" then
+                EnableGlobalSpell(popUpFrame.id, value, "alertCD") --global selections
+            else
+                db.alertCD[db.specSelected][popUpFrame.id] = value;
+            end
+        end)
     alertCD:SetPoint("TOP", order, "BOTTOM", -90, -30)
 
     local alertCDtext = panel:MakeToggle('name', 'Text alert', 'extra', popUpFrame, 'description',
         'Show a text alert when activated', 'default', false, 'getFunc', function()
-        return db.alertCDtext[db.specSelected][popUpFrame.id]
-    end, 'setFunc', function(value)
-        if db.globalSelections and db.category ~= "abilities" then
-            EnableGlobalSpell(popUpFrame.id, value, "alertCDtext") --global selections
-        else
-            db.alertCDtext[db.specSelected][popUpFrame.id] = value;
-        end
-    end)
+            return db.alertCDtext[db.specSelected][popUpFrame.id]
+        end, 'setFunc', function(value)
+            if db.globalSelections and db.category ~= "abilities" then
+                EnableGlobalSpell(popUpFrame.id, value, "alertCDtext") --global selections
+            else
+                db.alertCDtext[db.specSelected][popUpFrame.id] = value;
+            end
+        end)
     alertCDtext:SetPoint("LEFT", alertCD, "RIGHT", 100, 0)
 
     popUpFrame:SetScript("OnShow", function(self)
@@ -3895,11 +3902,11 @@ function ATT:UpdateScrollBar()
                     if isPvPtrinket then
                         GameTooltip:SetSpellByID(id)
                         GameTooltip:AddLine("|cffFF4500PvP|r - Spell ID:"
-                        .. id, 1, 1, 1)
+                            .. id, 1, 1, 1)
                     else
                         GameTooltip:SetItemByID(trinketId)
                         GameTooltip:AddLine("Spell ID: " .. id, 1
-                            , 1, 1)
+                        , 1, 1)
                     end
                     GameTooltip:SetPadding(16, 0)
                     GameTooltip:Show()
@@ -4011,44 +4018,44 @@ function ATT:CreateAbilityEditor()
             "Shaman", "DRUID", "Druid", "ROGUE", "Rogue", "MAGE", "Mage", "WARLOCK", "Warlock", "HUNTER", "Hunter",
             "MONK", "Monk", "DEMONHUNTER",
             "Demon Hunter", "EVOKER", "Evoker" }, 'default', 'WARRIOR', 'getFunc', function()
-        return db.classSelected or "WARRIOR"
-    end, 'getCurrent', function()
-        child.dropdown2.values = {}
-        for i = 1, GetNumClasses() do
-            local className, classTag, classID = GetClassInfo(i)
-            if classTag == db.classSelected then
-                for j = 1, GetNumSpecializationsForClassID(classID) do
-                    local specID, specName = GetSpecializationInfoForClassID(classID, j)
-                    if j == 1 then
-                        db.specSelected = tostring(specID)
+            return db.classSelected or "WARRIOR"
+        end, 'getCurrent', function()
+            child.dropdown2.values = {}
+            for i = 1, GetNumClasses() do
+                local className, classTag, classID = GetClassInfo(i)
+                if classTag == db.classSelected then
+                    for j = 1, GetNumSpecializationsForClassID(classID) do
+                        local specID, specName = GetSpecializationInfoForClassID(classID, j)
+                        if j == 1 then
+                            db.specSelected = tostring(specID)
+                        end
+                        child.dropdown2.values[#child.dropdown2.values + 1] = tostring(specID)
+                        child.dropdown2.values[#child.dropdown2.values + 1] = specName
                     end
-                    child.dropdown2.values[#child.dropdown2.values + 1] = tostring(specID)
-                    child.dropdown2.values[#child.dropdown2.values + 1] = specName
+                    break
                 end
-                break
             end
-        end
-        return db.classSelected or "WARRIOR"
-    end, 'setFunc', function(value)
-        db.classSelected = value;
-        child.dropdown2.values = {}
-        for i = 1, GetNumClasses() do
-            local className, classTag, classID = GetClassInfo(i)
-            if classTag == db.classSelected then
-                for j = 1, GetNumSpecializationsForClassID(classID) do
-                    local specID, specName = GetSpecializationInfoForClassID(classID, j)
-                    if j == 1 then
-                        db.specSelected = tostring(specID)
+            return db.classSelected or "WARRIOR"
+        end, 'setFunc', function(value)
+            db.classSelected = value;
+            child.dropdown2.values = {}
+            for i = 1, GetNumClasses() do
+                local className, classTag, classID = GetClassInfo(i)
+                if classTag == db.classSelected then
+                    for j = 1, GetNumSpecializationsForClassID(classID) do
+                        local specID, specName = GetSpecializationInfoForClassID(classID, j)
+                        if j == 1 then
+                            db.specSelected = tostring(specID)
+                        end
+                        child.dropdown2.values[#child.dropdown2.values + 1] = tostring(specID)
+                        child.dropdown2.values[#child.dropdown2.values + 1] = specName
                     end
-                    child.dropdown2.values[#child.dropdown2.values + 1] = tostring(specID)
-                    child.dropdown2.values[#child.dropdown2.values + 1] = specName
+                    break
                 end
-                break
             end
-        end
-        child.dropdown2.initialize()
-        child.dropdown2:SetValue(db.specSelected)
-    end)
+            child.dropdown2.initialize()
+            child.dropdown2:SetValue(db.specSelected)
+        end)
     dropdown:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 20, -10)
     child.dropdown = dropdown
 
@@ -4057,39 +4064,39 @@ function ATT:CreateAbilityEditor()
         function()
             return db.specSelected
         end, 'setFunc', function(value)
-        db.specSelected = value;
-        db.category = "abilities"
-        child.dropdown3.initialize()
-        child.dropdown3:SetValue(db.category)
-    end)
+            db.specSelected = value;
+            db.category = "abilities"
+            child.dropdown3.initialize()
+            child.dropdown3:SetValue(db.category)
+        end)
     dropdown2:SetPoint("TOPLEFT", dropdown, "BOTTOMLEFT", 0, -20)
     child.dropdown2 = dropdown2
 
     local dropdown3 = panel:MakeDropDown('name', ' Category', 'description', 'Pick a category', 'values',
         { "abilities", "Abilities", "trinkets", "Trinkets", "racials", "Racials" }, 'default', "abilities", 'current',
         "abilities", 'getCurrent', function()
-        return db.category
-    end, 'setFunc', function(value)
-        if panel.popUP then
-            panel.popUP:Hide()
-            panel.popUP = false
-        end
-        db.category = value;
-        ATT:UpdateScrollBar()
-    end)
+            return db.category
+        end, 'setFunc', function(value)
+            if panel.popUP then
+                panel.popUP:Hide()
+                panel.popUP = false
+            end
+            db.category = value;
+            ATT:UpdateScrollBar()
+        end)
     dropdown3:SetPoint("TOPLEFT", dropdown2, "BOTTOMLEFT", 0, -20)
     child.dropdown3 = dropdown3
 
     local globalSelections = panel:MakeToggle('name', 'Global Selections', 'description',
         'When enabled next selections of trinkets or racials will be applied to all classes and specializations',
         'default', true, 'getFunc', function()
-        return db.globalSelections
-    end, 'getCurrent', function()
-        return db.globalSelections
-    end, 'setFunc', function(value)
-        db.globalSelections = value;
-        self:UpdateIcons();
-    end)
+            return db.globalSelections
+        end, 'getCurrent', function()
+            return db.globalSelections
+        end, 'setFunc', function(value)
+            db.globalSelections = value;
+            self:UpdateIcons();
+        end)
     globalSelections:SetPoint("TOPLEFT", dropdown3, "BOTTOMLEFT", 20, -5)
 
     local ideditbox = CreateEditBox("Ability ID", panel, 80, 30)
@@ -4109,7 +4116,7 @@ function ATT:CreateAbilityEditor()
             for _, v in pairs(dbImport[class][spec]) do
                 if v.ability == tonumber(id) then
                     print("Ability ID: |cffFF4500" ..
-                    id .. "|r already exists in the base spells list and can not be updated")
+                        id .. "|r already exists in the base spells list and can not be updated")
                     return
                 end
             end
@@ -4128,7 +4135,7 @@ function ATT:CreateAbilityEditor()
                     ideditbox:SetText("");
                     cdeditbox:SetText("");
                     print("Updated: |cffFF4500" ..
-                    ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
+                        ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
                 else
                     -- adding new:
                     table.insert(abilities,
@@ -4136,7 +4143,7 @@ function ATT:CreateAbilityEditor()
                     ideditbox:SetText("");
                     cdeditbox:SetText("");
                     print("Added: |cffFF4500" ..
-                    ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
+                        ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
                 end
                 ATT:UpdateScrollBar();
                 ATT:UpdateIcons()

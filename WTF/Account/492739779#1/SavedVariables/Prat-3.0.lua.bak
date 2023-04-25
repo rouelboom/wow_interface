@@ -28,7 +28,7 @@ Prat3DB = {
 				["Default"] = {
 					["minchatwidthdefault"] = 296,
 					["maxchatheightdefault"] = 400,
-					["maxchatwidthdefault"] = 608,
+					["maxchatwidthdefault"] = 608.0000610351562,
 					["initialized"] = true,
 				},
 			},
@@ -36,8 +36,6 @@ Prat3DB = {
 		["Prat_Editbox"] = {
 		},
 		["Prat_History"] = {
-		},
-		["Prat_ChannelNames"] = {
 		},
 		["Prat_Font"] = {
 			["profiles"] = {
@@ -48,25 +46,27 @@ Prat3DB = {
 				},
 			},
 		},
+		["Prat_ChannelNames"] = {
+		},
 		["Prat_Bubbles"] = {
 		},
-		["Prat_TellTarget"] = {
+		["Prat_DebugModules"] = {
 		},
 		["Prat_KeyBindings"] = {
 		},
-		["Prat_Achievements"] = {
-		},
 		["Prat_Paragraph"] = {
 		},
-		["Prat_Alias"] = {
+		["Prat_Achievements"] = {
 		},
 		["Prat_NewcomersChat"] = {
+		},
+		["Prat_Alias"] = {
 		},
 		["Prat_OriginalButtons"] = {
 		},
 		["Prat_Highlight"] = {
 		},
-		["Prat_ChannelSticky"] = {
+		["Prat_PopupMessage"] = {
 		},
 		["Prat_Scroll"] = {
 		},
@@ -74,7 +74,7 @@ Prat3DB = {
 		},
 		["Prat_LinkInfoIcons"] = {
 		},
-		["Prat_PopupMessage"] = {
+		["Prat_ChannelSticky"] = {
 		},
 		["Prat_ChatLog"] = {
 		},
@@ -82,7 +82,7 @@ Prat3DB = {
 		},
 		["Prat_Buttons"] = {
 		},
-		["Prat_DebugModules"] = {
+		["Prat_TellTarget"] = {
 		},
 		["Prat_HoverTips"] = {
 		},
@@ -92,26 +92,29 @@ Prat3DB = {
 		["Толаинс - Страж Смерти"] = "Default",
 		["Lumbert - Silvermoon"] = "Default",
 		["Lawrune - Silvermoon"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
 		["Nometh - Silvermoon"] = "Default",
 		["Awakaner - Silvermoon"] = "Default",
 		["Фэроун - Гордунни"] = "Default",
 		["Jundzin - Silvermoon"] = "Default",
 		["Nowarg - Silvermoon"] = "Default",
 		["Роуэтс - Страж Смерти"] = "Default",
+		["Сопроцессор - Ревущий фьорд"] = "Default",
 		["Сеныч - Ревущий фьорд"] = "Default",
-		["Морализм - Ревущий фьорд"] = "Default",
+		["Maintainer - Silvermoon"] = "Default",
+		["Ambraser - Silvermoon"] = "Default",
 		["Альгадот - Ревущий фьорд"] = "Default",
 		["Кумпутина - Ревущий фьорд"] = "Default",
 		["Allower - Silvermoon"] = "Default",
-		["Ambraser - Silvermoon"] = "Default",
+		["Морализм - Ревущий фьорд"] = "Default",
 		["Rendo - Silvermoon"] = "Default",
 		["Orolon - Silvermoon"] = "Default",
-		["Сопроцессор - Ревущий фьорд"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
 			["modules"] = {
-				["ChatLog"] = 2,
+				["Alias"] = 2,
 				["Mentions"] = 2,
 				["PopupMessage"] = 2,
 				["AltNames"] = 2,
@@ -121,7 +124,7 @@ Prat3DB = {
 				["LinkInfoIcons"] = 2,
 				["DebugModules"] = 2,
 				["OriginalButtons"] = 2,
-				["Alias"] = 2,
+				["ChatLog"] = 2,
 			},
 		},
 	},

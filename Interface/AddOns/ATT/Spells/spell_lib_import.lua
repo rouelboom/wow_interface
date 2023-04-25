@@ -401,7 +401,7 @@ ATTdbs.dbImport = {
             { ["ability"] = 403876, ["cooldown"] = 60 }, --cd bug
            -- { ["ability"] = 404357, ["cooldown"] = 60 }, --to do
             { ["ability"] = 198034, ["cooldown"] = 20 }, --cd bug
-
+            { ["ability"] = 204018, ["cooldown"] = 300 },
             
         },
     },
@@ -490,7 +490,7 @@ ATTdbs.dbImport = {
             { ["ability"] = 6795, ["cooldown"] = 8 }, --
             { ["ability"] = 5215, ["cooldown"] = 6 }, --
             { ["ability"] = 2908, ["cooldown"] = 10 }, --
-            { ["ability"] = 22812, ["cooldown"] = 60 },
+            { ["ability"] = 22812, ["cooldown"] = 45 },
             { ["ability"] = 108238, ["cooldown"] = 90 },
             { ["ability"] = 50334, ["cooldown"] = 180 },
             { ["ability"] = 99, ["cooldown"] = 30 },
@@ -1805,6 +1805,7 @@ ATTdbs.isPVPspell = {
     [390428] = true,
     [390612] = true,
     [389794] = true,
+    [204018] = true, --blessing of 
 }
 
 ATTdbs.dbTrinketsMerge = {

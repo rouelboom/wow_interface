@@ -3,29 +3,38 @@ HandyNotesDB = {
 	["profileKeys"] = {
 		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
 		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
-		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
-		["Allower - Silvermoon"] = "Allower - Silvermoon",
 		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
-		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
-		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
 		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
+		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
+		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
 		},
 		["Jundzin - Silvermoon"] = {
 		},
-		["Nowarg - Silvermoon"] = {
+		["Сеныч - Ревущий фьорд"] = {
+		},
+		["Lumbert - Silvermoon"] = {
+		},
+		["Fasttest - Silvermoon"] = {
+		},
+		["Organizer - Silvermoon"] = {
 		},
 		["Allower - Silvermoon"] = {
 		},
-		["Сеныч - Ревущий фьорд"] = {
-		},
 		["Rendo - Silvermoon"] = {
+		},
+		["Maintainer - Silvermoon"] = {
 		},
 		["Awakaner - Silvermoon"] = {
 		},
-		["Lumbert - Silvermoon"] = {
+		["Nowarg - Silvermoon"] = {
 		},
 	},
 }
@@ -33,29 +42,38 @@ HandyNotes_HandyNotesDB = {
 	["profileKeys"] = {
 		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
 		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
-		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
-		["Allower - Silvermoon"] = "Allower - Silvermoon",
 		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
-		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
-		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
 		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
+		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
+		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
 		},
 		["Jundzin - Silvermoon"] = {
 		},
-		["Nowarg - Silvermoon"] = {
+		["Сеныч - Ревущий фьорд"] = {
+		},
+		["Lumbert - Silvermoon"] = {
+		},
+		["Fasttest - Silvermoon"] = {
+		},
+		["Organizer - Silvermoon"] = {
 		},
 		["Allower - Silvermoon"] = {
 		},
-		["Сеныч - Ревущий фьорд"] = {
-		},
 		["Rendo - Silvermoon"] = {
+		},
+		["Maintainer - Silvermoon"] = {
 		},
 		["Awakaner - Silvermoon"] = {
 		},
-		["Lumbert - Silvermoon"] = {
+		["Nowarg - Silvermoon"] = {
 		},
 	},
 }

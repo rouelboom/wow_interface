@@ -29,9 +29,9 @@ PawnOptions = {
 			["Link"] = "|cff1eff00|Hitem:193608::::::::70:70::13:6:8839:8840:5247:8983:7936:8802:5:28:2164:29:40:30:36:38:8:40:437:::::|h[Crimson Combatant's Draconium Waistguard |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r",
 		}, -- [6]
 		{
-			["ID"] = 193789,
-			["Level"] = 372,
-			["Link"] = "|cffa335ee|Hitem:193789::::::::70:66::23:5:7977:6652:8816:1594:8767:1:28:2157:::::|h[Fural's Blazing Faulds]|h|r",
+			["ID"] = 199437,
+			["Level"] = 385,
+			["Link"] = "|cffa335ee|Hitem:199437::::::::70:70::14:7:8943:6652:8822:8820:9343:1507:8767::::::|h[Legguards of Raging Tempests]|h|r",
 		}, -- [7]
 		{
 			["ID"] = 191985,
@@ -49,16 +49,16 @@ PawnOptions = {
 			["Link"] = "|cffa335ee|Hitem:193784::::::::70:66::23:5:7977:6652:8813:1594:8767:1:28:2157:::::|h[Forgemaster's Grips]|h|r",
 		}, -- [10]
 		{
-			["ID"] = 134532,
-			["Level"] = 359,
+			["ID"] = 201960,
+			["Level"] = 389,
 			["AlsoFitsIn"] = 12,
-			["Link"] = "|cff0070dd|Hitem:134532::::::::70:66::22:4:6652:8811:8171:7756:2:9:70:28:181:::::|h[Band of Fused Coral]|h|r",
+			["Link"] = "|cffa335ee|Hitem:201960::::::::70:70::14:4:7936:9377:1489:8767::::::|h[Chronologically Unstable Loop]|h|r",
 		}, -- [11]
 		{
-			["ID"] = 134525,
-			["Level"] = 359,
+			["ID"] = 201960,
+			["Level"] = 389,
 			["AlsoFitsIn"] = 11,
-			["Link"] = "|cff0070dd|Hitem:134525::::::::70:66::22:4:6652:8811:8171:7756:2:9:70:28:181:::::|h[Seal of the Nazjatar Empire]|h|r",
+			["Link"] = "|cffa335ee|Hitem:201960::::::::70:66::14:4:7936:9377:1489:8767::::::|h[Chronologically Unstable Loop]|h|r",
 		}, -- [12]
 		{
 			["ID"] = 194306,
@@ -73,9 +73,9 @@ PawnOptions = {
 			["Link"] = "|cffa335ee|Hitem:194306::::::::70:70::3:4:7979:6652:1472:8767:1:28:2474:::::|h[All-Totem of the Master]|h|r",
 		}, -- [14]
 		{
-			["ID"] = 193522,
-			["Level"] = 343,
-			["Link"] = "|cff1eff00|Hitem:193522::::::::70:70::13:5:8839:8840:5247:8983:8802:5:28:2164:29:36:30:32:38:8:40:416:::::|h[Crimson Combatant's Wildercloth Cloak |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r",
+			["ID"] = 199452,
+			["Level"] = 385,
+			["Link"] = "|cffa335ee|Hitem:199452::::::::70:70::14:7:8943:6652:8822:8819:9343:1507:8767::::::|h[Shroud of Raging Tempests]|h|r",
 		}, -- [15]
 		{
 			["ID"] = 190484,

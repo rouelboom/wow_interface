@@ -1,6 +1,6 @@
 
 PawnOptions = {
-	["LastVersion"] = 2.0716,
+	["LastVersion"] = 2.0717,
 	["LastPlayerFullName"] = "Сеныч-Ревущий фьорд",
 	["AutoSelectScales"] = true,
 	["ItemLevels"] = {

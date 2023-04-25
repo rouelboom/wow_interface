@@ -5,11 +5,14 @@ TomTomDB = {
 		["Jundzin - Silvermoon"] = "Default",
 		["Nowarg - Silvermoon"] = "Default",
 		["Lumbert - Silvermoon"] = "Default",
-		["Allower - Silvermoon"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
+		["Сеныч - Ревущий фьорд"] = "Default",
 		["Толаинс - Страж Смерти"] = "Default",
+		["Allower - Silvermoon"] = "Default",
+		["Maintainer - Silvermoon"] = "Default",
 		["Rendo - Silvermoon"] = "Default",
 		["Awakaner - Silvermoon"] = "Default",
-		["Сеныч - Ревущий фьорд"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
@@ -41,11 +44,14 @@ TomTomWaypointsM = {
 		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
 		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
-		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
+		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
 		["Толаинс - Страж Смерти"] = "Толаинс - Страж Смерти",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
 		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
 		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
-		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
+		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
@@ -56,15 +62,21 @@ TomTomWaypointsM = {
 		},
 		["Lumbert - Silvermoon"] = {
 		},
-		["Allower - Silvermoon"] = {
+		["Fasttest - Silvermoon"] = {
+		},
+		["Сеныч - Ревущий фьорд"] = {
 		},
 		["Толаинс - Страж Смерти"] = {
+		},
+		["Allower - Silvermoon"] = {
+		},
+		["Maintainer - Silvermoon"] = {
 		},
 		["Rendo - Silvermoon"] = {
 		},
 		["Awakaner - Silvermoon"] = {
 		},
-		["Сеныч - Ревущий фьорд"] = {
+		["Organizer - Silvermoon"] = {
 		},
 	},
 }

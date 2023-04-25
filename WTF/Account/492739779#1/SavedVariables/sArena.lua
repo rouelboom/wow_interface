@@ -6,6 +6,7 @@ sArena3DB = {
 		["Сеныч - Ревущий фьорд"] = "Default",
 		["Allower - Silvermoon"] = "Default",
 		["Nowarg - Silvermoon"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
 		["Lumbert - Silvermoon"] = "Default",
 	},
 	["profiles"] = {

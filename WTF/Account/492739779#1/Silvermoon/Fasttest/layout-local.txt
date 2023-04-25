@@ -1,0 +1,15 @@
+Version: 1
+Frame: GladiusButtonFramearena1
+FrameLevel: 1
+Anchor: RIGHT
+X: -229
+Y: 77
+W: 160
+H: 52
+Frame: scanner_button
+FrameLevel: 200
+Anchor: LEFT
+X: 250
+Y: -6
+W: 200
+H: 50

@@ -204,7 +204,11 @@ TidyPlatesHubCache = {
 		["WidgetAuraTrackDispelFriendly"] = false,
 		["EnemyBarColorMode"] = "ByThreat",
 		["FriendlyAlphaSpotlightMode"] = "None",
-		["ScaleIgnoreInactive"] = false,
+		["ColorFriendlyPlayer"] = {
+			["r"] = 0,
+			["g"] = 0,
+			["b"] = 1,
+		},
 		["HighHealthThreshold"] = 0.7,
 		["ColorPartyAggroGlow"] = true,
 		["StatusTextRightColor"] = true,
@@ -227,11 +231,7 @@ TidyPlatesHubCache = {
 			["g"] = 1,
 			["b"] = 0,
 		},
-		["ColorFriendlyPlayer"] = {
-			["r"] = 0,
-			["g"] = 0,
-			["b"] = 1,
-		},
+		["ScaleIgnoreInactive"] = false,
 		["ColorAttackingOtherTank"] = {
 			["r"] = 0.05882352941176471,
 			["g"] = 0.6666666666666666,

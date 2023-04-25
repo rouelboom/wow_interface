@@ -26,6 +26,10 @@ VER 3 000000000000000D "cyclone" "134400"
 #showtooltip
 /cast [@focus] Cyclone
 END
+VER 3 0000000000000010 "eggs" "134400"
+#showtooltip Brightly Colored Egg
+/use Brightly Colored Egg
+END
 VER 3 000000000000000C "focus" "135881"
 /focus
 END
@@ -45,6 +49,9 @@ END
 VER 3 000000000000000A "rej" "134914"
 #showtooltip 
 /castsequence Rejuvenation, Swiftmend
+END
+VER 3 0000000000000011 "RXPTargeting" "Ability_eyeoftheowl"
+//RestedXP Guides - current step has no configured targets
 END
 VER 3 0000000000000002 "ФОКУС" "136103"
 /focus

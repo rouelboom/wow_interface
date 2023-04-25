@@ -4,24 +4,24 @@ PawnOptions = {
 	["ItemLevels"] = {
 		{
 			["ID"] = 122248,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:122248::::::::18:269:::1:3592::::::|h[Stained Shadowcraft Cap]|h|r",
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122248::::::::20:269:::1:3592::::::|h[Stained Shadowcraft Cap]|h|r",
 		}, -- [1]
 		{
 			["ID"] = 122668,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:122668::::::::18:269:::1:583::::::|h[Eternal Will of the Martyr]|h|r",
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122668::::::::20:269:::1:583::::::|h[Eternal Will of the Martyr]|h|r",
 		}, -- [2]
 		{
 			["ID"] = 122376,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:122376::::::::18:269:::1:5805::::::|h[Exceptional Stormshroud Shoulders]|h|r",
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122376::::::::20:269:::1:5805::::::|h[Exceptional Stormshroud Shoulders]|h|r",
 		}, -- [3]
 		nil, -- [4]
 		{
 			["ID"] = 122383,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:122383::::::::18:269:::1:5805::::::|h[Stained Shadowcraft Tunic]|h|r",
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122383::::::::20:269:::1:5805::::::|h[Stained Shadowcraft Tunic]|h|r",
 		}, -- [5]
 		{
 			["ID"] = 131730,
@@ -30,8 +30,8 @@ PawnOptions = {
 		}, -- [6]
 		{
 			["ID"] = 122255,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:122255::::::::18:269:::1:3592::::::|h[Preened Wildfeather Leggings]|h|r",
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122255::::::::20:269:::1:3592::::::|h[Preened Wildfeather Leggings]|h|r",
 		}, -- [7]
 		{
 			["ID"] = 121659,
@@ -39,9 +39,9 @@ PawnOptions = {
 			["Link"] = "|cff1eff00|Hitem:121659::::::::16:269::11:1:3631:2:28:1705:9:16:::::|h[Drogstitch Footwraps]|h|r",
 		}, -- [8]
 		{
-			["ID"] = 175206,
-			["Level"] = 3,
-			["Link"] = "|cff1eff00|Hitem:175206::::::::7:1450::11:1:6500:2:9:6:28:741:::::|h[Expeditionary Leather Bracers]|h|r",
+			["ID"] = 130288,
+			["Level"] = 35,
+			["Link"] = "|cff1eff00|Hitem:130288::::::::19:269::11:1:3631:2:28:1705:9:19:::::|h[Drogstitch Wristwraps]|h|r",
 		}, -- [9]
 		{
 			["ID"] = 175184,
@@ -49,10 +49,10 @@ PawnOptions = {
 			["Link"] = "|cff1eff00|Hitem:175184::::::::10:269::11:1:6500:2:28:741:9:9:::::|h[Expeditionary Leather Gloves]|h|r",
 		}, -- [10]
 		{
-			["ID"] = 178171,
-			["Level"] = 9,
+			["ID"] = 130309,
+			["Level"] = 65,
 			["AlsoFitsIn"] = 12,
-			["Link"] = "|cff0070dd|Hitem:178171::::::::10:269::1:1:6500:2:28:741:9:10:::::|h[Darkmaul Signet Ring]|h|r",
+			["Link"] = "|cffa335ee|Hitem:130309::::::::20:269::11:2:4790:4792:2:9:19:28:1705:::::|h[Band of Malorne's Chosen]|h|r",
 		}, -- [11]
 		{
 			["ID"] = 178171,
@@ -62,25 +62,25 @@ PawnOptions = {
 		}, -- [12]
 		{
 			["ID"] = 122361,
-			["Level"] = 49,
+			["Level"] = 54,
 			["AlsoFitsIn"] = 14,
-			["Link"] = "|cff00ccff|Hitem:122361::::::::18:269:::1:583::::::|h[Swift Hand of Justice]|h|r",
+			["Link"] = "|cff00ccff|Hitem:122361::::::::20:269:::1:583::::::|h[Swift Hand of Justice]|h|r",
 		}, -- [13]
 		{
 			["ID"] = 122361,
-			["Level"] = 47,
+			["Level"] = 52,
 			["AlsoFitsIn"] = 13,
-			["Link"] = "|cff00ccff|Hitem:122361::::::::17:269:::1:583::::::|h[Swift Hand of Justice]|h|r",
+			["Link"] = "|cff00ccff|Hitem:122361::::::::19:270:::1:583::::::|h[Swift Hand of Justice]|h|r",
 		}, -- [14]
 		{
 			["ID"] = 122261,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:122261::::::::18:269:::::::::|h[Inherited Cape of the Black Baron]|h|r",
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122261::::::::20:269:::::::::|h[Inherited Cape of the Black Baron]|h|r",
 		}, -- [15]
 		{
-			["ID"] = 140773,
-			["Level"] = 49,
-			["Link"] = "|cff00ccff|Hitem:140773::::::::18:269:::1:3592::::::|h[Eagletalon Spear]|h|r",
+			["ID"] = 122368,
+			["Level"] = 54,
+			["Link"] = "|cff00ccff|Hitem:122368::::::::20:269:::1:3592::::::|h[Grand Staff of Jordan]|h|r",
 		}, -- [16]
 		{
 			["ID"] = 122369,
@@ -90,6 +90,7 @@ PawnOptions = {
 		}, -- [17]
 	},
 	["AutoSelectScales"] = true,
+	["LastPlayerFullName"] = "Jundzin-Silvermoon",
 	["Artifacts"] = {
 		[128940] = {
 			["Relics"] = {
@@ -106,7 +107,6 @@ PawnOptions = {
 			["Name"] = "Fists of the Heavens",
 		},
 	},
-	["LastPlayerFullName"] = "Jundzin-Silvermoon",
 	["LastKeybindingsSet"] = 1,
 }
 PawnMrRobotScaleProviderOptions = {

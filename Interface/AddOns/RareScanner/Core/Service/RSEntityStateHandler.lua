@@ -214,6 +214,7 @@ local function SetContainerOpenByZone(containerID, mapID, loadingAddon)
 		-- If we know for sure it remains showing up along the day
 		elseif (containerInternalInfo and containerInternalInfo.reset) then
 			RSLogger:PrintDebugMessage(string.format("Contenedor [%s]. Vuelve a aparecer en el mismo día.", containerID))
+			RSContainerDB.DeleteContainerOpened(containerID)
 		-- If we know for sure it resets with quests
 		elseif (containerInternalInfo and containerInternalInfo.questReset) then
 			RSLogger:PrintDebugMessage(string.format("Contenedor [%s]. Resetea con las misiones del mundo", containerID))
@@ -294,11 +295,6 @@ function RSEntityStateHandler.SetContainerOpen(containerID, loadingAddon)
 		return
 	end
 	
-	-- Ignore if already opened
-	if (RSContainerDB.IsContainerOpened(containerID)) then
-		return
-	end
-	
 	-- Mark as opened
 	local containerInfo = RSContainerDB.GetInternalContainerInfo(containerID)
 	if (containerInfo) then
@@ -328,7 +324,6 @@ function RSEntityStateHandler.SetContainerOpen(containerID, loadingAddon)
 		end
 
 		-- Extracts quest id if we don't have it
-		-- Avoids shift-left-click events
 		if (not loadingAddon and RSConstants.DEBUG_MODE) then
 			if (not containerInfo.questID and not RSContainerDB.GetContainerQuestIdFound(containerID)) then
 				RSLogger:PrintDebugMessage(string.format("Contenedor [%s]. Buscando questID...", containerID))

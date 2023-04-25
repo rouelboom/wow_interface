@@ -78,6 +78,9 @@ Bagnon_Config: disabled
 Bagnon_GuildBank: disabled
 Bagnon_VoidStorage: disabled
 BagBrother: disabled
-Scrap: disabled
-Scrap_Merchant: disabled
-Scrap_Config: disabled
+Scrap: enabled
+Scrap_Merchant: enabled
+Scrap_Config: enabled
+sArena: disabled
+Pawn: disabled
+MythicDungeonTools: disabled

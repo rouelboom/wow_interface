@@ -29,9 +29,9 @@ PawnOptions = {
 			["Link"] = "|cffa335ee|Hitem:198577::::::::70:105::14:8:8959:8977:6652:7936:8822:8818:1507:8767:1:28:2474:::::|h[Drakebreaker's Sash]|h|r",
 		}, -- [6]
 		{
-			["ID"] = 201594,
-			["Level"] = 382,
-			["Link"] = "|cffa335ee|Hitem:201594::::::::70:103::14:7:8999:6652:8822:8820:9009:1472:8767:1:28:2474:::::|h[Crimson Gladiator's Leather Legwraps]|h|r",
+			["ID"] = 134460,
+			["Level"] = 398,
+			["Link"] = "|cffa335ee|Hitem:134460::::::::70:105::35:8:8968:7977:40:8822:8820:9144:3277:8767::::::|h[Fevermelt Legguards]|h|r",
 		}, -- [7]
 		{
 			["ID"] = 193455,
@@ -39,9 +39,9 @@ PawnOptions = {
 			["Link"] = "|cffa335ee|Hitem:193455::::::::70:103::13:6:8836:8840:8902:8960:8809:8802:3:28:2164:38:8:40:385:::::|h[Infurious Footwraps of Indemnity |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r",
 		}, -- [8]
 		{
-			["ID"] = 198578,
-			["Level"] = 385,
-			["Link"] = "|cffa335ee|Hitem:198578:6583:::::::70:103::14:8:8959:8977:6652:7936:8822:8819:1507:8767:1:28:2474:::::|h[Drakebreaker's Bindings]|h|r",
+			["ID"] = 193649,
+			["Level"] = 395,
+			["Link"] = "|cffa335ee|Hitem:193649::::::::70:105::16:9:7977:6652:7936:8822:8819:9144:8967:1617:8767:1:28:1279:::::|h[Mirage Bindings]|h|r",
 		}, -- [9]
 		{
 			["ID"] = 195514,
@@ -49,28 +49,28 @@ PawnOptions = {
 			["Link"] = "|cffa335ee|Hitem:195514::::::::70:105::5:6:6652:7980:8825:8817:1485:8767:1:28:2474:::::|h[Treacherous Totem Wraps]|h|r",
 		}, -- [10]
 		{
-			["ID"] = 201802,
-			["Level"] = 385,
+			["ID"] = 200761,
+			["Level"] = 395,
 			["AlsoFitsIn"] = 12,
-			["Link"] = "|cffa335ee|Hitem:201802:6565:192938::::::70:103::38:6:9000:6652:7935:9009:1475:8767::::::|h[Crimson Gladiator's Band]|h|r",
+			["Link"] = "|cffa335ee|Hitem:200761::::::::70:105::81:5:7979:6652:7937:1478:8767:1:28:2471:::::|h[Smoldering Sulfuron Signet]|h|r",
 		}, -- [11]
 		{
-			["ID"] = 201802,
-			["Level"] = 385,
+			["ID"] = 201803,
+			["Level"] = 389,
 			["AlsoFitsIn"] = 11,
-			["Link"] = "|cffa335ee|Hitem:201802:6565:192938::::::70:102::38:6:9000:6652:7935:9009:1475:8767::::::|h[Crimson Gladiator's Band]|h|r",
+			["Link"] = "|cffa335ee|Hitem:201803::::::::70:105::14:6:6652:7936:9009:9001:1479:8767:1:28:2474:::::|h[Crimson Gladiator's Signet]|h|r",
 		}, -- [12]
 		{
-			["ID"] = 198407,
-			["Level"] = 382,
+			["ID"] = 191492,
+			["Level"] = 389,
 			["AlsoFitsIn"] = 14,
-			["Link"] = "|cffa335ee|Hitem:198407::::::::70:105::73:4:6652:1437:5864:8767:1:28:2437:::::|h[Azure Arcanic Amplifier]|h|r",
+			["Link"] = "|cffa335ee|Hitem:191492::::::::70:105::13:4:8836:8840:8902:8801:3:28:2164:38:7:40:201:::::|h[Alacritous Alchemist Stone |A:Professions-ChatIcon-Quality-Tier4:17:17::1|a]|h|r",
 		}, -- [13]
 		{
-			["ID"] = 198407,
-			["Level"] = 382,
+			["ID"] = 193005,
+			["Level"] = 386,
 			["AlsoFitsIn"] = 13,
-			["Link"] = "|cffa335ee|Hitem:198407::::::::70:102::73:4:6652:1437:5864:8767:1:28:2437:::::|h[Azure Arcanic Amplifier]|h|r",
+			["Link"] = "|cffa335ee|Hitem:193005::::::::70:105::13:4:8836:8840:8902:8800:3:28:2164:38:6:40:253:::::|h[Idol of the Dreamer |A:Professions-ChatIcon-Quality-Tier3:17:18::1|a]|h|r",
 		}, -- [14]
 		{
 			["ID"] = 200971,
@@ -83,9 +83,10 @@ PawnOptions = {
 			["Link"] = "|cffa335ee|Hitem:192033::::::::70:102::53:4:6652:1491:5865:8767:1:28:2521:::::|h[Maruuk Battle Standard]|h|r",
 		}, -- [16]
 		{
-			["ID"] = 201980,
-			["Level"] = 385,
-			["Link"] = "|cffa335ee|Hitem:201980::::::::70:102::38:5:9000:42:9009:1475:8767::::::|h[Crimson Gladiator's Horn]|h|r",
+			["ID"] = 201979,
+			["Level"] = 389,
+			["AlsoFitsIn"] = 16,
+			["Link"] = "|cffa335ee|Hitem:201979:6643:::::::70:105::14:5:9009:6652:9001:1479:8767:1:28:2474:::::|h[Crimson Gladiator's Gavel]|h|r",
 		}, -- [17]
 	},
 	["AutoSelectScales"] = true,

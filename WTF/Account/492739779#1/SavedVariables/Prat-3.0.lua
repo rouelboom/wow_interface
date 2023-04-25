@@ -37,6 +37,8 @@ Prat3DB = {
 		},
 		["Prat_History"] = {
 		},
+		["Prat_ChannelNames"] = {
+		},
 		["Prat_Font"] = {
 			["profiles"] = {
 				["Default"] = {
@@ -46,27 +48,25 @@ Prat3DB = {
 				},
 			},
 		},
-		["Prat_ChannelNames"] = {
-		},
 		["Prat_Bubbles"] = {
 		},
-		["Prat_DebugModules"] = {
+		["Prat_TellTarget"] = {
 		},
 		["Prat_KeyBindings"] = {
 		},
-		["Prat_Paragraph"] = {
-		},
 		["Prat_Achievements"] = {
 		},
-		["Prat_NewcomersChat"] = {
+		["Prat_Paragraph"] = {
 		},
 		["Prat_Alias"] = {
+		},
+		["Prat_NewcomersChat"] = {
 		},
 		["Prat_OriginalButtons"] = {
 		},
 		["Prat_Highlight"] = {
 		},
-		["Prat_PopupMessage"] = {
+		["Prat_ChannelSticky"] = {
 		},
 		["Prat_Scroll"] = {
 		},
@@ -74,7 +74,7 @@ Prat3DB = {
 		},
 		["Prat_LinkInfoIcons"] = {
 		},
-		["Prat_ChannelSticky"] = {
+		["Prat_PopupMessage"] = {
 		},
 		["Prat_ChatLog"] = {
 		},
@@ -82,7 +82,7 @@ Prat3DB = {
 		},
 		["Prat_Buttons"] = {
 		},
-		["Prat_TellTarget"] = {
+		["Prat_DebugModules"] = {
 		},
 		["Prat_HoverTips"] = {
 		},
@@ -92,26 +92,29 @@ Prat3DB = {
 		["Толаинс - Страж Смерти"] = "Default",
 		["Lumbert - Silvermoon"] = "Default",
 		["Lawrune - Silvermoon"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
 		["Nometh - Silvermoon"] = "Default",
 		["Awakaner - Silvermoon"] = "Default",
 		["Фэроун - Гордунни"] = "Default",
 		["Jundzin - Silvermoon"] = "Default",
 		["Nowarg - Silvermoon"] = "Default",
 		["Роуэтс - Страж Смерти"] = "Default",
-		["Сопроцессор - Ревущий фьорд"] = "Default",
-		["Альгадот - Ревущий фьорд"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
+		["Сеныч - Ревущий фьорд"] = "Default",
+		["Rendo - Silvermoon"] = "Default",
 		["Морализм - Ревущий фьорд"] = "Default",
+		["Ambraser - Silvermoon"] = "Default",
 		["Кумпутина - Ревущий фьорд"] = "Default",
 		["Allower - Silvermoon"] = "Default",
-		["Ambraser - Silvermoon"] = "Default",
-		["Rendo - Silvermoon"] = "Default",
+		["Альгадот - Ревущий фьорд"] = "Default",
+		["Maintainer - Silvermoon"] = "Default",
 		["Orolon - Silvermoon"] = "Default",
-		["Сеныч - Ревущий фьорд"] = "Default",
+		["Сопроцессор - Ревущий фьорд"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
 			["modules"] = {
-				["Alias"] = 2,
+				["ChatLog"] = 2,
 				["Mentions"] = 2,
 				["PopupMessage"] = 2,
 				["AltNames"] = 2,
@@ -121,7 +124,7 @@ Prat3DB = {
 				["LinkInfoIcons"] = 2,
 				["DebugModules"] = 2,
 				["OriginalButtons"] = 2,
-				["ChatLog"] = 2,
+				["Alias"] = 2,
 			},
 		},
 	},

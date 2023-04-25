@@ -3,40 +3,73 @@ Gladius2DB = {
 	["profileKeys"] = {
 		["Ambracer - Silvermoon"] = "Ambracer - Silvermoon",
 		["Jundzin - Silvermoon"] = "Jundzin - Silvermoon",
+		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
+		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
+		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
 		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 		["Allower - Silvermoon"] = "Allower - Silvermoon",
-		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
 		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
 		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
-		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
+		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["locked"] = true,
 			["y"] = {
 				["arena1"] = 361.5027694702148,
 			},
-			["x"] = {
-				["arena1"] = 931.7042541503906,
-			},
 			["clickAttributes"] = {
+				["Right"] = {
+					["macro"] = "Cyclone",
+					["action"] = "spell",
+				},
 				["Middle"] = {
 					["button"] = "3",
 					["macro"] = "Entangling Roots",
 					["action"] = "spell",
 					["modifier"] = "",
 				},
-				["Right"] = {
-					["macro"] = "Cyclone",
-					["action"] = "spell",
-				},
 			},
-			["auraVersion"] = 1,
-			["tagsVersion"] = 4,
-			["locked"] = true,
+			["x"] = {
+				["arena1"] = 931.7042541503906,
+			},
 		},
 		["Jundzin - Silvermoon"] = {
 			["auraVersion"] = 1,
 			["tagsVersion"] = 4,
+		},
+		["Сеныч - Ревущий фьорд"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["y"] = {
+				["arena1"] = 433.3666534423828,
+			},
+			["x"] = {
+				["arena1"] = 927.7335205078125,
+			},
+		},
+		["Lumbert - Silvermoon"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["y"] = {
+				["arena1"] = 403.5001373291016,
+			},
+			["x"] = {
+				["arena1"] = 957.6001281738281,
+			},
+		},
+		["Fasttest - Silvermoon"] = {
+			["auraVersion"] = 1,
+			["tagsVersion"] = 4,
+			["y"] = {
+				["arena1"] = 460.9171600341797,
+			},
+			["x"] = {
+				["arena1"] = 937.3028869628906,
+			},
 		},
 		["Nowarg - Silvermoon"] = {
 			["y"] = {
@@ -59,15 +92,9 @@ Gladius2DB = {
 				["arena1"] = 1096.977722167969,
 			},
 		},
-		["Lumbert - Silvermoon"] = {
-			["tagsVersion"] = 4,
+		["Maintainer - Silvermoon"] = {
 			["auraVersion"] = 1,
-			["y"] = {
-				["arena1"] = 403.5001373291016,
-			},
-			["x"] = {
-				["arena1"] = 957.6001281738281,
-			},
+			["tagsVersion"] = 4,
 		},
 		["Rendo - Silvermoon"] = {
 			["auraVersion"] = 1,
@@ -83,15 +110,9 @@ Gladius2DB = {
 			["auraVersion"] = 1,
 			["tagsVersion"] = 4,
 		},
-		["Сеныч - Ревущий фьорд"] = {
+		["Organizer - Silvermoon"] = {
 			["auraVersion"] = 1,
 			["tagsVersion"] = 4,
-			["y"] = {
-				["arena1"] = 433.3666534423828,
-			},
-			["x"] = {
-				["arena1"] = 927.7335205078125,
-			},
 		},
 	},
 }

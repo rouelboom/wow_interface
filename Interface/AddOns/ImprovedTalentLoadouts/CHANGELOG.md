@@ -1,9 +1,6 @@
 # ImprovedTalentLoadouts
 
-## [v1.1](https://github.com/Lardeck/ImprovedTalentLoadouts/tree/v1.1) (2023-03-22)
-[Full Changelog](https://github.com/Lardeck/ImprovedTalentLoadouts/compare/v1.0.8.1...v1.1) [Previous Releases](https://github.com/Lardeck/ImprovedTalentLoadouts/releases)
+## [v1.1.3](https://github.com/Lardeck/ImprovedTalentLoadouts/tree/v1.1.3) (2023-04-12)
+[Full Changelog](https://github.com/Lardeck/ImprovedTalentLoadouts/compare/v1.1.2...v1.1.3) [Previous Releases](https://github.com/Lardeck/ImprovedTalentLoadouts/releases)
 
-- Bump toc  
-- Improve fix-up code  
-- Make non breaking changes for 10.1  
-- Color loadouts red that couldn't be loaded because they are outdated  
+- Fix lua error that causes loadouts to not apply automatically  

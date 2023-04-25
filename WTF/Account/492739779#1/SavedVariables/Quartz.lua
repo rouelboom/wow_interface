@@ -20,9 +20,16 @@ Quartz3DB = {
 		},
 		["Range"] = {
 		},
-		["Mirror"] = {
-		},
 		["EnemyCasts"] = {
+		},
+		["Player"] = {
+			["profiles"] = {
+				["Default"] = {
+					["y"] = -141.8828735351563,
+					["point"] = "CENTER",
+					["x"] = -3.686126708984375,
+				},
+			},
 		},
 		["GCD"] = {
 		},
@@ -46,35 +53,31 @@ Quartz3DB = {
 		},
 		["Interrupt"] = {
 		},
-		["Player"] = {
-			["profiles"] = {
-				["Default"] = {
-					["y"] = -141.8828735351563,
-					["point"] = "CENTER",
-					["x"] = -3.686126708984375,
-				},
-			},
+		["Mirror"] = {
 		},
 		["Latency"] = {
 		},
 	},
 	["profileKeys"] = {
 		["Ambracer - Silvermoon"] = "Default",
-		["Jundzin - Silvermoon"] = "Default",
 		["Толаинс - Страж Смерти"] = "Default",
 		["Lumbert - Silvermoon"] = "Default",
-		["Роуэтс - Страж Смерти"] = "Default",
 		["Сопроцессор - Ревущий фьорд"] = "Default",
-		["Awakaner - Silvermoon"] = "Default",
-		["Морализм - Ревущий фьорд"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
 		["Nometh - Silvermoon"] = "Default",
+		["Awakaner - Silvermoon"] = "Default",
+		["Фэроун - Гордунни"] = "Default",
+		["Jundzin - Silvermoon"] = "Default",
+		["Роуэтс - Страж Смерти"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
 		["Альгадот - Ревущий фьорд"] = "Default",
+		["Ambraser - Silvermoon"] = "Default",
 		["Кумпутина - Ревущий фьорд"] = "Default",
 		["Allower - Silvermoon"] = "Default",
-		["Ambraser - Silvermoon"] = "Default",
 		["Rendo - Silvermoon"] = "Default",
+		["Maintainer - Silvermoon"] = "Default",
 		["Orolon - Silvermoon"] = "Default",
-		["Фэроун - Гордунни"] = "Default",
+		["Морализм - Ревущий фьорд"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

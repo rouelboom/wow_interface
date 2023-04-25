@@ -56,3 +56,4 @@ WorldQuestTracker: disabled
 VuhDo: enabled
 sArena: disabled
 ColorfulMicroMenu: enabled
+RXPGuides: disabled

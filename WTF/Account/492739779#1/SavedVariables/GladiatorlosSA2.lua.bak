@@ -2,11 +2,14 @@
 GladiatorlosSADB = {
 	["profileKeys"] = {
 		["Ambracer - Silvermoon"] = "Default",
-		["Jundzin - Silvermoon"] = "Default",
-		["Сеныч - Ревущий фьорд"] = "Default",
-		["Allower - Silvermoon"] = "Default",
-		["Lumbert - Silvermoon"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
 		["Nowarg - Silvermoon"] = "Default",
+		["Lumbert - Silvermoon"] = "Default",
+		["Fasttest - Silvermoon"] = "Default",
+		["Allower - Silvermoon"] = "Default",
+		["Maintainer - Silvermoon"] = "Default",
+		["Сеныч - Ревущий фьорд"] = "Default",
+		["Jundzin - Silvermoon"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {
