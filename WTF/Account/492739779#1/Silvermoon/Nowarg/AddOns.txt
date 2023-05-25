@@ -34,7 +34,7 @@ Blizzard_ObjectiveTracker: enabled
 Blizzard_CompactRaidFrames: enabled
 ConsolePort: disabled
 WorldBossTimers: enabled
-TalentTreeTweaks: enabled
+TalentTreeTweaks: disabled
 Blizzard_CombatText: enabled
 WeakAurasCompanion: enabled
 Sorted_CanIMogIt: disabled
@@ -52,3 +52,13 @@ RareScanner: disabled
 BattleGroundEnemies: disabled
 WorldQuestTracker: disabled
 BigDebuffs: disabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+BigWigs_Plugins: enabled
+LittleWigs: enabled
+BetterWardrobe: disabled
+BetterWardrobe_SourceData: disabled
+Capping: disabled
+Capping_Options: disabled
+Grid2: disabled
+RXPGuides: disabled

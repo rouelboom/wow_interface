@@ -239,7 +239,6 @@ L.WorldBuffAlert					= "Show alert message and timer when world buff RP has been
 
 L.Area_BugAlerts					= "Bug Reporting Alert Options"
 L.BadTimerAlert						= "Show chat message when DBM detects a bad timer with at least 1 second of incorrectness"
-L.BadIDAlert						= "Show chat message when DBM detects an invalid spell or journal ID in use"
 
 -- Panel: Spoken Alerts Frame
 L.Panel_SpokenAlerts				= "Spoken Alerts"
@@ -391,6 +390,7 @@ L.SpamBlockNoRangeFrame				= "Do not show range frame"
 L.SpamBlockNoInfoFrame				= "Do not show info frame"
 L.SpamBlockNoHudMap					= "Do not show HudMap"
 L.SpamBlockNoNameplate				= "Do not show Nameplate Auras"
+L.SpamBlockNoBossGUIDs				= "Do not show main boss (boss1) timers on Plater nameplates as Nameplate Auras\n(you will still see trash/boss adds timers if feature is enabled in Plater)"
 L.SpamBlockNoYells					= "Do not send chat yells"
 L.SpamBlockNoNoteSync				= "Do not accept shared notes"
 L.SpamBlockAutoGossip				= "Do not automatically handle gossip dialogs"

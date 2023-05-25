@@ -1682,7 +1682,8 @@ step
 	.use 23877 >>Use the pick in your bags to collect the small red crystal
     .complete 9585,1 --Collect Axxarien Crystal Sample (x1)
 step
-    .goto Bloodmyst Isle,41.9,29.6 >> Collect Crystals around the camps and kill Satyrs
+    .goto Bloodmyst Isle,41.9,29.6
+    >> Collect Crystals around the camps and kill Satyrs
     .complete 9569,1 --Kill Zevrax (x1)
     .complete 9569,2 --Kill Axxarien Shadowstalker (x5)
     .complete 9569,3 --Kill Axxarien Hellcaller (x5)
@@ -2907,13 +2908,6 @@ step << Draenei tbc/NightElf tbc
 #xprate >1.499
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
-    .zoneskip Elwynn Forest
-
-
 step << Draenei tbc/NightElf tbc
 #xprate >1.499
     #completewith next

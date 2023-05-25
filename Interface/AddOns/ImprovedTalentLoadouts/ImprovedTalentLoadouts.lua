@@ -12,6 +12,7 @@ local dataObjText = "ITL: %s, %s"
 local dataObj = LDB:NewDataObject(addonName, {type = "data source", text = "ITL: Spec, Loadout"})
 
 local dropdownFont = CreateFont("ITL_DropdownFont")
+local iterateLoadouts
 
 --- Create an iterator for a hash table.
 -- @param t:table The table to create the iterator for.
@@ -43,6 +44,12 @@ local function spairs(t, order)
     end
 end
 
+local function sortByName(t, a, b)
+    if t[a] and t[b] and t[a].name and t[b].name then
+        return t[a].name < t[b].name
+    end
+end
+
 local defaultDB = {
     loadouts = {
         globalLoadouts = {},
@@ -55,6 +62,20 @@ local defaultDB = {
         }
     }
 }
+
+local hooks = {}
+local function HookFunction(namespace, key, func)
+    hooksecurefunc(namespace, key, function()
+        if hooks[key] then
+            func()
+        end
+    end)
+    hooks[key] = true
+end
+
+local function UnhookFunction(key)
+    hooks[key] = nil
+end
 
 local RegisterEvent, UnregisterEvent
 do
@@ -71,10 +92,14 @@ do
     RegisterEvent("PLAYER_ENTERING_WORLD")
     RegisterEvent("TRAIT_CONFIG_UPDATED")
     RegisterEvent("TRAIT_CONFIG_CREATED")
+    RegisterEvent("PLAYER_REGEN_ENABLED")
+    RegisterEvent("PLAYER_REGEN_DISABLED")
+    RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
     RegisterEvent("UPDATE_MACROS")
     RegisterEvent("ACTIVE_PLAYER_SPECIALIZATION_CHANGED")
     RegisterEvent("EQUIPMENT_SWAP_FINISHED")
-    eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2)
+    RegisterEvent("TRAIT_TREE_CURRENCY_INFO_UPDATED")
+    eventFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3)
         if event == "ADDON_LOADED" then
             if arg1 == addonName then
                 TalentLoadouts:Initialize()
@@ -90,6 +115,10 @@ do
             TalentLoadouts:InitializeCharacterDB()
             TalentLoadouts:SaveCurrentLoadouts()
             TalentLoadouts:UpdateDataObj(ITLAPI:GetCurrentLoadout())
+        elseif event == "PLAYER_REGEN_ENABLED" then
+            RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+        elseif event == "PLAYER_REGEN_DISABLED" then
+            UnregisterEvent("UNIT_SPELLCAST_SUCCEEDED")
         elseif event == "TRAIT_CONFIG_UPDATED" then
             TalentLoadouts:UpdateConfig(arg1)
             TalentLoadouts.pendingLoadout = nil
@@ -98,11 +127,22 @@ do
         elseif event == "UPDATE_MACROS" then
             TalentLoadouts:UpdateMacros()
         elseif event == "ACTIVE_PLAYER_SPECIALIZATION_CHANGED" then
+            TalentLoadouts.charDB.lastCategory = nil
             TalentLoadouts:UpdateSpecID(true)
             TalentLoadouts:UpdateDropdownText()
             TalentLoadouts:UpdateSpecButtons()
             TalentLoadouts:UpdateDataObj()
-        elseif event == "TRAIT_TREE_CURRENCY_INFO_UPDATED" then
+            TalentLoadouts:UpdateIterator()
+        elseif event == "TRAIT_TREE_CURRENCY_INFO_UPDATED" or event == "CONFIG_COMMIT_FAILED" then
+            if (TalentLoadouts.pendingLoadout and not UnitCastingInfo("player")) or TalentLoadouts.lastUpdated then
+                TalentLoadouts:OnLoadoutFail(event)
+            end
+        elseif event == "UNIT_SPELLCAST_SUCCEEDED" and arg1 == "player" and arg3 == Constants.TraitConsts.COMMIT_COMBAT_TRAIT_CONFIG_CHANGES_SPELL_ID then
+            if TalentLoadouts.pendingLoadout then
+                TalentLoadouts:OnLoadoutSuccess()
+            else
+                TalentLoadouts:OnUnknownLoadoutSuccess()
+            end
         elseif event == "EQUIPMENT_SWAP_FINISHED" and not arg1 then
             local name = C_EquipmentSet.GetEquipmentSetInfo(arg2)
             TalentLoadouts:Print("Equipment swap failed:", name)
@@ -154,6 +194,7 @@ function TalentLoadouts:InitializeCharacterDB()
     self:CheckForVersionUpdates()
     self.initialized = true
     self:UpdateMacros()
+    self:UpdateIterator()
 end
 
 -- Not sure how that can happen but apparently it was a problem for someone. Maybe there is another AddOn that overwrites my db?
@@ -184,10 +225,20 @@ function TalentLoadouts:CheckForDBUpdates()
     }
 
     local options = ImprovedTalentLoadoutsDB.options
-    options.loadActionbars = options.loadActionbars == nil and true or options.loadActionbars
-    options.clearEmptySlots = options.clearEmptySlots == nil and false or options.clearEmptySlots
-    options.findMacroByName = options.findMacroByName == nil and false or options.findMacroByName
-    options.loadBlizzard = options.loadBlizzard == nil and false or options.loadBlizzard
+    local optionKeys = {
+        ["loadActionbars"] = true,
+        ["clearEmptySlots"] = false,
+        ["findMacroByName"] = false,
+        ["loadBlizzard"] = false,
+        ["showCategoryName"] = false,
+        ["sortLoadoutsByName"] = false
+    }
+
+    for key, defaultValue in ipairs(optionKeys) do
+        if options[key] == nil then
+            options[key] = defaultValue
+        end
+    end
 end
 
 
@@ -228,11 +279,20 @@ function TalentLoadouts:UpdateSpecID(isRespec)
     end
 end
 
+function TalentLoadouts:UpdateIterator()
+    if ImprovedTalentLoadoutsDB.options.sortLoadoutsByName then
+        iterateLoadouts = GenerateClosure(spairs, TalentLoadouts.globalDB.configIDs[self.specID] or {}, sortByName)
+    else
+        iterateLoadouts = GenerateClosure(pairs, TalentLoadouts.globalDB.configIDs[self.specID] or {})
+    end
+end
+
 local function CreateEntryInfoFromString(configID, exportString, treeID)
+    configID = C_Traits.GetConfigInfo(configID) and configID or C_ClassTalents.GetActiveConfigID()
     local importStream = ExportUtil.MakeImportDataStream(exportString)
     local _ = securecallfunction(ClassTalentFrame.TalentsTab.ReadLoadoutHeader, ClassTalentFrame.TalentsTab, importStream)
     local loadoutContent = securecallfunction(ClassTalentFrame.TalentsTab.ReadLoadoutContent, ClassTalentFrame.TalentsTab, importStream, treeID)
-    local success, loadoutEntryInfo = pcall(ClassTalentFrame.TalentsTab.ConvertToImportLoadoutEntryInfo, ClassTalentFrame.TalentsTab, treeID, loadoutContent)
+    local success, loadoutEntryInfo = pcall(ClassTalentFrame.TalentsTab.ConvertToImportLoadoutEntryInfo, ClassTalentFrame.TalentsTab, configID, treeID, loadoutContent)
     if success then
         return loadoutEntryInfo
     end
@@ -368,7 +428,7 @@ function TalentLoadouts:LoadGearAndLayout(configInfo)
 
     if not inCombat then
         if configInfo.gearset then
-            EquipmentManager_EquipSet(configInfo.gearset)
+            C_Timer.After(0, function() EquipmentManager_EquipSet(configInfo.gearset) end)
         end
 
         if configInfo.layout then
@@ -379,7 +439,9 @@ function TalentLoadouts:LoadGearAndLayout(configInfo)
     end
 end
 
-local function LoadLoadout(self, configInfo)
+local function LoadLoadout(self, configInfo, categoryInfo)
+    if not configInfo then return end
+
     local currentSpecID = TalentLoadouts.specID
     local configID = configInfo.ID
 
@@ -387,6 +449,8 @@ local function LoadLoadout(self, configInfo)
         C_ClassTalents.LoadConfig(configID, true)
         C_ClassTalents.UpdateLastSelectedSavedConfigID(currentSpecID, configID)
         TalentLoadouts.charDB.lastLoadout = configInfo.ID
+        TalentLoadouts.charDB[currentSpecID] = configInfo.ID
+        TalentLoadouts.charDB.lastCategory = categoryInfo
         TalentLoadouts:UpdateDropdownText()
         TalentLoadouts:UpdateDataObj(configInfo)
         TalentLoadouts:LoadGearAndLayout(configInfo)
@@ -414,8 +478,11 @@ local function LoadLoadout(self, configInfo)
     for i=1, #entryInfo do
         local entry = entryInfo[i]
         local nodeInfo = C_Traits.GetNodeInfo(activeConfigID, entry.nodeID)
-        if nodeInfo.canPurchaseRank and nodeInfo.isAvailable and nodeInfo.isVisible then
-            C_Traits.SetSelection(activeConfigID, entry.nodeID, entry.selectionEntryID)
+        if nodeInfo.isAvailable and nodeInfo.isVisible then
+            if nodeInfo.type == Enum.TraitNodeType.Selection then
+                C_Traits.SetSelection(activeConfigID, entry.nodeID, entry.selectionEntryID)
+            end
+
             if C_Traits.CanPurchaseRank(activeConfigID, entry.nodeID, entry.selectionEntryID) then
                 for rank=1, entry.ranksPurchased do
                     C_Traits.PurchaseRank(activeConfigID, entry.nodeID)
@@ -424,15 +491,45 @@ local function LoadLoadout(self, configInfo)
         end
     end
 
+    TalentLoadouts.pendingLoadout = configInfo
+    TalentLoadouts.pendingCategory = categoryInfo
+    TalentLoadouts.lastUpdated = nil
+    TalentLoadouts.lastUpdatedCategory = nil
+    RegisterEvent("CONFIG_COMMIT_FAILED")
+    RegisterEvent("TRAIT_TREE_CURRENCY_INFO_UPDATED")
+
+    TalentLoadouts:UpdateDropdownText()
+    TalentLoadouts:UpdateDataObj()
+
     local canChange, _, changeError = C_ClassTalents.CanChangeTalents()
     if not canChange then 
         if changeError == ERR_TALENT_FAILED_UNSPENT_TALENT_POINTS then
             configInfo.error = true
         end
 
+        HookFunction(C_Traits, "RollbackConfig", TalentLoadouts.OnLoadoutFail)
         TalentLoadouts:Print("|cffff0000Can't load Loadout.|r", changeError)
         return 
     end
+
+    if ImprovedTalentLoadoutsDB.options.applyLoadout then
+        C_ClassTalents.SaveConfig(configInfo.ID)
+        C_ClassTalents.CommitConfig(configInfo.ID)
+    else
+        HookFunction(C_Traits, "RollbackConfig", TalentLoadouts.OnLoadoutFail)
+    end
+
+    if not C_Traits.ConfigHasStagedChanges(activeConfigID) then
+        TalentLoadouts:OnLoadoutSuccess()
+    end
+
+    configInfo.error = nil
+    LibDD:CloseDropDownMenus()
+end
+
+function TalentLoadouts:OnLoadoutSuccess()
+    local configInfo = TalentLoadouts.pendingLoadout
+    local categoryInfo = TalentLoadouts.pendingCategory
 
     if ImprovedTalentLoadoutsDB.options.loadActionbars and configInfo.actionBars then
         TalentLoadouts:LoadActionBar(configInfo.actionBars)
@@ -440,26 +537,59 @@ local function LoadLoadout(self, configInfo)
 
     TalentLoadouts:LoadGearAndLayout(configInfo)
 
-    if ImprovedTalentLoadoutsDB.options.applyLoadout then
-        TalentLoadouts.pendingLoadout = nil
-        C_ClassTalents.SaveConfig(configInfo.ID)
-        C_ClassTalents.CommitConfig(configInfo.ID)
-        TalentLoadouts.charDB.lastLoadout = configInfo.ID
-        TalentLoadouts:UpdateDropdownText()
-        TalentLoadouts:UpdateDataObj(configInfo)
-        C_ClassTalents.UpdateLastSelectedSavedConfigID(currentSpecID, nil)
-        ClassTalentFrame.TalentsTab.LoadoutDropDown:ClearSelection()
-    else
-        TalentLoadouts.currentLoadout = TalentLoadouts.charDB.lastLoadout
-        TalentLoadouts.charDB.lastLoadout = configInfo.ID
-        TalentLoadouts:UpdateDropdownText()
-        TalentLoadouts:UpdateDataObj(configInfo)
-        TalentLoadouts.pendingLoadout = configInfo
-        --RegisterEvent("TRAIT_TREE_CURRENCY_INFO_UPDATED")
+    TalentLoadouts.charDB.lastLoadout = configInfo.ID
+    TalentLoadouts.charDB[self.specID] = configInfo.ID
+    TalentLoadouts.charDB.lastCategory = categoryInfo
+    TalentLoadouts.pendingLoadout = nil
+    TalentLoadouts.pendingCategory = nil
+
+    TalentLoadouts:UpdateDropdownText()
+    TalentLoadouts:UpdateDataObj(configInfo)
+
+    UnhookFunction("RollbackConfig")
+    UnregisterEvent("CONFIG_COMMIT_FAILED")
+    UnregisterEvent("TRAIT_TREE_CURRENCY_INFO_UPDATED")
+end
+
+function TalentLoadouts:OnUnknownLoadoutSuccess()
+    local known = false
+    if TalentLoadouts.lastUpdated then
+        local configInfo = TalentLoadouts.lastUpdated
+        local exportString = CreateExportString(configInfo, C_ClassTalents.GetActiveConfigID(), self.specID, true)
+        if exportString == configInfo.exportString then
+            TalentLoadouts.charDB.lastLoadout = configInfo.ID
+            TalentLoadouts.charDB[self.specID] = configInfo.ID
+            TalentLoadouts.charDB.lastCategory = TalentLoadouts.lastUpdatedCategory
+            known = true
+        end
     end
 
-    configInfo.error = nil
-    LibDD:CloseDropDownMenus()
+    if not known then
+        TalentLoadouts.charDB.lastLoadout = nil
+        TalentLoadouts.charDB[self.specID] = nil
+        TalentLoadouts.charDB.lastCategory = nil
+    end
+
+    TalentLoadouts:UpdateDropdownText()
+    TalentLoadouts:UpdateDataObj()
+end
+
+function TalentLoadouts:OnLoadoutFail(event)
+    TalentLoadouts.pendingLoadout = nil
+    TalentLoadouts.pendingCategory = nil
+    TalentLoadouts.lastUpdated = nil
+    TalentLoadouts.lastUpdatedCategory = nil
+
+    UnhookFunction("RollbackConfig")
+    UnregisterEvent("TRAIT_TREE_CURRENCY_INFO_UPDATED")
+    UnregisterEvent("CONFIG_COMMIT_FAILED")
+
+    if event == "CONFIG_COMMIT_FAILED" then
+        C_Traits.RollbackConfig(C_ClassTalents.GetActiveConfigID())
+    end
+
+    TalentLoadouts:UpdateDropdownText()
+    TalentLoadouts:UpdateDataObj()
 end
 
 local function FindFreeConfigID()
@@ -591,7 +721,9 @@ function TalentLoadouts:ImportCategory(data, isSubCategory, parentKey)
 
     for _, configInfo in ipairs(data) do
         local configID = TalentLoadouts:ImportLoadout(configInfo.exportString, configInfo.name, data.key)
-        tinsert(categoryInfo.loadouts, configID)
+        if configID then
+            tinsert(categoryInfo.loadouts, configID)
+        end
     end
 
     return data.key
@@ -757,10 +889,10 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_SAVE"] = {
     text = "Loadout Name",
     button1 = "Save",
     button2 = "Cancel",
-    OnAccept = function(self, saveType)
+    OnAccept = function(self, saveType, apply)
         local loadoutName = self.editBox:GetText()
         if saveType == 1 then
-            TalentLoadouts:SaveCurrentLoadout(loadoutName)
+            TalentLoadouts:SaveCurrentLoadout(loadoutName, nil, apply)
         elseif saveType == 2 then
             TalentLoadouts:SaveCurrentClassTree(loadoutName)
         elseif saveType == 3 then
@@ -778,9 +910,10 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_SAVE"] = {
     hideOnEscape = true,
  }
 
- local function SaveCurrentLoadout()
+ local function SaveCurrentLoadout(self, apply)
     local dialog = StaticPopup_Show("TALENTLOADOUTS_LOADOUT_SAVE")
     dialog.data = 1
+    dialog.data2 = apply
  end
 
  local function SaveCurrentClassTree()
@@ -793,27 +926,44 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_SAVE"] = {
     dialog.data = 3
  end
 
- function TalentLoadouts:SaveCurrentLoadout(loadoutName, currencyID)
+ function TalentLoadouts:SaveCurrentLoadout(loadoutName, currencyID, apply)
     local currentSpecID = self.specID
     local activeConfigID = C_ClassTalents.GetActiveConfigID()
     local fakeConfigID = FindFreeConfigID()
     if not fakeConfigID then return end
 
     self.globalDB.configIDs[currentSpecID][fakeConfigID] = C_Traits.GetConfigInfo(activeConfigID)
-    self.globalDB.configIDs[currentSpecID][fakeConfigID].fake = true
-    self.globalDB.configIDs[currentSpecID][fakeConfigID].name = loadoutName
-    self.globalDB.configIDs[currentSpecID][fakeConfigID].ID = fakeConfigID
-    self.globalDB.configIDs[currentSpecID][fakeConfigID].currencyID = currencyID
-    self.globalDB.configIDs[currentSpecID][fakeConfigID].categories = {}
-    self:InitializeTalentLoadout(fakeConfigID)
 
-    if currencyID then
-        self.charDB.lastClassLoadout = fakeConfigID
+    local configInfo = self.globalDB.configIDs[currentSpecID][fakeConfigID]
+    configInfo.fake = true
+    configInfo.name = loadoutName
+    configInfo.ID = fakeConfigID
+    configInfo.currencyID = currencyID
+    configInfo.categories = {}
+
+    local isInspecting = ClassTalentFrame.TalentsTab:IsInspecting()
+    if isInspecting then
+        local treeID = configInfo.treeIDs[1]
+        local exportString = C_Traits.GenerateInspectImportString(ClassTalentFrame:GetInspectUnit())
+        configInfo.exportString, configInfo.entryInfo, configInfo.treeHash = exportString, CreateEntryInfoFromString(activeConfigID, exportString, treeID), C_Traits.GetTreeHash(treeID)
+        return
     else
-        self.charDB.lastLoadout = fakeConfigID
+        self:InitializeTalentLoadout(fakeConfigID, exportString)
     end
-    TalentLoadouts:UpdateDropdownText()
-    TalentLoadouts:UpdateDataObj(self.globalDB.configIDs[currentSpecID][fakeConfigID])
+
+    if not C_Traits.ConfigHasStagedChanges(activeConfigID) then
+        if currencyID then
+            self.charDB.lastClassLoadout = fakeConfigID
+        else
+            self.charDB.lastLoadout = fakeConfigID
+            self.charDB[currentSpecID] = fakeConfigID
+        end
+
+        TalentLoadouts:UpdateDropdownText()
+        TalentLoadouts:UpdateDataObj(self.globalDB.configIDs[currentSpecID][fakeConfigID])
+    elseif apply then
+        LoadLoadout(nil, configInfo)
+    end
  end
 
  function TalentLoadouts:SaveCurrentClassTree(loadoutName)
@@ -840,7 +990,7 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_SAVE"] = {
     end
  end
 
- local function UpdateWithCurrentTree(self, configID)
+ local function UpdateWithCurrentTree(self, configID, categoryInfo, isButtonUpdate)
     if configID then
         local currentSpecID = TalentLoadouts.specID
         local configInfo = TalentLoadouts.globalDB.configIDs[currentSpecID][configID]
@@ -850,6 +1000,11 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_SAVE"] = {
             configInfo.error = nil
 
             TalentLoadouts:Print(configInfo.name, "updated")
+
+            if isButtonUpdate then
+                TalentLoadouts.lastUpdated = configInfo
+                TalentLoadouts.lastUpdatedCategory = categoryInfo
+            end
         end
     end
  end
@@ -983,10 +1138,11 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_IMPORT_STRING"] = {
     text = "Loadout Import String",
     button1 = "Import",
     button2 = "Cancel",
-    OnAccept = function(self)
+    OnAccept = function(self, apply)
        local importString = self.editBox:GetText()
        local dialog = StaticPopup_Show("TALENTLOADOUTS_LOADOUT_IMPORT_NAME")
        dialog.data = importString
+       dialog.data2 = apply
     end,
     timeout = 0,
     EditBoxOnEnterPressed = function(self)
@@ -1003,9 +1159,12 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_IMPORT_NAME"] = {
     text = "Loadout Import Name",
     button1 = "Import",
     button2 = "Cancel",
-    OnAccept = function(self, importString)
-       local loadoutName = self.editBox:GetText()
-       TalentLoadouts:ImportLoadout(importString, loadoutName)
+    OnAccept = function(self, importString, apply)
+        local loadoutName = self.editBox:GetText()
+        local fakeConfigID = TalentLoadouts:ImportLoadout(importString, loadoutName)
+        if fakeConfigID and apply then
+            LoadLoadout(nil, TalentLoadouts.globalDB.configIDs[TalentLoadouts.specID][fakeConfigID])
+        end
     end,
     timeout = 0,
     EditBoxOnEnterPressed = function(self)
@@ -1018,8 +1177,9 @@ StaticPopupDialogs["TALENTLOADOUTS_LOADOUT_IMPORT_NAME"] = {
     hideOnEscape = true,
 }
 
-local function ImportCustomLoadout()
-    StaticPopup_Show("TALENTLOADOUTS_LOADOUT_IMPORT_STRING")
+local function ImportCustomLoadout(self, apply)
+    local dialog = StaticPopup_Show("TALENTLOADOUTS_LOADOUT_IMPORT_STRING")
+    dialog.data = apply
 end
 
 function TalentLoadouts:ImportLoadout(importString, loadoutName, category)
@@ -1044,6 +1204,7 @@ function TalentLoadouts:ImportLoadout(importString, loadoutName, category)
         }
     else
         self:Print("Invalid import string.")
+        return
     end
 
     return fakeConfigID
@@ -1330,8 +1491,11 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
     local currentSpecID = TalentLoadouts.specID
     if level == 1 then
         TalentLoadouts.globalDB.categories[currentSpecID] = TalentLoadouts.globalDB.categories[currentSpecID] or {}
-        for _, categoryInfo in spairs(TalentLoadouts.globalDB.categories[currentSpecID], 
-        function(t, a, b) if t[a] and t[b] and t[a].name and t[b].name then return t[a].name < t[b].name end end) do
+        TalentLoadouts.globalDB.configIDs[currentSpecID] = TalentLoadouts.globalDB.configIDs[currentSpecID] or {}
+        TalentLoadouts:UpdateIterator()
+
+        
+        for _, categoryInfo in spairs(TalentLoadouts.globalDB.categories[currentSpecID], sortByName) do
             if not categoryInfo.isSubCategory then
                 LibDD:UIDropDownMenu_AddButton(
                         {
@@ -1348,7 +1512,8 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
             end
         end
 
-        for configID, configInfo  in pairs(TalentLoadouts.globalDB.configIDs[currentSpecID]) do
+
+        for configID, configInfo in iterateLoadouts() do
             if not configInfo.default and (not configInfo.categories or not next(configInfo.categories)) then
                 local color = (configInfo.error and "|cFFFF0000") or (configInfo.fake and "|cFF33ff96") or "|cFFFFD100"
                 LibDD:UIDropDownMenu_AddButton(
@@ -1383,7 +1548,18 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
 
         LibDD:UIDropDownMenu_AddButton(
             {
-                text = "Create Loadout from current Tree",
+                text = "Create Loadout",
+                minWidth = 170,
+                fontObject = dropdownFont,
+                notCheckable = 1,
+                func = SaveCurrentLoadout,
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Create Loadout + Apply",
+                arg1 = true,
                 minWidth = 170,
                 fontObject = dropdownFont,
                 notCheckable = 1,
@@ -1394,6 +1570,17 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
         LibDD:UIDropDownMenu_AddButton(
             {
                 text = "Import Loadout",
+                minWidth = 170,
+                fontObject = dropdownFont,
+                notCheckable = 1,
+                func = ImportCustomLoadout,
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Import Loadout + Apply",
+                arg1 = true,
                 minWidth = 170,
                 fontObject = dropdownFont,
                 notCheckable = 1,
@@ -1433,19 +1620,114 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
     elseif menu == "options" then
         LibDD:UIDropDownMenu_AddButton(
             {
-                text = "Automatically apply Loadout",
+                text = "Display Category Name",
                 isNotRadio = true,
                 minWidth = 170,
                 fontObject = dropdownFont,
                 func = function()
-                    ImprovedTalentLoadoutsDB.options.applyLoadout = not ImprovedTalentLoadoutsDB.options.applyLoadout
+                    ImprovedTalentLoadoutsDB.options.showCategoryName = not ImprovedTalentLoadoutsDB.options.showCategoryName
+                    TalentLoadouts:UpdateDropdownText()
                 end,
                 checked = function()
-                    return ImprovedTalentLoadoutsDB.options.applyLoadout
+                    return ImprovedTalentLoadoutsDB.options.showCategoryName
                 end
             },
         level)
 
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Show Spec Buttons",
+                isNotRadio = true,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                func = function()
+                    ImprovedTalentLoadoutsDB.options.showSpecButtons = not ImprovedTalentLoadoutsDB.options.showSpecButtons
+                    TalentLoadouts:UpdateSpecButtons()
+                end,
+                checked = function()
+                    return ImprovedTalentLoadoutsDB.options.showSpecButtons
+                end 
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Sort Loadouts by Name",
+                isNotRadio = true,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                func = function()
+                    ImprovedTalentLoadoutsDB.options.sortLoadoutsByName = not ImprovedTalentLoadoutsDB.options.sortLoadoutsByName
+                    TalentLoadouts:UpdateIterator()
+                end,
+                checked = function()
+                    return ImprovedTalentLoadoutsDB.options.sortLoadoutsByName
+                end
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Loadouts",
+                notCheckable = 1,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                hasArrow = true,
+                menuList = "globalLoadoutOptions"
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Action Bars",
+                notCheckable = 1,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                hasArrow = true,
+                menuList = "actionBarOptions"
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Spec Button Type",
+                notCheckable = 1,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                hasArrow = true,
+                menuList = "specButtonType"
+            },
+        level)
+
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Font Size",
+                notCheckable = 1,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                hasArrow = true,
+                menuList = "fontSizeOptions"
+            },
+        level)
+    elseif menu == "fontSizeOptions" then
+        local fontSizes = {10, 11, 12, 13, 14, 15, 16, 18, 20}
+        for _, fontSize in ipairs(fontSizes) do
+            LibDD:UIDropDownMenu_AddButton(
+                {
+                    text = fontSize,
+                    fontObject = dropdownFont,
+                    func = function()
+                        ImprovedTalentLoadoutsDB.options.fontSize = fontSize
+                        TalentLoadouts:UpdateDropdownFont()
+                        LibDD.CloseDropDownMenus()
+                    end,
+                    checked = function()
+                        return ImprovedTalentLoadoutsDB.options.fontSize == fontSize
+                    end
+                },
+            level)
+        end
+    elseif menu == "actionBarOptions" then
         LibDD:UIDropDownMenu_AddButton(
             {
                 text = "Load Action Bars with Loadout",
@@ -1457,24 +1739,6 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
                 end,
                 checked = function()
                     return ImprovedTalentLoadoutsDB.options.loadActionbars
-                end
-            },
-        level)
-
-        LibDD:UIDropDownMenu_AddButton(
-            {
-                text = "Find Macro By Name",
-                isNotRadio = true,
-                tooltipTitle = "Description:",
-                tooltipText = "Lets the AddOn find saved macros based on their names (instead of name + body).",
-                tooltipOnButton = 1,
-                minWidth = 170,
-                fontObject = dropdownFont,
-                func = function()
-                    ImprovedTalentLoadoutsDB.options.findMacroByName = not ImprovedTalentLoadoutsDB.options.findMacroByName
-                end,
-                checked = function()
-                    return ImprovedTalentLoadoutsDB.options.findMacroByName
                 end
             },
         level)
@@ -1499,19 +1763,34 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
 
         LibDD:UIDropDownMenu_AddButton(
             {
-                text = "Load Blizzard Loadouts (yellow)",
+                text = "Find Macro By Name",
+                isNotRadio = true,
+                tooltipTitle = "Description:",
+                tooltipText = "Lets the AddOn find saved macros based on their names (instead of name + body).",
+                tooltipOnButton = 1,
+                minWidth = 170,
+                fontObject = dropdownFont,
+                func = function()
+                    ImprovedTalentLoadoutsDB.options.findMacroByName = not ImprovedTalentLoadoutsDB.options.findMacroByName
+                end,
+                checked = function()
+                    return ImprovedTalentLoadoutsDB.options.findMacroByName
+                end
+            },
+        level)
+    elseif menu == "globalLoadoutOptions" then
+        LibDD:UIDropDownMenu_AddButton(
+            {
+                text = "Automatically apply Loadout",
                 isNotRadio = true,
                 minWidth = 170,
                 fontObject = dropdownFont,
-                tooltipOnButton = 1,
-                tooltipTitle = "Load Blizzard Loadouts",
-                tooltipText = "Load the yellow loadouts (if they exists) with the Blizzard API functions and don't handle it as an AddOn loadout. At large this disables the action bar handling of the AddOn for the yellow loadouts.",
                 func = function()
-                    ImprovedTalentLoadoutsDB.options.loadBlizzard = not ImprovedTalentLoadoutsDB.options.loadBlizzard
+                    ImprovedTalentLoadoutsDB.options.applyLoadout = not ImprovedTalentLoadoutsDB.options.applyLoadout
                 end,
                 checked = function()
-                    return ImprovedTalentLoadoutsDB.options.loadBlizzard
-                end 
+                    return ImprovedTalentLoadoutsDB.options.applyLoadout
+                end
             },
         level)
 
@@ -1532,59 +1811,21 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
 
         LibDD:UIDropDownMenu_AddButton(
             {
-                text = "Show Spec Buttons",
+                text = "Load Blizzard Loadouts (yellow)",
                 isNotRadio = true,
                 minWidth = 170,
                 fontObject = dropdownFont,
+                tooltipOnButton = 1,
+                tooltipTitle = "Load Blizzard Loadouts",
+                tooltipText = "Load the yellow loadouts (if they exists) with the Blizzard API functions and don't handle it as an AddOn loadout. At large this disables the action bar handling of the AddOn for the yellow loadouts.",
                 func = function()
-                    ImprovedTalentLoadoutsDB.options.showSpecButtons = not ImprovedTalentLoadoutsDB.options.showSpecButtons
-                    TalentLoadouts:UpdateSpecButtons()
+                    ImprovedTalentLoadoutsDB.options.loadBlizzard = not ImprovedTalentLoadoutsDB.options.loadBlizzard
                 end,
                 checked = function()
-                    return ImprovedTalentLoadoutsDB.options.showSpecButtons
+                    return ImprovedTalentLoadoutsDB.options.loadBlizzard
                 end 
             },
         level)
-
-        LibDD:UIDropDownMenu_AddButton(
-            {
-                text = "Font Size",
-                notCheckable = 1,
-                minWidth = 170,
-                fontObject = dropdownFont,
-                hasArrow = true,
-                menuList = "fontSize"
-            },
-        level)
-
-        LibDD:UIDropDownMenu_AddButton(
-            {
-                text = "Spec Button Type",
-                notCheckable = 1,
-                minWidth = 170,
-                fontObject = dropdownFont,
-                hasArrow = true,
-                menuList = "specButtonType"
-            },
-        level)
-    elseif menu == "fontSize" then
-        local fontSizes = {10, 11, 12, 13, 14, 15, 16, 18, 20}
-        for _, fontSize in ipairs(fontSizes) do
-            LibDD:UIDropDownMenu_AddButton(
-                {
-                    text = fontSize,
-                    fontObject = dropdownFont,
-                    func = function()
-                        ImprovedTalentLoadoutsDB.options.fontSize = fontSize
-                        TalentLoadouts:UpdateDropdownFont()
-                        LibDD.CloseDropDownMenus()
-                    end,
-                    checked = function()
-                        return ImprovedTalentLoadoutsDB.options.fontSize == fontSize
-                    end
-                },
-            level)
-        end
     elseif menu == "specButtonType" then
         local buttonTypes = {"text", "icon"}
         local buttonTypesText = {"Text", "Icons"}
@@ -1665,6 +1906,7 @@ local function LoadoutDropdownInitialize(_, level, menu, ...)
                     LibDD:UIDropDownMenu_AddButton(
                         {
                             arg1 = configInfo,
+                            arg2 = categoryInfo,
                             value = {configID, categoryInfo},
                             colorCode = color,
                             text = configInfo.name,
@@ -1821,9 +2063,23 @@ function TalentLoadouts:UpdateDropdownText()
     local currentSpecID = self.specID
     local dropdownText = ""
 
-    local configInfo = self.charDB.lastLoadout and self.globalDB.configIDs[currentSpecID][self.charDB.lastLoadout]
-    dropdownText = configInfo and configInfo.name or "Unknown"
-    LibDD:UIDropDownMenu_SetText(self.dropdown, dropdownText)
+    local color, configInfo = "FFFFFF", nil
+    if self.pendingLoadout then
+        color = "F5B042"
+        configInfo = self.pendingLoadout
+    elseif self.charDB[currentSpecID] then
+        configInfo = self.globalDB.configIDs[currentSpecID][self.charDB[currentSpecID]]
+    elseif self.charDB.lastLoadout then 
+        configInfo = self.globalDB.configIDs[currentSpecID][self.charDB.lastLoadout]
+    end
+    dropdownText = string.format("|cFF%s%s|r", color, configInfo and configInfo.name or "Unknown")
+
+    if self.charDB.lastCategory and ImprovedTalentLoadoutsDB.options.showCategoryName then
+        dropdownText = string.format("|cFF34ebe1[%s]|r %s", self.charDB.lastCategory.name, dropdownText)
+        LibDD:UIDropDownMenu_SetText(self.dropdown, dropdownText)
+    else
+        LibDD:UIDropDownMenu_SetText(self.dropdown, dropdownText)
+    end
 end
 
 function TalentLoadouts:UpdateDropdownFont()
@@ -2005,7 +2261,7 @@ function TalentLoadouts:InitializeButtons()
 
     saveButton:SetScript("OnClick", function()
         if IsShiftKeyDown() then
-            UpdateWithCurrentTree(nil, TalentLoadouts.charDB.lastLoadout)
+            UpdateWithCurrentTree(nil, TalentLoadouts.charDB.lastLoadout, TalentLoadouts.charDB.lastCategory, true)
         end
     end)
 

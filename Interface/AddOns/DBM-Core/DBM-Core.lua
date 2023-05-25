@@ -73,7 +73,7 @@ local function showRealDate(curseDate)
 end
 
 DBM = {
-	Revision = parseCurseDate("20230411014801"),
+	Revision = parseCurseDate("20230511074133"),
 }
 
 local fakeBWVersion, fakeBWHash
@@ -81,12 +81,12 @@ local bwVersionResponseString = "V^%d^%s"
 local PForceDisable
 -- The string that is shown as version
 if isRetail then
-	DBM.DisplayVersion = "10.0.35"
-	DBM.ReleaseRevision = releaseDate(2023, 4, 10) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
-	PForceDisable = 2--When this is incremented, trigger force disable regardless of major patch
+	DBM.DisplayVersion = "10.1.5"
+	DBM.ReleaseRevision = releaseDate(2023, 5, 11) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
+	PForceDisable = 4--When this is incremented, trigger force disable regardless of major patch
 	fakeBWVersion, fakeBWHash = 270, "48070b1"
 elseif isClassic then
-	DBM.DisplayVersion = "1.14.37"
+	DBM.DisplayVersion = "1.14.38 alpha"
 	DBM.ReleaseRevision = releaseDate(2023, 4, 10) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
 	PForceDisable = 1--When this is incremented, trigger force disable regardless of major patch
 	fakeBWVersion, fakeBWHash = 48, "9581348"
@@ -96,8 +96,8 @@ elseif isBCC then
 	PForceDisable = 1--When this is incremented, trigger force disable regardless of major patch
 	fakeBWVersion, fakeBWHash = 48, "9581348"
 elseif isWrath then
-	DBM.DisplayVersion = "3.4.38"
-	DBM.ReleaseRevision = releaseDate(2023, 4, 10) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
+	DBM.DisplayVersion = "3.4.40 alpha"
+	DBM.ReleaseRevision = releaseDate(2023, 4, 14) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
 	PForceDisable = 1--When this is incremented, trigger force disable regardless of major patch
 	fakeBWVersion, fakeBWHash = 48, "9581348"
 end
@@ -355,6 +355,7 @@ DBM.DefaultOptions = {
 	DontShowInfoFrame = false,
 	DontShowHudMap2 = false,
 	DontShowNameplateIcons = false,
+	DontSendBossGUIDs = false,
 	UseNameplateHandoff = true,
 	NPAuraSize = 40,
 	DontPlayCountdowns = false,
@@ -385,7 +386,6 @@ DBM.DefaultOptions = {
 	WorldBossAlert = not isRetail,
 	WorldBuffAlert = not isRetail,
 	BadTimerAlert = false,
-	BadIDAlert = false,
 	AutoAcceptFriendInvite = false,
 	AutoAcceptGuildInvite = false,
 	FakeBWVersion = false,
@@ -3215,11 +3215,11 @@ do
 		self:UpdateWarningOptions()
 		self:UpdateSpecialWarningOptions()
 		self.Options.CoreSavedRevision = self.Revision
-		--Fix fonts if they are nil or set to any of standard font values
-		if not self.Options.WarningFont or (self.Options.WarningFont == "Fonts\\2002.TTF" or self.Options.WarningFont == "Fonts\\ARKai_T.ttf" or self.Options.WarningFont == "Fonts\\blei00d.TTF" or self.Options.WarningFont == "Fonts\\FRIZQT___CYR.TTF" or self.Options.WarningFont == "Fonts\\FRIZQT__.TTF") then
+		--Fix fonts if they are nil
+		if not self.Options.WarningFont then
 			self.Options.WarningFont = "standardFont"
 		end
-		if not self.Options.SpecialWarningFont or (self.Options.SpecialWarningFont == "Fonts\\2002.TTF" or self.Options.SpecialWarningFont == "Fonts\\ARKai_T.ttf" or self.Options.SpecialWarningFont == "Fonts\\blei00d.TTF" or self.Options.SpecialWarningFont == "Fonts\\FRIZQT___CYR.TTF" or self.Options.SpecialWarningFont == "Fonts\\FRIZQT__.TTF") then
+		if not self.Options.SpecialWarningFont then
 			self.Options.SpecialWarningFont = "standardFont"
 		end
 		--If users previous voice pack was not set to none, don't force change it to VEM, honor whatever it was set to before
@@ -4103,7 +4103,7 @@ do
 						-- Start days check
 						local curseDate = tostring(version)
 						local daysPerMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
-						local year, month, day = curseDate:sub(1, 4), curseDate:sub(5, 6), curseDate:sub(7, 8)
+						local year, month, day = tonumber(curseDate:sub(1, 4)), tonumber(curseDate:sub(5, 6)), tonumber(curseDate:sub(7, 8))
 						if day + 2 > daysPerMonth[month] then
 							day = day + 2 - daysPerMonth[month]
 							month = month + 1
@@ -4122,7 +4122,7 @@ do
 						updateNotificationDisplayed = 3
 						DBM:ForceDisableSpam()
 						DBM:Disable(true)
-					--Disallow out of date to run during beta/ptr what so ever regardless of forceDisable revision
+						--Disallow out of date to run during beta/ptr what so ever regardless of forceDisable revision
 					elseif testBuild then
 						updateNotificationDisplayed = 3
 						DBM:ForceDisableSpam()
@@ -6042,11 +6042,7 @@ function DBM:EJ_GetSectionInfo(sectionID)
 	end
 	local info = EJ_GetSectionInfo(sectionID)
 	if not info then
-		if self.Options.BadIDAlert then
-			self:AddMsg("|cffff0000Invalid call to EJ_GetSectionInfo for sectionID: |r"..sectionID..". Please report this bug")
-		else
-			self:Debug("|cffff0000Invalid call to EJ_GetSectionInfo for sectionID: |r"..sectionID)
-		end
+		self:Debug("|cffff0000Invalid call to EJ_GetSectionInfo for sectionID: |r"..sectionID)
 		return
 	end
 	local flag1, flag2, flag3, flag4
@@ -6076,11 +6072,7 @@ function DBM:GetSpellInfo(spellId)
 			self:Debug("|cffff0000Invalid call to GetSpellInfo for spellId: |r"..spellId.." as a string!")
 		else
 			if spellId > 4 then
-				if self.Options.BadIDAlert then
-					self:AddMsg("|cffff0000Invalid call to GetSpellInfo for spellId: |r"..spellId..". Please report this bug")
-				else
-					self:Debug("|cffff0000Invalid call to GetSpellInfo for spellId: |r"..spellId)
-				end
+				self:Debug("|cffff0000Invalid call to GetSpellInfo for spellId: |r"..spellId)
 			end
 		end
 		return
@@ -6993,6 +6985,30 @@ function bossModPrototype:SetStage(stage)
 		fireEvent("DBM_SetStage", self, self.id, self.vb.phase, self.multiEncounterPullDetection and self.multiEncounterPullDetection[1] or self.encounterId, self.vb.stageTotality)--Mod, modId, Stage, Encounter Id (if available), total number of times SetStage has been called since combat start
 		--Note, some encounters have more than one encounter Id, for these encounters, the first ID from mod is always returned regardless of actual engage ID triggered fight
 		DBM:Debug("DBM_SetStage: " .. self.vb.phase .. "/" .. self.vb.stageTotality)
+	end
+end
+
+--If args are passed, returns true or false
+--If no args given, just returns current stage and stage total
+--stage: stage value to checkf or true/false rules
+--checkType: 0 or nil for just current stage match, 1 for less than check, 2 for greater than check, 3 not equal check
+--useTotal: uses stage total instead of current
+function bossModPrototype:GetStage(stage, checkType, useTotal)
+	local currentStage, currentTotal = self.vb.phase or 0, self.vb.stageTotality or 0
+	if stage then
+		checkType = checkType or 0--Optional pass if just an exact match check
+		if (checkType == 0) and (useTotal and currentTotal or currentStage) == stage then
+			return true
+		elseif (checkType == 1) and (useTotal and currentTotal or currentStage) < stage then
+			return true
+		elseif (checkType == 2) and (useTotal and currentTotal or currentStage) > stage then
+			return true
+		elseif (checkType == 3) and (useTotal and currentTotal or currentStage) ~= stage then
+			return true
+		end
+		return false
+	else
+		return currentStage, currentTotal
 	end
 end
 
@@ -9776,7 +9792,7 @@ do
 	end
 
 	do
-		local minVoicePackVersion = isRetail and 13 or 10
+		local minVoicePackVersion = isRetail and 14 or 10
 
 		function DBM:CheckVoicePackVersion(value)
 			local activeVP = self.Options.ChosenVoicePack2
@@ -10075,6 +10091,11 @@ do
 					end
 				end
 			end
+			--Mods that have specifically flagged that it's safe to assume all timers from that boss mod belong to boss1
+			--This check is performed secondary to args scan so that no adds guids are overwritten
+			if not guid and self.mod.sendMainBossGUID and not DBM.Options.DontSendBossGUIDs and (self.type == "cd" or self.type == "next" or self.type == "cdcount" or self.type == "nextcount" or self.type == "cdspecial" or self.type == "ai") then
+				guid = UnitGUID("boss1")
+			end
 			fireEvent("DBM_TimerStart", id, msg, timer, self.icon, self.type, self.spellId, colorId, self.mod.id, self.keep, self.fade, self.name, guid)
 			if not tContains(self.startedTimers, id) then--Make sure timer doesn't exist already before adding it
 				tinsert(self.startedTimers, id)
@@ -10203,6 +10224,11 @@ do
 							guid = v--If found, guid will be passed in DBM_TimerStart callback
 						end
 					end
+					--Mods that have specifically flagged that it's safe to assume all timers from that boss mod belong to boss1
+					--This check is performed secondary to args scan so that no adds guids are overwritten
+					if not guid and self.mod.sendMainBossGUID and not DBM.Options.DontSendBossGUIDs and (self.type == "cd" or self.type == "next" or self.type == "cdcount" or self.type == "nextcount" or self.type == "cdspecial" or self.type == "ai") then
+						guid = UnitGUID("boss1")
+					end
 					fireEvent("DBM_TimerStop", id, guid)
 					DBT:CancelBar(id)
 					DBM:Unschedule(playCountSound, id)--Unschedule countdown by timerId
@@ -10273,7 +10299,7 @@ do
 		fireEvent("DBM_TimerUpdate", id, elapsed, totalTime)
 		if bar then
 			local newRemaining = totalTime-elapsed
-			if newRemaining > 0 then
+			if not bar.keep and newRemaining > 0 then
 				--Correct table for tracked timer objects for adjusted time, or else timers may get stuck if stop is called on them
 				self.mod:Unschedule(removeEntry, self.startedTimers, id)
 				self.mod:Schedule(newRemaining, removeEntry, self.startedTimers, id)
@@ -10305,9 +10331,11 @@ do
 				local elapsed, total = (bar.totalTime - bar.timer), bar.totalTime
 				if elapsed and total then
 					local newRemaining = (total+extendAmount) - elapsed
+					if not bar.keep then
 					--Correct table for tracked timer objects for adjusted time, or else timers may get stuck if stop is called on them
-					self.mod:Unschedule(removeEntry, self.startedTimers, id)
-					self.mod:Schedule(newRemaining, removeEntry, self.startedTimers, id)
+						self.mod:Unschedule(removeEntry, self.startedTimers, id)
+						self.mod:Schedule(newRemaining, removeEntry, self.startedTimers, id)
+					end
 					if self.option then
 						local countVoice = self.mod.Options[self.option .. "CVoice"] or 0
 						if (type(countVoice) == "string" or countVoice > 0) then
@@ -10333,14 +10361,18 @@ do
 			local id = self.id..pformat((("\t%s"):rep(select("#", ...))), ...)
 			local bar = DBT:GetBar(id)
 			if bar then
-				self.mod:Unschedule(removeEntry, self.startedTimers, id)--Needs to be unscheduled here, or the entry might just get left in table until original expire time, if new expire time is less than 0
+				if not bar.keep then
+					self.mod:Unschedule(removeEntry, self.startedTimers, id)--Needs to be unscheduled here, or the entry might just get left in table until original expire time, if new expire time is less than 0
+				end
 				DBM:Unschedule(playCountSound, id)--Needs to be unscheduled here,or countdown might not be canceled if removing time made it cease to have a > 0 value
 				local elapsed, total = (bar.totalTime - bar.timer), bar.totalTime
 				if elapsed and total then
 					local newRemaining = (total-reduceAmount) - elapsed
 					if newRemaining > 0 then
 						--Correct table for tracked timer objects for adjusted time, or else timers may get stuck if stop is called on them
-						self.mod:Schedule(newRemaining, removeEntry, self.startedTimers, id)
+						if not bar.keep then
+							self.mod:Schedule(newRemaining, removeEntry, self.startedTimers, id)
+						end
 						if self.option and newRemaining > 2 then
 							local countVoice = self.mod.Options[self.option .. "CVoice"] or 0
 							if (type(countVoice) == "string" or countVoice > 0) then
@@ -10368,7 +10400,9 @@ do
 		local bar = DBT:GetBar(id)
 		if bar then
 			DBM:Unschedule(playCountSound, id)--Kill countdown on pause
-			self.mod:Unschedule(removeEntry, self.startedTimers, id)--Prevent removal from startedTimers table while bar is paused
+			if not bar.keep then
+				self.mod:Unschedule(removeEntry, self.startedTimers, id)--Prevent removal from startedTimers table while bar is paused
+			end
 			fireEvent("DBM_TimerPause", id)
 			return bar:Pause()
 		end
@@ -10381,7 +10415,9 @@ do
 			local elapsed, total = (bar.totalTime - bar.timer), bar.totalTime
 			if elapsed and total then
 				local remaining = total - elapsed
-				self.mod:Schedule(remaining, removeEntry, self.startedTimers, id)--Re-schedule the auto remove entry stuff
+				if not bar.keep then
+					self.mod:Schedule(remaining, removeEntry, self.startedTimers, id)--Re-schedule the auto remove entry stuff
+				end
 				--Have to check if paused bar had a countdown on resume so we can restore it
 				if self.option and not bar.fade then
 					local countVoice = self.mod.Options[self.option .. "CVoice"] or 0

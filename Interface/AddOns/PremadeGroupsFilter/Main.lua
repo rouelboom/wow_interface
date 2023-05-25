@@ -142,8 +142,10 @@ function PGF.SortByExpression(searchResultID1, searchResultID2)
     for k, v in pairs(sortTable) do
         if info1.env[k] ~= info2.env[k] then -- works with unknown 'k' as 'nil ~= nil' is false (or 'nil == nil' is true)
             if v == "desc" then
+                if type(info1.env[k]) == "boolean" then return info1.env[k] end -- true before false
                 return info1.env[k] > info2.env[k]
             else -- works with unknown 'v', in this case sort ascending by default
+                if type(info1.env[k]) == "boolean" then return info2.env[k] end -- false before true
                 return info1.env[k] < info2.env[k]
             end
         end
@@ -169,11 +171,12 @@ function PGF.SortByFriendsAndAge(searchResultID1, searchResultID2)
     local searchResultInfo1 = info1.searchResultInfo
     local searchResultInfo2 = info2.searchResultInfo
 
+    -- sort by partyfit
     local hasRemainingRole1 = PGF.HasRemainingSlotsForLocalPlayerRole(info1.memberCounts)
     local hasRemainingRole2 = PGF.HasRemainingSlotsForLocalPlayerRole(info2.memberCounts)
-
     if hasRemainingRole1 ~= hasRemainingRole2 then return hasRemainingRole1 end
 
+    -- sort by friends desc
     if searchResultInfo1.numBNetFriends ~= searchResultInfo2.numBNetFriends then
         return searchResultInfo1.numBNetFriends > searchResultInfo2.numBNetFriends
     end
@@ -183,6 +186,24 @@ function PGF.SortByFriendsAndAge(searchResultID1, searchResultID2)
     if searchResultInfo1.numGuildMates ~= searchResultInfo2.numGuildMates then
         return searchResultInfo1.numGuildMates > searchResultInfo2.numGuildMates
     end
+
+    -- if dungeon, sort by mprating desc
+    if info1.activityInfo.categoryID == C.CATEGORY_ID.DUNGEON or
+       info2.activityInfo.categoryID == C.CATEGORY_ID.DUNGEON then
+        if info1.env.mprating ~= info2.env.mprating then
+            return info1.env.mprating > info2.env.mprating
+        end
+    end
+    -- if arena or RBG, sort by pvprating desc
+    if info1.activityInfo.categoryID == C.CATEGORY_ID.ARENA or
+       info2.activityInfo.categoryID == C.CATEGORY_ID.ARENA or
+       info1.activityInfo.categoryID == C.CATEGORY_ID.RATED_BATTLEGROUND or
+       info2.activityInfo.categoryID == C.CATEGORY_ID.RATED_BATTLEGROUND then
+        if info1.env.pvprating ~= info2.env.pvprating then
+            return info1.env.pvprating > info2.env.pvprating
+        end
+    end
+
     if searchResultInfo1.isWarMode ~= searchResultInfo2.isWarMode then
         return searchResultInfo1.isWarMode == C_PvP.IsWarModeDesired()
     end
@@ -285,7 +306,6 @@ function PGF.DoFilterSearchResults(results)
     local sortTableSize, _ = PGF.GetSortTableFromModel()
     local exp = PGF.GetExpressionFromModel()
     PGF.currentSearchExpression = exp
-    if exp == "true" and sortTableSize == 0 then return false end -- skip trivial expression if no sorting
 
     local playerInfo = PGF.GetPlayerInfo()
 
@@ -385,9 +405,12 @@ function PGF.DoFilterSearchResults(results)
         PGF.PutEncounterNames(resultID, env)
 
         env.hasbr = env.druids > 0 or env.paladins > 0 or env.warlocks > 0 or env.deathknights > 0
-        env.haslust = env.shamans > 0 or env.evokers > 0 or env.hunters > 0 or env.mages > 0
-        env.hashero = env.haslust
-        env.hasbl = env.haslust
+        env.hasbl = env.shamans > 0 or env.evokers > 0 or env.hunters > 0 or env.mages > 0
+        env.hashero = env.hasbl
+        env.haslust = env.hasbl
+
+        env.brfit = env.hasbr or PGF.PlayerOrGroupHasBattleRezz() or PGF.HasRemainingSlotsForBattleRezzAfterJoin(memberCounts)
+        env.blfit = env.hasbl or PGF.PlayerOrGroupHasBloodlust() or PGF.HasRemainingSlotsForBloodlustAfterJoin(memberCounts)
 
         env.myilvl = playerInfo.avgItemLevelEquipped
         env.myilvlpvp = playerInfo.avgItemLevelPvp
@@ -442,7 +465,8 @@ function PGF.DoFilterSearchResults(results)
         -- Dragonflight raids
         --             normal         heroic         mythic
         env.voti     = aID == 1189 or aID == 1190 or aID == 1191 -- Vault of the Incarnates
-        local dfraid = env.voti -- all Dragonflight raids
+        env.asc      = aID == 1235 or aID == 1236 or aID == 1237 -- Aberrus, the Shadowed Crucible
+        local dfraid = env.voti or env.asc -- all Dragonflight raids
 
         -- Legion dungeons
         --                    normal        heroic        mythic        mythic+
@@ -460,9 +484,7 @@ function PGF.DoFilterSearchResults(results)
         env.tosl         = aID == 503 or aID == 505 or aID == 645 or aID == 504 or aID == 542  -- Temple of Sethraliss
         env.tos          = env.tosl
         env.tur          = aID == 506 or aID == 508 or aID == 644 or aID == 507 or aID == 541  -- The Underrot
-        env.undr         = env.tur
         env.tml          = aID == 509 or aID == 511 or aID == 646 or aID == 510 or aID == 540  -- The MOTHERLODE
-        env.ml           = env.tml
         env.kr           = aID == 512 or aID == 515 or aID == 513 or aID == 514                -- Kings' Rest
                                                     or aID == 660 or aID == 661
         env.fh           = aID == 516 or aID == 519 or aID == 517 or aID == 518 or aID == 539  -- Freehold
@@ -507,7 +529,7 @@ function PGF.DoFilterSearchResults(results)
         env.rlp         = aID == 1173 or aID == 1174 or aID == 1175 or aID == 1176 -- Ruby Life Pools
         env.av          = aID == 1177 or aID == 1178 or aID == 1179 or aID == 1180 -- The Azure Vault
         env.no          = aID == 1181 or aID == 1182 or aID == 1183 or aID == 1184 -- The Nokhud Offensive
-        env.lot         = aID == 1185 or aID == 1186 or aID == 1187 or aID == 1188 -- Uldaman: Legacy of Tyr
+        env.lot         = aID == 1185 or aID == 1186 or aID == 1187 or aID == 1188 or aID == 1194 -- Uldaman: Legacy of Tyr
         local dfdungeon = env.aa or env.bh or env.hoi or env.nt or env.rlp or env.av or env.no or env.lot -- all Dragonflight dungeons
 
         -- Dragonflight Season 1 dungeons
@@ -515,7 +537,9 @@ function PGF.DoFilterSearchResults(results)
         env.tjs = aID == 1192 -- Temple of the Jade Serpent (Warlords)
         env.hov = aID == 461 -- Halls of Valor (Legion)
         env.cos = aID == 466 -- Court of Stars (Legion)
+        env.vp = aID == 1195 -- Vortex Pinnacle (Cataclysm)
         env.dfs1 = env.rlp or env.no or env.av or env.aa or env.hov or env.cos or env.sbg or env.tjs
+        env.dfs2 = env.bh or env.hoi or env.lot or env.nt or env.fh or env.tur or env.nl or env.vp
 
         -- find more IDs: /run for i=1146,2000 do local info = C_LFGList.GetActivityInfoTable(i); if info then print(i, info.fullName) end end
 
@@ -555,7 +579,7 @@ function PGF.DoFilterSearchResults(results)
     return true
 end
 
-function PGF.PutRaiderIOAliases(env)
+function PGF. PutRaiderIOAliases(env)
     env.lowr = env.lkara
     env.uppr = env.ukara
 
@@ -563,11 +587,17 @@ function PGF.PutRaiderIOAliases(env)
     env.siege = env.sob  -- Siege of Boralus
     env.yard  = env.opmj -- Operation: Mechagon - Junkyard
     env.work  = env.opmw -- Operation: Mechagon - Workshop
+    env.undr  = env.tur  -- The Underrot
+    env.ml    = env.tml  -- The MOTHERLODE
 
     -- Shadowlands
     env.mists = env.mots -- Mists of Tirna Scithe
     env.strt  = env.tazs -- Tazavesh: Streets of Wonder
     env.gmbt  = env.tazg -- Tazavesh: So'leah's Gambit
+
+    -- Dragonflight
+    env.nelt  = env.nt   -- Neltharus
+    env.uld   = env.lot  -- Uldaman: Legacy of Tyr
 end
 
 function PGF.ColorGroupTexts(self, searchResultInfo)

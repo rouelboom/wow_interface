@@ -14,13 +14,13 @@ Prat3CharDB = {
 			},
 			["ChatFrame6EditBox"] = {
 			},
-			["ChatFrame1EditBox"] = {
-			},
-			["ChatFrame3EditBox"] = {
+			["ChatFrame9EditBox"] = {
 			},
 			["ChatFrame2EditBox"] = {
 			},
-			["ChatFrame9EditBox"] = {
+			["ChatFrame3EditBox"] = {
+			},
+			["ChatFrame1EditBox"] = {
 			},
 		},
 	},
@@ -29,7 +29,7 @@ Prat3HighCPUPerCharDB = {
 	["scrollback"] = {
 		["ChatFrame5"] = {
 			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
-			["headIndex"] = 10,
+			["headIndex"] = 91,
 			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
 			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
 			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
@@ -43,155 +43,1370 @@ Prat3HighCPUPerCharDB = {
 			["IsFull"] = nil --[[ skipped inline function ]],
 			["elements"] = {
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:33]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Zugzugberg-Silvermoon:1431:CHANNEL:5|h|cff00ff98Zugzugberg|r|h|cffd8d8d8]|r: |cffffff00|Hachievement:16343:Player-1305-0C5B6EB7:0:0:0:-1:0:0:0:0|h[Vault of the Incarnates]|h|rHC 8/8=150k> <8/8 HC Unsaved=250k> |cffffff00|Hachievement:16355:Player-3391-0C822931:0:0:0:0:0:0:0:0|h[Glory of the Vault Raider]|h|r=850k <HC Tier VIP=800k> |cffffff00|Hachievement:17107:Player-3674-0B0D7318:1:12:24:22:0:0:0:0|h[Ahead of the Curve: Raszageth the Storm-Eater]|h|r=60k |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:1:2493:14|h[Broodkeeper Diurna]|h|r=30k|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC=80k|r|cffffffff>|r |cffffffff<|r|cff00ff00M+15|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20|r|cffffffff>|r |cffffffff<|r|cff00ff0020-70|r|cffffffff>|r |cffffffff<|r|cff00ff00LVL 60-70=140k|r|cffffffff>|r",
-					["serverTime"] = 1681076673,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Aeringg-Silvermoon:686:CHANNEL:5|h|cfffff468Aeringg|r|h|cffd8d8d8]|r: We offer now |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r270k |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r 150k -both 400k - |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r Full run Normal/HC 9/9 -  (M+0-20)  [M+10] [M+15] [M+17]  10-60 And [Level 60]-[Level 70] /w more info",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						8, -- [4]
+						13, -- [3]
+						14, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208906.175,
+					["timestamp"] = 1240209.86,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [1]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:33]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Dealster-Silvermoon:1432:CHANNEL:5|h|cff0070ddDealster|r|h|cffd8d8d8]|r: |cffffff00|Hachievement:16343:Player-1084-0A862EF9:0:0:0:-1:0:0:0:0|h[Vault of the Incarnates]|h|r8/8HC=150k <HC Unsaved 8/8=250k> |cffffff00|Hachievement:16355:Player-604-0A6CAA65:0:0:0:0:0:0:0:0|h[Glory of the Vault Raider]|h|r=850k <HC Tier VIP=800k |cffffff00|Hachievement:17107:Player-604-0A65666F:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Raszageth the Storm-Eater]|h|r=60k <Diurna=30k> <Last 2=80k> <M+15> <M+16> <M+20> <20-70>|cffffff00|Hachievement:15805:Player-604-0A6CAA65:1:11:30:22:4294967295:4294967295:4294967295:4294967295|h[Level 70]|h|r(60-70)=140k>",
-					["serverTime"] = 1681076673,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Foxenkin-Silvermoon:687:CHANNEL:5|h|cffffffffFoxenkin|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Gilde Verkauf|r|cffffffff>|r WTS|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r|cffffffff<|r|cff00ff00HC 9/9 800k , Hc 8/9 600k|r|cffffffff>|r |cffffffff<|r|cff00ff00Nm 9/9 300k ,last 2 HC 640k|r|cffffffff>|r |cffffffff<|r|cff00ff00 M+ 0 - 25 |r|cffffffff>|r |cffa335ee|Hkeystone:180653:251:21:9:124:6:0|h[Keystone: The Underrot (21)]|h|r|cffffffff<|r|cff00ff004xM10 || 4xM11 || 4xM15 || 4xM16 || 4xM18 || M20|r|cffffffff>|r Lvlup 10-70 /W",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						10, -- [4]
+						13, -- [3]
+						16, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208906.175,
+					["timestamp"] = 1240209.86,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [2]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:34]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Alimalrxu-Silvermoon:1433:CHANNEL:5|h|cffff7c0aAlimalrxu|r|h|cffd8d8d8]|r: Guild Offers Leveling-[10->60 230k][60->70 165k]-Mythic+[M+16 104k][4xM+16 360K][M+20 250K][4xM+20 872K]-|cff66bbff|Hjournal:0:1200:15|h[Vault of the Incarnates]|h|r 8/8 Heroic Saved->150k Unsaved(lootshare)->250k VIP->800k Last 2 Heroic->80k |cff66bbff|Hjournal:1:2499:15|h[Raszageth the Storm-Eater]|h|r->60k",
-					["serverTime"] = 1681076674,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Kushinao-Silvermoon:688:CHANNEL:5|h|cffff7c0aKushinao|r|h|cffd8d8d8]|r: Offering  |cffffffff<|r|cff00ff00Heroic 9/9 900k|r|cffffffff>|r |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 270K!!! Neltharion 150K Last 2 HC 400K |cffffffff<|r|cff00ff00Normal 9/9 300K|r|cffffffff>|r |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r120K |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r90K Both 200K!  We have runs every 30mins. only for WoW Gold. /w",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						12, -- [4]
+						13, -- [3]
+						18, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208906.622,
+					["timestamp"] = 1240209.86,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [3]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:34]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ceosutrabzon-Silvermoon:1434:CHANNEL:5|h|cffaad372Ceosutrabzon|r|h|cffd8d8d8]|r: >Guild Group Offering Mythic |cffffffff<|r|cff00ff00 +15 +20 |r|cffffffff>|r Special HUGE DISCOUNT  Prices for |cffffffff<|r|cff00ff004x15|r|cffffffff>|r,  |cffffffff<|r|cff00ff004x16|r|cffffffff>|r ,|cffffffff<|r|cff00ff00 4x20|r|cffffffff>|r |cffffffff<|r|cff00ff008x15|r|cffffffff>|r  |cffffffff<|r|cff00ff008x16|r|cffffffff>|r or |cffffffff<|r|cff00ff008x20|r|cffffffff>|r Armor stack and spesific keys are possible |cffffffff<|r|cff00ff00LAST 2 HC 80K |r|cffffffff>|r 20-70 Levelings /W for best prices  |cffffffff<|r|cff00ff0060-70 in 1 hour |r|cffffffff>|r",
-					["serverTime"] = 1681076674,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Wixién-Silvermoon:689:CHANNEL:5|h|cff3fc7ebWixién|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00WTS|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r]NM 9/9=280k! HC 9/9=800k! |cffffff00|Hachievement:18160:Player-1403-0A4BA757:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|rHC 250k! HC  Last 2 Together=350k!",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						14, -- [4]
+						13, -- [3]
+						20, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208906.909,
+					["timestamp"] = 1240209.86,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [4]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:34]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Pristobostor-Silvermoon:1435:CHANNEL:5|h|cffffffffPristobostor|r|h|cffd8d8d8]|r: Guild Offers Leveling-[10->60 230k][60->70 165k]-Mythic+[M+16 104k][4xM+16 360K][M+20 250K][4xM+20 872K]-|cff66bbff|Hjournal:0:1200:14|h[Vault of the Incarnates]|h|r] 8/8 Heroic Saved->150k Unsaved(lootshare)->250k VIP->850k Last 2 Heroic->80k |cff66bbff|Hjournal:1:2499:15|h[Raszageth the Storm-Eater]|h|r->60k",
-					["serverTime"] = 1681076674,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Meviy-Silvermoon:690:CHANNEL:5|h|cffaad372Meviy|r|h|cffd8d8d8]|r: Offering Every 15mins |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00HC 270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r  |cffffffff<|r|cff00ff00HC 150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC 400K|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NHC 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r & |cffffffff<|r|cff00ff00Level 60-70 150k|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=1400K|r|cffffffff>|r /w",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						16, -- [4]
+						13, -- [3]
+						22, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208907.191,
+					["timestamp"] = 1240210.099,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [5]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:34]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Rebecy-Silvermoon:1436:CHANNEL:5|h|cff8788eeRebecy|r|h|cffd8d8d8]|r: Offering Every 15 min. |cffffff00|Hachievement:17107:Player-3674-0B0D7318:1:12:24:22:0:0:0:0|h[Ahead of the Curve: Raszageth the Storm-Eater]|h|r =60k |cffffffff<|r|cff00ff00Last2=80k|r|cffffffff>|r Diurna=30k || |cff66bbff|Hjournal:0:1200:16|h[Vault of the Incarnates]|h|r HC=150k |cffffffff<|r|cff00ff00Lootshare=250k|r|cffffffff>|r || |cffffffff<|r|cff00ff00M+16=104k|r|cffffffff>|r |cffffffff<|r|cff00ff004x+16=360k|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=250k|r|cffffffff>|r |cffffffff<|r|cff00ff004x+20=870k|r|cffffffff>|r |cffffffff<|r|cff00ff0060-70=155k|r|cffffffff>|r || |cffffffff<|r|cff00ff00M+ArmorStack|r|cffffffff>|r || |cffffffff<|r|cff00ff00PvP|r|cffffffff>|r /w.",
-					["serverTime"] = 1681076674,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Vikily-Silvermoon:691:CHANNEL:5|h|cffff7c0aVikily|r|h|cffd8d8d8]|r: WTS Mythic +5 -20 intime Guarantee Armor Stack - Full Run Raid Normal HC - 2 Last Boss- PowerLeveling 10-70 Cheap Price /W for info",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						18, -- [4]
+						13, -- [3]
+						24, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208907.191,
+					["timestamp"] = 1240210.099,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [6]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:35]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Friendlypal-Silvermoon:1437:CHANNEL:5|h|cfff48cbaFriendlypal|r|h|cffd8d8d8]|r: GOING NOW! |cff66bbff|Hjournal:0:1200:14|h[Vault of the Incarnates]|h|r |cffffffff<|r|cff00ff008/8 NM 130k|r|cffffffff>|r |cffffffff<|r|cff00ff008/8 HC 150k|r|cffffffff>|r |cffffffff<|r|cff00ff008/8 HC-Loot Share 250k|r|cffffffff>|r  |cffffff00|Hachievement:17107:Player-3391-0C65D98B:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Raszageth the Storm-Eater]|h|rHC=60k / Last 2 80k |||| Mythic+(0-25) |cffffffff<|r|cff00ff00M16 140k|r|cffffffff>|r|cffffffff<|r|cff00ff004x M16 380k|r|cffffffff>|r |cffffffff<|r|cff00ff00M20 270k|r|cffffffff>|r|cffffffff<|r|cff00ff004x M20 960k|r|cffffffff>|r |cffffffff<|r|cff00ff00PvP 0-2400|r|cffffffff>|r /w",
-					["serverTime"] = 1681076675,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Loÿi-Silvermoon:692:CHANNEL:5|h|cff00ff98Loÿi|r|h|cffd8d8d8]|r: WTS Mythic +5 -20 intime Guarantee Armor Stack - Full Run Raid Normal HC - 2 Last Boss- PowerLeveling 10-70 Cheap Price /W for info",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						20, -- [4]
+						13, -- [3]
+						26, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208907.391,
+					["timestamp"] = 1240210.099,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [7]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:35]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ravepristor-Silvermoon:1438:CHANNEL:5|h|cffffffffRavepristor|r|h|cffd8d8d8]|r: Guild Offers Leveling-[10->60 230k][60->70 165k]-Mythic+[M+16 104k][4xM+16 360K][M+20 250K][4xM+20 872K]-|cff66bbff|Hjournal:0:1200:14|h[Vault of the Incarnates]|h|r 8/8 Heroic Saved->150k Unsaved(lootshare)->250k VIP->850k Last 2 Heroic->80k |cff66bbff|Hjournal:1:2499:14|h[Raszageth the Storm-Eater]|h|r->60k",
-					["serverTime"] = 1681076675,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Zugzugberg-Silvermoon:695:CHANNEL:5|h|cff00ff98Zugzugberg|r|h|cffd8d8d8]|r: |cffffff00|Hachievement:18160:Player-3713-0ADD01A2:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|rHC 9/9=800k> <9/9 NM=290k> |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r=275k |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r HC=150k <Last 2 HC=375k|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 NM=175k|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11|r|cffffffff>|r |cffffffff<|r|cff00ff00M+15|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20|r|cffffffff>|r |cffffffff<|r|cff00ff00LVL 1-70|r|cffffffff>|r /w For Info!",
+					["serverTime"] = 1684696299,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						22, -- [4]
+						13, -- [3]
+						28, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208907.674,
+					["timestamp"] = 1240210.274,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [8]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:35]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Yamoe-Silvermoon:1439:CHANNEL:5|h|cff00ff98Yamoe|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00GuildTeam|r|cffffffff>|r |cffffffff<|r|cff00ff00Raid Heroic /Mythic 8/8|r|cffffffff>|r |cffffffff<|r|cff00ff00MYthic+ 10-25|r|cffffffff>|r|cffffffff<|r|cff00ff00KSM|r|cffffffff>|r|cffffffff<|r|cff00ff00KSH|r|cffffffff>|r|cffffffff<|r|cff00ff00Leather/ Cloth / Mail /Plate|r|cffffffff>|r|||||cffffffff<|r|cff00ff00Special Offer & Discount|r|cffffffff>|r |cffffffff<|r|cff00ff004x11|r|cffffffff>|r|cffffffff<|r|cff00ff004x15|r|cffffffff>|r|cffffffff<|r|cff00ff004x16|r|cffffffff>|r |cffffffff<|r|cff00ff004x20|r|cffffffff>|r|cffffffff<|r|cff00ff008x11|r|cffffffff>|r|cffffffff<|r|cff00ff008x16|r|cffffffff>|r|cffffffff<|r|cff00ff008x20|r|cffffffff>|r|||cffffffff<|r|cff00ff00LVLUP / 60-70|r|cffffffff>|r|cffffffff<|r|cff00ff002v2 Rbg|r|cffffffff>|r|||cffffffff<|r|cff00ff00For Gold Only|r|cffffffff>|r",
-					["serverTime"] = 1681076675,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Shayros-Silvermoon:696:CHANNEL:5|h|cfffff468Shayros|r|h|cffd8d8d8]|r: Heya^^ We are offering NOW |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00120k 270k HC|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r |cffffffff<|r|cff00ff0090k 150k HC|r|cffffffff>|r |cffffff00|Hachievement:18160:Player-1403-0A4BA757:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|r Full run NM 290k - HC 800k - (M+0-20)  [M+15 350k] [M+17 500k] 10-60 And 60-70 /w For more info",
+					["serverTime"] = 1684696299,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						24, -- [4]
+						13, -- [3]
+						30, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208907.674,
+					["timestamp"] = 1240210.274,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [9]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:36]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Mathîlda-Silvermoon:1440:CHANNEL:5|h|cfff48cbaMathîlda|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Experienced Guild|r|cffffffff>|r|cffffffff<|r|cff00ff00WTS<M+ (15-25)Cheap Prices|r|cffffffff>|r|cffa335ee|Hkeystone:180653:200:25:9:6:124:132|h[Keystone: Halls of Valor (25)]|h|r|cffffffff<|r|cff00ff00M+19 || M+20 || M+21 || M+22 ||M+23 ||8xM16 ||8xM18 || 8xM20 ||8x M15||4x M21||4x M22||4xM23 || 4xM24 |||r|cffffffff>|r|cffffffff<|r|cff00ff00Enjoy The Boosts With Us ||+3.3k Teams ||Mythic Raid / W ME|r|cffffffff>|r",
-					["serverTime"] = 1681076676,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Diepsy-Silvermoon:697:CHANNEL:5|h|cff00ff98Diepsy|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00WTS|r|cffffffff>|r|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r NM 9/9=280k! HC 9/9=800k! |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r HC 250k! HC Last 2 Together=350k",
+					["serverTime"] = 1684696299,
 					["r"] = 1,
 					["extraData"] = {
 						72, -- [1]
 						false, -- [2]
-						7, -- [3]
-						26, -- [4]
+						13, -- [3]
+						32, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208908.608,
+					["timestamp"] = 1240210.509,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
 				}, -- [10]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Gennôn-Silvermoon:698:CHANNEL:5|h|cffc41e3aGennôn|r|h|cffd8d8d8]|r: Offering|cffffff00|Hachievement:18160:Player-1403-0A4BA757:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|r]NM 300k HC 800k|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rHC 150k! |cffffff00|Hachievement:18253:Player-3391-0C8F681E:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r11 HC 270k! Last 2 HC 400k! 4x11 550k M+15 300k 4x15 1100k M+16 400k 4x16 1400k! Leveling 10-70! 290K",
+					["serverTime"] = 1684696299,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						34, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240210.509,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [11]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Zskarnn-Silvermoon:701:CHANNEL:5|h|cffffffffZskarnn|r|h|cffd8d8d8]|r: Offering  |cffffffff<|r|cff00ff00Heroic 9/9 900k|r|cffffffff>|r |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 250K!!! Neltharion 150k Last 2 HC 400K |cffffffff<|r|cff00ff00Normal 9/9 340K|r|cffffffff>|r  |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r 140K |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r 100K Both 160K!  We have runs every 30mins. only for WoW Gold. /w",
+					["serverTime"] = 1684696299,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						36, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240210.796,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [12]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Mathîlda-Silvermoon:703:CHANNEL:5|h|cfff48cbaMathîlda|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Guild Group|r|cffffffff>|rWTS |cffffffff<|r|cff00ff00Mythic Keystones|r|cffffffff>|r(0-22)|cffffffff<|r|cff00ff00Free ArmorStack + Specific Key|r|cffffffff>|r|cffa335ee|Hkeystone:180653:404:21:10:134:7:0|h[Keystone: Neltharus (21)]|h|r|cffffffff<|r|cff00ff004xM11 || 8x M11 || 4x M15|| 8x M15 || 8xM16 ||4xM16 ||1xM18 ||4xM18 ||8xM18 || 1xM20 || 4x M20 || 8xM20 || 1xM22 || Cheap Prices /W Me For Info|r|cffffffff>|r",
+					["serverTime"] = 1684696299,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						41, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.194,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [13]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Sunashine-Silvermoon:704:CHANNEL:5|h|cff3fc7ebSunashine|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Guild Group|r|cffffffff>|rWTS |cffffffff<|r|cff00ff00Mythic Keystones|r|cffffffff>|r(0-22)|cffffffff<|r|cff00ff00Free ArmorStack + Specific Key|r|cffffffff>|r|cffa335ee|Hkeystone:180653:404:21:10:134:7:0|h[Keystone: Neltharus (21)]|h|r|cffffffff<|r|cff00ff004xM11 || 8x M11 || 4x M15|| 8x M15 || 8xM16 ||4xM16 ||1xM18 ||4xM18 ||8xM18 || 1xM20 || 4x M20 || 8xM20 || 1xM22 || Cheap Prices /W Me For Info|r|cffffffff>|r",
+					["serverTime"] = 1684696299,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						43, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.194,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [14]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:40]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Prosilve-Silvermoon:706:CHANNEL:5|h|cfff48cbaProsilve|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00 Guild Offer |r|cffffffff>|r Aberrus Normal 9/9 |cffffffff<|r|cff00ff00290k|r|cffffffff>|r, last 2 NM|cffffffff<|r|cff00ff00200k|r|cffffffff>|rHC|cffffffff<|r|cff00ff00395k|r|cffffffff>|r, 8/9 HC |cffffffff<|r|cff00ff00700k|r|cffffffff>|r, 9/9 HC |cffffffff<|r|cff00ff00890k|r|cffffffff>|r, 3x +11 |cffffffff<|r|cff00ff00390k|r|cffffffff>|r 3x15 |cffffffff<|r|cff00ff00825k|r|cffffffff>|r 3x16 |cffffffff<|r|cff00ff00900k|r|cffffffff>|r 1x20 |cffffffff<|r|cff00ff001260k|r|cffffffff>|r Leveling /w",
+					["serverTime"] = 1684696300,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						45, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.403,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [15]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:40]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ephilepsi-Silvermoon:707:CHANNEL:5|h|cff8788eeEphilepsi|r|h|cffd8d8d8]|r: Offering |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r FullNM=315k/Last2NM=275k>HeroicFull=800k/Last2HC=400K>M0WorldTour(AllDungeon+0)=540k/1x11=150k>4x11=520k>1x15=300k>4x15=1100k/LvL 60-70=145k/w",
+					["serverTime"] = 1684696300,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						47, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.403,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [16]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:40]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Flusspferd-Silvermoon:708:CHANNEL:5|h|cff33937fFlusspferd|r|h|cffd8d8d8]|r: We are Offering Every 30mins HC |cffffff00|Hachievement:18253:Player-3391-0C63073A:1:5:19:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r|cffffffff<|r|cff00ff00150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Both 400K|r|cffffffff>|r and |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NM 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r & |cffffffff<|r|cff00ff00Level 10-70|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=1400K|r|cffffffff>|r",
+					["serverTime"] = 1684696300,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						49, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.71,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [17]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:40]|h|r |Hchannel:channel:5|h[5] |h<Away>|cffd8d8d8[|r|Hplayer:Nicølet-Silvermoon:709:CHANNEL:5|h|cff3fc7ebNicølet|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Guild Offer|r|cffffffff>|r WTS |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff00HC 9/9 800k , Hc 8/9 600k|r|cffffffff>|r |cffffffff<|r|cff00ff00Norm 9/9 300k , 2 last HC 400k|r|cffffffff>|r |cffffffff<|r|cff00ff00Offering M+ 10 - 25 Cheap Prices|r|cffffffff>|r |cffa335ee|Hkeystone:180653:251:21:9:124:6:0|h[Keystone: The Underrot (21)]|h|r |cffffffff<|r|cff00ff004xM10 || 4xM11 || 4xM15 || 4xM16 || 4xM18 || M20|r|cffffffff>|r Lvlup 10-70",
+					["serverTime"] = 1684696300,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						51, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.71,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [18]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:40]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Tyloveyou-Silvermoon:710:CHANNEL:5|h|cffff7c0aTyloveyou|r|h|cffd8d8d8]|r: WTS Mythic +5 -20 intime Guarantee Armor Stack - Full Run Raid (Normal HC AND MYTIC ) - 2 Last Boss- Power Leveling 1-70 best price/W for info",
+					["serverTime"] = 1684696300,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						53, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240211.71,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [19]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:41]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Yourrpall-Silvermoon:714:CHANNEL:5|h|cffc69b6dYourrpall|r|h|cffd8d8d8]|r: [Guild} selling|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|rNM=315k/HC=850k |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rNM=90k|cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r120k/last2boss=175k,M11=190k",
+					["serverTime"] = 1684696301,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						55, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240212.326,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [20]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:41]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Kaftarekakol-Silvermoon:715:CHANNEL:5|h|cffff7c0aKaftarekakol|r|h|cffd8d8d8]|r: Best Price is here >>>|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r >>  9/9 HC ((752k))--- 9/9 NM (( 279k )) --- Last2Booses HC((350k)) & NM ((157k)) / { PVP-Mythic+ } Lvlupboosting > ( 1 Or 10-70 |cffffffff<|r|cff00ff00220k|r|cffffffff>|r ) (60-70 |cffffffff<|r|cff00ff00120k|r|cffffffff>|r",
+					["serverTime"] = 1684696301,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						57, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240212.701,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [21]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:41]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Nutosikih-Silvermoon:716:CHANNEL:5|h|cffc69b6dNutosikih|r|h|cffd8d8d8]|r: [WТS] Aberrus Normal & Heroic 9/9 runs, Mythic +10-16 carry tonight! Get 415-441 ilvl gear, AOTC, KSM & new Mounts hassle-free. EXPRESS boost: runs start every 60 minutes! We have 23806+ Trustpilot reviews. Visit |cffffffff|Hurl:WowVendor.org|h[WowVendor.org]|h|r for more info",
+					["serverTime"] = 1684696301,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						59, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240212.701,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [22]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Lilblast-Silvermoon:719:CHANNEL:5|h|cffc41e3aLilblast|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00 O.T.F TEAM |r|cffffffff>|r WTS |cffffffff<|r|cff00ff00M+ 2-20|r|cffffffff>|r Special Offer & Discount On |cffffffff<|r|cff00ff00M11|r|cffffffff>|r  |cffffffff<|r|cff00ff00M15|r|cffffffff>|r , |cffffffff<|r|cff00ff00M16|r|cffffffff>|r |cffffffff<|r|cff00ff00M17|r|cffffffff>|r |cffffffff<|r|cff00ff00M20|r|cffffffff>|r Weekly Or IN Time & Specific Keys |cffffffff<|r|cff00ff004x16|r|cffffffff>|r |cffffffff<|r|cff00ff008x16 KSM|r|cffffffff>|r |cffffffff<|r|cff00ff004x15|r|cffffffff>|r |cffffffff<|r|cff00ff008x15|r|cffffffff>|r |cffffffff<|r|cff00ff004x17|r|cffffffff>|r |cffffffff<|r|cff00ff008x17|r|cffffffff>|r |cffffffff<|r|cff00ff004x20|r|cffffffff>|r |cffffffff<|r|cff00ff008x20 KSH|r|cffffffff>|r WITH ARMOR STACK |cffffffff<|r|cff00ff00LVL UP Service 10-70|r|cffffffff>|r|| |cffffffff<|r|cff00ff00Only for Gold|r|cffffffff>|r :)",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						61, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.446,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [23]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Icenukerr-Silvermoon:720:CHANNEL:5|h|cff3fc7ebIcenukerr|r|h|cffd8d8d8]|r: Guilde Offer with BIG DISSCOUNT M+ (0-20)|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|rNM/HC/|cffa335ee|Hkeystone:180653:251:21:9:124:6:0|h[Keystone: The Underrot (21)]|h|rM+11/M+15/M+16/M+17/M+18/M+19/M+20/4xM+11/4xM+16>/|cffffffff<|r|cff00ff00Leveling 1-70|r|cffffffff>|r",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						63, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.446,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [24]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Grunbêld-Silvermoon:722:CHANNEL:5|h|cffc41e3aGrunbêld|r|h|cffd8d8d8]|r: Offering |cffffff00|Hachievement:18160:Player-1403-0A4BA757:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|rNM 300k HC 800k|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rHC 150k! |cffffff00|Hachievement:18253:Player-3391-0C63073A:1:5:19:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|rHC 270k! Last 2 HC 400k! 4x11 550k M+15 300k 4x15 1100k M+16 400k 4x16 1400k! Leveling 10-70! 290K",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						67, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.446,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [25]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Drakkarius-Silvermoon:723:CHANNEL:5|h|cff33937fDrakkarius|r|h|cffd8d8d8]|r: WTS M+0-18 Discount on bundles 4x11 / 8x11 / 4x15 / 8x15 / 4x16 / 8x16-|cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|rNormal& Heroic-Last 2 bosses Sarkareth & Neltharion Normal& Heroic-Leveling boost 10-70 Fast & Cheap-only for gold",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						69, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.754,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [26]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Octavians-Silvermoon:725:CHANNEL:5|h|cff00ff98Octavians|r|h|cffd8d8d8]|r: Guild  Offering |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r 9/9 Normal 350k& Heroic 9/9 750 - 8/9 700|r|cffffffff>|r|cffffffff<|r|cff00ff00|cffffff00|Hachievement:18253:Player-3391-0C8E4CEF:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 275k|r|cffffffff>|r|cffffffff<|r|cff00ff00M+ Offers 4x11=500-4x15=1050-4x16=1150-Solo dung available|r|cffffffff>|r|cffffffff<|r|cff00ff00Levling 10-70|r|cffffffff>|r|cffffffff<|r|cff00ff00PVP|r|cffffffff>|r /w for info33",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						71, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.754,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [27]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Gåîa-Silvermoon:729:CHANNEL:5|h|cff3fc7ebGåîa|r|h|cffd8d8d8]|r: Guild Team Offering |cff66bbff|Hjournal:0:1208:16|h[Aberrus, the Shadowed Crucible]|h|r  Full Clear Normal 290k / HC 850M  ||  M+11 = 140k || 4x M+15 950k || M+ 15 = 290K ||   M+ 16 = 315k  || 4x M+16 1050k || +20 1000k / 60-70  Levelling 150k",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						73, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240214.004,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [28]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Dreamxalex-Silvermoon:730:CHANNEL:5|h|cff00ff98Dreamxalex|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Guild|r|cffffffff>|r WTS |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r 9/9 NM 280k + HC 9/9 800k +8/9 650k + Curve Last HC 275k+ 2XLastHC 400k /M+15 270k / M+16 300k / M+17 400k /M+20 1000k /4x+11 450k / 4x+15 1000k / 3x+16 810k / 3x+20 2800k /KSM 8x+15 2100k / Lvlup Boost",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						75, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240214.004,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [29]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Naelaeloran-Silvermoon:731:CHANNEL:5|h|cffa330c9Naelaeloran|r|h|cffd8d8d8]|r: offerr every 30 minutes HC [LAST BOSS] |cffffffff<|r|cff00ff00275k|r|cffffffff>|r|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r|cffffffff<|r|cff00ff00150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 Bosses 400k|r|cffffffff>|r [9/9 HC 800k]|cffffffff<|r|cff00ff009/9 NM 315k|r|cffffffff>|r|cffffffff<|r|cff00ff008/9 HC 750k|r|cffffffff>|r M+|cffffffff<|r|cff00ff004xM10|r|cffffffff>|r|cffffffff<|r|cff00ff004xM11|r|cffffffff>|r|cffffffff<|r|cff00ff001xM15|r|cffffffff>|r|cffffffff<|r|cff00ff004x16|r|cffffffff>|r|cffffffff<|r|cff00ff001x20|r|cffffffff>|r|cffffffff<|r|cff00ff008xM20|r|cffffffff>|r level up 0-70",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						77, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240214.004,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [30]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Thehonorable-Silvermoon:732:CHANNEL:5|h|cfff48cbaThehonorable|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00TEAM Pirates Of Sinking Ship|r|cffffffff>|r Offering |cffffffff<|r|cff00ff00Mythic Keystones|r|cffffffff>|r Scores/Gears 0-29 |||| |cffffffff<|r|cff00ff00Raid|r|cffffffff>|r Saved/Unsaved/VIP ATSC Nm/Hc/Mythic |||| |cffffffff<|r|cff00ff00LVLUP|r|cffffffff>|r 1-70 |||| |cffffffff<|r|cff00ff00PVP|r|cffffffff>|r Ratings,Wins,Coaching,Gearing 2v2/3v3/Rbgs |||| |cffffffff<|r|cff00ff00Legacies/Ach/Mounts|r|cffffffff>|r Say ARGHHH & W/me PIRATE",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						79, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240214.004,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [31]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:43]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ebonmaster-Silvermoon:734:CHANNEL:5|h|cffc41e3aEbonmaster|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00TEAM Pirates Of Sinking Ship|r|cffffffff>|r Offering |cffffffff<|r|cff00ff00Mythic Keystones|r|cffffffff>|r Scores/Gears 0-29 |||| |cffffffff<|r|cff00ff00Raid|r|cffffffff>|r Saved/Unsaved/VIP ATSC Nm/Hc/Mythic |||| |cffffffff<|r|cff00ff00LVLUP|r|cffffffff>|r 1-70 |||| |cffffffff<|r|cff00ff00PVP|r|cffffffff>|r Ratings,Wins,Coaching,Gearing 2v2/3v3/Rbgs |||| |cffffffff<|r|cff00ff00Legacies/Ach/Mounts|r|cffffffff>|r Say ARGHHH & W/me PIRATE",
+					["serverTime"] = 1684696303,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						81, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240214.619,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [32]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:43]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ravepristor-Silvermoon:735:CHANNEL:5|h|cffffffffRavepristor|r|h|cffd8d8d8]|r: Offers |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r->[150k/90k] |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r->[275k/120k] [Last2->[400k/175k] - |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r [9/9]->[900k/315k] - 8/9HC->[650k] [Leveling] [Mythic+] for all kind of boosts /w me",
+					["serverTime"] = 1684696303,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						83, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240214.834,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [33]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:44]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Greepokek-Silvermoon:738:CHANNEL:5|h|cff00ff98Greepokek|r|h|cffd8d8d8]|r: OFFERING|cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|rCurve Heroic Today 270k & Last 2Boss HC 390k & Last 2Boss NM || 9/9 Heroic 850k || || Full run normal 290k || Whisper me",
+					["serverTime"] = 1684696304,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						85, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240215.57,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [34]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:44]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Yametepls-Silvermoon:739:CHANNEL:5|h|cff3fc7ebYametepls|r|h|cffd8d8d8]|r: WTS |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r---|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r---|cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r FULL Run & CURVE Run---LEVELING BOOST 1-70 \"DM FOR INFO\"",
+					["serverTime"] = 1684696304,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						87, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240215.57,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [35]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:44]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Kaftarekakol-Silvermoon:742:CHANNEL:5|h|cffff7c0aKaftarekakol|r|h|cffd8d8d8]|r: Best Price is here >>>|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r >>  9/9 HC ((752k))--- 9/9 NM (( 279k )) --- Last2Booses HC((350k)) & NM ((157k)) / { PVP-Mythic+ } Lvlupboosting > ( 1 Or 10-70 |cffffffff<|r|cff00ff00220k|r|cffffffff>|r ) (60-70 |cffffffff<|r|cff00ff00120k|r|cffffffff>|r",
+					["serverTime"] = 1684696304,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						57, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240216.251,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [36]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:45]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Agehâ-Silvermoon:745:CHANNEL:5|h|cffff7c0aAgehâ|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Heroic 9/9 850k|r|cffffffff>|r|cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 250K!!! Neltharion 150k Last 2 HC 390K |cffffffff<|r|cff00ff00Normal 9/9 300K|r|cffffffff>|r |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r 120K |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r 100K Both 160K! We have runs every 30mins. only for WoW Gold. /w",
+					["serverTime"] = 1684696305,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						93, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240216.727,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [37]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:45]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Wertep-Silvermoon:746:CHANNEL:5|h|cff0070ddWertep|r|h|cffd8d8d8]|r: any pl guild ?",
+					["serverTime"] = 1684696305,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						95, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240216.727,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [38]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:45]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Griffîth-Silvermoon:747:CHANNEL:5|h|cffc41e3aGriffîth|r|h|cffd8d8d8]|r: Offering|cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|rNM 300k HC 800k|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rHC 150k! |cffffff00|Hachievement:18253:Player-3391-0C63091D:1:5:19:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|rHC 270k! Last 2 HC 400k! 4x11 550k M+15 300k 4x15 1100k M+16 400k 4x16 1400k! Leveling 10-70! 290K",
+					["serverTime"] = 1684696305,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						97, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240217.07,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [39]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:46]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Evanõr-Silvermoon:750:CHANNEL:5|h|cff8788eeEvanõr|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00<WTS |r|cffffffff>|r> (M+ 0-20 ) (Raid HC-NM) (Last 2 Bosses) (Power Leveling Boost 10-70 ) ( PVP Boost ) for cheap price / Dm me for more info",
+					["serverTime"] = 1684696306,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						99, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240217.738,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [40]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:46]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Philiius-Silvermoon:751:CHANNEL:5|h|cfff48cbaPhiliius|r|h|cffd8d8d8]|r: Offering Mythic +10- 20 inTime -Weekly-Armor Stack (Big Discount  Multi runs )4x15 -4x16-4x20  also selling |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r 9/9 - 8/9  Normal & HC Every 30 Min || Last 2 Boss || PVP || Lvlup Boost /w",
+					["serverTime"] = 1684696306,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						101, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240218.019,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [41]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Nestr-Silvermoon:752:CHANNEL:5|h|cffffffffNestr|r|h|cffd8d8d8]|r: Offering Every 30mins |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00HC 270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r |cffffffff<|r|cff00ff00HC 150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC 400K|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NHC 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r & |cffffffff<|r|cff00ff00Level 60-70 150k|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=1400K|r|cffffffff>|r /w",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						103, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240218.45,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [42]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Prosilv-Silvermoon:753:CHANNEL:5|h|cfff48cbaProsilv|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00 Guild Offer|r|cffffffff>|r Aberrus Normal 9/9 |cffffffff<|r|cff00ff00290k|r|cffffffff>|r, last 2 NM|cffffffff<|r|cff00ff00200k|r|cffffffff>|rHC|cffffffff<|r|cff00ff00395k|r|cffffffff>|r, 8/9 HC |cffffffff<|r|cff00ff00700k|r|cffffffff>|r, 9/9 HC |cffffffff<|r|cff00ff00890k|r|cffffffff>|r, 3x +11 |cffffffff<|r|cff00ff00390k|r|cffffffff>|r 3x15 |cffffffff<|r|cff00ff00825k|r|cffffffff>|r 3x16 |cffffffff<|r|cff00ff00900k|r|cffffffff>|r 1x20 |cffffffff<|r|cff00ff001260k|r|cffffffff>|r Leveling /w",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						105, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240218.45,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [43]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Adellheid-Silvermoon:754:CHANNEL:5|h|cffaad372Adellheid|r|h|cffd8d8d8]|r: STARTS NOW With The Lowest PRICE |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff00Heroic 9/9 8/9|r|cffffffff>|r |cffffffff<|r|cff00ff00Normal 9/9|r|cffffffff>|r || Every 30 Min With The Lowest PRICE |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|rNormal/Heroic|r|cffffffff>|r |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rNormal/Heroic|r|cffffffff>|r |cffffffff<|r|cff00ff00LAST 2 Boss Normal/Heroic|r|cffffffff>|r |cffffffff<|r|cff00ff00Gold|r|cffffffff>|r",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						107, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240218.45,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [44]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Crysto-Silvermoon:755:CHANNEL:5|h|cff8788eeCrysto|r|h|cffd8d8d8]|r: Offering Every 30mins |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00HC 270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:15|h[Echo of Neltharion]|h|r  |cffffffff<|r|cff00ff00HC 150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC 400K|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NHC 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r& |cffffffff<|r|cff00ff00Level 60-70 150k|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r <M+20=1400K /w",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						109, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240218.666,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [45]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Selasa-Silvermoon:756:CHANNEL:5|h|cffffffffSelasa|r|h|cffd8d8d8]|r: LAST 2 BOSS HEROIC>>400k<<|cffffff00|Hachievement:18253:Player-3682-0B232975:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r|cff66bbff|Hjournal:1:2523:15|h[Echo of Neltharion]|h|r150K|cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r270K Chance to get 437+ items &mount skin||FAST AND SMOOTH||",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						111, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.007,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [46]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Gcascâ-Silvermoon:757:CHANNEL:5|h|cffc41e3aGcascâ|r|h|cffd8d8d8]|r: Offering|cffffff00|Hachievement:18160:Player-3713-0ADD01A2:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|rNM 300k HC 800k|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rHC 150k! |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r] HC 270k! Last 2 HC 400k! 4x11 550k M+15 300k 4x15 1100k M+16 400k 4x16 1400k! Leveling 10-70! 290K",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						113, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.007,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [47]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Dambeldor-Silvermoon:758:CHANNEL:5|h|cff00ff98Dambeldor|r|h|cffd8d8d8]|r: Selling M+ Boost 0 - 20 Garantee intime OR WEEKLY Run , Discount on Multiple Runs - |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r HC & NM, FULL Run and CURVE Run -  Leveling boost 1-70 for Horde & Alliance  /w for more info",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						115, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.007,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [48]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Octainsteem-Silvermoon:759:CHANNEL:5|h|cff00ff98Octainsteem|r|h|cffd8d8d8]|r: Guild  Offering |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r 9/9 Normal 350k& Heroic 9/9 750- 8/9 700|r|cffffffff>|r|cffffffff<|r|cff00ff00|cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 275k|r|cffffffff>|r|cffffffff<|r|cff00ff00M+ Offers 4x11=500-4x15=1050-4x16=1150-Solo dung available|r|cffffffff>|r|cffffffff<|r|cff00ff00Levling 10-70|r|cffffffff>|r|cffffffff<|r|cff00ff00PVP|r|cffffffff>|r /w for info",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						117, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.222,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [49]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Quattroace-Silvermoon:760:CHANNEL:5|h|cffffffffQuattroace|r|h|cffd8d8d8]|r: Offering Every 30mins |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00HC 270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r|cffffffff<|r|cff00ff00HC 150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC 400K|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r|cffffffff<|r|cff00ff009/9 NM 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						119, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.222,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [50]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:47]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Mosellmaster-Silvermoon:761:CHANNEL:5|h|cff00ff98Mosellmaster|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00 Gilden|r|cffffffff>|r |cffffff00|Hachievement:18160:Player-3391-0C4B2956:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|r 8/9 700k||9/9 850k||NM 300k |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 270k/last2400k||8x 11 ||1x+20 1000k||4x+16/ Level Up 10-70 300k+60-70130K /w for info",
+					["serverTime"] = 1684696307,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						121, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.222,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [51]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Pearlhun-Silvermoon:762:CHANNEL:5|h|cff0070ddPearlhun|r|h|cffd8d8d8]|r: Top20 Guild Offering |cffffff00|Hachievement:18253:Player-3674-07C8487D:1:5:12:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00<260|r|cffffffff>|r>|cff66bbff|Hjournal:1:2523:15|h[Echo of Neltharion]|h|r>150k|cffffffff<|r|cff00ff00 // Last 2 Both |r|cffffffff>|r>360k|cffffffff<|r|cff00ff00< // 9/9HC |r|cffffffff>|r>850k!! CHEAPEST PRICES",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						123, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.538,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [52]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Silveray-Silvermoon:763:CHANNEL:5|h|cfff48cbaSilveray|r|h|cffd8d8d8]|r: WTS |cffffd000|Htrade:Player-3391-0C8A7C83:7411:333|h[Enchanting]|h|r |cffa335ee|Hitem:204682::::::::70:70::13:1:3524::::::|h[Enchanted Wyrm's Shadowflame Crest]|h|r - |cffa335ee|Hitem:204697::::::::70:70::13:1:3524::::::|h[Enchanted Aspect's Shadowflame Crest]|h|r",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						125, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.538,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [53]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Nahomiis-Silvermoon:764:CHANNEL:5|h|cfffff468Nahomiis|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00<GUILD OFFERING|r|cffffffff>|r>|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r|| 9/9Heroic=|cffffffff<|r|cff00ff00800k|r|cffffffff>|r || Heroic 8/9=|cffffffff<|r|cff00ff00600k|r|cffffffff>|r|| || 9/9Normal=|cffffffff<|r|cff00ff00300k|r|cffffffff>|r|| Last Boss HC=|cffffffff<|r|cff00ff00270k|r|cffffffff>|r|| Last 2BOSS HC|cffffffff<|r|cff00ff00390k|r|cffffffff>|r|| || M+16=|cffffffff<|r|cff00ff00300k|r|cffffffff>|r || || 4xM+16=|cffffffff<|r|cff00ff001060k|r|cffffffff>|r || || M+20=|cffffffff<|r|cff00ff001000k|r|cffffffff>|r||",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						127, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.538,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [54]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Pristobostor-Silvermoon:765:CHANNEL:5|h|cffffffffPristobostor|r|h|cffd8d8d8]|r: Offers |cff66bbff|Hjournal:1:2523:15|h[Echo of Neltharion]|h|r->[150k/90k] |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r->[275k/120k] [Last2->[400k/175k] - |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r [9/9]->[900k/315k] - 8/9HC->[650k] [Leveling] [Mythic+] for all kind of boosts /w me",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						129, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.785,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [55]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Sweét-Silvermoon:766:CHANNEL:5|h|cff00ff98Sweét|r|h|cffd8d8d8]|r: [WTS]   %      M0 - M+24 All Keys+Stack  ||  M+11 x4=470K  ||  M+15=275K  ||  M+16=295K  ||  M+15 x4=890K  ||  M+16 x4=990K  || M+20=1100K ||  Raid NHC=230K  ||  Last Boss HC=260k  ||  Raid HC=730K  ||  Last TWO NM=190K / HC=380K  || Level up || PVP",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						131, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.785,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [56]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Syllvvanas-Silvermoon:767:CHANNEL:5|h|cfffff468Syllvvanas|r|h|cffd8d8d8]|r: |cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|r(9/9 HEROIC=800K )  (9/9 NORMAL =235K)  (LAST 2 HEROIC=350K) (Last2 normal 160k) (CURVE SARA HC=260K) |cffffffff<|r|cff00ff00M+11=120K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+15=240k|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=270k|r|cffffffff>|r|cffffffff<|r|cff00ff00M+20=900k|r|cffffffff>|r POWER LEVELING |cffffffff<|r|cff00ff0060-70=130K|r|cffffffff>|r",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						133, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240219.785,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [57]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Vikily-Silvermoon:768:CHANNEL:5|h|cffff7c0aVikily|r|h|cffd8d8d8]|r: WTS Mythic +5 -20 intime Guarantee Armor Stack - Full Run Raid Normal HC - 2 Last Boss- PowerLeveling 10-70 Cheap Price /W for info",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						24, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.048,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [58]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:48]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Soulkeeperz-Silvermoon:769:CHANNEL:5|h|cff33937fSoulkeeperz|r|h|cffd8d8d8]|r: We are Offering Every 30mins HC|cffffff00|Hachievement:18253:Player-3391-0C63091D:1:5:19:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r|cffffffff<|r|cff00ff00150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Both 400K|r|cffffffff>|r and  |cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NM 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r & |cffffffff<|r|cff00ff00Level 10-70|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=1400K|r|cffffffff>|r",
+					["serverTime"] = 1684696308,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						135, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.048,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [59]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Quisv-Silvermoon:770:CHANNEL:5|h|cff00ff98Quisv|r|h|cffd8d8d8]|r: HEY! ^^ Selling |cffffff00|Hachievement:18253:Player-3391-0C8F6742:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r HC >> 270k! << || Echo Of Neltharion 150k. Both 400k! Every 25 minutes! Chance to loot 437ilvl item & |cffa335ee|Hitem:206046::::::::1:1450:::::::::|h[Void-Touched Curio]|h|r & Mount  /w me for info",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						137, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.292,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [60]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Gisidrô-Silvermoon:771:CHANNEL:5|h|cffc41e3aGisidrô|r|h|cffd8d8d8]|r: Offering|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|rNM 300k HC 800k|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rHC 150k! |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r HC 270k! Last 2 HC 400k! 4x11 550k M+15 300k 4x15 1100k M+16 400k 4x16 1400k! Leveling 10-70! 290K",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						139, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.292,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [61]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Azjo-Silvermoon:773:CHANNEL:5|h|cffff7c0aAzjo|r|h|cffd8d8d8]|r: Guild Group - WTS [ Mythic+  With Good prices ] Mythic 0 / Mythic 10/ Mythic 20 / Lvlup Boost 10-70  |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|rHC /NM/Mythic Mode 8/8 / 2 Last Boss / Vip Token runs /Unsaved w/m for more info.",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						143, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.521,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [62]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Letmedothis-Silvermoon:774:CHANNEL:5|h|cff0070ddLetmedothis|r|h|cffd8d8d8]|r: Offering Every 15 Mins |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00HC 270k|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r |cffffffff<|r|cff00ff00HC 130k|r|cffffffff>|r|cffffffff<|r|cff00ff00Both HC 390k|r|cffffffff>|r And |cffffff00|Hachievement:18160:Player-3391-0C9037B8:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NM 305k|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 890k|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11 120k || M+15 280k || M+16 300k || M+20 1000k|r|cffffffff>|r /W Me",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						145, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.521,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [63]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Honezone-Silvermoon:775:CHANNEL:5|h|cffc41e3aHonezone|r|h|cffd8d8d8]|r: Guild Offering |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00HC 270K|r|cffffffff>|r |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r|cffffffff<|r|cff00ff00HC 150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC 400K|r|cffffffff>|r|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r|cffffffff<|r|cff00ff009/9 NM 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff004x+11=600k|r|cffffffff>|r |cffffffff<|r|cff00ff004x+15=1280k|r|cffffffff>|r |cffffffff<|r|cff00ff004x+16=1400k|r|cffffffff>|r",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						147, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.818,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [64]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Höpè-Silvermoon:776:CHANNEL:5|h|cff00ff98Höpè|r|h|cffd8d8d8]|r: [WTS]   %      NORMAL Raid 9/9=230K  ||  M0 - M+24  ||  HEROIC Raid 9/9=730K  ||  Last TWO NM=190K / HC=380K  || Level up ||  Last Boss HC=260k  ||  M+11 x4=470K  ||  M+15=275K  ||  M+16=295K  ||  M+15 x4=890K  ||  M+16 x4=990K  || M+20=1100K || PVP",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						149, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.818,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [65]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Unablily-Silvermoon:777:CHANNEL:5|h|cffffffffUnablily|r|h|cffd8d8d8]|r: Guild is selling Heroic |cffffff00|Hachievement:18253:Player-3391-0C8F681E:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r for 270k! and |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r for 150k! BOTH 400k! Going every 20 minutes!  You have a chance for 437 ilvl /w me for info",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						151, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.242,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [66]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Opskelet-Silvermoon:779:CHANNEL:5|h|cfffff468Opskelet|r|h|cffd8d8d8]|r: High-level guild  Offering |cffffff00|Hachievement:18253:Player-3674-07C8487D:1:5:12:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r  275K - Neltharion 150K - Last 2 HC 400K - FULL CLEAR 8/8 NHC for 315K - 8/8 HC for 900K - M10 to M20 dungeons. We also do KSM /w for reserve.",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						155, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.242,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [67]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Orangeelady-Silvermoon:780:CHANNEL:5|h|cffffffffOrangeelady|r|h|cffd8d8d8]|r: Guild is selling Heroic |cffffff00|Hachievement:18253:Player-3391-0C8F61C2:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r for 269k! and |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r for 149k! BOTH 399k! Going every 20 minutes!  You have a chance for 437 ilvl /w me for info",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						157, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.622,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [68]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Yamoe-Silvermoon:781:CHANNEL:5|h|cff00ff98Yamoe|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00GuildTeam|r|cffffffff>|r |cffffffff<|r|cff00ff00New Raid A S C /Normal/ HC |r|cffffffff>|r |cffffffff<|r|cff00ff00MYthic+ 0 - 20 |r|cffffffff>|r|cffffffff<|r|cff00ff004xM 10|r|cffffffff>|r |cffffffff<|r|cff00ff004xM 11|r|cffffffff>|r |cffffffff<|r|cff00ff004xM 12|r|cffffffff>|r |cffffffff<|r|cff00ff004xM 13|r|cffffffff>|r |cffffffff<|r|cff00ff004xM14|r|cffffffff>|r |cffffffff<|r|cff00ff001x M15|r|cffffffff>|r |cffffffff<|r|cff00ff004x M15|r|cffffffff>|r |cffffffff<|r|cff00ff004x M16 |r|cffffffff>|r |cffffffff<|r|cff00ff008xM11 |r|cffffffff>|r |cffffffff<|r|cff00ff008x M12|r|cffffffff>|r |cffffffff<|r|cff00ff00Leather/ Cloth /Chain /Plate|r|cffffffff>|r|cffffffff<|r|cff00ff00Sale & Discount|r|cffffffff>|r |cffffffff<|r|cff00ff00LVLUP /10 / 70 ||60-70|r|cffffffff>|r|cffffffff<|r|cff00ff002v2 Rbg|r|cffffffff>|r |cffffffff<|r|cff00ff00For Gold Only|r|cffffffff>|r",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						159, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.622,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [69]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Mellmi-Silvermoon:782:CHANNEL:5|h|cffffffffMellmi|r|h|cffd8d8d8]|r: Offering Every 15mins |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00HC 270K|r|cffffffff>|r [|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r  |cffffffff<|r|cff00ff00HC 150K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 HC 400K|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NHC 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r& |cffffffff<|r|cff00ff00Level 60-70 150k|r|cffffffff>|r & |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=1400K|r|cffffffff>|r /w",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						161, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.622,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [70]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Bhorîn-Silvermoon:783:CHANNEL:5|h|cff0070ddBhorîn|r|h|cffd8d8d8]|r: |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|rNm=|cffffffff<|r|cff00ff00300k|r|cffffffff>|rHc FullHc=|cffffffff<|r|cff00ff00800k|r|cffffffff>|r1|cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|rHc(Curve)=|cffffffff<|r|cff00ff00250k|r|cffffffff>|rNm=|cffffffff<|r|cff00ff00100k|r|cffffffff>|r|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rNm=|cffffffff<|r|cff00ff0080k|r|cffffffff>|rHc=|cffffffff<|r|cff00ff00140k|r|cffffffff>|rHcLast2=|cffffffff<|r|cff00ff00390k|r|cffffffff>|rNmLast2=|cffffffff<|r|cff00ff00160k|r|cffffffff>|r||8x15 8x16||M20 Weekly|| Powerleveling1-70||",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						163, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.891,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [71]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Aoscarbalili-Silvermoon:784:CHANNEL:5|h|cff00ff98Aoscarbalili|r|h|cffd8d8d8]|r: Guild Group Offering Heroic |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r 150k & |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r 270k & BOTH 400k! Chance to get 444 ilvl !/w für info.",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						165, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.891,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [72]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ceosutrabzon-Silvermoon:785:CHANNEL:5|h|cffaad372Ceosutrabzon|r|h|cffd8d8d8]|r: Offering Last 2 HEROIC |cffffffff<|r|cff00ff00 |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r 150K |r|cffffffff>|r |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00 270K |r|cffffffff>|r |cffffffff<|r|cff00ff00 Last 2 400K |r|cffffffff>|r /w me for quick book Fast and Clean Runs Every 20 Minutes |cffffffff<|r|cff00ff00 Last 2 HC 400K |r|cffffffff>|r",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						167, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.199,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [73]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:50]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Firstdranei-Silvermoon:786:CHANNEL:5|h|cffffffffFirstdranei|r|h|cffd8d8d8]|r: Offers |cff66bbff|Hjournal:1:2523:15|h[Echo of Neltharion]|h|r->[150k/90k] |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r->[275k/120k] [Last2->[400k/175k] - |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r [9/9]->[900k/315k] - 8/9HC->[650k] [Leveling] [Mythic+] for all kind of boosts /w me",
+					["serverTime"] = 1684696310,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						169, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.199,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [74]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Voxomom-Silvermoon:792:CHANNEL:5|h|cff00ff98Voxomom|r|h|cffd8d8d8]|r: WTS |cffffff00|Hachievement:18253:Player-3682-0B232975:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00HC Sarkareth 250k|r|cffffffff>|r |cffffffff<|r|cff00ff00HC Neltharion 140K|r|cffffffff>|r  LAST 2 |cffffffff<|r|cff00ff00350k|r|cffffffff>|r /w info",
+					["serverTime"] = 1684696311,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						175, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.551,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [75]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Viictoriaa-Silvermoon:793:CHANNEL:5|h|cfff48cbaViictoriaa|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Experienced Group|r|cffffffff>|r WTS Mythic Keystone |cffffffff<|r|cff00ff00M+ 0-20 Intime|r|cffffffff>|r|cffa335ee|Hkeystone:180653:251:19:9:124:6:0|h[Keystone: The Underrot (19)]|h|r+M15 || +M16 || +M17 || +M18 || +M19 || +M20 - 24 || 8x15 || 8x16 || 8x18 || 8x20 || 8x21 || 4x20 || 4x16 || + Lvlup /W Me",
+					["serverTime"] = 1684696311,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						177, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.551,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [76]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Maimyxdd-Silvermoon:797:CHANNEL:5|h|cffc69b6dMaimyxdd|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00WTS|r|cffffffff>|r Guild Group Offering HC |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r |cffffffff<|r|cff00ff00270K|r|cffffffff>|r & |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r |cffffffff<|r|cff00ff00150K|r|cffffffff>|r |cffffffff<|r|cff00ff00BOTH 400K|r|cffffffff>|r /w me for more info!",
+					["serverTime"] = 1684696311,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						181, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.732,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [77]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Kalestires-Silvermoon:798:CHANNEL:5|h|cfffff468Kalestires|r|h|cffd8d8d8]|r: Selling |cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|r FullNM=315k/Last2NM=175k>HeroicFull=800k/Last2HC=400K>M0WorldTour(AllDungeon+0)=540k/1x11=150k>4x11=520k>1x15=300k>4x15=1100k/LvL 60-70=145k/w",
+					["serverTime"] = 1684696311,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						183, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240223.179,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [78]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:52]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Sarkaret-Silvermoon:799:CHANNEL:5|h|cffffffffSarkaret|r|h|cffd8d8d8]|r: GOING NOW|cffffff00|Hachievement:18253:Player-3391-0C8EFC21:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 9/9 HC 800k - Sarkareth HC=275k Last Two=400k || 9/9 NM 300K - SS 100k - Last Two=175 VIP=1800k || M+[0-20] - LVL10-70 |cffffffff<|r|cff00ff00270k|r|cffffffff>|r",
+					["serverTime"] = 1684696312,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						185, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240223.832,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [79]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:52]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Ganishkâ-Silvermoon:800:CHANNEL:5|h|cffc41e3aGanishkâ|r|h|cffd8d8d8]|r: Offering|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|rNM 300k HC 800k|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|rHC 150k! |cffffff00|Hachievement:18253:Player-3391-0C8F61C2:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r HC 270k! Last 2 HC 400k! 4x11 550k M+15 300k 4x15 1100k M+16 400k 4x16 1400k! Leveling 10-70! 290K",
+					["serverTime"] = 1684696312,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						187, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240223.832,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [80]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:52]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Mycoowgirl-Silvermoon:801:CHANNEL:5|h|cff00ff98Mycoowgirl|r|h|cffd8d8d8]|r: Guild Offering Full  Normal 310k Heroic 750k |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|rTwo Last Boss 400k.|cffffffff<|r|cff00ff00Leveling |r|cffffffff>|r  M+10-20 Good Offer . W Me For More Info For Good Deal |cffffffff<|r|cff00ff004x11=600k|r|cffffffff>|r|cffffffff<|r|cff00ff004x16=1250k|r|cffffffff>|r  For More Info W Me",
+					["serverTime"] = 1684696312,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						189, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.05,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [81]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:52]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Easycurve-Silvermoon:802:CHANNEL:5|h|cff0070ddEasycurve|r|h|cffd8d8d8]|r: Top20 Guild Offering |cffffff00|Hachievement:18253:Player-3674-07C8487D:1:5:12:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r>260k|cffffffff<|r|cff00ff00 |cff66bbff|Hjournal:1:2523:15|h[Echo of Neltharion]|h|r|r|cffffffff>|r150k|cffffffff<|r|cff00ff00 // Last 2 Both |r|cffffffff>|r>360k|cffffffff<|r|cff00ff00< // 9/9HC |r|cffffffff>|r>850k!!|cffffffff<|r|cff00ff00<<discount for 2 or more people|r|cffffffff>|r CHEAPEST PRICES",
+					["serverTime"] = 1684696312,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						191, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.259,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [82]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:52]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Dismis-Silvermoon:803:CHANNEL:5|h|cffc69b6dDismis|r|h|cffd8d8d8]|r: WTS MYTHIC+ 5-20 intime and weekly multi run GET good DISCOUNT || RAID full clear Normal & Heroic  !!!!     || POWER LEVELING 1-70 FAST !!!!",
+					["serverTime"] = 1684696312,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						193, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.259,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [83]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Kushinao-Silvermoon:804:CHANNEL:5|h|cffff7c0aKushinao|r|h|cffd8d8d8]|r: Offering  |cffffffff<|r|cff00ff00Heroic 9/9 900k|r|cffffffff>|r |cffffff00|Hachievement:18253:Player-3391-0C8D5120:0:0:0:0:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r 270K!!! Neltharion 150K Last 2 HC 400K |cffffffff<|r|cff00ff00Normal 9/9 300K|r|cffffffff>|r |cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r120K |cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r90K Both 200K!  We have runs every 30mins. only for WoW Gold. /w",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						18, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.259,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [84]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Tellmetostay-Silvermoon:805:CHANNEL:5|h|cff33937fTellmetostay|r|h|cffd8d8d8]|r: We are Offering |cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|r |cffffffff<|r|cff00ff009/9 NM 300K|r|cffffffff>|r |cffffffff<|r|cff00ff009/9 HC 800K|r|cffffffff>|r and HC|cff66bbff|Hjournal:1:2523:14|h[Echo of Neltharion]|h|r|cffffffff<|r|cff00ff00150K|r|cffffffff>|r |cffffff00|Hachievement:18253:Player-3391-0C6305F3:1:5:19:23:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r|cffffffff<|r|cff00ff00270K|r|cffffffff>|r |cffffffff<|r|cff00ff00Last 2 400K|r|cffffffff>|r and |cffffffff<|r|cff00ff00Level 60-70|r|cffffffff>|r |cffffffff<|r|cff00ff00M+0-20|r|cffffffff>|r |cffffffff<|r|cff00ff00M+11=180K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=400K|r|cffffffff>|r |cffffffff<|r|cff00ff00M+20=1400K|r|cffffffff>|r",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						195, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.477,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [85]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Dreamylike-Silvermoon:806:CHANNEL:5|h|cff00ff98Dreamylike|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00Guild|r|cffffffff>|r WTS +|cff66bbff|Hjournal:1:2520:14|h[Scalecommander Sarkareth]|h|r Curve  Heroic 265k+NM+Last2xHC 380k +|cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r 9/9NM 300k +9/9HC 800k +8/9HC 600k+LOOTSHARE /M+11 130k /M+15 275k /M+16 300k /M+17 390k /M+20 1100k /4x11 450k /+4x16 1060k/+8x15 2150k+LvlUp /w",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						197, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.477,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [86]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Thugsmoon-Silvermoon:808:CHANNEL:5|h|cffc41e3aThugsmoon|r|h|cffd8d8d8]|r: Offering |cffffffff<|r|cff00ff00|cff66bbff|Hjournal:0:1208:15|h[Aberrus, the Shadowed Crucible]|h|rHC9/9=800K|r|cffffffff>|r|cffffffff<|r|cff00ff00Last2Bosses=395K|r|cffffffff>|r|cffffffff<|r|cff00ff00Lvlup|r|cffffffff>|r|cffffffff<|r|cff00ff00M0-22|r|cffffffff>|r|cffffffff<|r|cff00ff00M16=324K-M20=1170K|r|cffffffff>|r|cffffffff<|r|cff00ff00Armorstack/Specific|r|cffffffff>|rDiscount on Multiple Runs|cffffffff<|r|cff00ff003x16=275K EA|r|cffffffff>|r|cffffffff<|r|cff00ff003x20=990K EA|r|cffffffff>|rCoaching/Legacy/PVP/Mounts/w For More",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						201, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.757,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [87]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Yamoe-Silvermoon:810:CHANNEL:5|h|cff00ff98Yamoe|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00GuildTeam|r|cffffffff>|r |cffffffff<|r|cff00ff00New Raid A S C /Normal/ HC |r|cffffffff>|r |cffffffff<|r|cff00ff00MYthic+ 0 - 20 |r|cffffffff>|r|cffffffff<|r|cff00ff004xM 10|r|cffffffff>|r |cffffffff<|r|cff00ff004xM 11|r|cffffffff>|r |cffffffff<|r|cff00ff004xM 12|r|cffffffff>|r |cffffffff<|r|cff00ff004xM 13|r|cffffffff>|r |cffffffff<|r|cff00ff004xM14|r|cffffffff>|r |cffffffff<|r|cff00ff001x M15|r|cffffffff>|r |cffffffff<|r|cff00ff004x M15|r|cffffffff>|r |cffffffff<|r|cff00ff004x M16 |r|cffffffff>|r |cffffffff<|r|cff00ff008xM11 |r|cffffffff>|r |cffffffff<|r|cff00ff008x M12|r|cffffffff>|r |cffffffff<|r|cff00ff00Leather/ Cloth /Chain /Plate|r|cffffffff>|r|cffffffff<|r|cff00ff00Sale & Discount|r|cffffffff>|r |cffffffff<|r|cff00ff00LVLUP /10 / 70 ||60-70|r|cffffffff>|r|cffffffff<|r|cff00ff002v2 Rbg|r|cffffffff>|r |cffffffff<|r|cff00ff00For Gold Only|r|cffffffff>|r",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						159, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240225.031,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [88]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Rebecy-Silvermoon:811:CHANNEL:5|h|cff8788eeRebecy|r|h|cffd8d8d8]|r: WTS |cffffff00|Hachievement:18253:Player-1403-0A6F3F8B:0:0:0:-1:0:0:0:0|h[Ahead of the Curve: Scalecommander Sarkareth]|h|r HC=270k NM=120k |cffffffff<|r|cff00ff00HC Last2=370k|r|cffffffff>|r |cffffffff<|r|cff00ff00NM Last2=170k|r|cffffffff>|r || 9/9 |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r NM=290k HC=800k || |cffffffff<|r|cff00ff00M+11=150k|r|cffffffff>|r |cffffffff<|r|cff00ff00M+15=300k|r|cffffffff>|r |cffffffff<|r|cff00ff00M+16=330k|r|cffffffff>|r || Leveling || /w me.",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						205, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240225.521,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [89]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:5|h[5] |h|cffd8d8d8[|r|Hplayer:Wixién-Silvermoon:812:CHANNEL:5|h|cff3fc7ebWixién|r|h|cffd8d8d8]|r: |cffffffff<|r|cff00ff00WTS|r|cffffffff>|r |cff66bbff|Hjournal:0:1208:14|h[Aberrus, the Shadowed Crucible]|h|r]NM 9/9=280k! HC 9/9=800k! |cffffff00|Hachievement:18160:Player-1403-0A4BA757:0:0:0:-1:0:0:0:0|h[Aberrus, the Shadowed Crucible]|h|rHC 250k! HC  Last 2 Together=350k!",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						20, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240225.971,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [90]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:5|h[5] |h Left Channel: |Hchannel:CHANNEL:5|h[5. Trade (Services) - City]|h",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						72, -- [1]
+						false, -- [2]
+						13, -- [3]
+						209, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240226.029,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [91]
 			},
 			["maxElements"] = 128,
 			["TransformIf"] = nil --[[ skipped inline function ]],
@@ -200,45 +1415,212 @@ Prat3HighCPUPerCharDB = {
 			["GetNumElements"] = nil --[[ skipped inline function ]],
 			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
 		},
-		["ChatFrame11"] = {
-			["maxElements"] = 128,
+		["ChatFrame4"] = {
+			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["headIndex"] = 12,
+			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
+			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
+			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
+			["PushBack"] = nil --[[ skipped inline function ]],
+			["RemoveIf"] = nil --[[ skipped inline function ]],
+			["Clear"] = nil --[[ skipped inline function ]],
+			["PushFront"] = nil --[[ skipped inline function ]],
+			["OnLoad"] = nil --[[ skipped inline function ]],
+			["IsEmpty"] = nil --[[ skipped inline function ]],
+			["IsFull"] = nil --[[ skipped inline function ]],
 			["elements"] = {
 				{
-					["message"] = "|cff979797|Hpratcopy|h[23:13:45]|h|r [W To] |cffd8d8d8[|r|Hplayer:Donkatzu-Dalaran:1824:WHISPER:DONKATZU-DALARAN|h|cffd8bc3f70|r:|cfff48cbaDonkatzu|r-|cff00fc9cDal|r|h|cffd8d8d8]|r: [Common] thanks so much :)",
+					["message"] = "|cff979797|Hpratcopy|h[22:11:39]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Menathar-Silvermoon:702:CHANNEL:2|h|cff8788eeMenathar|r|h|cffd8d8d8]|r: LFW |cffa335ee|Hitem:204697::::::::70:267::13:1:3524::::::|h[Enchanted Aspect's Shadowflame Crest]|h|r |cffa335ee|Hitem:204682::::::::70:267::13:1:3524::::::|h[Enchanted Wyrm's Shadowflame Crest]|h|r |cffa335ee|Hitem:204681::::::::70:267::13:1:3524::::::|h[Enchanted Whelpling's Shadowflame Crest]|h|r tip whatever you want :)",
+					["serverTime"] = 1684696299,
 					["r"] = 1,
-					["b"] = 1,
-					["g"] = 0.501960813999176,
-					["timestamp"] = 1839209.521,
 					["extraData"] = {
-						10, -- [1]
+						69, -- [1]
 						false, -- [2]
-						273, -- [3]
-						274, -- [4]
+						38, -- [3]
+						39, -- [4]
 						["n"] = 4,
 					},
-					["serverTime"] = 1675102425,
+					["timestamp"] = 1240211.194,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
 				}, -- [1]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[23:13:53]|h|r [W From] |cffd8d8d8[|r|Hplayer:Donkatzu-Dalaran:1825:WHISPER:DONKATZU-DALARAN|h|cffd8bc3f70|r:|cfff48cbaDonkatzu|r-|cff00fc9cDal|r|h|cffd8d8d8]|r: ur welcome",
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Partolieos-Silvermoon:721:CHANNEL:2|h|cffc69b6dPartolieos|r|h|cffd8d8d8]|r: WTC: ALL weapons except bows 447-->40% chance, ALL cloth NON TIER armor 447-->39%chance, Lariat+Rings 447-->39%chance, Main stat gems with HASTE/CRIT 35% chance for rank 3",
+					["serverTime"] = 1684696302,
 					["r"] = 1,
-					["b"] = 1,
-					["g"] = 0.501960813999176,
-					["timestamp"] = 1839217.462,
 					["extraData"] = {
-						8, -- [1]
+						69, -- [1]
 						false, -- [2]
-						273, -- [3]
-						275, -- [4]
+						38, -- [3]
+						65, -- [4]
 						["n"] = 4,
 					},
-					["serverTime"] = 1675102433,
+					["timestamp"] = 1240213.446,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
 				}, -- [2]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Partolieos-Silvermoon:724:CHANNEL:2|h|cffc69b6dPartolieos|r|h|cffd8d8d8]|r: WTC: ALL weapons except bows 447-->40% chance, ALL cloth NON TIER armor 447-->39%chance, Lariat+Rings 447-->39%chance, Main stat gems with HASTE/CRIT 35% chance for rank 3",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						65, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.754,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [3]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:44]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Feraell-Silvermoon:740:CHANNEL:2|h|cffaad372Feraell|r|h|cffd8d8d8]|r: |cff0070dd|Hitem:204968::::::::70:254:::::::::|h[Pattern: Shadowflame-Tempered Armor Patch]|h|r WTS",
+					["serverTime"] = 1684696304,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						89, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240215.796,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [4]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:45]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Ínfínity-Silvermoon:743:CHANNEL:2|h|cffff7c0aÍnfínity|r|h|cffd8d8d8]|r: |cffffd000|Htrade:Player-3391-0C6C6BE9:25229:755|h[Jewelcrafting]|h|r|cffa335ee|Hitem:193001::::::::70:104::13:1:3524:2:40:260:38:8:::::|h[Elemental Lariat |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:192999::::::::70:104::13:1:3524:2:40:258:38:8:::::|h[Signet of Titanic Insight |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:201759::::::::70:104::13:1:3524:2:40:834:38:8:::::|h[Torc of Passed Time |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:193000::::::::70:104::13:1:3524:2:40:259:38:8:::::|h[Ring-Bound Hourglass |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:204217::::::::70:104::13:1:3524::::::|h[Unstable Elementium]|h|r |cffa335ee|Hitem:192985::::::::70:104::13:1:3524:2:40:240:38:3:::::|h[Fierce Illimited Diamond |A:Professions-ChatIcon-Quality-Tier3:17:18::1|a]|h|r|cffa335ee|Hitem:192988::::::::70:104::13:1:3524:2:40:241:38:3:::::|h[Skillful Illimited Diamond |A:Professions-ChatIcon-Quality-Tier3:17:18::1|a]|h|r all gems/ |cffffd000|Htrade:Player-3391-0C6C6BE9:2108:165|h[Leatherworking]|h|r|cffa335ee|Hitem:193451::::::::70:104::13:1:3524:2:40:376:38:8:::::|h[Slimy Expulsion Boots |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r+ more",
+					["serverTime"] = 1684696305,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						91, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240216.509,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [5]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Berserky-Silvermoon:772:CHANNEL:2|h|cfffff468Berserky|r|h|cffd8d8d8]|r: LFW|cffffd000|Htrade:Player-3391-0C8BA40B:25229:755|h[Jewelcrafting]|h|r|cffffd000|Htrade:Player-3391-0C8BA40B:2018:164|h[Blacksmithing]|h|rALL WEAPS|cffa335ee|Hitem:190506::::::::70:259::13:1:3524:2:40:191:38:8:::::|h[Primal Molten Spellblade |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|rALL NECKS|cffa335ee|Hitem:193001::::::::70:259::13:1:3524:2:40:260:38:8:::::|h[Elemental Lariat |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|rALL RINGS|cffa335ee|Hitem:193000::::::::70:259::13:1:3524:2:40:259:38:8:::::|h[Ring-Bound Hourglass |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r->|cffa335ee|Hitem:204217::::::::70:259::13:1:3524::::::|h[Unstable Elementium]|h|r->GEM|cffa335ee|Hitem:192985::::::::70:259::13:1:3524:2:40:240:38:3:::::|h[Fierce Illimited Diamond |A:Professions-ChatIcon-Quality-Tier3:17:18::1|a]|h|r>>[ 395 /447]<>[ MAX INSP]-|cffffff00|Hachievement:16791:Player-3391-0C8BA40B:1:4:7:23:4294967295:4294967295:4294967295:4294967295|h[Merchant Artisan]|h|r-\\_( *  .  * )_/",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						141, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240220.292,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [6]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:49]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Cheezeprof-Silvermoon:778:CHANNEL:2|h|cffc69b6dCheezeprof|r|h|cffd8d8d8]|r: LFW |cffffd000|Htrade:Player-3391-0C7015C3:25229:755|h[Jewelcrafting]|h|r ANY NECKLACE |cffa335ee|Hitem:193001::::::::70:72::13:1:3524:2:40:260:38:8:::::|h[Elemental Lariat |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r ANY Ring|cffa335ee|Hitem:193000::::::::70:72::13:1:3524:2:40:259:38:8:::::|h[Ring-Bound Hourglass |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:192999::::::::70:72::13:1:3524:2:40:258:38:8:::::|h[Signet of Titanic Insight |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r ANY IDOL like |cffa335ee|Hitem:193005::::::::70:72::13:1:3524:2:40:253:38:8:::::|h[Idol of the Dreamer |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|rmaxed out 44% insp. Set min Q to Blue(4) //EVERY GEM available! pm what u need",
+					["serverTime"] = 1684696309,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						153, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240221.242,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [7]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Sihal-Silvermoon:791:CHANNEL:2|h|cff00ff98Sihal|r|h|cffd8d8d8]|r: LFW Full|cffffd000|Htrade:Player-3391-096E701A:25229:755|h[Jewelcrafting]|h|r|cffa335ee|Hitem:193001::::::::70:104::13:1:3524:2:40:260:38:8:::::|h[Elemental Lariat |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:192999::::::::70:260::13:1:3524:2:40:258:38:8:::::|h[Signet of Titanic Insight |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:193000::::::::70:73::13:2:3524:8846:2:40:259:38:8:::::|h[Ring-Bound Hourglass |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r395-447 [MAX insp 44%]+ALL GEMS|cffa335ee|Hitem:192985::::::::70:102::13:1:3524:2:40:240:38:3:::::|h[Fierce Illimited Diamond |A:Professions-ChatIcon-Quality-Tier3:17:18::1|a]|h|r42%+All Idols|cffa335ee|Hitem:193005::::::::70:269::13:2:3524:9366:2:40:253:38:8:::::|h[Idol of the Dreamer |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r+Tools&|cffffd000|Htrade:Player-3391-096E701A:2259:171|h[Alchemy]|h|r|cffa335ee|Hitem:191492::::::::70:269::13:2:3524:9366:2:40:201:38:8:::::|h[Alacritous Alchemist Stone |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|rAll Trinkets 44%|cffffffff<|r|cff00ff00/W ME|r|cffffffff>|r",
+					["serverTime"] = 1684696311,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						173, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.551,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [8]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Presento-Silvermoon:807:CHANNEL:2|h|cffc69b6dPresento|r|h|cffd8d8d8]|r: |cffffff00|Hachievement:16791:Player-3391-09BF733C:1:2:23:23:4294967295:4294967295:4294967295:4294967295|h[Merchant Artisan]|h|r|cffffd000|Htrade:Player-3391-09BF733C:2108:165|h[Leatherworking]|h|r|cffffd000|Htrade:Player-3391-09BF733C:2018:164|h[Blacksmithing]|h|r|cffffd000|Htrade:Player-3391-0B97DEE0:3908:197|h[Tailoring]|h|r|cffa335ee|Hitem:193449::::::::11:73::13:1:3524:2:40:337:38:8:::::|h[Bow of the Dragon Hunters |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:193494::::::::11:73::13:1:3524:2:40:313:38:8:::::|h[Flaring Cowl |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:193460::::::::70:577::13:1:3524:2:40:386:38:8:::::|h[Venom-Steeped Stompers |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:191623::::::::70:577::13:1:3524:2:40:158:38:8:::::|h[Unstable Frostfire Belt |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r |cffa335ee|Hitem:193511::::::::70:254::13:1:3524:2:40:446:38:8:::::|h[Vibrant Wildercloth Shawl |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r+All (Leather+Mail+Plate+Weapons)+Some Cloth 447.",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						199, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240224.477,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [9]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:53]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Crafthor-Silvermoon:809:CHANNEL:2|h|cffc69b6dCrafthor|r|h|cffd8d8d8]|r: |cffffd000|Htrade:Player-3391-0C8FB3CA:2018:164|h[Blacksmithing]|h|r |cffffd000|Htrade:Player-3391-0C8FB3CA:25229:755|h[Jewelcrafting]|h|r All weapons & Shields & Wrists & Belts & Legs & Signet & Necks & Gems 100/120/43% up to 447 ! Whisper me for details. |cffa335ee|Hitem:190514::::::::70:71::13:1:3524:2:40:123:38:8:::::|h[Obsidian Seared Claymore |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffa335ee|Hitem:190503::::::::70:71::13:1:3524:2:40:122:38:8:::::|h[Primal Molten Defender |A:Professions-ChatIcon-Quality-Tier5:17:17::1|a]|h|r|cffffff00|Hachievement:16791:Player-3391-0C8FB3CA:1:12:31:22:4294967295:4294967295:4294967295:4294967295|h[Merchant Artisan]|h|r",
+					["serverTime"] = 1684696313,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						203, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240225.031,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [10]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:2|h[2] |h|cffd8d8d8[|r|Hplayer:Menathar-Silvermoon:813:CHANNEL:2|h|cff8788eeMenathar|r|h|cffd8d8d8]|r: LFW |cffa335ee|Hitem:204697::::::::70:267::13:1:3524::::::|h[Enchanted Aspect's Shadowflame Crest]|h|r |cffa335ee|Hitem:204682::::::::70:267::13:1:3524::::::|h[Enchanted Wyrm's Shadowflame Crest]|h|r |cffa335ee|Hitem:204681::::::::70:267::13:1:3524::::::|h[Enchanted Whelpling's Shadowflame Crest]|h|r tip whatever you want :)",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						39, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240226.029,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [11]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:2|h[2] |h Left Channel: |Hchannel:CHANNEL:2|h[2. Trade - City]|h",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						69, -- [1]
+						false, -- [2]
+						38, -- [3]
+						207, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240226.029,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [12]
 			},
-			["headIndex"] = 2,
+			["maxElements"] = 128,
+			["TransformIf"] = nil --[[ skipped inline function ]],
+			["ReplaceElements"] = nil --[[ skipped inline function ]],
+			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["GetNumElements"] = nil --[[ skipped inline function ]],
+			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
 		},
 		["ChatFrame3"] = {
 			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
-			["headIndex"] = 4,
+			["headIndex"] = 5,
 			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
 			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
 			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
@@ -253,24 +1635,36 @@ Prat3HighCPUPerCharDB = {
 			["elements"] = {
 				{
 					["message"] = "Speech to text allows you to add closed captioning in a voice channel.",
-					["serverTime"] = 1681076637,
+					["g"] = 1,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684672975,
+					["b"] = 0,
+				}, -- [1]
+				{
+					["message"] = "Speech to text allows you to add closed captioning in a voice channel.",
+					["serverTime"] = 1684696246,
 					["r"] = 1,
 					["b"] = 0,
-					["timestamp"] = 208869.237,
+					["timestamp"] = 1240157.582,
 					["extraData"] = {
 						1, -- [1]
 						["n"] = 1,
 					},
 					["g"] = 1,
-				}, -- [1]
-				{
-					["message"] = "0 |4day:days;, 0 |4hour:hours;, 0 |4minute:minutes;, 0 |4second:seconds;",
-					["timestamp"] = 208869.237,
 				}, -- [2]
 				{
-					["message"] = "========== End of Scrollback ==========",
-					["timestamp"] = 208869.237,
+					["message"] = "0 |4day:days;, 0 |4hour:hours;, 0 |4minute:minutes;, 0 |4second:seconds;",
+					["timestamp"] = 1240157.582,
 				}, -- [3]
+				{
+					["message"] = "========== End of Scrollback ==========",
+					["timestamp"] = 1240157.582,
+				}, -- [4]
 				{
 					["message"] = "Speech to text allows you to add closed captioning in a voice channel.",
 					["r"] = 1,
@@ -278,10 +1672,10 @@ Prat3HighCPUPerCharDB = {
 						1, -- [1]
 						["n"] = 1,
 					},
-					["timestamp"] = 208858.991,
+					["timestamp"] = 1240147.164,
 					["g"] = 1,
 					["b"] = 0,
-				}, -- [4]
+				}, -- [5]
 			},
 			["maxElements"] = 128,
 			["TransformIf"] = nil --[[ skipped inline function ]],
@@ -341,8 +1735,11 @@ Prat3HighCPUPerCharDB = {
 			["elements"] = {
 				{
 					["message"] = "|cff979797|Hpratcopy|h[02:22:11]|h|r [W From] |cffd8d8d8[|r|Hplayer:Bobyhunter-Silvermoon:7469:WHISPER:BOBYHUNTER-SILVERMOON|h|cffd8bc3f70|r:|cffa330c9Bobyhunter|r|h|cffd8d8d8]|r: dungeon??",
-					["serverTime"] = 1674940931,
+					["b"] = 1,
 					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1728753.268,
+					["serverTime"] = 1674940931,
 					["extraData"] = {
 						8, -- [1]
 						false, -- [2]
@@ -350,14 +1747,14 @@ Prat3HighCPUPerCharDB = {
 						528, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 1728753.268,
-					["g"] = 0.501960813999176,
-					["b"] = 1,
 				}, -- [1]
 				{
 					["message"] = "|cff979797|Hpratcopy|h[02:22:27]|h|r [W To] |cffd8d8d8[|r|Hplayer:Bobyhunter-Silvermoon:7539:WHISPER:BOBYHUNTER-SILVERMOON|h|cffd8bc3f70|r:|cffa330c9Bobyhunter|r|h|cffd8d8d8]|r: no, arena",
-					["serverTime"] = 1674940947,
+					["b"] = 1,
 					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1728769.535,
+					["serverTime"] = 1674940947,
 					["extraData"] = {
 						10, -- [1]
 						false, -- [2]
@@ -365,14 +1762,14 @@ Prat3HighCPUPerCharDB = {
 						531, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 1728769.535,
-					["g"] = 0.501960813999176,
-					["b"] = 1,
 				}, -- [2]
 				{
 					["message"] = "|cff979797|Hpratcopy|h[02:22:35]|h|r [W From] |cffd8d8d8[|r|Hplayer:Bobyhunter-Silvermoon:7574:WHISPER:BOBYHUNTER-SILVERMOON|h|cffd8bc3f70|r:|cffa330c9Bobyhunter|r|h|cffd8d8d8]|r: oh oh",
-					["serverTime"] = 1674940955,
+					["b"] = 1,
 					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1728777.785,
+					["serverTime"] = 1674940955,
 					["extraData"] = {
 						8, -- [1]
 						false, -- [2]
@@ -380,9 +1777,6 @@ Prat3HighCPUPerCharDB = {
 						528, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 1728777.785,
-					["g"] = 0.501960813999176,
-					["b"] = 1,
 				}, -- [3]
 			},
 			["headIndex"] = 3,
@@ -433,28 +1827,41 @@ Prat3HighCPUPerCharDB = {
 			["GetNumElements"] = nil --[[ skipped inline function ]],
 			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
 		},
-		["ChatFrame4"] = {
-			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
-			["headIndex"] = 0,
-			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
-			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
-			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
-			["ReverseEnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
-			["PushBack"] = nil --[[ skipped inline function ]],
-			["RemoveIf"] = nil --[[ skipped inline function ]],
-			["Clear"] = nil --[[ skipped inline function ]],
-			["PushFront"] = nil --[[ skipped inline function ]],
-			["OnLoad"] = nil --[[ skipped inline function ]],
-			["IsEmpty"] = nil --[[ skipped inline function ]],
-			["IsFull"] = nil --[[ skipped inline function ]],
-			["elements"] = {
-			},
+		["ChatFrame11"] = {
 			["maxElements"] = 128,
-			["TransformIf"] = nil --[[ skipped inline function ]],
-			["ReplaceElements"] = nil --[[ skipped inline function ]],
-			["SetMaxNumElements"] = nil --[[ skipped inline function ]],
-			["GetNumElements"] = nil --[[ skipped inline function ]],
-			["GetMaxNumElements"] = nil --[[ skipped inline function ]],
+			["elements"] = {
+				{
+					["message"] = "|cff979797|Hpratcopy|h[23:13:45]|h|r [W To] |cffd8d8d8[|r|Hplayer:Donkatzu-Dalaran:1824:WHISPER:DONKATZU-DALARAN|h|cffd8bc3f70|r:|cfff48cbaDonkatzu|r-|cff00fc9cDal|r|h|cffd8d8d8]|r: [Common] thanks so much :)",
+					["serverTime"] = 1675102425,
+					["r"] = 1,
+					["extraData"] = {
+						10, -- [1]
+						false, -- [2]
+						273, -- [3]
+						274, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1839209.521,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [1]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[23:13:53]|h|r [W From] |cffd8d8d8[|r|Hplayer:Donkatzu-Dalaran:1825:WHISPER:DONKATZU-DALARAN|h|cffd8bc3f70|r:|cfff48cbaDonkatzu|r-|cff00fc9cDal|r|h|cffd8d8d8]|r: ur welcome",
+					["serverTime"] = 1675102433,
+					["r"] = 1,
+					["extraData"] = {
+						8, -- [1]
+						false, -- [2]
+						273, -- [3]
+						275, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1839217.462,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [2]
+			},
+			["headIndex"] = 2,
 		},
 		["ChatFrame9"] = {
 			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
@@ -481,7 +1888,7 @@ Prat3HighCPUPerCharDB = {
 		},
 		["ChatFrame1"] = {
 			["EnumerateIndexedEntries"] = nil --[[ skipped inline function ]],
-			["headIndex"] = 10,
+			["headIndex"] = 19,
 			["GetEntryAtIndex"] = nil --[[ skipped inline function ]],
 			["CalculateElementIndex"] = nil --[[ skipped inline function ]],
 			["CalculateElementIndexFromGlobalIndex"] = nil --[[ skipped inline function ]],
@@ -495,98 +1902,1858 @@ Prat3HighCPUPerCharDB = {
 			["IsFull"] = nil --[[ skipped inline function ]],
 			["elements"] = {
 				{
-					["message"] = "|cff979797|Hpratcopy|h[15:44:09]|h|r Guild Message of the Day: \"Welcome!! for those interested in participating in the m + / Raid write me in private, thanks and good game\"",
-					["serverTime"] = 1681076637,
-					["r"] = 0.250980406999588,
-					["b"] = 0.250980406999588,
-					["timestamp"] = 208869.237,
-					["extraData"] = {
-						5, -- [1]
-						["n"] = 1,
-					},
-					["g"] = 1,
+					["message"] = "|cff979797|Hpratcopy|h[22:10:46]|h|r Premade Groups Filter: Will not apply fix for 'Interface action failed because of an AddOn' errors because you don't seem to have a fully secured account and otherwise can't create premade groups. See addon FAQ for more information and how to fix this issue.",
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684696246,
 				}, -- [1]
 				{
-					["message"] = "0 |4day:days;, 0 |4hour:hours;, 0 |4minute:minutes;, 0 |4second:seconds;",
-					["timestamp"] = 208869.237,
+					["message"] = "|cff979797|Hpratcopy|h[22:10:47]|h|r Loot Specialization set to: Protection",
+					["serverTime"] = 1684696247,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+					["timestamp"] = 1240157.582,
+					["g"] = 1,
+					["b"] = 0,
 				}, -- [2]
 				{
-					["message"] = "========== End of Scrollback ==========",
-					["timestamp"] = 208869.237,
-				}, -- [3]
-				{
-					["message"] = "|cff33ff99ATT|r: |cff33ff99A|rbility |cff33ff99T|ream |cff33ff99T|rracker |cffFF4500v86|r loaded. Type |cffFF4500/att|r to open options.",
-					["timestamp"] = 208858.991,
-				}, -- [4]
-				{
-					["message"] = "|cff69CCF0 GladiatorlosSA2|r (|cffFFF569/gsa|r)|cffFF7D0A 4.0 |r(|cff9482C910.0.2 Dragonflight|r)",
-					["timestamp"] = 208858.991,
-				}, -- [5]
-				{
-					["message"] = "|cff979797|Hpratcopy|h[00:43:56]|h|r Guild Message of the Day: \"Welcome!! for those interested in participating in the m + / Raid write me in private, thanks and good game\"",
-					["r"] = 0.250980406999588,
-					["extraData"] = {
-						5, -- [1]
-						["n"] = 1,
-					},
-					["timestamp"] = 208864.829,
-					["g"] = 1,
-					["b"] = 0.250980406999588,
-				}, -- [6]
-				{
-					["message"] = "|cff979797|Hpratcopy|h[00:43:57]|h|r Loot Specialization set to: Retribution",
-					["serverTime"] = 1681076637,
+					["message"] = "|cff979797|Hpratcopy|h[22:10:58]|h|r Quest accepted: Community Feast",
+					["serverTime"] = 1684696258,
 					["r"] = 1,
 					["extraData"] = {
 						1, -- [1]
-						["n"] = 1,
-					},
-					["timestamp"] = 208869.237,
-					["g"] = 1,
-					["b"] = 0,
-				}, -- [7]
-				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:33]|h|r Loot Specialization set to: Retribution",
-					["serverTime"] = 1681076673,
-					["r"] = 1,
-					["extraData"] = {
-						1, -- [1]
-						["n"] = 1,
-					},
-					["timestamp"] = 208905.739,
-					["g"] = 1,
-					["b"] = 0,
-				}, -- [8]
-				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:33]|h|r |Hchannel:channel:1|h[1] |h Changed Channel: |Hchannel:CHANNEL:1|h[1. General - Dalaran]|h",
-					["serverTime"] = 1681076673,
-					["r"] = 1,
-					["extraData"] = {
-						68, -- [1]
 						false, -- [2]
 						1, -- [3]
 						2, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208906.175,
+					["timestamp"] = 1240169.44,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [3]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:00]|h|r |cffa330c9Talycon|r has gone offline.",
+					["serverTime"] = 1684696260,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240171.597,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [4]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:02]|h|r Big Kinook says: Who here wants dumplings? Nowarg, grab some pastry dough from Erugosa and toss it into the pot!",
+					["serverTime"] = 1684696262,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240173.957,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
+				}, -- [5]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:06]|h|r [S] |cffd8d8d8[|r|Hplayer:Nowarg-Silvermoon:683:SAY|h|cffd8bc3f70|r:|cfff48cbaNowarg|r|h|cffd8d8d8]|r: Yes chef!",
+					["serverTime"] = 1684696266,
+					["r"] = 1,
+					["extraData"] = {
+						2, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240177.465,
+					["g"] = 1,
+					["b"] = 1,
+				}, -- [6]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r Loot Specialization set to: Protection",
+					["serverTime"] = 1684696298,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+					["timestamp"] = 1240209.124,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [7]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:1|h[1] |h Changed Channel: |Hchannel:CHANNEL:1|h[1. General - Valdrakken]|h",
+					["serverTime"] = 1684696298,
+					["r"] = 1,
+					["extraData"] = {
+						68, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240209.86,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
-				}, -- [9]
+				}, -- [8]
 				{
-					["message"] = "|cff979797|Hpratcopy|h[00:44:33]|h|r |Hchannel:channel:3|h[3] |h Changed Channel: |Hchannel:CHANNEL:3|h[3. LocalDefense - Dalaran]|h",
-					["serverTime"] = 1681076673,
+					["message"] = "|cff979797|Hpratcopy|h[22:11:38]|h|r |Hchannel:channel:3|h[3] |h Changed Channel: |Hchannel:CHANNEL:3|h[3. LocalDefense - Valdrakken]|h",
+					["serverTime"] = 1684696298,
 					["r"] = 1,
 					["extraData"] = {
 						70, -- [1]
 						false, -- [2]
-						4, -- [3]
-						5, -- [4]
+						10, -- [3]
+						11, -- [4]
 						["n"] = 4,
 					},
-					["timestamp"] = 208906.175,
+					["timestamp"] = 1240209.86,
 					["g"] = 0.7529412508010864,
 					["b"] = 0.7529412508010864,
+				}, -- [9]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:42]|h|r Brigita says: Welcome to the Roasted Ram! Seating is open.",
+					["serverTime"] = 1684696302,
+					["r"] = 1,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240213.82,
+					["g"] = 1,
+					["b"] = 0.6235294342041016,
 				}, -- [10]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r Reputation with Dragonscale Expedition increased by 1500.",
+					["serverTime"] = 1684696311,
+					["r"] = 0.501960813999176,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						171, -- [3]
+						172, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.46,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [11]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r Reputation with Iskaara Tuskarr increased by 1500.",
+					["serverTime"] = 1684696311,
+					["r"] = 0.501960813999176,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						171, -- [3]
+						172, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.46,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [12]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r Reputation with Maruuk Centaur increased by 1000.",
+					["serverTime"] = 1684696311,
+					["r"] = 0.501960813999176,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						171, -- [3]
+						172, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.46,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [13]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r Reputation with Valdrakken Accord increased by 1500.",
+					["serverTime"] = 1684696311,
+					["r"] = 0.501960813999176,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						171, -- [3]
+						172, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.46,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [14]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r Aiding the Accord: A Feast For All completed.",
+					["serverTime"] = 1684696311,
+					["r"] = 1,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.551,
+					["g"] = 1,
+					["b"] = 0,
+				}, -- [15]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r You receive item: |cffa335ee|Hitem:200073::::::::70:70::11::2:9:70:28:2437:::::|h[Valdrakken Treasures]|h|r",
+					["serverTime"] = 1684696311,
+					["r"] = 0,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						179, -- [3]
+						180, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.687,
+					["g"] = 0.6666666865348816,
+					["b"] = 0,
+				}, -- [16]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:51]|h|r Reputation with Guild increased by 125.",
+					["serverTime"] = 1684696311,
+					["r"] = 0.501960813999176,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						171, -- [3]
+						172, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240222.687,
+					["g"] = 0.501960813999176,
+					["b"] = 1,
+				}, -- [17]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:1|h[1] |h Left Channel: |Hchannel:CHANNEL:1|h[1. General - Valdrakken]|h",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						68, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240226.029,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [18]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:11:54]|h|r |Hchannel:channel:3|h[3] |h Left Channel: |Hchannel:CHANNEL:3|h[3. LocalDefense - Valdrakken]|h",
+					["serverTime"] = 1684696314,
+					["r"] = 1,
+					["extraData"] = {
+						70, -- [1]
+						false, -- [2]
+						10, -- [3]
+						11, -- [4]
+						["n"] = 4,
+					},
+					["timestamp"] = 1240226.029,
+					["g"] = 0.7529412508010864,
+					["b"] = 0.7529412508010864,
+				}, -- [19]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:1022:0|h[Blessing of Protection]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [20]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:408459:0|h[Divine Purpose]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [21]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:385450:0|h[Seal of Might]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [22]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:385125:0|h[Of Dusk and Dawn]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [23]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:190784:0|h[Divine Steed]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [24]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:255937:0|h[Wake of Ashes]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [25]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:403509:0|h[Zealot's Fervor]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [26]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:387170:0|h[Empyrean Legacy]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [27]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:409089:0|h[Mastery: Hand of Light]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [28]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:326734:0|h[Healing Hands]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [29]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:406154:0|h[Heart of the Crusader]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [30]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:1044:0|h[Blessing of Freedom]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [31]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:24275:0|h[Hammer of Wrath]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [32]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:183435:0|h[Retribution Aura]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [33]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new spell: |cff71d5ff|Hspell:32223:0|h[Crusader Aura]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [34]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r You have learned a new passive effect: |cff71d5ff|Hspell:328263:0|h[Cleansed Vestments]|h|r.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [35]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r Soulbound with Pelagos.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [36]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:03]|h|r Gloowaz Bonesmusher says: That's the spirit, kid!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674183,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [37]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:16]|h|r You receive loot: |cff0070dd|Hitem:201325::::::::70:70:::::::::|h[Draconic Augment Rune]|h|rx2",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674196,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [38]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:17]|h|r You loot 905 Gold, 48 Silver, 26 Copper",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674197,
+					["extraData"] = {
+						29, -- [1]
+						false, -- [2]
+						9, -- [3]
+						23, -- [4]
+						["n"] = 4,
+					},
+				}, -- [39]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:51]|h|r Brynnsahce says: Hey hey, everyone!- Woah! What's going on here, Talpi?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674231,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [40]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:54]|h|r Tale-Teller Talpi says: Someone fed Gumm rock candy again. I'd pay ya for your goods, but the little dirt digger stole my crystal pouch.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674234,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [41]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:56]|h|r Gumm says: Fine, take it! That crystal don' even smell like anything anyway.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674236,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [42]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:03:59]|h|r Brynnsahce says: It's okay, little ones. Why not take an early lunch!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674239,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [43]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:03]|h|r Tale-Teller Talpi says: Everyone say \"Thank you, mister Brynnsahce and uplander friend.\"",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674243,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [44]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:13]|h|r Brynnsahce says: Myrrit! Noses up!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674253,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [45]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:14]|h|r Myrrit says: My Deepflayer snackaroos! And fresh!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674254,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [46]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:17]|h|r Myrrit says: I got your payment around here somewhere. One sec...",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674257,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [47]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:22]|h|r Brynnsahce says: Myrrit always brings the best treasure back from his digs.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674262,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [48]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:23]|h|r Myrrit says: Is this it? Hard to see down here...",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674263,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [49]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:27]|h|r Myrrit says: No, no. This one! Right...?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674267,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [50]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:32]|h|r Cenka says: Brynnsahce, ma boy!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674272,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [51]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:33]|h|r Brynnsahce says: Hey howdy there, Cenka! I can smell that delicious Zaralek slug stew from the other side of town!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674273,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [52]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:34]|h|r You sold your junk for 6|TInterface\\MoneyFrame\\UI-GoldIcon:0:0:2:0|t 73|TInterface\\MoneyFrame\\UI-SilverIcon:0:0:2:0|t 31|TInterface\\MoneyFrame\\UI-CopperIcon:0:0:2:0|t",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674274,
+					["extraData"] = {
+						29, -- [1]
+						false, -- [2]
+						9, -- [3]
+						9, -- [4]
+						["n"] = 4,
+					},
+				}, -- [53]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:35]|h|r You gained: |cffffffff6|TInterface\\MoneyFrame\\UI-GoldIcon:0:0:2:0|t 73|TInterface\\MoneyFrame\\UI-SilverIcon:0:0:2:0|t 31|TInterface\\MoneyFrame\\UI-CopperIcon:0:0:2:0|t|r",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674275,
+					["extraData"] = {
+						1, -- [1]
+						["n"] = 1,
+					},
+				}, -- [54]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:38]|h|r Cenka says: WAAAAH! SLUGS CAN GROW WINGS?!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674278,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [55]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:42]|h|r Cenka says: GET 'EM BRYNN!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674282,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [56]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:49]|h|r Brynnsahce says: CENKA! STOP PUTTING YOUR CRYSTALS IN THE SLUG JAR!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674289,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [57]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:53]|h|r Cenka says: Hmm, maybe that was an overreaction.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674293,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [58]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:04:55]|h|r Brynnsahce says: Can you believe that guy?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674295,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [59]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:05:51]|h|r Spinmarrow watches its prey with its many eyes.",
+					["b"] = 0.250980406999588,
+					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674351,
+					["extraData"] = {
+						17, -- [1]
+						false, -- [2]
+						24, -- [3]
+						25, -- [4]
+						["n"] = 4,
+					},
+				}, -- [60]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:05:56]|h|r Myrrit says: Look at the sparklies here! You like sparklies, right?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674356,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [61]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:06:00]|h|r Myrrit says: I see some pressure plates... but there's only one of me! What do we do?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674360,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [62]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:06:06]|h|r Myrrit says: Oh wait...",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674366,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [63]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:06:08]|h|r Myrrit says: Do you smell that?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674368,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [64]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:09:16]|h|r A flash of teeth and wings darts across the cavern ceiling.",
+					["b"] = 0.250980406999588,
+					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674556,
+					["extraData"] = {
+						17, -- [1]
+						false, -- [2]
+						24, -- [3]
+						25, -- [4]
+						["n"] = 4,
+					},
+				}, -- [65]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:10:35]|h|r Myrrit says: You already have one! Toss me the |Hitem:205982:0:0:0:0:0:0:0:90:0|h|cffffffff[Lost Dig Map]|r|h!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674635,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [66]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:10:50]|h|r Myrrit says: Look at the sparklies here! You like sparklies, right?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674650,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [67]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:10:55]|h|r Myrrit says: I see some pressure plates... but there's only one of me! What do we do?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674655,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [68]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:11:00]|h|r Myrrit says: Oh wait...",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674660,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [69]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:11:03]|h|r Myrrit says: Do you smell that?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674663,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [70]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:11:07]|h|r Myrrit says: It's ALIVE!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674667,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [71]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:11:59]|h|r Myrrit says: Not so alive now, good work!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674719,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [72]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:03]|h|r Myrrit says: He kept throwing heavy coins at us. Could we use that?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674723,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [73]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:03]|h|r Myrrit says: The door's opening! Let's go take a peek behind it!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674723,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [74]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:16]|h|r You receive item: |cffa335ee|Hitem:204717::::::::70:70:::::::::|h[Splintered Spark of Shadowflame]|h|r",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674736,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [75]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:16]|h|r You receive item: |cff0070dd|Hitem:205347::::::::70:70::11::1:28:2633:::::|h[Gathered Niffen Resources]|h|r",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674736,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [76]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:16]|h|r Reputation with Guild increased by 125.",
+					["b"] = 1,
+					["r"] = 0.501960813999176,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674736,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [77]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:16]|h|r Myrrit says: I've never seen treasures come to life to defend themselves! What an adventure, Nowarg!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674736,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [78]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:22]|h|r Myrrit says: Even so, we did great! You're brave AND clever!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674742,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [79]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:12:26]|h|r Myrrit says: That was amazing. Let's head back with our treasure!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674746,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [80]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r You receive item: |cff0070dd|Hitem:190321::::::::70:70:::::::::|h[Awakened Fire]|h|rx3",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [81]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r You receive item: |cff0070dd|Hitem:190316::::::::70:70:::::::::|h[Awakened Earth]|h|rx3",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [82]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r You receive item: |cff1eff00|Hitem:189143::::::::70:70::::1:38:1:::::|h[Draconium Ore |A:Professions-ChatIcon-Quality-Tier1:17:15::1|a]|h|rx16",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [83]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r You receive item: |cff0070dd|Hitem:204460::::::::70:70:::::::::|h[Zaralek Glowspores]|h|rx16",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [84]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r You receive item: |cff1eff00|Hitem:204985::::::::70:70:::::::::|h[Barter Brick]|h|rx4",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [85]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r You receive item: |cffffffff|Hitem:190395::::::::70:70::::1:38:1:::::|h[Serevite Ore |A:Professions-ChatIcon-Quality-Tier1:17:15::1|a]|h|rx20",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [86]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:02]|h|r Myrrit says: Thanks again, Brynn!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674782,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [87]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:03]|h|r You receive currency: |cffffffff|Hcurrency:2003:0|h[Dragon Isles Supplies]|h|rx65",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674783,
+					["extraData"] = {
+						59, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+				}, -- [88]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:05]|h|r Brynnsahce says: Luck to ya on your next sniffenseek!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674785,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [89]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:09]|h|r Brynnsahce says: Smelling your reactions to everything in Loamm made me appreciate the familiar in a whole new way. Way to go, Uplander!",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674789,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [90]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r |cffff80ff|Htransmogappearance:185596|h[Draconic Cleaver]|h|r has been added to your appearance collection.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [91]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r |cffff80ff|Htransmogappearance:185597|h[Earth-Bound Saber]|h|r has been added to your appearance collection.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [92]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r |cffff80ff|Htransmogappearance:185602|h[Proto-Drake Slicer]|h|r has been added to your appearance collection.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [93]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r |cffff80ff|Htransmogappearance:185603|h[Almost Immovable Wall]|h|r has been added to your appearance collection.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [94]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r You receive currency: |cff0070dd|Hcurrency:2245:0|h[Flightstones]|h|rx10",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						59, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+				}, -- [95]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r Welcome to the City of Smells completed.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [96]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r Received 56 Gold, 18 Silver.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [97]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r You receive item: |cff1eff00|Hitem:204457::::::::70:70::11:3:9295:8902:1472:1:28:2588:::::|h[Almost Immovable Wall]|h|r",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						28, -- [1]
+						false, -- [2]
+						3, -- [3]
+						4, -- [4]
+						["n"] = 4,
+					},
+				}, -- [98]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:51]|h|r Reputation with Guild increased by 125.",
+					["b"] = 1,
+					["r"] = 0.501960813999176,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674831,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [99]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:55]|h|r Quest accepted: Six Hundred Feet Under",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674835,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [100]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:13:56]|h|r Ebyssian waves you over.",
+					["b"] = 0.250980406999588,
+					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674836,
+					["extraData"] = {
+						17, -- [1]
+						false, -- [2]
+						24, -- [3]
+						25, -- [4]
+						["n"] = 4,
+					},
+				}, -- [101]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:23]|h|r Ebyssian says: The niffen saw an eruption of fire in the cavern you came from. Was that Fyrakk?",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674863,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [102]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:26]|h|r You receive currency: |cff0070dd|Hcurrency:2245:0|h[Flightstones]|h|rx10",
+					["b"] = 0,
+					["r"] = 0,
+					["g"] = 0.6666666865348816,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674866,
+					["extraData"] = {
+						59, -- [1]
+						false, -- [2]
+						7, -- [3]
+						8, -- [4]
+						["n"] = 4,
+					},
+				}, -- [103]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:26]|h|r Reputation with Guild increased by 125.",
+					["b"] = 1,
+					["r"] = 0.501960813999176,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674866,
+					["extraData"] = {
+						36, -- [1]
+						false, -- [2]
+						5, -- [3]
+						6, -- [4]
+						["n"] = 4,
+					},
+				}, -- [104]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:26]|h|r Six Hundred Feet Under completed.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674866,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [105]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:26]|h|r Received 28 Gold, 9 Silver.",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674866,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [106]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:30]|h|r Quest accepted: Future Aspects",
+					["b"] = 0,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674870,
+					["extraData"] = {
+						1, -- [1]
+						false, -- [2]
+						1, -- [3]
+						2, -- [4]
+						["n"] = 4,
+					},
+				}, -- [107]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:30]|h|r Wrathion says: He defeated us as if we were nothing.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674870,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [108]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:34]|h|r Sabellian says: He is surprisingly stealthy. I am sure we can devise an effective strategy if we are not distracted by...",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674874,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [109]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:43]|h|r A fire elemental approaches Olfor and Big Bessie!",
+					["b"] = 0.250980406999588,
+					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674883,
+					["extraData"] = {
+						17, -- [1]
+						false, -- [2]
+						24, -- [3]
+						25, -- [4]
+						["n"] = 4,
+					},
+				}, -- [110]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:46]|h|r Ebyssian says: The whispers...",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674886,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [111]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:48]|h|r Sabellian says: Yes. They distracted us at key moments. They are quieter when I use my visage.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674888,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [112]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:14:56]|h|r Sabellian says: Also, I have discovered some recording artifice of my father's. He talked of a laboratory called Aberrus. A Sundered Flame partisan was killed by one of them.",
+					["b"] = 0.6235294342041016,
+					["r"] = 1,
+					["g"] = 1,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674896,
+					["extraData"] = {
+						13, -- [1]
+						false, -- [2]
+						20, -- [3]
+						21, -- [4]
+						["n"] = 4,
+					},
+				}, -- [113]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:15:58]|h|r |Hchannel:channel:4|h[4] |h|cffd8d8d8[|r|Hplayer:Vendrick-Silvermoon:8115:CHANNEL:4|h|cfff48cbaVendrick|r|h|cffd8d8d8]|r: how do u obtain explorer gear? i got veterans but need explorers for upgr quest",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674958,
+					["extraData"] = {
+						71, -- [1]
+						false, -- [2]
+						39, -- [3]
+						40, -- [4]
+						["n"] = 4,
+					},
+				}, -- [114]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:16:15]|h|r |Hchannel:channel:4|h[4] |h|cffd8d8d8[|r|Hplayer:Decenium-Silvermoon:8116:CHANNEL:4|h|cffaad372Decenium|r|h|cffd8d8d8]|r: gotta do m+",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674975,
+					["extraData"] = {
+						71, -- [1]
+						false, -- [2]
+						39, -- [3]
+						42, -- [4]
+						["n"] = 4,
+					},
+				}, -- [115]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:16:19]|h|r The drone of ancient drums echoes throughout the cavern.",
+					["b"] = 0.250980406999588,
+					["r"] = 1,
+					["g"] = 0.501960813999176,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674979,
+					["extraData"] = {
+						17, -- [1]
+						false, -- [2]
+						24, -- [3]
+						25, -- [4]
+						["n"] = 4,
+					},
+				}, -- [116]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:16:37]|h|r |Hchannel:channel:4|h[4] |h|cffd8d8d8[|r|Hplayer:Wyntersun-Silvermoon:8118:CHANNEL:4|h|cff33937fWyntersun|r|h|cffd8d8d8]|r: zaralek main quest should give some",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684674997,
+					["extraData"] = {
+						71, -- [1]
+						false, -- [2]
+						39, -- [3]
+						44, -- [4]
+						["n"] = 4,
+					},
+				}, -- [117]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:16:41]|h|r |Hchannel:channel:4|h[4] |h|cffd8d8d8[|r|Hplayer:Wyntersun-Silvermoon:8119:CHANNEL:4|h|cff33937fWyntersun|r|h|cffd8d8d8]|r: or buy off AH",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684675001,
+					["extraData"] = {
+						71, -- [1]
+						false, -- [2]
+						39, -- [3]
+						44, -- [4]
+						["n"] = 4,
+					},
+				}, -- [118]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:16:47]|h|r |Hchannel:channel:1|h[1] |h Changed Channel: |Hchannel:CHANNEL:1|h[1. General - The Azure Span]|h",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684675007,
+					["extraData"] = {
+						68, -- [1]
+						false, -- [2]
+						12, -- [3]
+						13, -- [4]
+						["n"] = 4,
+					},
+				}, -- [119]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:16:47]|h|r |Hchannel:channel:3|h[3] |h Changed Channel: |Hchannel:CHANNEL:3|h[3. LocalDefense - The Azure Span]|h",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684675007,
+					["extraData"] = {
+						70, -- [1]
+						false, -- [2]
+						15, -- [3]
+						16, -- [4]
+						["n"] = 4,
+					},
+				}, -- [120]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:17:00]|h|r |Hchannel:channel:4|h[4] |h|cffd8d8d8[|r|Hplayer:Vendrick-Silvermoon:8122:CHANNEL:4|h|cfff48cbaVendrick|r|h|cffd8d8d8]|r: ty",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684675020,
+					["extraData"] = {
+						71, -- [1]
+						false, -- [2]
+						39, -- [3]
+						40, -- [4]
+						["n"] = 4,
+					},
+				}, -- [121]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:18:22]|h|r |Hchannel:channel:1|h[1] |h Left Channel: |Hchannel:CHANNEL:1|h[1. General - The Azure Span]|h",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684675102,
+					["extraData"] = {
+						68, -- [1]
+						false, -- [2]
+						12, -- [3]
+						13, -- [4]
+						["n"] = 4,
+					},
+				}, -- [122]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[16:18:22]|h|r |Hchannel:channel:3|h[3] |h Left Channel: |Hchannel:CHANNEL:3|h[3. LocalDefense - The Azure Span]|h",
+					["b"] = 0.7529412508010864,
+					["r"] = 1,
+					["g"] = 0.7529412508010864,
+					["timestamp"] = 1240157.582,
+					["serverTime"] = 1684675102,
+					["extraData"] = {
+						70, -- [1]
+						false, -- [2]
+						15, -- [3]
+						16, -- [4]
+						["n"] = 4,
+					},
+				}, -- [123]
+				{
+					["message"] = "0 |4day:days;, 5 |4hour:hours;, 52 |4minute:minutes;, 24 |4second:seconds;",
+					["timestamp"] = 1240157.582,
+				}, -- [124]
+				{
+					["message"] = "========== End of Scrollback ==========",
+					["timestamp"] = 1240157.582,
+				}, -- [125]
+				{
+					["message"] = "|cff33ff99ATT|r: |cff33ff99A|rbility |cff33ff99T|ream |cff33ff99T|rracker |cffFF4500v92|r loaded. Type |cffFF4500/att|r to open options.",
+					["timestamp"] = 1240147.164,
+				}, -- [126]
+				{
+					["message"] = "|cff69CCF0 GladiatorlosSA2|r (|cffFFF569/gsa|r)|cffFF7D0A 4.0 |r(|cff9482C910.0.2 Dragonflight|r)",
+					["timestamp"] = 1240147.164,
+				}, -- [127]
+				{
+					["message"] = "|cff979797|Hpratcopy|h[22:10:46]|h|r Guild Message of the Day: \"Welcome!! for those interested in participating in the m + / Raid write me in private, thanks and good game\"",
+					["r"] = 0.250980406999588,
+					["extraData"] = {
+						5, -- [1]
+						["n"] = 1,
+					},
+					["timestamp"] = 1240153.254,
+					["g"] = 1,
+					["b"] = 0.250980406999588,
+				}, -- [128]
 			},
 			["maxElements"] = 128,
 			["TransformIf"] = nil --[[ skipped inline function ]],

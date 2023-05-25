@@ -1,0 +1,2 @@
+
+DBMDMF_AllSavedVars = nil

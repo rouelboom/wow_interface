@@ -1,9 +1,9 @@
 local addonName, addon = ...
 
-local RXPG = addon.RXPG
+local RXPGuides = addon.RXPGuides
 local _, class = UnitClass("player")
 local _G = _G
-local fmt = string.format
+local fmt,tinsert = string.format, table.insert
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 
 -- Alias addon.locale.Get
@@ -48,30 +48,23 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
-function addon.RenderFrame(themeUpdate)
-    addon:LoadActiveTheme()
-
-    -- TODO better handle themes
-    addon.colors = addon.activeTheme
-
-    RXPFrame.backdropEdge.edgeFile = addon.GetTexture("rxp-borders")
-    RXPFrame.guideNameBackdrop.edgeFile = addon.GetTexture("rxp-borders")
+function RXPFrame:UpdateVisuals()
     BottomFrame:ClearBackdrop()
-    BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
+    BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
     if RXPFrame.activeItemFrame then
         RXPFrame.activeItemFrame:ClearBackdrop()
-        RXPFrame.activeItemFrame:SetBackdrop(RXPFrame.backdropEdge)
+        RXPFrame.activeItemFrame:SetBackdrop(RXPFrame.backdrop.edge)
         RXPFrame.activeItemFrame:SetBackdropColor(
             unpack(addon.colors.background))
     end
 
     GuideName:ClearBackdrop()
-    GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
     GuideName:SetBackdropColor(unpack(addon.colors.background))
     Footer:ClearBackdrop()
-    Footer:SetBackdrop(RXPFrame.backdropEdge)
+    Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
     Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -79,51 +72,75 @@ function addon.RenderFrame(themeUpdate)
     GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
     GuideName.classIcon:SetTexture(addon.GetTexture(class))
     Footer.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
+    RXPFrame.UpdateScrollBar()
+end
 
-    addon.arrowFrame.texture:SetTexture(addon.GetTexture(
-                                            "rxp_navigation_arrow-1"))
-    addon.UpdateScrollBar()
+function addon.RenderFrame(themeUpdate,isLoading)
+    addon:LoadActiveTheme()
 
+    -- TODO better handle themes
+    addon.colors = addon.activeTheme
+
+    --TODO: Add UpdateVisuals function to every frame under enabledFrames
+    for _,frame in pairs(addon.enabledFrames) do
+        if frame.UpdateVisuals then
+            frame:UpdateVisuals(true)
+        end
+    end
     if not themeUpdate then
         RXPFrame.GenerateMenuTable()
-        if addon.currentGuide then addon.ReloadGuide() end
+    end
+    if addon.currentGuide and not isLoading then
+        addon.ReloadGuide()
     end
 end
+
+
+RXPFrame.backdrop = {}
+
+RXPFrame.defaultBackground = {
+    edge = "Interface/BUTTONS/WHITE8X8",
+    guideName = "Interface/BUTTONS/WHITE8X8",
+    bottom = "Interface/BUTTONS/WHITE8X8",
+}
+
+RXPFrame.defaultEdges = {
+    edge = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+    guideName = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+}
+
+RXPFrame.backdrop.edge = {
+    bgFile = "Interface/BUTTONS/WHITE8X8",
+    -- edgeFile = "Interface/BUTTONS/WHITE8X8",
+    -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
+    edgeFile = addon.GetTexture("rxp-borders"),
+    tile = true,
+    edgeSize = 8,
+    tileSize = 8,
+    insets = {left = 4, right = 2, top = 2, bottom = 4}
+}
+
+RXPFrame.backdrop.guideName = {
+    edgeFile = addon.GetTexture("rxp-borders"),
+    edgeSize = 8,
+    insets = {left = 4, right = 2, top = 2, bottom = 4}
+}
+
+RXPFrame.backdrop.bottom = {
+    bgFile = "Interface/BUTTONS/WHITE8X8",
+    tile = true,
+    tileSize = 16
+    --edgeSize = 1,
+    --insets = {left = 0, right = 0, top = -1, bottom = -1}
+}
 
 function addon.SetupGuideWindow()
     -- These were in-line, but now rely on settings
 
-    RXPFrame.backdropEdge = {
-        bgFile = "Interface/BUTTONS/WHITE8X8",
-        -- edgeFile = "Interface/BUTTONS/WHITE8X8",
-        -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
-        edgeFile = addon.GetTexture("rxp-borders"),
-        tile = true,
-        edgeSize = 8,
-        tileSize = 8,
-        insets = {left = 4, right = 2, top = 2, bottom = 4}
-    }
-
-    RXPFrame.guideNameBackdrop = {
-        bgFile = "Interface/BUTTONS/WHITE8X8",
-        edgeFile = addon.GetTexture("rxp-borders"),
-        tile = true,
-        edgeSize = 8,
-        tileSize = 8,
-        insets = {left = 4, right = 2, top = 2, bottom = 4}
-    }
-
-    RXPFrame.bottomBackdrop = {
-        bgFile = "Interface\\Buttons\\WHITE8x8",
-        edgeFile = "Interface\\Buttons\\WHITE8x8",
-        edgeSize = 1,
-        insets = {left = 0, right = 0, top = -1, bottom = -1}
-    }
-
-    BottomFrame:SetBackdrop(RXPFrame.backdropEdge)
+    BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
 
-    GuideName:SetBackdrop(RXPFrame.guideNameBackdrop)
+    GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
     GuideName:SetBackdropColor(unpack(addon.colors.background))
 
     GuideName.text:SetFont(addon.font, 11, "")
@@ -137,7 +154,7 @@ function addon.SetupGuideWindow()
 
     GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
-    Footer:SetBackdrop(RXPFrame.guideNameBackdrop)
+    Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
     Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
 
@@ -146,7 +163,7 @@ function addon.SetupGuideWindow()
     GuideName.classIcon:SetTexture(addon.GetTexture(class))
     Footer.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
 
-    addon.UpdateScrollBar()
+    RXPFrame.UpdateScrollBar()
 
 end
 
@@ -196,6 +213,7 @@ local function SetStepFrameAnchor()
         if frame:GetBottom() * scale < 0 then SetTop() end
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
     end
+    addon:SortTimers()
 
 end
 
@@ -259,14 +277,6 @@ RXPFrame:SetHeight(addon.height)
 RXPFrame:SetPoint("LEFT", 0, 35)
 RXPFrame:SetFrameStrata("BACKGROUND")
 
-local backdrop = {
-    bgFile = "Interface/BUTTONS/WHITE8X8",
-    tile = true,
-    tileSize = 16
-    -- edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
-    -- edgeSize = 16, insets = {left = 4, right = 4, top = 4, bottom = 4}
-}
-
 -- RXPFrame.CurrentStepFrame:SetBackdrop(backdrop)
 -- RXPFrame.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
 CurrentStepFrame:SetPoint("BOTTOMLEFT", GuideName, "TOPLEFT", 0, 2)
@@ -276,6 +286,144 @@ CurrentStepFrame:SetHeight(25)
 CurrentStepFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
 CurrentStepFrame:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
 CurrentStepFrame:EnableMouse(1)
+
+local CheckStepCompletion = function(self,initialCheck)
+    local stepCompleted = true
+    for _,element in pairs(self.elements) do
+        if initialCheck then
+            --print('ok1',GetTime())
+            element.container:callback()
+        end
+        stepCompleted = stepCompleted and element.completed
+    end
+    self.completed = stepCompleted
+end
+
+
+local hiddenFramePool = {}
+
+function addon.RegisterGeneratedSteps()
+    local i = 1
+    local stepUnitscan, stepMobs, stepTargets = {},{},{}
+    for _,context in pairs(addon.generatedSteps) do
+    for _,step in ipairs(context) do
+    for _,element in ipairs(step.elements) do
+        if element.tag then
+            local events = element.event or addon.functions.events[element.tag]
+            local container = hiddenFramePool[i] or CreateFrame("Frame",nil,addon.RXPFrame)
+            hiddenFramePool[i] = container
+            i = i + 1
+            container:Show()
+            container.callback = addon.functions[element.tag]
+            if type(events) == "string" then
+                if events == "OnUpdate" then
+                    container:SetScript("OnUpdate", container.callback)
+                else
+                    container:RegisterEvent(events)
+                    container:SetScript("OnEvent",
+                                        CurrentStepFrame.EventHandler)
+                end
+            elseif type(events) == "table" then
+                for _, event in ipairs(events) do
+                    if event == "OnUpdate" then
+                        container:SetScript("OnUpdate",
+                                            container.callback)
+                    else
+                        container:RegisterEvent(event)
+                        container:SetScript("OnEvent",
+                                            CurrentStepFrame.EventHandler)
+                    end
+                end
+            end
+            container.element = element
+            element.container = container
+            if element.unitscan then
+                for _, t in ipairs(element.unitscan) do
+                    tinsert(stepUnitscan, addon.GetCreatureName(t))
+                end
+            end
+            if element.mobs then
+                for _, t in ipairs(element.mobs) do
+                    tinsert(stepMobs, addon.GetCreatureName(t))
+                end
+            end
+            if element.targets then
+                for _, t in ipairs(element.targets) do
+                    tinsert(stepTargets, addon.GetCreatureName(t))
+                end
+            end
+        end
+    end
+    end
+    end
+
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
+    addon.targeting:UpdateTargetList(stepTargets, true)
+    addon.targeting:CheckNameplates()
+
+    for j = i,#hiddenFramePool do
+        local container = hiddenFramePool[j]
+        container:Hide()
+        container:SetScript("OnUpdate",nil)
+        container:SetScript("OnEvent",nil)
+        container.element = nil
+        container.callback = nil
+    end
+    addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion,true)
+end
+
+function addon:ProcessGeneratedSteps(func,...)
+    if type(func) ~= "function" then func = nil end
+    for _,context in pairs(addon.generatedSteps) do
+        for _,step in ipairs(context) do
+            if step.isActive then
+                step.active = step:isActive()
+                --print(step,GetTime(),step.active)
+            end
+            if step.active and func then
+                func(step,...)
+            end
+        end
+    end
+end
+
+function addon:ShowTips(state)
+    if state == "toggle" then
+        RXPCData.hideTipWindow = not RXPCData.hideTipWindow
+    else
+        RXPCData.hideTipWindow = not state
+    end
+    addon.updateSteps = true
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+end
+
+local tipMenu = {{
+        notCheckable = 1,
+        text = L("Hide tips"),
+        func = addon.ShowTips,
+        arg1 = false
+    }}
+local TipWindowMouseDown = function(self,button)
+    if self.step and self.step.tip then
+        if (button == "RightButton") then
+            if LibDD then
+                LibDD:EasyMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU");
+            else
+                _G.EasyMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU");
+            end
+        else
+            self:StartMoving()
+        end
+    end
+end
+local TipWindowMouseUp = function(self)
+    if self.step and self.step.tip then
+        self:StopMovingOrSizing()
+        local point = {self:GetPoint()}
+        point[2] = nil
+        RXPCData.tipWindow = point
+    end
+end
 
 CurrentStepFrame.framePool = {}
 
@@ -329,12 +477,13 @@ function addon.UpdateStepCompletion()
     addon.updateSteps = false
     if addon.currentGuide.empty then return end
 
-    local n = 0
+    addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion)
+
     local update
 
     for i, step in ipairs(activeSteps) do
         local completed = true
-        if not step.completed then
+        if not (step.completed or step.tip) then
             for j, element in ipairs(step.elements) do
                 if not (element.completed or element.skip) then
                     completed = false
@@ -343,11 +492,12 @@ function addon.UpdateStepCompletion()
             end
         end
 
+        local c
         local completewith = step.completewith
-        if completewith and not completed then
+        if completewith and (not completed or step.tip) then
             local guide = addon.currentGuide
             if completewith == "next" then
-                completewith = step.index + 1
+                completewith = step.index and (step.index + 1)
             else
                 completewith = guide.labels[completewith]
             end
@@ -356,20 +506,28 @@ function addon.UpdateStepCompletion()
                     guide.steps[completewith].sticky then
                     if RXPCData.stepSkip[completewith] then
                         completed = true
+                        c = true
                     end
                 else
                     if RXPCData.currentStep > completewith then
                         completed = true
+                        c = true
                     end
                 end
             end
         end
 
-        if completed then
-            for j, element in ipairs(step.elements) do
-                if element.OnStepCompletion then
-                    element:OnStepCompletion()
-                end
+
+        if step.tip then
+            c = c or RXPCData.hideTipWindow
+            if step.hidetip ~= c then
+                update = true
+            end
+            step.hidetip = c
+            step.active = not c
+        elseif completed and step.index then
+            if step.active and GetTime() - addon.lastStepUpdate > 1 then
+                addon:QueueMessage("RXP_STEP_COMPLETE",step,addon.currentGuide)
             end
             if step.sticky then
                 RXPCData.stepSkip[step.index] = true
@@ -407,19 +565,20 @@ function addon.SetStep(n, n2, loopback)
             end
         end
         local isComplete = true
-        local completedStep
+        --local completedStep
         for i, step in pairs(activeSteps) do
             if step.sticky and not RXPCData.stepSkip[i] then
                 isComplete = false
             end
         end
         if isComplete then
-            return RXPG[group].next()
+            return RXPGuides[group].next()
         else
             n = #guide.steps
         end
     end
     RXPCData.currentStep = n
+    RXPCData.currentStepId = guide.steps[n].stepId
     -- isUpdating = true
 
     if not guide.steps[n].active then
@@ -433,6 +592,7 @@ function addon.SetStep(n, n2, loopback)
         if C_SuperTrack and trackId then
             C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
+        addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
     end
 
     RXPCData.stepSkip[n + 1] = nil
@@ -441,11 +601,14 @@ function addon.SetStep(n, n2, loopback)
         return addon.SetStep(n + 1)
     end
 
+    local previousSteps = {}
     for i, step in pairs(activeSteps) do
         step.active = nil
+        tinsert(previousSteps,step)
         if n < #guide.steps then step.completed = nil end
     end
 
+    addon:ScheduleTask(addon.RegisterGeneratedSteps)
     table.wipe(activeSteps)
     table.wipe(addon.questAccept)
     table.wipe(addon.questTurnIn)
@@ -466,7 +629,7 @@ function addon.SetStep(n, n2, loopback)
                     not req.active do
                     if requiredSteps[req] then
                         print('ERROR: Step requirement loop at steps %d and %d',
-                              step.index, req.index)
+                              step.index or 0, req.index or 0)
                         break
                     end
                     requiredSteps[req] = true
@@ -479,7 +642,7 @@ function addon.SetStep(n, n2, loopback)
                                             not RXPCData.stepSkip[req.index])))
             if not RXPCData.stepSkip[i] and step.reqFulfilled and level >=
                 step.level then
-                table.insert(activeSteps, step)
+                tinsert(activeSteps, step)
                 if n > 1 then scrollHeight = n - 1 end
                 -- ScrollChild.framePool[i]:SetAlpha(0.66)
                 step.active = true
@@ -487,6 +650,7 @@ function addon.SetStep(n, n2, loopback)
         end
     end
 
+    local lastTip = addon.currentTip
     local step = guide.steps[n]
     local req = step.requires and guide.labels[step.requires] and
                     guide.steps[guide.labels[step.requires]]
@@ -495,23 +659,34 @@ function addon.SetStep(n, n2, loopback)
     elseif step and not step.completed and
         not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled))) and
         level >= step.level then
-        table.insert(activeSteps, step)
+        tinsert(activeSteps, step)
         ScrollChild.framePool[n]:SetAlpha(1)
         step.active = true
         scrollHeight = n
+        if step.tipWindow then
+            tinsert(activeSteps,step.tipWindow)
+            step.tipWindow.active = true
+        end
     end
 
     if #activeSteps == 0 then
         if n >= #guide.steps then
-            return RXPG[group].next()
+            return RXPGuides[group].next()
         else
             return addon.SetStep(n + 1)
         end
     end
 
-    local totalHeight = 0
+    for _,prevstep in pairs(previousSteps) do
+        if not prevstep.active then
+            addon:SendEvent("RXP_STEP_DEACTIVATED",prevstep,guide)
+        end
+    end
+
+    --local totalHeight = 0
     local c = 0
-    local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
+    local anchor = 0
+    --local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     local stepUnitscan = {}
     local stepMobs = {}
     local stepTargets = {}
@@ -527,17 +702,45 @@ function addon.SetStep(n, n2, loopback)
             stepframe = CurrentStepFrame.framePool[c]
             -- stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
             stepframe.elements = {}
+
             -- addon.CreateActiveItemFrame(stepframe)
         end
-        stepframe:ClearAllPoints()
-        if c == 1 then
-            stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
-            stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
+        if step.tip then
+            --stepframe:SetParent(UIParent)
+            stepframe:ClearAllPoints()
+            local pos = RXPCData.tipWindow
+            stepframe:SetFrameStrata("MEDIUM")
+            if pos then
+                stepframe:SetPoint(pos[1], UIParent, pos[3], pos[4], pos[5])
+            else
+                stepframe:SetPoint("BOTTOMLEFT", UIParent, 0, 0)
+            end
+            --TODO: Save window position
+            stepframe:SetWidth(200)
+            stepframe:SetMovable(true)
+            stepframe:EnableMouse(true)
+            stepframe:SetClampedToScreen(true)
+            --stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
+            anchor = c - 1
+            stepframe:SetScript("OnMouseDown",TipWindowMouseDown)
+            stepframe:SetScript("OnMouseUp",TipWindowMouseUp)
+            addon.currentTip = step
         else
-            stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[c - 1],
-                               "BOTTOMLEFT", 0, -5)
-            stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[c - 1],
-                               "BOTTOMRIGHT", 0, -5)
+            stepframe:SetFrameStrata(RXPFrame:GetFrameStrata())
+            stepframe:ClearAllPoints()
+            stepframe:SetScript("OnMouseDown",nil)
+            stepframe:SetScript("OnMouseUp",nil)
+            if anchor < 1 then
+                stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
+                stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
+            else
+                stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[anchor],
+                                "BOTTOMLEFT", 0, -5)
+                stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor],
+                                "BOTTOMRIGHT", 0, -5)
+            end
+            anchor = c
+            stepframe:SetMovable(false)
         end
         if not stepframe.number then
             stepframe.number = CreateFrame("Frame", "$parent_number", stepframe,
@@ -555,14 +758,13 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetFont(addon.font, addon.settings.db.profile
                                               .guideFontSize, "")
         end
-        if stepframe.hardcore ~= addon.settings.db.profile.hardcore or
-            not stepframe.hardcore then
-            stepframe.hardcore = addon.settings.db.profile.hardcore
+        if stepframe.theme ~= addon.activeTheme then
+            stepframe.theme = addon.activeTheme
             stepframe:ClearBackdrop()
-            stepframe:SetBackdrop(RXPFrame.backdropEdge)
+            stepframe:SetBackdrop(RXPFrame.backdrop.edge)
             stepframe:SetBackdropColor(unpack(addon.colors.background))
             stepframe.number:ClearBackdrop()
-            stepframe.number:SetBackdrop(RXPFrame.backdropEdge)
+            stepframe.number:SetBackdrop(RXPFrame.backdrop.edge)
             stepframe.number:SetBackdropColor(unpack(addon.colors.background))
         end
 
@@ -570,7 +772,7 @@ function addon.SetStep(n, n2, loopback)
         if step.sticky then
             titletext = step.title or ""
         else
-            titletext = step.title or (string.format(L("Step %d"), index))
+            titletext = step.title or (fmt(L("Step %d"), index))
         end
 
         if titletext == "" then
@@ -594,7 +796,7 @@ function addon.SetStep(n, n2, loopback)
             local elementFrame = stepframe.elements[e]
             if not stepframe.elements[e] then
                 stepframe.elements[e] = CreateFrame("Frame", "$parent_" .. e,
-                                                    stepframe, BackdropTemplate)
+                                                    stepframe, nil)
                 elementFrame = stepframe.elements[e]
                 -- elementFrame:SetHeight(0)
                 -- elementFrame:SetWidth(300)
@@ -610,7 +812,7 @@ function addon.SetStep(n, n2, loopback)
                         element.skip = self:GetChecked()
                     end
                     addon.updateSteps = true
-                    addon.updateMap = true
+                    addon.UpdateMap()
                 end)
 
                 --
@@ -671,16 +873,14 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.button:HookScript("OnEnter", tpOnEnter)
                 elementFrame.button:HookScript("OnLeave", tpOnLeave)
             end
-            if elementFrame.button.hardcore ~=
-                addon.settings.db.profile.hardcore or not elementFrame.hardcore then
+            if elementFrame.button.theme ~= addon.activeTheme then
+                elementFrame.button.theme = addon.activeTheme
                 elementFrame.button:SetNormalTexture(addon.GetTexture(
                                                          "rxp-btn-blank-32"))
                 elementFrame.button:SetCheckedTexture(addon.GetTexture(
                                                           "rxp-checked-32"))
                 elementFrame.button:SetDisabledCheckedTexture(addon.GetTexture(
                                                                   "rxp-checked-32"))
-                elementFrame.button.hardcore =
-                    addon.settings.db.profile.hardcore
             end
             elementFrame.step = step
             elementFrame.element = element
@@ -688,8 +888,8 @@ function addon.SetStep(n, n2, loopback)
             element.frame = elementFrame
             elementFrame.button:Enable()
             if element.tag then
-                local events = element.event or RXPG[group].events[element.tag]
-                elementFrame.callback = RXPG[group][element.tag]
+                local events = element.event or RXPGuides[group].events[element.tag]
+                elementFrame.callback = RXPGuides[group][element.tag]
                 elementFrame.callback(elementFrame)
                 if type(events) == "string" then
                     if events == "OnUpdate" then
@@ -714,20 +914,20 @@ function addon.SetStep(n, n2, loopback)
             end
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
-                    table.insert(stepUnitscan, addon.GetCreatureName(t))
+                    tinsert(stepUnitscan, addon.GetCreatureName(t))
                 end
             end
             if element.mobs then
                 for _, t in ipairs(element.mobs) do
-                    table.insert(stepMobs, addon.GetCreatureName(t))
+                    tinsert(stepMobs, addon.GetCreatureName(t))
                 end
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    table.insert(stepTargets, addon.GetCreatureName(t))
+                    tinsert(stepTargets, addon.GetCreatureName(t))
                 end
             end
-            local spacing = 0
+            --local spacing = 0
 
         end
         for n = e + 1, #stepframe.elements do
@@ -745,19 +945,24 @@ function addon.SetStep(n, n2, loopback)
                     addon.activeSpells[k] = v
                 end
             end
-
-            addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
-
-            addon.targeting:UpdateTargetList(stepTargets)
-
-            addon.targeting:CheckNameplates()
         else
             stepframe:Hide()
         end
     end
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+
+    addon.targeting:UpdateTargetList(stepTargets)
+
+    addon.targeting:CheckNameplates()
+    addon:QueueMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
 
     for index in pairs(RXPCData.completedWaypoints) do
-        local wstep = guide.steps[index]
+        local wstep
+        if index == "tip" and lastTip ~= addon.currentTip then
+            wstep = lastTip
+        else
+            wstep = guide.steps[index]
+        end
         if not (wstep and wstep.active) then
             -- print('kk',index)
             RXPCData.completedWaypoints[index] = nil
@@ -766,15 +971,16 @@ function addon.SetStep(n, n2, loopback)
     addon.UpdateItemFrame()
     CurrentStepFrame.UpdateText()
     addon.updateSteps = true
-    addon.updateMap = true
+    addon.UpdateMap()
     StepScroll(scrollHeight)
 end
 
 function CurrentStepFrame.EventHandler(self, event, ...)
-    -- print(event,self.index,self.element.tag)
+    --print(event,self.index,self.element.tag)
     if addon.isHidden then
         return
     elseif self.callback and self.step and self.step.active then
+        --print(self.callback,self.element.tag)
         self.callback(self, event, ...)
     else
         print('!!!') -- ok
@@ -792,6 +998,7 @@ function CurrentStepFrame.UpdateText()
     -- StepScroll(n)
     local totalHeight = 0
     local c = 0
+    local anchor = 0
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     for i, step in pairs(activeSteps) do
 
@@ -799,19 +1006,23 @@ function CurrentStepFrame.UpdateText()
         c = c + 1
         local stepframe = CurrentStepFrame.framePool[c]
 
-        stepframe:ClearAllPoints()
-        if c == 1 then
-            stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
-            stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
-        else
-            stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[c - 1],
-                               "BOTTOMLEFT", 0, -5)
-            stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[c - 1],
-                               "BOTTOMRIGHT", 0, -5)
+        if not step.tip then
+            stepframe:ClearAllPoints()
+            if anchor < 1 then
+                stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
+                stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
+            else
+                stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[anchor],
+                                "BOTTOMLEFT", 0, -5)
+                stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor],
+                                "BOTTOMRIGHT", 0, -5)
+            end
+            stepframe:SetMovable(false)
+            anchor = c
         end
 
         stepframe.number.text:SetText(step.title or
-                                          (string.format(L("Step %d"), index)))
+                                          (fmt(L("Step %d"), index)))
         stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
         local e = 0
@@ -823,7 +1034,7 @@ function CurrentStepFrame.UpdateText()
                 elementFrame:Show()
 
                 local spacing = 0
-                if step.hidewindow then
+                if step.hidewindow or step.hidetip then
                     elementFrame:SetAlpha(0)
                     elementFrame.button:Hide()
                     elementFrame:SetHeight(1)
@@ -838,7 +1049,7 @@ function CurrentStepFrame.UpdateText()
                     elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
                                                "TOPRIGHT", 11, -1)
                     elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
-                    text:SetText(addon.settings:ReplaceColors(L(element.text)))
+                    text:SetText(L(element.text))
                     local h = math.ceil(elementFrame.text:GetStringHeight() *
                                             1.1) + 1
                     -- print('sh:',h)
@@ -894,7 +1105,7 @@ function CurrentStepFrame.UpdateText()
 
         end
 
-        if step.hidewindow then
+        if step.hidewindow or step.hidetip then
             stepframe:SetAlpha(0)
             frameHeight = 1
             stepframe:EnableMouse(false)
@@ -908,6 +1119,9 @@ function CurrentStepFrame.UpdateText()
             frameHeight = math.ceil(frameHeight + 18)
         end
         stepframe:SetHeight(frameHeight)
+        if step.tip then
+            frameHeight = -5
+        end
         totalHeight = totalHeight + frameHeight + 5
     end
     CurrentStepFrame:SetHeight(totalHeight - 5)
@@ -936,7 +1150,7 @@ GuideName.bg:SetPoint("TOPLEFT", 4, -2)
 GuideName.bg:SetPoint("BOTTOMRIGHT", -2, 4)
 
 -- footer
--- Footer:SetBackdrop(RXPFrame.backdropEdge)
+-- Footer:SetBackdrop(RXPFrame.backdrop.edge)
 Footer:SetPoint("BOTTOMLEFT", RXPFrame, "BOTTOMLEFT", 3, 0)
 Footer:SetPoint("BOTTOMRIGHT", RXPFrame, "BOTTOMRIGHT", -3, 0)
 Footer:SetHeight(20)
@@ -1026,7 +1240,7 @@ ScrollFrame:SetPoint("TOPLEFT", BottomFrame, 5, -5)
 ScrollFrame:SetPoint("BOTTOMRIGHT", BottomFrame, -20, 7)
 ScrollFrame.ScrollBar:SetPoint("TOPLEFT", ScrollFrame, "TOPRIGHT", 0, -18)
 
-function addon.UpdateScrollBar()
+function RXPFrame.UpdateScrollBar()
     local prefix = addon.GetTexture("Scrollbar/")
 
     local s = ScrollFrame.ScrollBar.ScrollDownButton
@@ -1109,12 +1323,61 @@ addon.emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
+function addon:FetchGuide(guide,arg2)
+    if type(guide) == "string" then
+        return addon:FetchGuide(addon.GetGuideTable(guide,arg2))
+    elseif guide and not guide.steps then
+        --print('ok3',guide.key)
+        local key = guide.key
+        local index = fmt("%s||%s",guide.group,guide.name)
+        local oldGuide = guide
+        local newGuide = addon.guideCache[key] and
+                        addon.guideCache[key]()
+        if newGuide then
+            newGuide.menuIndex = oldGuide.menuIndex
+            newGuide.submenuIndex = oldGuide.submenuIndex
+            addon.guides[index] = newGuide
+            addon.guideCache[key] = nil
+            guide = newGuide
+            addon:ScheduleTask(addon.UpdateQuestButton)
+            addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+        else
+            --print(guide.name,guide.group)
+            --GG = guide
+            error('Tried to load an invalid Guide')
+            return
+        end
+    end
+    return guide
+end
+
+function addon:LoadGuideTable(guideGroup,guideName)
+    return addon:LoadGuide(addon.GetGuideTable(guideGroup, guideName))
+end
+
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
 
     if not addon.IsGuideActive(guide) or not guide.empty and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) then
         return addon:LoadGuide(addon.emptyGuide)
+    end
+
+    guide = addon:FetchGuide(guide)
+
+    if not guide.steps then
+        return addon:LoadGuide(addon.emptyGuide)
+    end
+
+    if guide.hardcore then
+        if not addon.settings.db.profile.hardcore then
+            addon.settings.db.profile.hardcore = true
+            addon.RenderFrame(true,true)
+        end
+        addon.settings.db.profile.SoM = false
+    elseif guide.softcore and addon.settings.db.profile.hardcore then
+            addon.settings.db.profile.hardcore = false
+            addon.RenderFrame(true,true)
     end
 
     if addon.settings.db.profile.frameHeight then
@@ -1138,13 +1401,46 @@ function addon:LoadGuide(guide, OnLoad)
 
     table.wipe(addon.scheduledTasks)
     table.wipe(addon.stepUpdateList)
+    addon.updateTipWindow = false
+    addon.currentGuide = nil
+    local renderFrame
+
+    if guide.hardcore and addon.game == "CLASSIC" and not addon.settings.db.profile.hardcore then
+        addon.settings.db.profile.hardcore = true
+        renderFrame = true
+    end
+
+    --TODO: add better theme handling
+    if guide.theme and addon.themes[guide.theme] and addon.activeTheme == addon.themes["Default"] then
+        addon.settings.db.profile.activeTheme = guide.theme
+        renderFrame = true
+    end
+
+    if renderFrame then
+        addon.RenderFrame()
+    end
+
     addon.currentGuide = {}
 
     for k, v in pairs(guide) do addon.currentGuide[k] = v end
     addon.currentGuide.steps = {}
+    addon.currentGuide.tips = {}
+    local lastTip
     for _, step in ipairs(guide.steps) do
         if addon.IsStepShown(step) then
-            table.insert(addon.currentGuide.steps, step)
+            if step.tip then
+                tinsert(addon.currentGuide.tips,step)
+                lastTip = step
+                step.title = step.title or "Tip"
+            else
+                tinsert(addon.currentGuide.steps, step)
+                step.tipWindow = lastTip
+            end
+            if step.elements then
+                for _,element in pairs(step.elements) do
+                    addon.settings.ReplaceColors(element)
+                end
+            end
         end
     end
     guide = addon.currentGuide
@@ -1176,7 +1472,7 @@ function addon:LoadGuide(guide, OnLoad)
     for n, step in ipairs(guide.steps) do
         step.index = n
         BottomFrame.stepList[n] = n
-        if step.completewith then step.sticky = true end
+        if step.completewith and not step.tip then step.sticky = true end
         if step.requires then
             local requirement = guide.labels[step.requires]
             if requirement then
@@ -1211,9 +1507,8 @@ function addon:LoadGuide(guide, OnLoad)
             frame:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -3)
             frame:SetPoint("TOPRIGHT", anchor, "BOTTOMRIGHT", 0, -3)
         end
-        -- frame:SetBackdrop(RXPFrame.bottomBackdrop)
         frame:ClearBackdrop()
-        frame:SetBackdrop(backdrop)
+        frame:SetBackdrop(RXPFrame.backdrop.bottom)
         frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
 
         frame:SetScript("OnEnter", function(self)
@@ -1255,7 +1550,7 @@ function addon:LoadGuide(guide, OnLoad)
 
         if not frame.number then
             frame.number = CreateFrame("Frame", "$parent_number", frame,
-                                       BackdropTemplate)
+                                       nil)
             frame.number:SetPoint("BOTTOMRIGHT", frame)
             frame.number.text = frame.number:CreateFontString(nil, "OVERLAY")
             frame.number.text:SetFontObject(_G.GameFontNormalSmall)
@@ -1304,6 +1599,8 @@ function addon:LoadGuide(guide, OnLoad)
     BottomFrame.hiddenFrames = 0
     BottomFrame.UpdateFrame()
     addon.tickTimer = 0
+    addon:QueueMessage("RXP_GUIDE_LOADED",guide)
+    addon:ScheduleTask(RXPFrame.GenerateMenuTable)
 end
 
 function addon.ReloadGuide()
@@ -1335,7 +1632,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                 if not element.element then
                     element.element = element
                 end
-                RXPG[addon.currentGuide.group][element.tag](element,
+                RXPGuides[addon.currentGuide.group][element.tag](element,
                                                             "WindowUpdate")
                 if element.requestFromServer then
                     addon.updateStepText = true
@@ -1392,7 +1689,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                     local stepDiff = element.step.index - RXPCData.currentStep
                     element.element = element
                     if element.requestFromServer then
-                        RXPG[addon.currentGuide.group][element.tag](element,
+                        RXPGuides[addon.currentGuide.group][element.tag](element,
                                                                     "WindowUpdate")
                         addon.updateStepText =
                             addon.updateStepText or
@@ -1401,7 +1698,7 @@ function BottomFrame.UpdateFrame(self, inc, stepn, updateText)
                             not element.requestFromServer
                     elseif element.tag and
                         (stepDiff <= 8 and stepDiff >= 0 or element.keepUpdating) then
-                        RXPG[addon.currentGuide.group][element.tag](element,
+                        RXPGuides[addon.currentGuide.group][element.tag](element,
                                                                     "WindowUpdate")
                     end
                 end
@@ -1491,6 +1788,7 @@ function BottomFrame.SortSteps()
         elseif k1 < k2 then
             return true
         end
+        return false
     end)
 
     for i = 1, #BottomFrame.stepList do
@@ -1503,9 +1801,9 @@ function BottomFrame.SortSteps()
 end
 
 local function IsGuideActive(guide)
-    if guide and addon.SeasonCheck(guide) and addon.PhaseCheck(guide) and
-        addon.XpRateCheck(guide) and addon.FreshAccountCheck(guide) and
-        addon.LevelCheck(guide) then
+    if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
+        addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
+        addon.stepLogic.LevelCheck(guide) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
     end
@@ -1513,7 +1811,7 @@ end
 
 addon.IsGuideActive = IsGuideActive
 
-function RXPFrame.GenerateMenuTable(menu)
+function RXPFrame:GenerateMenuTable(menu)
     local menuList = menu or {}
 
     local groupList = {}
@@ -1523,12 +1821,12 @@ function RXPFrame.GenerateMenuTable(menu)
     for group in pairs(addon.guideList) do
         local firstChar = group:sub(1, 1)
         if RXPCData and RXPCData.GA then
-            if firstChar == "+" then table.insert(farmGuides, group) end
+            if firstChar == "+" then tinsert(farmGuides, group) end
         elseif firstChar ~= "+" then
             if firstChar ~= "*" then
-                table.insert(groupList, group)
+                tinsert(groupList, group)
             else
-                table.insert(unusedGuides, group)
+                tinsert(unusedGuides, group)
             end
         end
     end
@@ -1566,8 +1864,10 @@ function RXPFrame.GenerateMenuTable(menu)
         item.subgroups = {}
         item.subtable = {}
         local submenuIndex = 0
+        local groupName = group:gsub("^%*","")
         for j, guideName in ipairs(t.names_) do
-            local guide = addon.GetGuideTable(group, guideName)
+            local guide = addon.GetGuideTable(groupName, guideName)
+            --if not guide then print(guide,group,guideName) end
             if IsGuideActive(guide) then
                 if guide.subgroup then
                     local subgroup = guide.subgroup
@@ -1583,25 +1883,27 @@ function RXPFrame.GenerateMenuTable(menu)
                             subweight = 0
                         }
                         item.subtable[subname] = subtable
-                        table.insert(item.subgroups, subname)
+                        tinsert(item.subgroups, subname)
                     end
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuide
-                    subitem.arg1 = guide
+                    subitem.func = addon.LoadGuideTable
+                    subitem.arg1 = guide.group
+                    subitem.arg2 = guideName
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
-                    table.insert(subtable.menuList, subitem)
+                    tinsert(subtable.menuList, subitem)
                 else
                     submenuIndex = submenuIndex + 1
                     guide.menuIndex = menuIndex
                     guide.submenuIndex = submenuIndex
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuide
-                    subitem.arg1 = guide
+                    subitem.func = addon.LoadGuideTable
+                    subitem.arg1 = guide.group
+                    subitem.arg2 = guideName
                     subitem.notCheckable = 1
-                    table.insert(item.menuList, subitem)
+                    tinsert(item.menuList, subitem)
                 end
             end
         end
@@ -1617,18 +1919,18 @@ function RXPFrame.GenerateMenuTable(menu)
                 end
             end)
             for i, subgroup in ipairs(item.subgroups) do
-                table.insert(item.menuList, item.subtable[subgroup])
+                tinsert(item.menuList, item.subtable[subgroup])
             end
         else
             item.subgroups = nil
             item.subtable = nil
         end
 
-        table.insert(menuList, item)
+        tinsert(menuList, item)
     end
 
     if #groupList > 0 then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = L("Available Guides"),
             isTitle = 1,
             notCheckable = 1
@@ -1637,7 +1939,7 @@ function RXPFrame.GenerateMenuTable(menu)
     end
 
     if #farmGuides > 0 then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = L("Gold Farming Guides"),
             notCheckable = 1,
             isTitle = 1
@@ -1646,38 +1948,56 @@ function RXPFrame.GenerateMenuTable(menu)
     end
 
     if addon.settings.db.profile.showUnusedGuides and #unusedGuides > 0 then
-        table.insert(menuList,
+        tinsert(menuList,
                      {text = L("Unused Guides"), notCheckable = 1, isTitle = 1})
         for _, group in ipairs(unusedGuides) do createMenu(group) end
     end
 
-    table.insert(menuList, {text = "", notCheckable = 1, isTitle = 1})
+    tinsert(menuList, {text = "", notCheckable = 1, isTitle = 1})
+
+    local tips = addon.currentGuide and addon.currentGuide.tips
+    if tips and #tips > 0 then
+        tinsert(menuList, {
+            text = "Display Tips",
+            func = addon.ShowTips,
+            arg1 = "toggle",
+            checked = function()
+                return not RXPCData.hideTipWindow
+            end,
+
+        })
+    end
 
     if addon.game == "CLASSIC" then
+        local guide = addon.currentGuide
+        local hc = addon.settings.db.profile.hardcore
         local hctext
-        if addon.settings.db.profile.hardcore then
+        local disabled = guide and (guide.hardcore and hc or guide.softcore and not hc)
+        if hc then
             hctext = L("Deactivate Hardcore mode")
         else
             hctext = L("Activate Hardcore mode")
         end
-        table.insert(menuList, {
+
+        tinsert(menuList, {
             text = hctext,
             notCheckable = 1,
-            func = addon.HardcoreToggle
+            func = addon.HardcoreToggle,
+            disabled = disabled and 1
         })
     end
 
     if RXPCData and RXPCData.GA then
         local text = L("Activate the Quest Guide mode")
-        table.insert(menuList,
+        tinsert(menuList,
                      {text = text, notCheckable = 1, func = addon.GAToggle})
     elseif addon.farmGuides > 0 then
         local text = L("Activate the Gold Assistant mode")
-        table.insert(menuList,
+        tinsert(menuList,
                      {text = text, notCheckable = 1, func = addon.GAToggle})
     end
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
         func = function()
@@ -1686,7 +2006,7 @@ function RXPFrame.GenerateMenuTable(menu)
         end
     })
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
@@ -1704,7 +2024,7 @@ function RXPFrame.GenerateMenuTable(menu)
     })
 
     if addon.settings.db and addon.settings.db.profile.enableTracker then
-        table.insert(menuList, {
+        tinsert(menuList, {
             text = L("Leveling report"),
             notCheckable = 1,
             func = function()
@@ -1713,20 +2033,20 @@ function RXPFrame.GenerateMenuTable(menu)
         })
     end
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = L("Open Feedback Form"),
         notCheckable = 1,
         func = function() addon.comms.OpenBugReport() end
     })
 
-    table.insert(menuList, {
+    tinsert(menuList, {
         text = _G.CLOSE,
         notCheckable = 1,
         func = function(self) self:Hide() end
     })
 
     -- Only update RXPFrame.menuList by default
-    if not menu then RXPFrame.menuList = menuList end
+    if type(menu) ~= 'table' then RXPFrame.menuList = menuList end
 
     return menuList
 end

@@ -418,13 +418,15 @@ function addon.comms.OpenBugReport(stepNumber)
     local guide = fmt("%s (%s)",
                       addon.currentGuide and addon.currentGuide.key or
                           'Inactive', addon.currentGuide.name and
-                          addon.currentGuide.version or 'N/A')
+                          (addon.currentGuide.version .. '/' .. addon.currentGuide.guideId) or 'N/A')
 
     stepNumber = stepNumber or RXPCData.currentStep
     local stepData = ""
     if addon.currentGuide and addon.currentGuide.steps and stepNumber then
         local step = addon.currentGuide.steps[stepNumber]
         if type(step) == "table" then
+            local stepId = step.stepId or 0
+            stepData = fmt("%s\nStep ID: %.0f\n",stepData,stepId)
             if step.elements then
                 for s, e in pairs(step.elements) do
                     stepData = fmt("%s\nStep %d:%d", stepData, stepNumber, s)
@@ -529,7 +531,7 @@ Arrow data
     f.scrollContainer:SetFullHeight(true)
     f:AddChild(f.scrollContainer)
 
-    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")
@@ -558,7 +560,7 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
     f.statustext:GetParent():Hide()
     f:SetTitle("RestedXP: " .. title)
 
-    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")

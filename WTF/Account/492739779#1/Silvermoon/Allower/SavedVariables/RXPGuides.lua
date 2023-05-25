@@ -1,12 +1,12 @@
 
 RXPCData = {
-	["stepSkip"] = {
-	},
+	["GA"] = false,
 	["completedWaypoints"] = {
 	},
 	["currentStep"] = 1,
 	["currentGuideName"] = "",
-	["currentGuideGroup"] = "",
+	["stepSkip"] = {
+	},
 	["flightPaths"] = {
 		[635] = "Fuselight, Badlands",
 		[2] = "Stormwind, Elwynn",
@@ -30,37 +30,37 @@ RXPCData = {
 		[383] = "Thondroril River, Eastern Plaguelands",
 		[634] = "Dragon's Mouth, Badlands",
 		[195] = "Rebel Camp, Stranglethorn Vale",
-		[1538] = "Shattered Beachhead, Blasted Lands",
-		[43] = "Aerie Peak, The Hinterlands",
+		[4] = "Sentinel Hill, Westfall",
+		[85] = "Northpass Tower, Eastern Plaguelands",
 		[583] = "Moonbrook, Westfall",
 		[84] = "Plaguewood Tower, Eastern Plaguelands",
 		[650] = "Andorhal, Western Plaguelands",
 		[589] = "Eastvale Logging Camp, Elwynn",
 		[591] = "Explorers' League Digsite, Stranglethorn",
-		[85] = "Northpass Tower, Eastern Plaguelands",
-		[74] = "Thorium Point, Searing Gorge",
-		[66] = "Chillwind Camp, Western Plaguelands",
+		[43] = "Aerie Peak, The Hinterlands",
+		[19] = "Booty Bay, Stranglethorn",
+		[555] = "Farstrider Lodge, Loch Modan",
 		[599] = "Bogpaddle, Swamp of Sorrows",
 		[86] = "Eastwall Tower, Eastern Plaguelands",
-		[67] = "Light's Hope Chapel, Eastern Plaguelands",
-		[672] = "Hearthglen, Western Plaguelands",
+		[16] = "Refuge Pointe, Arathi",
+		[8] = "Thelsamar, Loch Modan",
 		[71] = "Morgan's Vigil, Burning Steppes",
-		[87] = "Crown Guard Tower, Eastern Plaguelands",
-		[5] = "Lakeshire, Redridge",
+		[672] = "Hearthglen, Western Plaguelands",
+		[552] = "Greenwarden's Grove, Wetlands",
 		[676] = "Chiselgrip, Burning Steppes",
 		[615] = "Camp Everstill, Redridge",
 		[554] = "Slabchisel's Survey, Wetlands",
 		[619] = "Kharanos, Dun Morogh",
 		[7] = "Menethil Harbor, Wetlands",
-		[552] = "Greenwarden's Grove, Wetlands",
-		[8] = "Thelsamar, Loch Modan",
-		[16] = "Refuge Pointe, Arathi",
-		[555] = "Farstrider Lodge, Loch Modan",
-		[19] = "Booty Bay, Stranglethorn",
+		[5] = "Lakeshire, Redridge",
+		[87] = "Crown Guard Tower, Eastern Plaguelands",
+		[67] = "Light's Hope Chapel, Eastern Plaguelands",
+		[66] = "Chillwind Camp, Western Plaguelands",
+		[74] = "Thorium Point, Searing Gorge",
 		[633] = "Dustwind Dig, Badlands",
-		[4] = "Sentinel Hill, Westfall",
+		[1538] = "Shattered Beachhead, Blasted Lands",
 	},
-	["GA"] = false,
+	["currentGuideGroup"] = "",
 }
 RXPCTrackingData = {
 	["profileKeys"] = {
@@ -69,173 +69,136 @@ RXPCTrackingData = {
 	["profiles"] = {
 		["Allower - Silvermoon"] = {
 			["levels"] = {
-				[33] = {
+				[58] = {
 					["groupExperience"] = 0,
 					["deaths"] = 0,
 					["mobs"] = {
-						["Tanaan Jungle"] = {
-							["xp"] = 11306,
-							["count"] = 39,
+						["Loch Modan"] = {
+							["xp"] = 5811,
+							["count"] = 19,
 						},
 					},
 					["timestamp"] = {
 						["dateStarted"] = {
-							["monthDay"] = 24,
-							["weekday"] = 2,
+							["monthDay"] = 29,
+							["weekday"] = 7,
 							["month"] = 4,
 							["year"] = 2023,
-							["hour"] = 7,
-							["minute"] = 25,
+							["hour"] = 23,
+							["minute"] = 1,
 						},
-						["finished"] = 28794,
+						["finished"] = 52003,
 						["dateFinished"] = {
-							["monthDay"] = 24,
-							["weekday"] = 2,
+							["monthDay"] = 29,
+							["weekday"] = 7,
 							["month"] = 4,
 							["year"] = 2023,
-							["hour"] = 7,
-							["minute"] = 41,
-						},
-						["started"] = 27844,
-					},
-					["quests"] = {
-						["Tanaan Jungle"] = {
-							[34439] = 7820,
-							[34987] = 5175,
-							[34436] = 5175,
-							[35019] = 5175,
-							[34958] = 5175,
-							[34442] = 5175,
-							[34432] = 5060,
-						},
-					},
-				},
-				[35] = {
-					["groupExperience"] = 4902,
-					["deaths"] = 0,
-					["mobs"] = {
-						["Duskwood"] = {
-							["xp"] = 1308,
-							["count"] = 3,
-						},
-						["Black Rook Hold"] = {
-							["xp"] = 4902,
-							["count"] = 12,
-						},
-						["Lunarfall"] = {
-							["xp"] = 3536,
-							["count"] = 9,
-						},
-					},
-					["timestamp"] = {
-						["dateStarted"] = {
-							["monthDay"] = 24,
-							["weekday"] = 2,
-							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 7,
-							["minute"] = 52,
-						},
-						["finished"] = 30481,
-						["dateFinished"] = {
-							["monthDay"] = 24,
-							["weekday"] = 2,
-							["month"] = 4,
-							["minute"] = 57,
-							["hour"] = 11,
-							["year"] = 2023,
-						},
-						["started"] = 29510,
-					},
-					["quests"] = {
-						["Lunarfall"] = {
-							[34586] = 6900,
-							[34616] = 5520,
-							[34583] = 4025,
-							[34585] = 5520,
-							[34584] = 5520,
-						},
-						["Duskwood"] = {
-							[26777] = 6900,
-							[26720] = 5520,
-						},
-					},
-				},
-				[37] = {
-					["groupExperience"] = 4368,
-					["deaths"] = 0,
-					["mobs"] = {
-						["Black Rook Hold"] = {
-							["xp"] = 4368,
-							["count"] = 1,
-						},
-						["Duskwood"] = {
-							["xp"] = 21290,
-							["count"] = 34,
-						},
-					},
-					["timestamp"] = {
-						["dateStarted"] = {
-							["monthDay"] = 24,
-							["weekday"] = 2,
-							["month"] = 4,
-							["minute"] = 7,
-							["hour"] = 12,
-							["year"] = 2023,
-						},
-						["finished"] = 32007,
-						["dateFinished"] = {
-							["monthDay"] = 24,
-							["weekday"] = 2,
-							["month"] = 4,
+							["hour"] = 23,
 							["minute"] = 22,
-							["hour"] = 12,
-							["year"] = 2023,
 						},
-						["started"] = 31110,
+						["started"] = 50744,
 					},
 					["quests"] = {
-						["Duskwood"] = {
-							[26787] = 5807,
-							[26680] = 5807,
-							[26721] = 5807,
+						["Loch Modan"] = {
+							[26929] = 11327,
+							[26868] = 13627,
+							[26932] = 11327,
+							[26961] = 11327,
+							[309] = 11327,
+							[26928] = 11327,
+							[13639] = 6785,
 						},
 					},
 				},
-				[39] = {
-					["groupExperience"] = 14332,
+				[59] = {
+					["groupExperience"] = 0,
 					["deaths"] = 0,
 					["mobs"] = {
-						["Dire Maul"] = {
-							["xp"] = 14332,
-							["count"] = 79,
-						},
-						["Northern Stranglethorn"] = {
-							["xp"] = 4348,
-							["count"] = 4,
+						["Loch Modan"] = {
+							["xp"] = 18843,
+							["count"] = 27,
 						},
 					},
 					["timestamp"] = {
 						["dateStarted"] = {
-							["monthDay"] = 25,
-							["weekday"] = 3,
+							["monthDay"] = 29,
+							["weekday"] = 7,
 							["month"] = 4,
 							["year"] = 2023,
-							["hour"] = 12,
-							["minute"] = 17,
+							["hour"] = 23,
+							["minute"] = 22,
 						},
-						["finished"] = 34420,
+						["finished"] = 53543,
 						["dateFinished"] = {
-							["monthDay"] = 25,
-							["weekday"] = 3,
+							["monthDay"] = 29,
+							["weekday"] = 7,
 							["month"] = 4,
 							["year"] = 2023,
-							["hour"] = 12,
-							["minute"] = 30,
+							["hour"] = 23,
+							["minute"] = 47,
 						},
-						["started"] = 33609,
+						["started"] = 52004,
 					},
 					["quests"] = {
+						["Loch Modan"] = {
+							[27034] = 4600,
+							[27035] = 11557,
+							[13650] = 11327,
+							[27032] = 4600,
+							[27074] = 4600,
+						},
+						["Farstrider Lodge"] = {
+							[13647] = 9257,
+							[27033] = 13857,
+							[27031] = 11557,
+						},
+					},
+				},
+				[60] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["The Waking Shores"] = {
+							["xp"] = 11299,
+							["count"] = 40,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 23,
+							["minute"] = 47,
+						},
+						["started"] = 53544,
+					},
+					["quests"] = {
+						["The Waking Shores"] = {
+							[70122] = 10407,
+							[70123] = 10407,
+							[70124] = 10407,
+							[70125] = 5232,
+							[67053] = 1322,
+							[67700] = 1322,
+							[72293] = 5232,
+							[69911] = 5232,
+							[72266] = 1322,
+							[66101] = 5232,
+							[66074] = 10407,
+						},
+						["Stormwind City"] = {
+							[62250] = 1000,
+							[66577] = 130,
+							[65436] = 130,
+							[72240] = 1000,
+							[66589] = 1000,
+							[66596] = 130,
+						},
+						["Loch Modan"] = {
+							[27077] = 11557,
+						},
 					},
 				},
 				[31] = {
@@ -252,9 +215,9 @@ RXPCTrackingData = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 7,
 							["minute"] = 4,
+							["hour"] = 7,
+							["year"] = 2023,
 						},
 						["finished"] = 26575,
 						["started"] = 2,
@@ -282,18 +245,18 @@ RXPCTrackingData = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 7,
 							["minute"] = 4,
+							["hour"] = 7,
+							["year"] = 2023,
 						},
 						["finished"] = 27843,
 						["dateFinished"] = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 7,
 							["minute"] = 25,
+							["hour"] = 7,
+							["year"] = 2023,
 						},
 						["started"] = 26576,
 					},
@@ -305,6 +268,47 @@ RXPCTrackingData = {
 							[34431] = 5060,
 							[34423] = 5060,
 							[34478] = 5060,
+						},
+					},
+				},
+				[33] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Tanaan Jungle"] = {
+							["xp"] = 11306,
+							["count"] = 39,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 24,
+							["weekday"] = 2,
+							["month"] = 4,
+							["minute"] = 25,
+							["hour"] = 7,
+							["year"] = 2023,
+						},
+						["finished"] = 28794,
+						["dateFinished"] = {
+							["monthDay"] = 24,
+							["weekday"] = 2,
+							["month"] = 4,
+							["minute"] = 41,
+							["hour"] = 7,
+							["year"] = 2023,
+						},
+						["started"] = 27844,
+					},
+					["quests"] = {
+						["Tanaan Jungle"] = {
+							[34439] = 7820,
+							[34987] = 5175,
+							[34436] = 5175,
+							[35019] = 5175,
+							[34958] = 5175,
+							[34442] = 5175,
+							[34432] = 5060,
 						},
 					},
 				},
@@ -322,18 +326,18 @@ RXPCTrackingData = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 7,
 							["minute"] = 41,
+							["hour"] = 7,
+							["year"] = 2023,
 						},
 						["finished"] = 29509,
 						["dateFinished"] = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 7,
 							["minute"] = 52,
+							["hour"] = 7,
+							["year"] = 2023,
 						},
 						["started"] = 28795,
 					},
@@ -343,13 +347,64 @@ RXPCTrackingData = {
 						},
 						["Tanaan Jungle"] = {
 							[35747] = 5347,
-							[34445] = 8050,
+							[35884] = 8050,
 							[34925] = 5347,
 							[34437] = 2702,
-							[35884] = 8050,
+							[34445] = 8050,
 						},
 						["Lunarfall"] = {
 							[34582] = 5347,
+						},
+					},
+				},
+				[35] = {
+					["groupExperience"] = 4902,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Duskwood"] = {
+							["xp"] = 1308,
+							["count"] = 3,
+						},
+						["Lunarfall"] = {
+							["xp"] = 3536,
+							["count"] = 9,
+						},
+						["Black Rook Hold"] = {
+							["xp"] = 4902,
+							["count"] = 12,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 24,
+							["weekday"] = 2,
+							["month"] = 4,
+							["minute"] = 52,
+							["hour"] = 7,
+							["year"] = 2023,
+						},
+						["finished"] = 30481,
+						["dateFinished"] = {
+							["monthDay"] = 24,
+							["weekday"] = 2,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 11,
+							["minute"] = 57,
+						},
+						["started"] = 29510,
+					},
+					["quests"] = {
+						["Lunarfall"] = {
+							[34586] = 6900,
+							[34616] = 5520,
+							[34583] = 4025,
+							[34585] = 5520,
+							[34584] = 5520,
+						},
+						["Duskwood"] = {
+							[26777] = 6900,
+							[26720] = 5520,
 						},
 					},
 				},
@@ -367,22 +422,63 @@ RXPCTrackingData = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["minute"] = 57,
-							["hour"] = 11,
 							["year"] = 2023,
+							["hour"] = 11,
+							["minute"] = 57,
 						},
 						["finished"] = 31109,
 						["dateFinished"] = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["minute"] = 7,
-							["hour"] = 12,
 							["year"] = 2023,
+							["hour"] = 12,
+							["minute"] = 7,
 						},
 						["started"] = 30482,
 					},
 					["quests"] = {
+					},
+				},
+				[37] = {
+					["groupExperience"] = 4368,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Black Rook Hold"] = {
+							["xp"] = 4368,
+							["count"] = 1,
+						},
+						["Duskwood"] = {
+							["xp"] = 21290,
+							["count"] = 34,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 24,
+							["weekday"] = 2,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 12,
+							["minute"] = 7,
+						},
+						["finished"] = 32007,
+						["dateFinished"] = {
+							["monthDay"] = 24,
+							["weekday"] = 2,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 12,
+							["minute"] = 22,
+						},
+						["started"] = 31110,
+					},
+					["quests"] = {
+						["Duskwood"] = {
+							[26787] = 5807,
+							[26680] = 5807,
+							[26721] = 5807,
+						},
 					},
 				},
 				[38] = {
@@ -411,18 +507,18 @@ RXPCTrackingData = {
 							["monthDay"] = 24,
 							["weekday"] = 2,
 							["month"] = 4,
-							["minute"] = 22,
-							["hour"] = 12,
 							["year"] = 2023,
+							["hour"] = 12,
+							["minute"] = 22,
 						},
 						["finished"] = 33608,
 						["dateFinished"] = {
 							["monthDay"] = 25,
 							["weekday"] = 3,
 							["month"] = 4,
-							["year"] = 2023,
-							["hour"] = 12,
 							["minute"] = 17,
+							["hour"] = 12,
+							["year"] = 2023,
 						},
 						["started"] = 32008,
 					},
@@ -442,13 +538,17 @@ RXPCTrackingData = {
 						},
 					},
 				},
-				[40] = {
-					["groupExperience"] = 0,
+				[39] = {
+					["groupExperience"] = 14332,
 					["deaths"] = 0,
 					["mobs"] = {
+						["Dire Maul"] = {
+							["xp"] = 14332,
+							["count"] = 79,
+						},
 						["Northern Stranglethorn"] = {
-							["xp"] = 2387,
-							["count"] = 11,
+							["xp"] = 4348,
+							["count"] = 4,
 						},
 					},
 					["timestamp"] = {
@@ -456,16 +556,732 @@ RXPCTrackingData = {
 							["monthDay"] = 25,
 							["weekday"] = 3,
 							["month"] = 4,
-							["year"] = 2023,
+							["minute"] = 17,
 							["hour"] = 12,
+							["year"] = 2023,
+						},
+						["finished"] = 34420,
+						["dateFinished"] = {
+							["monthDay"] = 25,
+							["weekday"] = 3,
+							["month"] = 4,
 							["minute"] = 30,
+							["hour"] = 12,
+							["year"] = 2023,
+						},
+						["started"] = 33609,
+					},
+					["quests"] = {
+					},
+				},
+				[40] = {
+					["groupExperience"] = 10036,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 3622,
+							["count"] = 16,
+						},
+						["Utgarde Keep"] = {
+							["xp"] = 10036,
+							["count"] = 47,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 25,
+							["weekday"] = 3,
+							["month"] = 4,
+							["minute"] = 30,
+							["hour"] = 12,
+							["year"] = 2023,
+						},
+						["finished"] = 36185,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 32,
+							["hour"] = 4,
+							["year"] = 2023,
 						},
 						["started"] = 34421,
 					},
 					["quests"] = {
 						["Northern Stranglethorn"] = {
-							[26344] = 6267,
+							[26765] = 6267,
 							[26763] = 6267,
+							[26344] = 6267,
+							[190] = 6267,
+						},
+					},
+				},
+				[41] = {
+					["groupExperience"] = 11285,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Utgarde Keep"] = {
+							["xp"] = 11285,
+							["count"] = 50,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 32,
+							["hour"] = 4,
+							["year"] = 2023,
+						},
+						["finished"] = 36596,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 38,
+							["hour"] = 4,
+							["year"] = 2023,
+						},
+						["started"] = 36186,
+					},
+					["quests"] = {
+					},
+				},
+				[42] = {
+					["groupExperience"] = 17100,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 8547,
+							["count"] = 33,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 38,
+							["hour"] = 4,
+							["year"] = 2023,
+						},
+						["finished"] = 37302,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 50,
+							["hour"] = 4,
+							["year"] = 2023,
+						},
+						["started"] = 36597,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[26733] = 6612,
+							[186] = 6612,
+							[26735] = 6612,
+							[26738] = 833,
+							[26732] = 6612,
+						},
+						["Utgarde Keep"] = {
+							[29763] = 5750,
+							[29764] = 5750,
+							[29803] = 5600,
+						},
+					},
+				},
+				[43] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 12145,
+							["count"] = 46,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 50,
+							["hour"] = 4,
+							["year"] = 2023,
+						},
+						["finished"] = 38245,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 8,
+						},
+						["started"] = 37303,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[26739] = 6727,
+							[26736] = 6727,
+							[26737] = 10120,
+							[26734] = 6727,
+						},
+					},
+				},
+				[44] = {
+					["groupExperience"] = 11875,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 7248,
+							["count"] = 29,
+						},
+						["Freehold"] = {
+							["xp"] = 11875,
+							["count"] = 38,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 8,
+						},
+						["finished"] = 38946,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 20,
+						},
+						["started"] = 38246,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[26729] = 6900,
+							[194] = 6900,
+							[191] = 6900,
+						},
+					},
+				},
+				[45] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 8832,
+							["count"] = 32,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 20,
+						},
+						["finished"] = 39410,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 27,
+						},
+						["started"] = 38947,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[195] = 7072,
+						},
+					},
+				},
+				[46] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 14602,
+							["count"] = 39,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 27,
+						},
+						["finished"] = 40390,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 44,
+						},
+						["started"] = 39411,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[192] = 7245,
+							[26730] = 7245,
+							[187] = 7245,
+							[196] = 7245,
+						},
+					},
+				},
+				[47] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 5,
+							["minute"] = 44,
+						},
+						["finished"] = 40616,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 48,
+							["hour"] = 5,
+							["year"] = 2023,
+						},
+						["started"] = 40391,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[193] = 9200,
+							[197] = 9027,
+							[26345] = 9200,
+							[188] = 9200,
+							[26742] = 7360,
+						},
+					},
+				},
+				[48] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 8795,
+							["count"] = 17,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 48,
+							["hour"] = 5,
+							["year"] = 2023,
+						},
+						["finished"] = 41100,
+						["dateFinished"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 56,
+							["hour"] = 5,
+							["year"] = 2023,
+						},
+						["started"] = 40617,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[26744] = 7360,
+							[26745] = 7532,
+							[26731] = 7532,
+							[208] = 11270,
+						},
+					},
+				},
+				[49] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Northern Stranglethorn"] = {
+							["xp"] = 11129,
+							["count"] = 30,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 26,
+							["weekday"] = 4,
+							["month"] = 4,
+							["minute"] = 56,
+							["hour"] = 5,
+							["year"] = 2023,
+						},
+						["finished"] = 41850,
+						["dateFinished"] = {
+							["monthDay"] = 28,
+							["weekday"] = 6,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 21,
+							["minute"] = 49,
+						},
+						["started"] = 41101,
+					},
+					["quests"] = {
+						["Northern Stranglethorn"] = {
+							[26747] = 9602,
+							[26751] = 9602,
+							[26746] = 7705,
+							[26743] = 7532,
+						},
+					},
+				},
+				[50] = {
+					["groupExperience"] = 8593,
+					["deaths"] = 1,
+					["mobs"] = {
+						["Forge of Aeons"] = {
+							["xp"] = 8593,
+							["count"] = 39,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 28,
+							["weekday"] = 6,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 21,
+							["minute"] = 49,
+						},
+						["finished"] = 43504,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["minute"] = 31,
+							["hour"] = 10,
+							["year"] = 2023,
+						},
+						["started"] = 41851,
+					},
+					["quests"] = {
+						["Telogrus Rift"] = {
+							[49928] = 7820,
+						},
+						["The Vindicaar"] = {
+							[49698] = 7820,
+						},
+						["Northern Stranglethorn"] = {
+							[26748] = 11500,
+						},
+						["Stormwind City"] = {
+							[49929] = 850,
+						},
+					},
+				},
+				[51] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Dun Morogh"] = {
+							["xp"] = 620,
+							["count"] = 2,
+						},
+						["Loch Modan"] = {
+							["xp"] = 12261,
+							["count"] = 25,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["minute"] = 31,
+							["hour"] = 10,
+							["year"] = 2023,
+						},
+						["finished"] = 45480,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 21,
+							["minute"] = 32,
+						},
+						["started"] = 43505,
+					},
+					["quests"] = {
+						["Stormwind City"] = {
+							[50071] = 6950,
+						},
+						["The Vindicaar"] = {
+							[49266] = 7820,
+						},
+						["Dun Morogh"] = {
+							[26854] = 7992,
+						},
+						["Loch Modan"] = {
+							[26842] = 10005,
+							[25118] = 7992,
+						},
+					},
+				},
+				[52] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Loch Modan"] = {
+							["xp"] = 16752,
+							["count"] = 38,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 21,
+							["minute"] = 32,
+						},
+						["finished"] = 46975,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 21,
+							["minute"] = 57,
+						},
+						["started"] = 45481,
+					},
+					["quests"] = {
+						["Loch Modan"] = {
+							[13635] = 8165,
+							[26145] = 10177,
+							[26146] = 10177,
+							[26855] = 7992,
+						},
+					},
+				},
+				[53] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Loch Modan"] = {
+							["xp"] = 8022,
+							["count"] = 12,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 21,
+							["minute"] = 57,
+						},
+						["finished"] = 47659,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 9,
+						},
+						["started"] = 46976,
+					},
+					["quests"] = {
+						["Loch Modan"] = {
+							[26147] = 10407,
+							[26148] = 12477,
+							[13648] = 10407,
+							[13656] = 10407,
+						},
+					},
+				},
+				[54] = {
+					["groupExperience"] = 0,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Loch Modan"] = {
+							["xp"] = 17541,
+							["count"] = 42,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 9,
+						},
+						["finished"] = 48700,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 27,
+						},
+						["started"] = 47660,
+					},
+					["quests"] = {
+						["Loch Modan"] = {
+							[26860] = 10407,
+							[13636] = 6325,
+							[26863] = 10580,
+							[26843] = 10580,
+							[26844] = 10580,
+							[26846] = 10580,
+						},
+					},
+				},
+				[55] = {
+					["groupExperience"] = 33621,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Gnomeregan"] = {
+							["xp"] = 18621,
+							["count"] = 69,
+						},
+						["Loch Modan"] = {
+							["xp"] = 2837,
+							["count"] = 3,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 27,
+						},
+						["finished"] = 49508,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 40,
+						},
+						["started"] = 48701,
+					},
+					["quests"] = {
+						["Gnomeregan"] = {
+							[26939] = 7500,
+							[26941] = 7500,
+						},
+						["Loch Modan"] = {
+							[26864] = 4312,
+							[26845] = 10752,
+							[26927] = 8625,
+						},
+					},
+				},
+				[56] = {
+					["groupExperience"] = 27619,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Gnomeregan"] = {
+							["xp"] = 3248,
+							["count"] = 1,
+						},
+						["Stormwind Stockade"] = {
+							["xp"] = 16721,
+							["count"] = 50,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 40,
+						},
+						["finished"] = 50077,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 50,
+						},
+						["started"] = 49509,
+					},
+					["quests"] = {
+						["Gnomeregan"] = {
+							[26942] = 7650,
+						},
+					},
+				},
+				[57] = {
+					["groupExperience"] = 23250,
+					["deaths"] = 0,
+					["mobs"] = {
+						["Loch Modan"] = {
+							["xp"] = 17015,
+							["count"] = 36,
+						},
+					},
+					["timestamp"] = {
+						["dateStarted"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 22,
+							["minute"] = 50,
+						},
+						["finished"] = 50743,
+						["dateFinished"] = {
+							["monthDay"] = 29,
+							["weekday"] = 7,
+							["month"] = 4,
+							["year"] = 2023,
+							["hour"] = 23,
+							["minute"] = 1,
+						},
+						["started"] = 50078,
+					},
+					["quests"] = {
+						["Stormwind Stockade"] = {
+							[27737] = 7750,
+							[27733] = 7750,
+							[27739] = 7750,
 						},
 					},
 				},
@@ -480,25 +1296,30 @@ RXPCComms = {
 	["profiles"] = {
 		["Allower - Silvermoon"] = {
 			["players"] = {
-				["Arcvana"] = {
-					["timePlayed"] = 530.6520000000019,
-					["class"] = "MAGE",
-					["xp"] = 58,
+				["Noiizz"] = {
+					["timePlayed"] = 1191.648999999976,
+					["class"] = "WARRIOR",
+					["xp"] = 192,
 				},
-				["Smizk"] = {
-					["timePlayed"] = 752.8389999999781,
-					["class"] = "WARLOCK",
-					["xp"] = 52,
+				["Hauntella"] = {
+					["timePlayed"] = 689.5709999999963,
+					["class"] = "DRUID",
+					["xp"] = 301,
 				},
 				["Steinhildr"] = {
 					["timePlayed"] = 179.2110000000102,
 					["class"] = "ROGUE",
 					["xp"] = 320,
 				},
-				["Lelith"] = {
-					["timePlayed"] = 752.8389999999781,
+				["Gentoocz"] = {
+					["timePlayed"] = 328.8690000000643,
+					["class"] = "PALADIN",
+					["xp"] = 296,
+				},
+				["Hunttik"] = {
+					["timePlayed"] = 328.8690000000643,
 					["class"] = "HUNTER",
-					["xp"] = 52,
+					["xp"] = 296,
 				},
 				["Darktech"] = {
 					["timePlayed"] = 760.6900000000023,
@@ -510,20 +1331,75 @@ RXPCComms = {
 					["class"] = "MONK",
 					["xp"] = 52,
 				},
-				["Lothinen"] = {
-					["timePlayed"] = 752.8389999999781,
+				["Kewpie"] = {
+					["timePlayed"] = 614.5709999999963,
+					["class"] = "MONK",
+					["xp"] = 301,
+				},
+				["Holysheeld"] = {
+					["timePlayed"] = 1222.876999999979,
 					["class"] = "PALADIN",
+					["xp"] = 192,
+				},
+				["Slowbrew"] = {
+					["timePlayed"] = 1222.876999999979,
+					["class"] = "SHAMAN",
+					["xp"] = 192,
+				},
+				["Valadorn"] = {
+					["timePlayed"] = 760.6900000000023,
+					["class"] = "PALADIN",
+					["xp"] = 320,
+				},
+				["Arcvana"] = {
+					["timePlayed"] = 530.6520000000019,
+					["class"] = "MAGE",
+					["xp"] = 58,
+				},
+				["Smizk"] = {
+					["timePlayed"] = 752.8389999999781,
+					["class"] = "WARLOCK",
 					["xp"] = 52,
+				},
+				["Stumpén"] = {
+					["timePlayed"] = 614.5709999999963,
+					["class"] = "ROGUE",
+					["xp"] = 301,
+				},
+				["Lelith"] = {
+					["timePlayed"] = 752.8389999999781,
+					["class"] = "HUNTER",
+					["xp"] = 52,
+				},
+				["Humage"] = {
+					["timePlayed"] = 614.5709999999963,
+					["class"] = "MAGE",
+					["xp"] = 301,
 				},
 				["Flamí"] = {
 					["timePlayed"] = 760.6900000000023,
 					["class"] = "PRIEST",
 					["xp"] = 320,
 				},
-				["Valadorn"] = {
-					["timePlayed"] = 760.6900000000023,
+				["Lothinen"] = {
+					["timePlayed"] = 752.8389999999781,
 					["class"] = "PALADIN",
-					["xp"] = 320,
+					["xp"] = 52,
+				},
+				["Nythandra"] = {
+					["timePlayed"] = 328.8690000000643,
+					["class"] = "DEMONHUNTER",
+					["xp"] = 296,
+				},
+				["Soltge"] = {
+					["timePlayed"] = 328.8690000000643,
+					["class"] = "ROGUE",
+					["xp"] = 296,
+				},
+				["Manica"] = {
+					["timePlayed"] = 1222.876999999979,
+					["class"] = "ROGUE",
+					["xp"] = 192,
 				},
 			},
 		},

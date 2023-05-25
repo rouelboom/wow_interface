@@ -16,20 +16,14 @@ RecountDB = {
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
-			["MainWindowVis"] = false,
 			["MainWindow"] = {
 				["Position"] = {
-					["y"] = -330.3217620849609,
-					["x"] = 778.1190185546875,
-					["w"] = 246.0000457763672,
-					["h"] = 198.9999847412109,
+					["y"] = -265.0781555175781,
+					["x"] = 747.407470703125,
+					["w"] = 298.1480102539063,
+					["h"] = 235.0295867919922,
 				},
 			},
-			["MainWindowMode"] = 5,
-			["LastInstanceName"] = "Nokhudon Proving Grounds",
-			["MainWindowHeight"] = 199.0518798828125,
-			["CurDataSet"] = "LastFightData",
-			["MainWindowWidth"] = 246.1927947998047,
 			["Colors"] = {
 				["Bar"] = {
 					["Bar Text"] = {
@@ -40,6 +34,11 @@ RecountDB = {
 					},
 				},
 			},
+			["MainWindowVis"] = false,
+			["LastInstanceName"] = "Nagrand Arena",
+			["CurDataSet"] = "LastFightData",
+			["MainWindowWidth"] = 298.1481628417969,
+			["MainWindowHeight"] = 235.0295867919922,
 		},
 		["Jundzin - Silvermoon"] = {
 			["MainWindow"] = {
@@ -79,10 +78,10 @@ RecountDB = {
 					},
 				},
 			},
-			["LastInstanceName"] = "Hook Point",
+			["MainWindowHeight"] = 183.4208984375,
 			["CurDataSet"] = "OverallData",
 			["MainWindowWidth"] = 274.09521484375,
-			["MainWindowHeight"] = 183.4208984375,
+			["LastInstanceName"] = "Algeth'ar Academy",
 		},
 		["Lumbert - Silvermoon"] = {
 			["MainWindowVis"] = false,
@@ -167,11 +166,13 @@ RecountDB = {
 			["CurDataSet"] = "OverallData",
 		},
 		["Allower - Silvermoon"] = {
+			["MainWindowVis"] = false,
 			["MainWindow"] = {
 				["Position"] = {
-					["y"] = -6.103515625e-05,
-					["x"] = -0.0003662109375,
-					["w"] = 140.0000762939453,
+					["y"] = -186.7852478027344,
+					["x"] = 511.9996337890625,
+					["w"] = 316.3554382324219,
+					["h"] = 188.6221618652344,
 				},
 			},
 			["Colors"] = {
@@ -184,9 +185,10 @@ RecountDB = {
 					},
 				},
 			},
-			["MainWindowVis"] = false,
-			["LastInstanceName"] = "Dire Maul",
-			["CurDataSet"] = "OverallData",
+			["MainWindowHeight"] = 188.6222076416016,
+			["LastInstanceName"] = "The Azure Vault",
+			["MainWindowWidth"] = 316.3555908203125,
+			["CurDataSet"] = "LastFightData",
 		},
 		["Maintainer - Silvermoon"] = {
 			["MainWindow"] = {

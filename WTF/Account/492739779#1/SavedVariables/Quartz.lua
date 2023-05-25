@@ -20,16 +20,9 @@ Quartz3DB = {
 		},
 		["Range"] = {
 		},
-		["EnemyCasts"] = {
+		["Mirror"] = {
 		},
-		["Player"] = {
-			["profiles"] = {
-				["Default"] = {
-					["y"] = -141.8828735351563,
-					["point"] = "CENTER",
-					["x"] = -3.686126708984375,
-				},
-			},
+		["EnemyCasts"] = {
 		},
 		["GCD"] = {
 		},
@@ -53,7 +46,14 @@ Quartz3DB = {
 		},
 		["Interrupt"] = {
 		},
-		["Mirror"] = {
+		["Player"] = {
+			["profiles"] = {
+				["Default"] = {
+					["y"] = -141.8828735351563,
+					["point"] = "CENTER",
+					["x"] = -3.686126708984375,
+				},
+			},
 		},
 		["Latency"] = {
 		},
@@ -69,15 +69,15 @@ Quartz3DB = {
 		["Фэроун - Гордунни"] = "Default",
 		["Jundzin - Silvermoon"] = "Default",
 		["Роуэтс - Страж Смерти"] = "Default",
-		["Organizer - Silvermoon"] = "Default",
-		["Альгадот - Ревущий фьорд"] = "Default",
+		["Морализм - Ревущий фьорд"] = "Default",
 		["Ambraser - Silvermoon"] = "Default",
+		["Альгадот - Ревущий фьорд"] = "Default",
 		["Кумпутина - Ревущий фьорд"] = "Default",
 		["Allower - Silvermoon"] = "Default",
-		["Rendo - Silvermoon"] = "Default",
 		["Maintainer - Silvermoon"] = "Default",
+		["Rendo - Silvermoon"] = "Default",
 		["Orolon - Silvermoon"] = "Default",
-		["Морализм - Ревущий фьорд"] = "Default",
+		["Organizer - Silvermoon"] = "Default",
 	},
 	["profiles"] = {
 		["Default"] = {

@@ -4,7 +4,7 @@ Blizzard_CombatText: enabled
 WeakAurasCompanion: enabled
 WeakAurasArchive: enabled
 Atlas: disabled
-Auctionator: disabled
+Auctionator: enabled
 BattleGroundEnemies: disabled
 BigDebuffs: disabled
 Gladius: disabled
@@ -17,3 +17,17 @@ Pawn: disabled
 Plater: disabled
 TalentTreeTweaks: disabled
 sArena: disabled
+HandyNotes_Dragonflight: disabled
+HandyNotes: disabled
+RXPGuides: disabled
+BigWigs_Core: enabled
+BigWigs_Options: enabled
+BigWigs_Plugins: enabled
+Scrap: enabled
+DBM-Core: disabled
+ATT: disabled
+Capping: disabled
+Grid2: disabled
+Immersion: enabled
+RareScanner: disabled
+LittleWigs: enabled

@@ -6,6 +6,8 @@ SimulationCraftDB = {
 		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 		["Allower - Silvermoon"] = "Allower - Silvermoon",
 		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
+		["Scaleblade - Silvermoon"] = "Scaleblade - Silvermoon",
+		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
@@ -17,6 +19,10 @@ SimulationCraftDB = {
 		["Allower - Silvermoon"] = {
 		},
 		["Maintainer - Silvermoon"] = {
+		},
+		["Scaleblade - Silvermoon"] = {
+		},
+		["Сеныч - Ревущий фьорд"] = {
 		},
 	},
 }

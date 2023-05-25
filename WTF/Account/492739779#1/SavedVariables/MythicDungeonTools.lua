@@ -12,6 +12,7 @@ MythicDungeonToolsDB = {
 		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 	},
 	["global"] = {
+		["scale"] = 1.3,
 		["MDI"] = {
 		},
 		["maximized"] = false,
@@ -46,8 +47,32 @@ MythicDungeonToolsDB = {
 					},
 				}, -- [1]
 			},
+			[48] = {
+				{
+					["difficulty"] = 10,
+					["week"] = 1,
+					["value"] = {
+						["currentPull"] = 1,
+						["currentSublevel"] = 1,
+						["riftOffsets"] = {
+							{
+							}, -- [1]
+						},
+						["currentDungeonIdx"] = 48,
+						["teeming"] = false,
+						["selection"] = {
+							1, -- [1]
+						},
+						["pulls"] = {
+							{
+								["color"] = "ff3eff",
+							}, -- [1]
+						},
+					},
+				}, -- [1]
+			},
 		},
-		["scale"] = 1.3,
-		["version"] = 4029,
+		["currentDungeonIdx"] = 48,
+		["version"] = 4036,
 	},
 }

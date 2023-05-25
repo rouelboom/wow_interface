@@ -244,7 +244,6 @@ L.DisableGuildStatus 		= "길드에 진행 상황 알림 메시지를 전송하�
 
 L.Area_BugAlerts			= "버그 제보 알림 설정"
 L.BadTimerAlert				= "DBM이 최소 1초 이상 맞지 않는 불량 타이머를 감지했을 때 대화창에 메시지 표시"
-L.BadIDAlert				= "DBM에 쓰이는 주문이나 도감 ID가 잘못됐을 때 대화창에 메시지 표시"
 
 -- Panel: Spoken Alerts Frame
 L.Panel_SpokenAlerts		= "음성 경고"
@@ -393,6 +392,7 @@ L.SpamBlockNoRangeFrame		= "거리 창 표시 안함"
 L.SpamBlockNoInfoFrame		= "정보 창 표시 안함"
 L.SpamBlockNoHudMap			= "HUD 표시 안함"
 L.SpamBlockNoNameplate		= "이름표 오라 표시 안함"
+L.SpamBlockNoBossGUIDs			= "메인 보스 (boss1)의 타이머를 Plater 이름표 오라로 표시 안함\n(Plater에서 해당 기능을 활성화 했다면 일반몹/보스 쫄의 타이머는 볼 수 있습니다)"
 L.SpamBlockNoYells			= "말풍선 알림 사용 안함"
 L.SpamBlockNoNoteSync		= "메모 공유 수락 안함"
 L.SpamBlockAutoGossip		= "NPC 대화 자동 수락 안함"

@@ -6,12 +6,12 @@ HandyNotesDB = {
 		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
 		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
 		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
-		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
-		["Allower - Silvermoon"] = "Allower - Silvermoon",
-		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
-		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
-		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
 		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
@@ -24,17 +24,17 @@ HandyNotesDB = {
 		},
 		["Fasttest - Silvermoon"] = {
 		},
-		["Nowarg - Silvermoon"] = {
+		["Organizer - Silvermoon"] = {
 		},
 		["Allower - Silvermoon"] = {
 		},
-		["Maintainer - Silvermoon"] = {
-		},
 		["Rendo - Silvermoon"] = {
+		},
+		["Maintainer - Silvermoon"] = {
 		},
 		["Awakaner - Silvermoon"] = {
 		},
-		["Organizer - Silvermoon"] = {
+		["Nowarg - Silvermoon"] = {
 		},
 	},
 }
@@ -45,12 +45,12 @@ HandyNotes_HandyNotesDB = {
 		["Сеныч - Ревущий фьорд"] = "Сеныч - Ревущий фьорд",
 		["Lumbert - Silvermoon"] = "Lumbert - Silvermoon",
 		["Fasttest - Silvermoon"] = "Fasttest - Silvermoon",
-		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
-		["Allower - Silvermoon"] = "Allower - Silvermoon",
-		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
-		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
-		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
 		["Organizer - Silvermoon"] = "Organizer - Silvermoon",
+		["Allower - Silvermoon"] = "Allower - Silvermoon",
+		["Rendo - Silvermoon"] = "Rendo - Silvermoon",
+		["Maintainer - Silvermoon"] = "Maintainer - Silvermoon",
+		["Awakaner - Silvermoon"] = "Awakaner - Silvermoon",
+		["Nowarg - Silvermoon"] = "Nowarg - Silvermoon",
 	},
 	["profiles"] = {
 		["Ambracer - Silvermoon"] = {
@@ -63,17 +63,17 @@ HandyNotes_HandyNotesDB = {
 		},
 		["Fasttest - Silvermoon"] = {
 		},
-		["Nowarg - Silvermoon"] = {
+		["Organizer - Silvermoon"] = {
 		},
 		["Allower - Silvermoon"] = {
 		},
-		["Maintainer - Silvermoon"] = {
-		},
 		["Rendo - Silvermoon"] = {
+		},
+		["Maintainer - Silvermoon"] = {
 		},
 		["Awakaner - Silvermoon"] = {
 		},
-		["Organizer - Silvermoon"] = {
+		["Nowarg - Silvermoon"] = {
 		},
 	},
 }

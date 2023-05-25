@@ -12,7 +12,7 @@ ConsolePort_Keyboard: disabled
 ConsolePort_Menu: disabled
 ConsolePort_World: disabled
 CovenantMissionHelper: disabled
-Plater: enabled
+Plater: disabled
 Prat-3.0: disabled
 Prat-3.0_Libraries: disabled
 Scrap: enabled
@@ -51,3 +51,8 @@ Sorted_Pawn: disabled
 Sorted_Scrap: disabled
 Gladius: disabled
 GladiatorlosSA2: enabled
+BigWigs_Options: enabled
+BigWigs_Plugins: enabled
+BigWigs_Core: enabled
+Grid2: disabled
+RXPGuides: disabled

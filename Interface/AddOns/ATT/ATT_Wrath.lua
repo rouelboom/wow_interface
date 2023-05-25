@@ -35,6 +35,7 @@ local validPartyUnits = ATTdbs.validPartyUnits
 local validRaidUnits = ATTdbs.validRaidUnits
 local customframes = ATTdbs.customframes
 local itemBonus = ATTdbs.dbItemBonus
+local setBonus = ATTdbs.dbSetBonus
 local dbModifBonus = ATTdbs.dbModifBonus
 local ATT = CreateFrame("Frame", "ATT", UIParent)
 local ATTIcons = CreateFrame("Frame", nil, UIParent)
@@ -67,24 +68,18 @@ local function print(...)
     end
 end
 
-local function isRaidGr()
-    local _, instanceType = IsInInstance()
-    local isInRaidGr = IsInRaid(1) or (IsInRaid(2) and (instanceType == "raid" or instanceType == "pvp")) or
-        GetNumGroupMembers() > 5
-    return isInRaidGr
-end
-
 function ATT:GetUnitByGUID(guid)
-    local validUnits = (isRaidGr() and validRaidUnits) or validPartyUnits
+    if not guid then return end
+    local validUnits = (ATT.isRaidGr and validRaidUnits) or validPartyUnits
     for k, v in pairs(validUnits) do
-        if guid and UnitGUID(k) == guid and ((isRaidGr() and ((validRaidUnits[k] <= db.raidGroupSize) or (db.showSelf and guid == PlayerGUID))) or not isRaidGr()) then
+        if guid and UnitGUID(k) == guid and ((ATT.isRaidGr and ((validRaidUnits[k] <= db.raidGroupSize) or (db.showSelf and guid == PlayerGUID))) or not ATT.isRaidGr) then
             return k
         end
     end
 end
 
 function ATT:GetAnchorByUnit(unit)
-    local validUnits = (isRaidGr() and validRaidUnits) or validPartyUnits
+    local validUnits = ATT.isRaidGr and validRaidUnits or validPartyUnits
     return anchors[validUnits[unit]]
 end
 
@@ -119,6 +114,10 @@ function ATT:RequeueInspectByGUID(guid)
 end
 
 function ATT:InspectPlayer()
+    local _, instanceType = IsInInstance()
+    ATT.isRaidGr = IsInRaid(1) or (IsInRaid(2) and (instanceType == "raid" or instanceType == "pvp")) or GetNumGroupMembers() > 5
+    ATT.isBgMode = db.bgMode and (instanceType == "pvp")
+
     local unit = self:GetUnitByGUID(PlayerGUID)
     if db.showSelf and unit then self:UpdateAnchorGUID(unit, PlayerGUID, 1) end
 end
@@ -131,8 +130,8 @@ function ATT:InspectIsReady(guid, inspectedUnit)
 end
 
 function ATT:EnqueueInspect(isUpdate)
-    for i = 1, ((isRaidGr() and db.raidGroupSize) or 4) do
-        local unit = (isRaidGr() and "raid" .. i) or ("party" .. i)
+    for i = 1, ((ATT.isRaidGr and db.raidGroupSize) or 4) do
+        local unit = (ATT.isRaidGr and "raid" .. i) or ("party" .. i)
         local guid = UnitGUID(unit)
         if guid and guid ~= PlayerGUID then
             if isUpdate then
@@ -218,7 +217,7 @@ function ATT:CheckBlizzFrames()
     local UseCombinedGroups = CompactRaidFrameManager_GetSetting and CompactRaidFrameManager_GetSetting("KeepGroupsTogether")
     local frametype = nil
 
-    if isRaidGr() then
+    if ATT.isRaidGr then
         if compact and _G["CompactPartyFrameMember1"] and _G["CompactPartyFrameMember1"]:IsVisible() then
             frametype = "CompactPartyFrameMember%d"
         else
@@ -325,19 +324,28 @@ function ATT:UpdatePositions()
 
     for k, anchor in ipairs(anchors) do
         anchors[k]:ClearAllPoints()
-        local anchorUnit = (isRaidGr() and "raid" .. k) or ((k == 5 and "player") or (k ~= 5 and "party" .. k))
+        local anchorUnit = (ATT.isRaidGr and "raid" .. k) or ((k == 5 and "player") or (k ~= 5 and "party" .. k))
         local anchorGuid = anchorUnit and UnitGUID(anchorUnit)
-        local raidFrame = hookedFrames[anchorGuid]
+        local raidFrame = anchorGuid and hookedFrames[anchorGuid]
 
-        if anchor.GUID == PlayerGUID and db.selfAttach then raidFrame = nil end
+        if anchorGuid == PlayerGUID and db.selfAttach then raidFrame = nil end
         if raidFrame and db.attach and db.attach ~= 0 then
-            if db.horizontal then
-                anchors[k]:SetPoint(db.growLeft and "BOTTOMLEFT" or "BOTTOMRIGHT", raidFrame,
-                    db.growLeft and "BOTTOMRIGHT" or "BOTTOMLEFT", db.offsetX, db.offsetY)
+            if not db.attachPos or db.attachPos == 0  then
+                  anchors[k]:SetPoint("BOTTOMLEFT", raidFrame, "TOPLEFT", db.offsetX, db.offsetY) --anchorTOPLEFT
+            elseif db.attachPos == 1 then
+                  anchors[k]:SetPoint("BOTTOMRIGHT", raidFrame, "TOPRIGHT", db.offsetX, db.offsetY) --anchorTOPRIGHT
+            elseif db.attachPos == 2 then
+                  anchors[k]:SetPoint("TOPLEFT", raidFrame, "BOTTOMLEFT", db.offsetX, db.offsetY) --anchorBOTTOMLEFT
+            elseif db.attachPos == 3 then
+                    anchors[k]:SetPoint("TOPRIGHT", raidFrame, "BOTTOMRIGHT", db.offsetX, db.offsetY) --anchorBOTTOMRIGHT
+            elseif db.attachPos == 4 then
+               anchors[k]:SetPoint("CENTER", raidFrame, "LEFT", db.offsetX, db.offsetY) --anchorCENTERLEFT
+            elseif db.attachPos == 5 then
+               anchors[k]:SetPoint("CENTER", raidFrame, "RIGHT", db.offsetX, db.offsetY) --anchorCENTERRIGHT
             else
-                anchors[k]:SetPoint(db.growLeft and "BOTTOMLEFT" or "BOTTOMRIGHT", raidFrame,
-                    db.growLeft and "TOPLEFT" or "TOPRIGHT", db.offsetX, db.offsetY)
-            end
+                anchors[k]:SetPoint("BOTTOMLEFT", raidFrame, "TOPLEFT", db.offsetX, db.offsetY) --anchorTOPLEFT
+        end
+
         else
             if db.positions[k] then
                 local x = db.positions[k].x
@@ -353,8 +361,7 @@ end
 
 function ATT:CreateAnchors()
     for i = 1, 40 do
-        local anchor = CreateFrame("Frame", "ATTAnchor" .. i, ATTAnchor,
-            BackdropTemplateMixin and "BackdropTemplate, TooltipBackdropTemplate") --GlowBoxTemplate
+        local anchor = CreateFrame("Frame", "ATTAnchor" .. i, ATTAnchor, BackdropTemplateMixin and "BackdropTemplate, TooltipBackdropTemplate") --GlowBoxTemplate
         local index = anchor:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
         anchor:SetHeight(22)
         anchor:SetWidth(24)
@@ -695,8 +702,11 @@ function ATT:UpdateAnchorGUID(unit, guid, newInspect)
             if itemID then
                 local hasItemBonus = itemBonus[itemID]
                 if hasItemBonus then
-                    dbInspect[guid][hasItemBonus] = dbInspect[guid][hasItemBonus] and (dbInspect[guid][hasItemBonus] + 1) or
-                        1
+                    dbInspect[guid][hasItemBonus] = 1
+                end
+                local hasSetBonus = setBonus[itemID]
+                if hasSetBonus then
+                    dbInspect[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
                 end
             end
         end
@@ -779,7 +789,7 @@ function ATT:UpdateAnchorGUID(unit, guid, newInspect)
         end
 
         -- Abilities:
-        if not ATTAnchor.isBgMode then
+        if not ATT.isBgMode then
             for abilityIndex, abilityTable in pairs(self:MergeTable(class, "abilities", true)) do
                 local name, id, cooldown, charges, custom, spellrace, texture = abilityTable.name, abilityTable.ability,
                     abilityTable.cooldown, abilityTable.charges, abilityTable.custom, abilityTable.race,
@@ -881,52 +891,49 @@ function ATT:ToggleDisplay(anchor, unitGuid, isUpdate)
         icon:Hide()
     end
 
+    local attachPos = (db.attachPos or 0) % 2 == 0
     for k, icon in pairs(icons) do
-        if icon and icon.abilityID and icon.showing and icon.inUse and unitGuid and unitGuid == anchor.GUID and icon.GUID == unitGuid then
+        if icon and icon.abilityID and icon.showing and icon.inUse and unitGuid and unitGuid == anchor.GUID and
+            icon.GUID == unitGuid then
             if db.reverseIcons then
                 if db.IconRows > 1 then
                     if lastActiveIndex == 0 then
-                        icon:SetPoint(db.growLeft and "TOPLEFT" or "TOPRIGHT", anchor,
-                            db.growLeft and "BOTTOMRIGHT" or "BOTTOMLEFT")
+                         icon:SetPoint(attachPos and "TOPLEFT" or "TOPRIGHT", anchor, attachPos and "BOTTOMRIGHT" or "BOTTOMLEFT")
                     elseif (count >= db.IconRows and count % db.IconRows == 0) then
-                        icon:SetPoint(db.growLeft and "LEFT" or "RIGHT", icons[oldActiveIndex],
-                            db.growLeft and "RIGHT" or "LEFT", db.growLeft and 1 * db.iconOffsetY or -1 * db.iconOffsetY,
-                            0)
+                        icon:SetPoint(attachPos and "LEFT" or "RIGHT", icons[oldActiveIndex],attachPos and "RIGHT" or "LEFT", attachPos and 1 * db.iconOffsetY or -1 * db.iconOffsetY, 0)
                     else
-                        icon:SetPoint(db.growLeft and "TOP" or "TOP", icons[lastActiveIndex],
-                            db.growLeft and "BOTTOM" or "BOTTOM", 0, -1 * db.iconOffsetX)
+                        if db.growUP then
+                            icon:SetPoint(attachPos and "BOTTOM" or "BOTTOM", icons[lastActiveIndex],attachPos and "TOP" or "TOP", 0, 1 * db.iconOffsetX)
+                        else
+                            icon:SetPoint(attachPos and "TOP" or "TOP", icons[lastActiveIndex], attachPos and "BOTTOM" or "BOTTOM", 0, -1 * db.iconOffsetX)
+
+                        end
                     end
                 else
                     if lastActiveIndex == 0 then
-                        icon:SetPoint(db.growLeft and "TOPLEFT" or "TOPRIGHT", anchor,
-                            db.growLeft and "BOTTOMRIGHT" or "BOTTOMLEFT",
-                            db.growLeft and 1 * db.iconOffsetY or -1 * db.iconOffsetY, 0)
+                        icon:SetPoint(attachPos and "TOPLEFT" or "TOPRIGHT", anchor, attachPos and "BOTTOMRIGHT" or "BOTTOMLEFT", attachPos and 1 * db.iconOffsetY or -1 * db.iconOffsetY, 0)
                     else
-                        icon:SetPoint(db.growLeft and "LEFT" or "RIGHT", icons[lastActiveIndex],
-                            db.growLeft and "RIGHT" or "LEFT", db.growLeft and 1 * db.iconOffsetY or -1 * db.iconOffsetY,
-                            0)
+                        icon:SetPoint(attachPos and "LEFT" or "RIGHT", icons[lastActiveIndex],attachPos and "RIGHT" or "LEFT", attachPos and 1 * db.iconOffsetY or -1 * db.iconOffsetY, 0)
                     end
                 end
             else
                 if db.IconRows > 1 then
                     if lastActiveIndex == 0 then
-                        icon:SetPoint(db.growLeft and "TOPRIGHT" or "TOPLEFT", anchor,
-                            db.growLeft and "BOTTOMLEFT" or "BOTTOMRIGHT")
+                       icon:SetPoint(attachPos and "TOPRIGHT" or "TOPLEFT", anchor,attachPos and "BOTTOMLEFT" or "BOTTOMRIGHT")
                     elseif (count >= db.IconRows and count % db.IconRows == 0) then
-                        icon:SetPoint(db.growLeft and "RIGHT" or "LEFT", icons[oldActiveIndex],
-                            db.growLeft and "LEFT" or "RIGHT", db.growLeft and -1 * db.iconOffsetY or db.iconOffsetY, 0)
+                        icon:SetPoint(attachPos and "RIGHT" or "LEFT", icons[oldActiveIndex],attachPos and "LEFT" or "RIGHT", attachPos and -1 * db.iconOffsetY or db.iconOffsetY, 0)
                     else
-                        icon:SetPoint(db.growLeft and "TOP" or "TOP", icons[lastActiveIndex],
-                            db.growLeft and "BOTTOM" or "BOTTOM", 0, -1 * db.iconOffsetX)
+                        if db.growUP then
+                            icon:SetPoint(attachPos and "BOTTOM" or "BOTTOM", icons[lastActiveIndex],attachPos and "TOP" or "TOP", 0, 1 * db.iconOffsetX)
+                        else
+                             icon:SetPoint(attachPos and "TOP" or "TOP", icons[lastActiveIndex],attachPos and "BOTTOM" or "BOTTOM", 0, -1 * db.iconOffsetX)
+                        end
                     end
                 else
                     if lastActiveIndex == 0 then
-                        icon:SetPoint(db.growLeft and "TOPRIGHT" or "TOPLEFT", anchor,
-                            db.growLeft and "BOTTOMLEFT" or "BOTTOMRIGHT",
-                            db.growLeft and -1 * db.iconOffsetY or db.iconOffsetY, 0)
+                        icon:SetPoint(attachPos and "TOPRIGHT" or "TOPLEFT", anchor,attachPos and "BOTTOMLEFT" or "BOTTOMRIGHT", attachPos and -1 * db.iconOffsetY or db.iconOffsetY, 0)
                     else
-                        icon:SetPoint(db.growLeft and "RIGHT" or "LEFT", icons[lastActiveIndex],
-                            db.growLeft and "LEFT" or "RIGHT", db.growLeft and -1 * db.iconOffsetY or db.iconOffsetY, 0)
+                        icon:SetPoint(attachPos and "RIGHT" or "LEFT", icons[lastActiveIndex],attachPos and "LEFT" or "RIGHT", attachPos and -1 * db.iconOffsetY or db.iconOffsetY, 0)
                     end
                 end
             end
@@ -943,16 +950,15 @@ end
 
 function ATT:UpdateIcons()
     for k, anchor in ipairs(anchors) do
-        local unit = (isRaidGr() and "raid" .. k) or ((k == 5 and "player") or (k ~= 5 and "party" .. k))
+        local unit = (ATT.isRaidGr and "raid" .. k) or ((k == 5 and "player") or (k ~= 5 and "party" .. k))
         local guid = unit and UnitGUID(unit)
-        if guid and (guid ~= PlayerGUID) and ((isRaidGr() and (k <= db.raidGroupSize)) or (not isRaidGr() and (k <= 5))) then -- here  db.raidGroupSize == 0
+        if guid and (guid ~= PlayerGUID) and ((ATT.isRaidGr and (k <= db.raidGroupSize)) or (not ATT.isRaidGr and (k <= 5))) then -- here  db.raidGroupSize == 0
             if db.lock then anchor:Hide() else anchor:Show() end
             self:UpdateAnchorGUID(unit, guid)
-        elseif guid and (guid == PlayerGUID) and db.showSelf then
+        elseif guid and (guid == PlayerGUID) and db.showSelf and not (ATT.isRaidGr and db.raidGroupSize == 0 and db.selfHideInRaid) then
             if db.lock then anchor:Hide() else anchor:Show() end
             self:UpdateAnchorGUID(unit, guid)
         else
-            -- anchor:Hide()
             anchor:RemoveAnchor()
         end
     end
@@ -960,7 +966,8 @@ end
 
 function ATT:ApplyAnchorSettings()
     local _, instanceType = IsInInstance()
-    ATTAnchor.isBgMode = db.bgMode and (instanceType == "pvp")
+    ATT.isRaidGr = IsInRaid(1) or (IsInRaid(2) and (instanceType == "raid" or instanceType == "pvp")) or GetNumGroupMembers() > 5
+    ATT.isBgMode = db.bgMode and (instanceType == "pvp")
     ATTIcons:SetScale(db.scale or 1)
 
     if (db.isEnabledVisibility.arena and instanceType == "arena") or (db.isEnabledVisibility.dungeons and instanceType == "party") or (db.isEnabledVisibility.scenarios and instanceType == "scenario") or
@@ -1309,9 +1316,6 @@ function ATT:PLAYER_EQUIPMENT_CHANGED(item)
     if not item then
         return
     end
-    if (item ~= 13 and item ~= 14) then
-        return
-    end
     self:InspectPlayer()
 end
 
@@ -1335,10 +1339,10 @@ function ATT:PLAYER_TALENT_UPDATE()
 end
 
 function ATT:CheckProfile()
+    local _, instanceType = IsInInstance()
     selectedDB.ProfileSelected = selectedDB.ProfileSelected or "DEFAULT"
 
     if selectedDB.autoselectBG then
-        local _, instanceType = IsInInstance()
         if instanceType == "pvp" and selectedDB.ProfileSelected ~= "BG" then
             selectedDB.lastProfile = selectedDB.ProfileSelected
             selectedDB.ProfileSelected = "BG"
@@ -1351,6 +1355,8 @@ function ATT:CheckProfile()
     db = selectedDB[selectedDB.ProfileSelected]
     db.classSelected = "WARRIOR";
     db.category = "abilities";
+    ATT.isRaidGr = IsInRaid(1) or (IsInRaid(2) and (instanceType == "raid" or instanceType == "pvp")) or GetNumGroupMembers() > 5
+    ATT.isBgMode = db.bgMode and (instanceType == "pvp")
 end
 
 function ATT:LoadProfiles()
@@ -1601,8 +1607,7 @@ end
 
 local function CreateListButton(parent, index, panel)
     local button = CreateFrame("CheckButton", parent:GetName() .. index, parent, "InterfaceOptionsCheckButtonTemplate")
-    button.orderbtn = CreateFrame("button", parent:GetName() .. index .. "orderbtn", button,
-        "UIPanelScrollUpButtonTemplate")
+    button.orderbtn = CreateFrame("button", parent:GetName() .. index .. "orderbtn", button, "UIPanelScrollUpButtonTemplate")
     return button
 end
 
@@ -1651,12 +1656,13 @@ function ATT:FindFrameType()
     ATT_DropDown1.doRefresh()
 end
 
+
 function ATT:CreateOptions()
-    local panel = SO.AddOptionsPanel("Ability Team Tracker", function()
-    end)
+    local panel = SO.AddOptionsPanel("Ability Team Tracker", function() end)
     self.panel = panel
+
     SO.AddSlashCommand("Ability Team Tracker", "/att")
-    local title, subText = panel:MakeTitleTextAndSubText("Ability Team Tracker")
+    panel:MakeTitleTextAndSubText("Ability Team Tracker")
 
     local attach = panel:MakeDropDown('name', ' Attach to raid frames', 'description', 'Select hook mode behaviour',
         'values', { 0, "Do Not Attach", 1, "Auto attach UI", 2, "Blizzard UI" }, 'default', 0, 'getFunc', function()
@@ -1667,52 +1673,52 @@ function ATT:CreateOptions()
             db.attach = tonumber(value);
             self:ApplyAnchorSettings();
         end)
-    attach:SetPoint("TOPLEFT", panel, "TOPLEFT", 5, -65)
+    attach:SetPoint("TOPLEFT", panel, "TOPLEFT", 5, -60)
 
-    local selfAttach = panel:MakeToggle(
-        'name', 'Disable Self Attach',
-        'description', 'Disable self frame hooking',
-        'default', false,
-        'getFunc', function() return db.selfAttach end,
-        'getCurrent', function() return db.selfAttach end,
-        'setFunc', function(value)
-            db.selfAttach = value;
-            self:ApplyAnchorSettings()
-        end)
-    selfAttach:SetPoint("TOPLEFT", attach, "TOPLEFT", 15, -42)
+    local attachPos = panel:MakeDropDown('name', ' Attach position', 'description', 'Select anchor position',
+    'values', { 0, "TOP LEFT", 1, "TOP RIGHT", 2, "BOTTOM LEFT", 3, "BOTTOM RIGHT", 4, "CENTER LEFT", 5, "CENTER RIGHT" }, 'default', 0, 'getFunc', function()
+        return  db.attachPos or 0
+    end, 'getCurrent', function()
+        return  db.attachPos or 0
+    end, 'setFunc', function(value)
+        db.attachPos = tonumber(value);
+        self:ApplyAnchorSettings();
+    end)
+    attachPos:SetPoint("TOPLEFT", attach, "TOPLEFT", 0, -50)
 
-    local reverseIcons = panel:MakeToggle('name', 'Reverse Icons', 'description', 'Reverse icons growing direction',
-        'default', false, 'getFunc', function()
-            return db.reverseIcons
-        end, 'getCurrent', function()
-            return db.reverseIcons
-        end, 'setFunc', function(value)
-            db.reverseIcons = value;
-            self:ApplyAnchorSettings()
-        end)
-    reverseIcons:SetPoint("TOP", panel, "TOP", -110, -45)
+    local growUP = panel:MakeToggle('name', 'Grow Rows Upwards', 'description', 'Grow new rows upwards', 'default'
+   , false, 'getFunc', function()
+       return db.growUP
+   end, 'getCurrent', function()
+       return db.growUP
+   end, 'setFunc', function(value)
+       db.growUP = value;
+       self:ApplyAnchorSettings();
+   end)
+   growUP:SetPoint("TOP", panel, "TOP", -120, -50)
 
-    local growLeft = panel:MakeToggle('name', 'Anchor Left', 'description', 'Hook anchors left of the frames', 'default',
-        false, 'getFunc', function()
-            return db.growLeft
-        end, 'getCurrent', function()
-            return db.growLeft
-        end, 'setFunc', function(value)
-            db.growLeft = value;
-            self:ApplyAnchorSettings();
-        end)
-    growLeft:SetPoint("TOP", reverseIcons, "BOTTOM", 0, -5)
+   local reverseIcons = panel:MakeToggle('name', 'Grow Icons Reversed', 'description', 'Reverse icons growing direction',
+   'default', false, 'getFunc', function()
+       return db.reverseIcons
+   end, 'getCurrent', function()
+       return db.reverseIcons
+   end, 'setFunc', function(value)
+       db.reverseIcons = value;
+       self:ApplyAnchorSettings()
+   end)
+reverseIcons:SetPoint("TOP", growUP, "BOTTOM", 0, -5)
 
-    local growDown = panel:MakeToggle('name', 'Anchor Down', 'description', 'Hook anchors under the frames', 'default',
-        false, 'getFunc', function()
-            return db.horizontal
-        end, 'getCurrent', function()
-            return db.horizontal
-        end, 'setFunc', function(value)
-            db.horizontal = value;
-            self:ApplyAnchorSettings();
-        end)
-    growDown:SetPoint("TOP", growLeft, "BOTTOM", 0, -5)
+   local selfAttach = panel:MakeToggle(
+    'name', 'Disable Self Attach',
+    'description', 'Disable self frame hooking',
+    'default', false,
+    'getFunc', function() return db.selfAttach end,
+    'getCurrent', function() return db.selfAttach end,
+    'setFunc', function(value)
+        db.selfAttach = value;
+        self:ApplyAnchorSettings()
+    end)
+selfAttach:SetPoint("TOP", reverseIcons, "BOTTOM", 0, -5)
 
     local scale = panel:MakeSlider('name', 'Scale', 'description', 'Adjust the scale of icons', 'minText', 'Min',
         'maxText', 'Max', 'minValue', 1, 'maxValue', 200, 'step', 1, 'default', 100, 'current',
@@ -1727,11 +1733,12 @@ function ATT:CreateOptions()
         end, 'currentTextFunc', function(value)
             return tonumber(string.format("%.2f", value))
         end)
-    scale:SetPoint("TOPLEFT", attach, "TOPLEFT", 20, -90)
+    scale:SetPoint("TOPLEFT", attach, "TOPLEFT", 20, -100)
 
     local iconRows = panel:MakeSlider('name', 'Icon Rows', 'description', 'Adjust number of icons per row', 'minText',
         '1', 'maxText', '5', 'minValue', 1, 'maxValue', 5, 'step', 1, 'default', 2, 'current',
-        tonumber(db.IconRows) or 1, 'getCurrent',
+        tonumber(db.IconRows) or 1
+        , 'getCurrent',
         function()
             return tonumber(db.IconRows) or 1
         end, 'setFunc', function(value)
@@ -1744,7 +1751,7 @@ function ATT:CreateOptions()
         end)
     iconRows:SetPoint("LEFT", scale, "RIGHT", 15, 0)
 
-    local iconAlpha = panel:MakeSlider('name', 'Icon Alpha', 'description', 'Adjust icons transparency.', 'minText',
+    local iconAlpha = panel:MakeSlider('name', 'Icon Opacity', 'description', 'Adjust icons opacity', 'minText',
         'Hide', 'maxText', 'Max', 'minValue', 0, 'maxValue', 10, 'step', 1, 'default', 0, 'current',
         db.iconAlpha and tonumber(db.iconAlpha * 10) or 10,
         'getCurrent', function()
@@ -1760,7 +1767,7 @@ function ATT:CreateOptions()
     iconAlpha:SetPoint("LEFT", iconRows, "RIGHT", 15, 0)
 
     local raidGroupSize = panel:MakeSlider('name', 'Raid Anchors', 'description',
-        'Adjust number of anchors to show in a raid group\n', 'minText', 'Hide', 'maxText', '40', 'minValue', 0,
+        'Adjust number of anchors to show inside a raid group\n', 'minText', 'Hide', 'maxText', '40', 'minValue', 0,
         'maxValue', 40, 'step', 1, 'default', 0, 'current', tonumber(db.raidGroupSize) or 5,
         'getCurrent', function()
             return tonumber(db.raidGroupSize) or 5
@@ -1788,7 +1795,7 @@ function ATT:CreateOptions()
         end, 'currentTextFunc', function(value)
             return tonumber(value);
         end)
-    offsetX:SetPoint("TOPLEFT", attach, "TOPLEFT", 20, -150)
+    offsetX:SetPoint("TOPLEFT", attach, "TOPLEFT", 20, -160)
 
     local offsetY = panel:MakeSlider('name', 'Anchor Offset Y', 'description', 'Adjust anchor position Y', 'minText',
         'Down', 'maxText', 'Up', 'minValue', -200, 'maxValue', 200, 'step', 1, 'default', 0, 'current',
@@ -1835,16 +1842,16 @@ function ATT:CreateOptions()
         end)
     iconOffsetY:SetPoint("LEFT", iconOffsetX, "RIGHT", 15, 0)
 
-    local lock = panel:MakeToggle('name', 'Hide Anchors', 'description', 'Hide/Lock anchors', 'default', false, 'getFunc',
-        function()
-            return db.lock
-        end, 'getCurrent', function()
-            return db.lock
-        end, 'setFunc', function(value)
-            db.lock = value;
-            self:ApplyAnchorSettings()
-        end)
-    lock:SetPoint("TOP", panel, "TOP", 30, -45)
+    local lock = panel:MakeToggle('name', 'Hide Anchors', 'description', 'Hide/Lock anchors', 'default', false, 'getFunc'
+    , function()
+        return db.lock
+    end, 'getCurrent', function()
+        return db.lock
+    end, 'setFunc', function(value)
+        db.lock = value;
+        self:ApplyAnchorSettings()
+    end)
+    lock:SetPoint("TOP", panel, "TOP", 40, -50)
 
     local glow = panel:MakeToggle('name', 'Glow Icons', 'description',
         'Show Glow animation when\nimportant abilites are active', 'default', true, 'getFunc', function()
@@ -1876,10 +1883,9 @@ function ATT:CreateOptions()
         end, 'setFunc', function(value)
             db.showSelf = value;
             self:InspectPlayer()
-            self:UpdateIcons()
-            self:UpdatePositions() --here
+            self:ApplyAnchorSettings()
         end)
-    showSelf:SetPoint("LEFT", lock, "RIGHT", 130, 0)
+    showSelf:SetPoint("LEFT", lock, "RIGHT", 120, 0)
 
     local showTooltip = panel:MakeToggle('name', 'Show Tooltip', 'description', 'Show tooltips over icons', 'default',
         false, 'getFunc', function()
@@ -1892,7 +1898,7 @@ function ATT:CreateOptions()
         end)
     showTooltip:SetPoint("TOP", showSelf, "BOTTOM", 0, -5)
 
-    local hidden = panel:MakeToggle('name', 'Hidden Mode', 'description', 'Show icons only after\nthey are on cooldown',
+    local hidden = panel:MakeToggle('name', 'Hidden Mode', 'description', 'Show icons only if that are on cooldown',
         'default', false, 'getFunc', function()
             return db.hidden
         end, 'getCurrent', function()
@@ -1903,10 +1909,10 @@ function ATT:CreateOptions()
         end)
     hidden:SetPoint("TOP", showTooltip, "BOTTOM", 0, -5)
 
-    local cpanel = CreateFrame("Frame", "ATTFrame", panel,
-        BackdropTemplateMixin and "BackdropTemplate, TooltipBorderedFrameTemplate")
+    local cpanel = CreateFrame("Frame", "ATTFrame", panel,BackdropTemplateMixin and "BackdropTemplate, TooltipBorderedFrameTemplate")
     cpanel:SetSize(615, 240)
-    cpanel:SetPoint("TOP", panel, "TOP", 0, -265)
+    cpanel:SetPoint("TOP", panel, "TOP", 0, -270)
+    cpanel:SetBackdropColor(0,0,0, 0.4)
 
     local info = CreateFrame("Frame", "ATTFrame", panel, BackdropTemplateMixin and "BackdropTemplate")
     info:SetPoint("TOPLEFT", panel, "TOPLEFT", 25, -520)
@@ -1933,6 +1939,18 @@ function ATT:CreateOptionFrame()
 
     local extraoptions = CreatePopUpFrame(panel, "Options")
 
+    local selfHideInRaid = panel:MakeToggle('name', 'Hide Self In Raid', 'description',
+    'Hide Self in Raid Groups when Raid Anchors option is set to 0', 'extra', extraoptions, 'default', false, 'getFunc',
+    function()
+        return db.selfHideInRaid
+    end, 'getCurrent', function()
+        return db.selfHideInRaid
+    end, 'setFunc', function(value)
+        db.selfHideInRaid = value;
+        ATT:ApplyAnchorSettings();
+    end)
+    selfHideInRaid:SetPoint("TOP", extraoptions, "TOP", -110, -40)
+
     local bgMode = panel:MakeToggle('name', 'Battleground Mode', 'description',
         'Show only trinkets and racials\ninside Battlegrounds', 'extra', extraoptions, 'default', false, 'getFunc',
         function()
@@ -1943,7 +1961,7 @@ function ATT:CreateOptionFrame()
             db.bgMode = value;
             ATT:ApplyAnchorSettings();
         end)
-    bgMode:SetPoint("TOP", extraoptions, "TOP", -110, -40)
+    bgMode:SetPoint("TOP", selfHideInRaid, "TOP", 0, -30)
 
     local cooldownsSync = panel:MakeToggle('name', 'Sync Cooldowns', 'description',
         'Sync cooldowns with your party and raid members|r ', 'extra', extraoptions, 'default', true, 'getFunc',
@@ -2355,11 +2373,10 @@ function ATT:UpdateScrollBar()
                     GameTooltip:SetOwner(button.Text, "ANCHOR_TOP")
                     GameTooltip:SetSpellByID(id)
                     if custom then
-                        GameTooltip:AddLine("Spell ID: " .. id .. " - Cooldown: " .. cooldown, 1, 1, 1)
+                        GameTooltip:AddLine("|cff808080CUSTOM|r - Spell ID: " .. id .. " - CD: " .. cooldown, 1, 1, 1)
                     else
                         if db.category == "glyphs" then
-                            GameTooltip:AddLine("Glyph ID: " .. id .. "\n|cffFF4500Glyphs are permanently active|r", 1, 1,
-                                1)
+                            GameTooltip:AddLine("Glyph ID: " .. id .. "\n|cffFF4500Glyphs are permanently active|r", 1, 1, 1)
                         else
                             GameTooltip:AddLine("Spell ID: " .. id, 1, 1, 1)
                         end
@@ -2409,8 +2426,7 @@ function ATT:CreateAbilityEditor()
     local btns = {}
     self.btns = btns
 
-    local scrollframe = CreateFrame("ScrollFrame", "ATTScrollFrame", panel,
-        (BackdropTemplateMixin and "UIPanelScrollFrameTemplate, BackdropTemplate") or "UIPanelScrollFrameTemplate")
+    local scrollframe = CreateFrame("ScrollFrame", "ATTScrollFrame", panel,(BackdropTemplateMixin and "UIPanelScrollFrameTemplate, BackdropTemplate") or "UIPanelScrollFrameTemplate")
     local backdrop = {
         bgFile = [=[Interface\Buttons\WHITE8X8]=],
         insets = {
@@ -2428,7 +2444,7 @@ function ATT:CreateAbilityEditor()
     scrollframe:SetScrollChild(child)
     self.scrollframe = child
     scrollframe:SetSize(430, 210)
-    scrollframe:SetPoint('LEFT', 10, -100)
+    scrollframe:SetPoint('LEFT', 10, -105)
 
     for i = 1, 50 do
         local button = CreateListButton(child, tostring(i), panel)
@@ -2523,14 +2539,6 @@ function ATT:CreateAbilityEditor()
             local ability = GetSpellInfo(id)
             local cdtext = cdeditbox:GetText():match("^[0-9]+$")
 
-            for _, v in pairs(dbImport[class]) do
-                if v.ability == tonumber(id) then
-                    print("Ability ID:|cffFF4500" ..
-                        id .. "|r already exists in the base spells list and can not be updated")
-                    return
-                end
-            end
-
             if ability and cdtext and id and db.customSpells[class] then
                 local abilities = db.customSpells[class]
                 local _ability, _index = ATT:FindAbilityByName(db.customSpells[class], tonumber(ideditbox:GetText()))
@@ -2543,15 +2551,12 @@ function ATT:CreateAbilityEditor()
                     }
                     ideditbox:SetText("");
                     cdeditbox:SetText("");
-                    print("Updated: |cffFF4500" ..
-                        ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
+                    print("Updated Custom Ability: |cffFF4500" .. ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
                 else
-                    table.insert(abilities,
-                        { ability = tonumber(id), cooldown = tonumber(cdtext), order = 20, custom = true })
+                    table.insert(abilities, { ability = tonumber(id), cooldown = tonumber(cdtext), order = 20, custom = true })
                     ideditbox:SetText("");
                     cdeditbox:SetText("");
-                    print("Added: |cffFF4500" ..
-                        ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
+                    print("Added Custom Ability: |cffFF4500" .. ability .. "|r id: |cffFF4500" .. id .. "|r cd: |cffFF4500" .. cdtext .. "|r")
                 end
                 ATT:UpdateScrollBar();
                 ATT:UpdateIcons()

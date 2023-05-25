@@ -6,9 +6,21 @@ local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 addon.activeWaypoints = {}
 addon.linePoints = {}
+addon.generatedSteps = {}
+
+local MapPinPool = {}
+local MapLinePool = {}
+local worldMapFramePool, miniMapFramePool, lineMapFramePool
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
+
+function addon.arrowFrame:UpdateVisuals()
+    self.texture:SetTexture(addon.GetTexture(
+        "rxp_navigation_arrow-1"))
+end
+
+
 addon.enabledFrames["arrowFrame"] = af
 af.IsFeatureEnabled = function ()
     return not addon.settings.db.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
@@ -81,11 +93,11 @@ function addon.UpdateArrow(self)
         if dist ~= self.distance then
             self.distance = dist
             local step = element.step
-            if step then
-                local title = step.title or ("Step "..step.index)
-                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
-            elseif element.title then
+            local title = step and (step.title or step.index and ("Step "..step.index))
+            if element.title then
                 self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
+            elseif title then
+                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
             end
@@ -94,10 +106,85 @@ function addon.UpdateArrow(self)
 
 end
 
+local function PinOnEnter(self)
+    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+        return
+    end
+    local pin = self.activeObject
+    local showTooltip
+    if self.lineData then
+        showTooltip = pin.step and pin.step.showTooltip and pin.step.elements
+        if addon.settings.db.profile.debug then
+            local line = self.lineData
+            self:SetAlpha(0.5)
+            print("Line start point:", line.sX, ",", line.sY)
+            print("Line end point:", line.fX, ",", line.fY)
+        end
+        if showTooltip then
+            local element = self.lineData.element
+            for line in lineMapFramePool:EnumerateActive() do
+                if line.lineData.element == element then
+                    line:SetAlpha(0.3)
+                end
+            end
+        end
+    end
+
+    _G.GameTooltip:SetOwner(self, "ANCHOR_RIGHT", 0, 0)
+    _G.GameTooltip:ClearLines()
+    local lines = 0
+    local lastStep
+
+    for _, element in pairs(pin.elements or showTooltip or {}) do
+        local parent = element.parent
+        local text
+        local step = element.step
+        local icon = step.icon or ""
+        icon = icon:gsub("(|T.-):%d+:%d+:","%1:0:0:")
+        if parent and not parent.hideTooltip then
+            text = parent.mapTooltip or parent.tooltipText or parent.text or ""
+            local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
+            if title and title ~= lastStep then
+                _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
+                lastStep = title
+            end
+            _G.GameTooltip:AddLine(text)
+            lines = lines + 1
+        elseif not parent and not element.hideTooltip then
+            text = element.mapTooltip or element.tooltipText or step.text or ""
+            local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
+            if title and step ~= lastStep then
+                _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
+                lastStep = title
+            end
+            _G.GameTooltip:AddLine(text)
+            lines = lines + 1
+        end
+    end
+
+    _G.GameTooltip:SetShown(lines > 0)
+end
+
+local function PinOnLeave(self)
+    if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+        return
+    end
+    local lineData = self.lineData
+    if lineData then
+        local element = lineData.element
+        for line in lineMapFramePool:EnumerateActive() do
+            if line.lineData.element == element then
+                self:SetAlpha(line.lineData.lineAlpha or 1)
+            end
+        end
+        addon.UpdateMap()
+    end
+    _G.GameTooltip:Hide()
+end
+
 -- The Frame Pool that will manage pins on the world and mini map
 -- You must use a frame pool to aquire and release pin frames,
 -- otherwise the pins will not be properly removed from the map.
-local MapPinPool = {}
 
 MapPinPool.create = function()
     local framePool = _G.CreateFramePool()
@@ -112,6 +199,7 @@ end
 -- Because you cannot pass the pin data to the Frame Pool when acquiring a frame,
 -- the frame is given a "render" function that can be used to bind the corect data
 -- to the frame
+
 MapPinPool.creationFunc = function(framePool)
     local f = CreateFrame("Button", nil, UIParent,
                           BackdropTemplateMixin and "BackdropTemplate")
@@ -126,7 +214,6 @@ MapPinPool.creationFunc = function(framePool)
     f:EnableMouse()
     f:SetMouseClickEnabled(false)
     f:Hide()
-
     -- Active Step Indicator (A Target Icon)
     f.inner = CreateFrame("Button", nil, f,
                           BackdropTemplateMixin and "BackdropTemplate")
@@ -135,120 +222,103 @@ MapPinPool.creationFunc = function(framePool)
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f.inner:SetPoint("CENTER", 0, 0)
-    f.inner:EnableMouse()
+    --f.inner:EnableMouse()
 
     -- Text
-    f.text = f.inner:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+    f.text = f:CreateFontString(nil, "ARTWORK", "GameFontNormal")
     f.text:SetTextColor(unpack(addon.colors.mapPins))
     f.text:SetFont(addon.font, 14, "OUTLINE")
 
     -- Renders the Pin with Step Information
-    f.render = function(pin, isMiniMapPin)
-        local step = pin.elements[1].step
-        local stepIndex = pin.elements[1].step.index
+    f.render = function(self, pin, isMiniMapPin)
+        local element = pin.elements[1]
+        local step = element.step or pin.step
+        local icon = step.icon and step.icon:match("(|T.-:%d.*|t)")
+        local label = icon or element.label or step.index or "*"
+        self.activeObject = pin
 
-        local r = f.text:GetTextColor()
+        local r = self.text:GetTextColor()
         if r ~= addon.colors.mapPins[1] then
-            f.text:SetTextColor(unpack(addon.colors.mapPins))
+            self.text:SetTextColor(unpack(addon.colors.mapPins))
         end
-        if #pin.elements > 1 then
-            f.text:SetText(stepIndex .. "+")
+
+        if #pin.elements > 1 and not icon then
+            self.text:SetText(label .. "+")
         else
-            f.text:SetText(stepIndex)
+            self.text:SetText(label)
         end
 
-        if addon.settings.db.profile.mapCircle and not isMiniMapPin then
-            local size = math.max(f.text:GetWidth(), f.text:GetHeight()) + 8
-
+        self.text:Show()
+        if addon.settings.db.profile.mapCircle and not isMiniMapPin and not icon then
+            local size = math.max(self.text:GetWidth(), self.text:GetHeight()) + 8
+            self.inner:Show()
             if step.active then
-                f:SetAlpha(1)
-                f:SetWidth(size + 3)
-                f:SetHeight(size + 3)
-                f:SetBackdropColor(0.0, 0.0, 0.0,
+                self:SetAlpha(1)
+                self:SetWidth(size + 3)
+                self:SetHeight(size + 3)
+                self:SetBackdropColor(0.0, 0.0, 0.0,
                                    addon.settings.db.profile.worldMapPinBackgroundOpacity)
-                f.inner:SetBackdropColor(1, 1, 1, 1)
-                f.inner:SetWidth(size + 3)
-                f.inner:SetHeight(size + 3)
+                self.inner:SetBackdropColor(1, 1, 1, 1)
+                self.inner:SetWidth(size + 3)
+                self.inner:SetHeight(size + 3)
 
-                f.text:SetFont(addon.font, 14, "OUTLINE")
+                self.text:SetFont(addon.font, 14, "OUTLINE")
             else
-                f:SetBackdropColor(0.1, 0.1, 0.1,
+                self:SetBackdropColor(0.1, 0.1, 0.1,
                                    addon.settings.db.profile.worldMapPinBackgroundOpacity)
-                f:SetWidth(size)
-                f:SetHeight(size)
+                self:SetWidth(size)
+                self:SetHeight(size)
 
-                f.inner:SetBackdropColor(0, 0, 0, 0)
+                self.inner:SetBackdropColor(0, 0, 0, 0)
 
-                f.text:SetFont(addon.font, 9, "OUTLINE")
+                self.text:SetFont(addon.font, 9, "OUTLINE")
             end
-            f.inner:SetPoint("CENTER", f, 0, 0)
-            f.inner:SetWidth(size)
-            f.inner:SetHeight(size)
-            f.text:SetPoint("CENTER", f, 0, 0)
-            f:SetScale(addon.settings.db.profile.worldMapPinScale)
-            f:SetAlpha(pin.opacity)
+            self.inner:SetPoint("CENTER", self, 0, 0)
+            self.inner:SetWidth(size)
+            self.inner:SetHeight(size)
+            self.text:SetPoint("CENTER", self, 0, 0)
+            self:SetScale(addon.settings.db.profile.worldMapPinScale)
+            self:SetAlpha(pin.opacity)
         else
-            if step.active and not isMiniMapPin then
-                f:SetAlpha(1)
-                f:SetBackdropColor(0.0, 0.0, 0.0,
-                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
-                f.inner:SetBackdropColor(1, 1, 1, 1)
-                f.inner:SetWidth(8 + 3)
-                f.inner:SetHeight(8 + 3)
+            --print('s3',GetTime())
+            self.inner:Hide()
 
-                f.text:SetFont(addon.font, 14, "OUTLINE")
+            if icon then
+                self:SetBackdropColor(0, 0, 0, 0)
+                self.text:SetFont(addon.font, 16, "OUTLINE")
+                local x,y = icon:match("|T.-:(%d+):?(%d*)")
+                x,y = tonumber(x), tonumber(y)
+                x = x > 0 and x or 16
+                y = y or 16
+                self:SetSize(x,y)
+                self.text:SetPoint("CENTER", self, 1, 0)
+            elseif step.active and not isMiniMapPin then
+                self:SetBackdropColor(0.0, 0.0, 0.0,
+                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
+
+                self.text:SetFont(addon.font, 14, "OUTLINE")
+                self:SetWidth(self.text:GetStringWidth() + 3)
+                self:SetHeight(self.text:GetStringHeight() + 5)
+                self.text:SetPoint("CENTER", self, 1, 0)
             else
                 local bgAlpha = isMiniMapPin and 0 or
                                     addon.settings.db.profile.worldMapPinBackgroundOpacity
-                f:SetBackdropColor(0.1, 0.1, 0.1, bgAlpha)
+                self:SetBackdropColor(0.1, 0.1, 0.1, bgAlpha)
 
-                f.inner:SetBackdropColor(0, 0, 0, 0)
-
-                f.text:SetFont(addon.font, 9, "OUTLINE")
+                self.text:SetFont(addon.font, 9, "OUTLINE")
+                self:SetWidth(self.text:GetStringWidth() + 3)
+                self:SetHeight(self.text:GetStringHeight() + 5)
+                self.text:SetPoint("CENTER", self, 1, 0)
             end
-            f:SetWidth(f.text:GetStringWidth() + 3)
-            f:SetHeight(f.text:GetStringHeight() + 5)
 
-            f.inner:SetPoint("CENTER", f, 0, 0)
-            f.inner:SetWidth(1)
-            f.inner:SetHeight(1)
-            f.text:SetPoint("CENTER", f, 0, 0)
-            f:SetScale(addon.settings.db.profile.worldMapPinScale)
-            f:SetAlpha(pin.opacity)
+            self:SetScale(addon.settings.db.profile.worldMapPinScale)
+            self:SetAlpha(pin.opacity)
         end
 
         -- Mouse Handlers
-        f:SetScript("OnEnter", function(self)
-            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
-                return
-            end
-            _G.GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
-            _G.GameTooltip:ClearLines()
+        self:SetScript("OnEnter", PinOnEnter)
 
-            for i, element in pairs(pin.elements) do
-                local parent = element.parent
-                local text
-                local step = element.step
-                if parent then
-                    text = parent.mapTooltip or parent.tooltipText
-                elseif not element.hideTooltip then
-                    text = element.mapTooltip or element.tooltipText
-                end
-                text = text or step.text or ""
-                _G.GameTooltip:AddLine("Step " .. step.index,
-                                       unpack(addon.colors.mapPins))
-                _G.GameTooltip:AddLine(text)
-            end
-
-            _G.GameTooltip:Show()
-        end)
-
-        f:SetScript("OnLeave", function(self)
-            if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
-                return
-            end
-            _G.GameTooltip:Hide()
-        end)
+        self:SetScript("OnLeave", PinOnLeave)
 
     end
 
@@ -261,9 +331,10 @@ MapPinPool.resetterFunc = function(framePool, frame)
     frame:SetWidth(0)
     frame:Hide()
     frame:EnableMouse(0)
+    frame.currentPin = nil
 end
 
-local MapLinePool = {}
+
 
 MapLinePool.create = function()
     local framePool = _G.CreateFramePool()
@@ -285,13 +356,13 @@ MapLinePool.creationFunc = function(framePool)
     local border = f.border or f:CreateLine();
     border:SetColorTexture(0, 0, 0, 1);
     f.border = border
-    f:SetFrameLevel(15000)
 
-    f.render = function(self, coords, isMiniMapPin)
+    f.render = function(self, coords)
         if coords.lineAlpha == 0 then
             self:Hide()
             return
         end
+        f.activeObject = self
         local thickness = coords.linethickness or 3
         local alpha = coords.lineAlpha or 1
         self:SetAlpha(alpha)
@@ -328,26 +399,17 @@ MapLinePool.creationFunc = function(framePool)
         lborder:SetAlpha(0.5)
 
         self:SetParent(canvas)
-        --self:SetFrameStrata("HIGH")
-        self:SetFrameStrata("FULLSCREEN_DIALOG")
+        self:SetFrameStrata(canvas:GetFrameStrata())
+        self:SetFrameLevel(2010)
+        --self:SetFrameStrata("FULLSCREEN_DIALOG")
         -- self:SetFrameLevel(3000)
         self:SetPoint("TOPLEFT", canvas, "TOPLEFT", xAnchor, yAnchor)
         self:EnableMouse(true)
         -- self:Show()
 
-        f:SetScript("OnEnter", function(self)
-            if addon.settings.db.profile.debug and self.lineData then
-                local line = self.lineData
-                self:SetAlpha(0.5)
-                print("Line start point:", line.sX, ",", line.sY)
-                print("Line end point:", line.fX, ",", line.fY)
-            end
-        end)
+        f:SetScript("OnEnter",PinOnEnter)
 
-        f:SetScript("OnLeave", function(self)
-            local line = self.lineData
-            self:SetAlpha(line.lineAlpha or 1)
-        end)
+        f:SetScript("OnLeave", PinOnLeave)
         --local _,_,px,py = line:GetStartPoint()
         --print('ok',coords.sX,coords.sY,';',coords.fX,coords.fY,'+',_G.WorldMapFrame:GetMapID())
         --print(width,height)
@@ -366,11 +428,12 @@ MapLinePool.resetterFunc = function(framePool, frame)
     frame.step = nil
     frame.zone = nil
     frame.lineData = nil
+    frame.activeObject = nil
 end
 
-local worldMapFramePool = MapPinPool.create()
-local miniMapFramePool = MapPinPool.create()
-local lineMapFramePool = MapLinePool.create()
+worldMapFramePool = MapPinPool.create()
+miniMapFramePool = MapPinPool.create()
+lineMapFramePool = MapLinePool.create()
 
 -- Calculates if a given element is close to any other provided pins
 local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
@@ -470,14 +533,15 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
         local j = 1;
         local n = 0;
         local nCenter = step.centerPins and #step.centerPins or 0
+        --print('cp',#step.centerPins)
         local nElements = #step.elements
-        while numActivePins < numPins and j <= nElements + nCenter do
+        while (numActivePins < numPins or j <= nCenter) and j <= nElements + nCenter do
             local element
             if j > nCenter then
                 element = step.elements[j-nCenter]
             else
                 element = step.centerPins[j]
-                print('c1',element.x,element.y)
+                --print('c1',element.x,element.y)
             end
 
             local skipWp = not(element.zone and element.x)
@@ -486,14 +550,14 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                 n = n + 1
             end
             if not isMiniMap and step.active and not skipWp then
-                local wpList = RXPCData.completedWaypoints[step.index] or {}
+                local wpList = RXPCData.completedWaypoints[step.index or "tip"] or {}
                 skipWp = wpList[element.wpHash] or element.skip
                 wpList[element.wpHash] = skipWp
-                RXPCData.completedWaypoints[element.step.index] = wpList
+                RXPCData.completedWaypoints[element.step.index or "tip"] = wpList
             end
 
             if element.text and not element.label and not element.textOnly then
-                element.label = tostring(step.index)
+                element.label = tostring(step.index or "*")
             end
 
             if not skipWp and
@@ -551,7 +615,10 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             local step = steps[startingIndex + i]
             ProcessMapPin(step)
         end
+
+        addon:ProcessGeneratedSteps(ProcessMapPin)
     end
+
     return pins
 end
 
@@ -620,7 +687,8 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 range = element.range,
                 generated = flags,
                 step = step,
-                parent = element.parent
+                parent = element.parent,
+                mapTooltip = element.mapTooltip,
             }
             point.wpHash = GetPinHash(x,y,element.zone,n)
             n = n + 1
@@ -643,8 +711,14 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 for i = 1, nPoints * 2, 2 do
                     local sX = (element.segments[i])
                     local sY = (element.segments[i + 1])
-                    local fX = (element.segments[(i + 1) % nSegments + 1])
-                    local fY = (element.segments[(i + 2) % nSegments + 1])
+                    local fX,fY
+                    if element.connectPoints then
+                        fX = (element.segments[(i + 1) % nSegments + 1])
+                        fY = (element.segments[(i + 2) % nSegments + 1])
+                    else
+                        fX = element.segments[i + 2]
+                        fY = element.segments[i + 3]
+                    end
 
                     if sX and sY and fX and fY then
                         if sX < 0 and sY < 0 then
@@ -713,7 +787,19 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
             local step = steps[startingIndex + i]
             ProcessLine(step)
         end
+
+        for _,container in pairs(addon.generatedSteps) do
+            for _,step in ipairs(container) do
+                if step.isActive then
+                    step.active = step:isActive()
+                end
+                if step.active then
+                    ProcessLine(step)
+                end
+            end
+        end
     end
+
     return pins
 end
 
@@ -729,9 +815,10 @@ local function addWorldMapPins()
         if not pin.hidePin then
             local element = pin.elements[1]
             local worldMapFrame = worldMapFramePool:Acquire()
-            worldMapFrame.render(pin, false)
+            worldMapFrame:render(pin, false)
             local map = element.step and element.step.map and (addon.mapId[element.step.map] or tonumber(element.step.map))
             local x,y
+            --if pin.generated then print('f',element.generated) end
             if map then
                 x,y = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, map)
             else
@@ -785,7 +872,7 @@ local function addMiniMapPins(pins)
         local element = pin.elements[1]
         if element and element.x then
             local miniMapFrame = miniMapFramePool:Acquire()
-            miniMapFrame.render(pin, true)
+            miniMapFrame:render(pin, true)
             HBDPins:AddMinimapIconMap(addon, miniMapFrame, element.zone,
                                       element.x / 100, element.y / 100, true, true)
         end
@@ -875,15 +962,22 @@ local function resetMap()
 end
 
 local lastMap
-function addon.UpdateMap()
-    if addon.currentGuide == nil then return end
-    lastMap = nil
-    resetMap()
-    addWorldMapPins()
-    addWorldMapLines()
-    addMiniMapPins()
-    updateArrow()
-    addon.DisplayLines(true)
+function addon.UpdateMap(resetPins)
+    if resetPins then
+        if addon.currentGuide == nil then return end
+        lastMap = nil
+        resetMap()
+        addWorldMapLines()
+        addWorldMapPins()
+        addMiniMapPins()
+        updateArrow()
+        addon.DisplayLines(true)
+    else
+        addon.updateMap = true
+        --[[if GetTime() - gt > 10 then
+            error('ok')
+        end]]
+    end
 end
 
 local closestPoint
@@ -904,9 +998,14 @@ addon.DisplayLines = DisplayLines
 
 hooksecurefunc(_G.WorldMapFrame, "OnMapChanged", DisplayLines);
 
+local scale = 0
 if _G.WorldMapFrame.OnCanvasScaleChanged then
     hooksecurefunc(_G.WorldMapFrame, "OnCanvasScaleChanged", function()
-        addon.updateMap = true
+        local mapScale = _G.WorldMapFrame:GetCanvasScale()
+        if mapScale ~= scale then
+            addon.UpdateMap()
+        end
+        scale = mapScale
     end)
 end
 
@@ -955,7 +1054,7 @@ function addon.UpdateGotoSteps()
                             elseif not (element.textOnly and element.hidePin and
                                          element.wpHash ~= af.element.wpHash and not element.generated) then
                                 element.skip = true
-                                addon.updateMap = true
+                                addon.UpdateMap()
                                 addon.SetElementComplete(element.frame)
                                 if element.timer then
                                     addon.StartTimer(element.timer,element.timerText)
